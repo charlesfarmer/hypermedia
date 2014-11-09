@@ -10,7 +10,9 @@ public interface IClientFacade extends IFacade {
 	ClientBean getClientByEmail(Connexion connexion, String email)
 			throws FacadeException;
 
-	void ajouterClient(Connexion connexion, ClientBean clientBean)
+	ClientBean ajouterClient(Connexion connexion, ClientBean clientBean)
 			throws FacadeException, EmailAlreadyUsedException;
+	
+	ClientBean modifierMotDePasse(Connexion connexion, ClientBean clientBean) throws FacadeException;
 
 }
