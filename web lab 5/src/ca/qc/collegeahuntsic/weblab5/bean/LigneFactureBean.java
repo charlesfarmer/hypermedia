@@ -1,8 +1,9 @@
 package ca.qc.collegeahuntsic.weblab5.bean;
 
 import java.math.BigDecimal;
+
 public class LigneFactureBean extends Bean {
-	
+
 	public static final String ID_LIGNEFACTURE_COLUMN_NAME = "IDLigneFacture";
 
 	public static final String ID_ACHAT_COLUMN_NAME = "AchatID";
@@ -16,11 +17,11 @@ public class LigneFactureBean extends Bean {
 	private static final long serialVersionUID = 1L;
 
 	private String idLigneFacture;
-	
+
 	private int quantite;
 
 	private BigDecimal prix;
-	
+
 	private AchatBean achatBean;
 
 	private ProduitBean produitBean;
@@ -30,15 +31,15 @@ public class LigneFactureBean extends Bean {
 	}
 
 	public String getIdLigneFacture() {
-		return idLigneFacture;
+		return this.idLigneFacture;
 	}
 
 	public void setIdLigneFacture(String idLigneFacture) {
 		this.idLigneFacture = idLigneFacture;
 	}
-	
+
 	public int getQuantite() {
-		return quantite;
+		return this.quantite;
 	}
 
 	public void setQuantite(int quantite) {
@@ -46,15 +47,15 @@ public class LigneFactureBean extends Bean {
 	}
 
 	public BigDecimal getPrix() {
-		return prix;
+		return this.prix;
 	}
 
 	public void setPrix(BigDecimal prix) {
 		this.prix = prix;
 	}
-	
+
 	public ProduitBean getProduitBean() {
-		return produitBean;
+		return this.produitBean;
 	}
 
 	public void setProduitBean(ProduitBean produitBean) {
@@ -62,7 +63,7 @@ public class LigneFactureBean extends Bean {
 	}
 
 	public AchatBean getAchatBean() {
-		return achatBean;
+		return this.achatBean;
 	}
 
 	public void setAchatBean(AchatBean achatBean) {

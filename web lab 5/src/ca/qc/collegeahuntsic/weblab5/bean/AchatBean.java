@@ -23,7 +23,7 @@ public class AchatBean extends Bean {
 	}
 
 	public String getIdAchat() {
-		return idAchat;
+		return this.idAchat;
 	}
 
 	public void setIdAchat(String idAchat) {
@@ -31,7 +31,7 @@ public class AchatBean extends Bean {
 	}
 
 	public ClientBean getClientBean() {
-		return clientBean;
+		return this.clientBean;
 	}
 
 	public void setClientBean(ClientBean clientBean) {
@@ -39,7 +39,7 @@ public class AchatBean extends Bean {
 	}
 
 	public Timestamp getDateAchat() {
-		return dateAchat;
+		return this.dateAchat;
 	}
 
 	public void setDateAchat(Timestamp dateAchat) {
