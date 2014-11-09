@@ -52,7 +52,7 @@ public class MagasinCreateur implements Serializable {
 			
 			setConnexion(new Connexion(serveur, bd, user, password));
 			setAchatService(new AchatService(new AchatDAO(AchatBean.class)));
-			setClientService(new ClientService(new ClientDAO(ClientBean.class)));
+			setClientService(new ClientService(new ClientDAO(ClientBean.class), new ProfilDAO(ProfilBean.class)));
 			setLignePanierService(new LignePanierService(new LignePanierDAO(LignePanierBean.class)));
 			setProduitService(new ProduitService(new ProduitDAO(ProduitBean.class)));
 			setProfilService(new ProfilService(new ProfilDAO(ProfilBean.class)));
