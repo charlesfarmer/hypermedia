@@ -32,7 +32,8 @@ public class ClientFacade extends Facade implements IClientFacade {
 		}
 	}
 	
-	public void AjouterClient(Connexion connexion, ClientBean clientBean) throws FacadeException, EmailAlreadyUsedException{
+	@Override
+	public void ajouterClient(Connexion connexion, ClientBean clientBean) throws FacadeException, EmailAlreadyUsedException{
 		try {
 			getService().ajouterClient(connexion, clientBean);
 		} catch (ServiceException e) {
