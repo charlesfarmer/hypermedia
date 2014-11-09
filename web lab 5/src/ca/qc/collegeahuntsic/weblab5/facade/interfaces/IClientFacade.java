@@ -12,7 +12,8 @@ public interface IClientFacade extends IFacade {
 
 	ClientBean ajouterClient(Connexion connexion, ClientBean clientBean)
 			throws FacadeException, EmailAlreadyUsedException;
-	
-	ClientBean modifierMotDePasse(Connexion connexion, ClientBean clientBean) throws FacadeException;
+
+	void modifierMotDePasse(Connexion connexion, ClientBean clientBean)
+			throws FacadeException;
 
 }

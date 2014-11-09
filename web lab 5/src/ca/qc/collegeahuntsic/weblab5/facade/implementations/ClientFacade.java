@@ -10,18 +10,19 @@ import ca.qc.collegeahuntsic.weblab5.service.interfaces.IClientService;
 
 public class ClientFacade extends Facade implements IClientFacade {
 	private IClientService service;
-	
-	public ClientFacade(IClientService service){
+
+	public ClientFacade(IClientService service) {
 		setService(service);
 	}
-	
+
 	private IClientService getService() {
-		return service;
+		return this.service;
 	}
+
 	private void setService(IClientService service) {
 		this.service = service;
 	}
-	
+
 	@Override
 	public ClientBean getClientByEmail(Connexion connexion, String email)
 			throws FacadeException {
@@ -31,11 +32,22 @@ public class ClientFacade extends Facade implements IClientFacade {
 			throw new FacadeException(e);
 		}
 	}
-	
+
 	@Override
-	public ClientBean ajouterClient(Connexion connexion, ClientBean clientBean) throws FacadeException, EmailAlreadyUsedException{
+	public ClientBean ajouterClient(Connexion connexion, ClientBean clientBean)
+			throws FacadeException, EmailAlreadyUsedException {
 		try {
 			return getService().ajouterClient(connexion, clientBean);
+		} catch (ServiceException e) {
+			throw new FacadeException(e);
+		}
+	}
+
+	@Override
+	public void modifierMotDePasse(Connexion connexion, ClientBean clientBean)
+			throws FacadeException {
+		try {
+			getService().update(connexion, clientBean);
 		} catch (ServiceException e) {
 			throw new FacadeException(e);
 		}
