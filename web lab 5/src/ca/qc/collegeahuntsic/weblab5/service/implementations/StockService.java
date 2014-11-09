@@ -1,3 +1,4 @@
+
 package ca.qc.collegeahuntsic.weblab5.service.implementations;
 
 import ca.qc.collegeahuntsic.weblab5.bean.StockBean;
@@ -9,60 +10,63 @@ import ca.qc.collegeahuntsic.weblab5.service.interfaces.IStockService;
 
 public class StockService extends Service implements IStockService {
 
-	private IStockDAO stockDAO;
+    private IStockDAO stockDAO;
 
-	public StockService(IStockDAO stockDAO) {
-		super();
-		setStockDAO(stockDAO);
-	}
+    public StockService(IStockDAO stockDAO) {
+        super();
+        setStockDAO(stockDAO);
+    }
 
-	public IStockDAO getStockDAO() {
-		return this.stockDAO;
-	}
+    public IStockDAO getStockDAO() {
+        return this.stockDAO;
+    }
 
-	public void setStockDAO(IStockDAO stockDAO) {
-		this.stockDAO = stockDAO;
-	}
+    public void setStockDAO(IStockDAO stockDAO) {
+        this.stockDAO = stockDAO;
+    }
 
-	@Override
-	public StockBean add(Connexion connexion, StockBean stockBean)
-			throws ServiceException {
-		try {
-			return (StockBean) getStockDAO().add(connexion, stockBean);
-		} catch (DAOException e) {
-			throw new ServiceException(e);
-		}
-	}
+    @Override
+    public StockBean add(Connexion connexion,
+        StockBean stockBean) throws ServiceException {
+        try {
+            return (StockBean) getStockDAO().add(connexion,
+                stockBean);
+        } catch(DAOException e) {
+            throw new ServiceException(e);
+        }
+    }
 
-	@Override
-	public StockBean get(Connexion connexion, StockBean stockBean)
-			throws ServiceException {
-		try {
-			return (StockBean) getStockDAO().get(connexion,
-					stockBean.getIdStock());
-		} catch (DAOException e) {
-			throw new ServiceException(e);
-		}
-	}
+    @Override
+    public StockBean get(Connexion connexion,
+        StockBean stockBean) throws ServiceException {
+        try {
+            return (StockBean) getStockDAO().get(connexion,
+                stockBean.getIdStock());
+        } catch(DAOException e) {
+            throw new ServiceException(e);
+        }
+    }
 
-	@Override
-	public void update(Connexion connexion, StockBean stockBean)
-			throws ServiceException {
-		try {
-			getStockDAO().update(connexion, stockBean);
-		} catch (DAOException e) {
-			throw new ServiceException(e);
-		}
-	}
+    @Override
+    public void update(Connexion connexion,
+        StockBean stockBean) throws ServiceException {
+        try {
+            getStockDAO().update(connexion,
+                stockBean);
+        } catch(DAOException e) {
+            throw new ServiceException(e);
+        }
+    }
 
-	@Override
-	public void delete(Connexion connexion, StockBean stockBean)
-			throws ServiceException {
-		try {
-			getStockDAO().delete(connexion, stockBean);
-		} catch (DAOException e) {
-			throw new ServiceException(e);
-		}
-	}
+    @Override
+    public void delete(Connexion connexion,
+        StockBean stockBean) throws ServiceException {
+        try {
+            getStockDAO().delete(connexion,
+                stockBean);
+        } catch(DAOException e) {
+            throw new ServiceException(e);
+        }
+    }
 
 }

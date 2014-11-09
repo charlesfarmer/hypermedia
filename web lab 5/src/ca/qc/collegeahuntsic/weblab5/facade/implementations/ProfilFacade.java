@@ -1,3 +1,4 @@
+
 package ca.qc.collegeahuntsic.weblab5.facade.implementations;
 
 import ca.qc.collegeahuntsic.weblab5.bean.ProfilBean;
@@ -8,28 +9,29 @@ import ca.qc.collegeahuntsic.weblab5.facade.interfaces.IProfilFacade;
 import ca.qc.collegeahuntsic.weblab5.service.interfaces.IProfilService;
 
 public class ProfilFacade extends Facade implements IProfilFacade {
-	private IProfilService service;
+    private IProfilService service;
 
-	public ProfilFacade(IProfilService service) {
-		setService(service);
-	}
+    public ProfilFacade(IProfilService service) {
+        setService(service);
+    }
 
-	private IProfilService getService() {
-		return this.service;
-	}
+    private IProfilService getService() {
+        return this.service;
+    }
 
-	private void setService(IProfilService service) {
-		this.service = service;
-	}
+    private void setService(IProfilService service) {
+        this.service = service;
+    }
 
-	@Override
-	public ProfilBean modifierProfil(Connexion connexion, ProfilBean profilBean)
-			throws FacadeException {
-		try {
-			getService().update(connexion, profilBean);
-		} catch (ServiceException e) {
-			throw new FacadeException(e);
-		}
-		return null;
-	}
+    @Override
+    public ProfilBean modifierProfil(Connexion connexion,
+        ProfilBean profilBean) throws FacadeException {
+        try {
+            getService().update(connexion,
+                profilBean);
+        } catch(ServiceException e) {
+            throw new FacadeException(e);
+        }
+        return null;
+    }
 }

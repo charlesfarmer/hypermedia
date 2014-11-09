@@ -1,59 +1,60 @@
+
 package ca.qc.collegeahuntsic.weblab5.bean;
 
 public class LignePanierBean extends Bean {
 
-	public static final String ID_LIGNE_PANIER_COLUMN_NAME = "IDLignePanier";
+    public static final String ID_LIGNE_PANIER_COLUMN_NAME = "IDLignePanier";
 
-	public static final String ID_CLIENT_COLUMN_NAME = "ClientID";
+    public static final String ID_CLIENT_COLUMN_NAME = "ClientID";
 
-	public static final String ID_PRODUIT_COLUMN_NAME = "ProduitID";
+    public static final String ID_PRODUIT_COLUMN_NAME = "ProduitID";
 
-	public static final String QUANTITE_COLUMN_NAME = "Quantite";
+    public static final String QUANTITE_COLUMN_NAME = "Quantite";
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
-	private String idLignePanier;
+    private String idLignePanier;
 
-	private ClientBean clientBean;
+    private ClientBean clientBean;
 
-	private ProduitBean produitBean;
+    private ProduitBean produitBean;
 
-	private int quantite;
+    private int quantite;
 
-	public LignePanierBean() {
-		super();
-	}
+    public LignePanierBean() {
+        super();
+    }
 
-	public String getIdLignePanier() {
-		return this.idLignePanier;
-	}
+    public String getIdLignePanier() {
+        return this.idLignePanier;
+    }
 
-	public void setIdLignePanier(String idLignePanier) {
-		this.idLignePanier = idLignePanier;
-	}
+    public void setIdLignePanier(String idLignePanier) {
+        this.idLignePanier = idLignePanier;
+    }
 
-	public int getQuantite() {
-		return this.quantite;
-	}
+    public int getQuantite() {
+        return this.quantite;
+    }
 
-	public void setQuantite(int quantite) {
-		this.quantite = quantite;
-	}
+    public void setQuantite(int quantite) {
+        this.quantite = quantite;
+    }
 
-	public ClientBean getClientBean() {
-		return this.clientBean;
-	}
+    public ClientBean getClientBean() {
+        return this.clientBean;
+    }
 
-	public void setClientBean(ClientBean clientBean) {
-		this.clientBean = clientBean;
-	}
+    public void setClientBean(ClientBean clientBean) {
+        this.clientBean = clientBean;
+    }
 
-	public ProduitBean getProduitBean() {
-		return this.produitBean;
-	}
+    public ProduitBean getProduitBean() {
+        return this.produitBean;
+    }
 
-	public void setProduitBean(ProduitBean produitBean) {
-		this.produitBean = produitBean;
-	}
+    public void setProduitBean(ProduitBean produitBean) {
+        this.produitBean = produitBean;
+    }
 
 }
