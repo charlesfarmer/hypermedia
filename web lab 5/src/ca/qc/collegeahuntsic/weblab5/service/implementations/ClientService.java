@@ -66,7 +66,7 @@ public class ClientService extends Service implements IClientService {
 			throw new ServiceException(e);
 		}
 	}
-	
+	@Override
 	public ClientBean ajouterClient(Connexion connexion, ClientBean clientBean)
 			throws ServiceException, EmailAlreadyUsedException {
 		
