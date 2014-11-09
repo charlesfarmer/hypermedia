@@ -17,4 +17,7 @@ public interface ILignePanierService extends IService {
 	void deleteByClient(Connexion connexion, ClientBean clientBean) throws ServiceException;
 	LignePanierBean ajouterAuPanier(Connexion connexion,
 			LignePanierBean lignePanierBean) throws ServiceException, NotEnoughStockQuantityException;
+	void modifierNombreDitems(Connexion connexion,
+			LignePanierBean lignePanierBean) throws ServiceException,
+			NotEnoughStockQuantityException;
 }

@@ -48,9 +48,9 @@ public class LignePanierFacade extends Facade implements ILignePanierFacade {
 
 	@Override
 	public void modifierNombreDitems(Connexion connexion,
-			LignePanierBean lignePanierBean) throws FacadeException {
+			LignePanierBean lignePanierBean) throws FacadeException, NotEnoughStockQuantityException {
 		try {
-			getService().update(connexion, lignePanierBean);
+			getService().modifierNombreDitems(connexion, lignePanierBean);
 		} catch (ServiceException e) {
 			throw new FacadeException(e);
 		}

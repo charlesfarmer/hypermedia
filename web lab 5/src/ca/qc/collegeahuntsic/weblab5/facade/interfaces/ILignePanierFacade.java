@@ -11,7 +11,7 @@ import ca.qc.collegeahuntsic.weblab5.exception.service.NotEnoughStockQuantityExc
 public interface ILignePanierFacade {
 	LignePanierBean ajouterAuPanier(Connexion connexion, LignePanierBean lignePanierBean) throws FacadeException, NotEnoughStockQuantityException;
 	void retirerDuPanier(Connexion connexion, LignePanierBean lignePanierBean) throws FacadeException;
-	void modifierNombreDitems(Connexion connexion, LignePanierBean lignePanierBean) throws FacadeException;
+	void modifierNombreDitems(Connexion connexion, LignePanierBean lignePanierBean) throws FacadeException, NotEnoughStockQuantityException;
 	List<LignePanierBean> getPanier(Connexion connexion, ClientBean clientBean) throws FacadeException;
 	void viderPanier(Connexion connexion, ClientBean clientBean) throws FacadeException;
 }

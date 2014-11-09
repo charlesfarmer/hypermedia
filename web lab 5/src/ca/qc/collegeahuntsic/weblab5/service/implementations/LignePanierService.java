@@ -120,4 +120,9 @@ public class LignePanierService extends Service implements ILignePanierService {
 			throw new ServiceException(e);
 		}
 	}
+	
+	@Override
+	public void modifierNombreDitems(Connexion connexion, LignePanierBean lignePanierBean) throws ServiceException, NotEnoughStockQuantityException{
+		// TODO bro fais ça
+	}
 }
