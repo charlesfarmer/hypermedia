@@ -2,3 +2,5 @@
 /ca/
 /commons-lang3-3.3.2.jar
 /ojdbc7.jar
+/classes/
+*.class
