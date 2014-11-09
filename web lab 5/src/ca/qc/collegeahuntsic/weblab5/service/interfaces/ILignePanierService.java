@@ -5,6 +5,7 @@ import java.util.List;
 import ca.qc.collegeahuntsic.weblab5.bean.ClientBean;
 import ca.qc.collegeahuntsic.weblab5.bean.LignePanierBean;
 import ca.qc.collegeahuntsic.weblab5.db.Connexion;
+import ca.qc.collegeahuntsic.weblab5.exception.service.NotEnoughStockQuantityException;
 import ca.qc.collegeahuntsic.weblab5.exception.service.ServiceException;
 
 public interface ILignePanierService extends IService {
@@ -14,4 +15,6 @@ public interface ILignePanierService extends IService {
 	void delete(Connexion connexion, LignePanierBean lignePanierBean) throws ServiceException;
 	List<LignePanierBean> findByClient(Connexion connexion, ClientBean clientBean) throws ServiceException;
 	void deleteByClient(Connexion connexion, ClientBean clientBean) throws ServiceException;
+	LignePanierBean ajouterAuPanier(Connexion connexion,
+			LignePanierBean lignePanierBean) throws ServiceException, NotEnoughStockQuantityException;
 }
