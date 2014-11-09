@@ -1,3 +1,4 @@
+
 package ca.qc.collegeahuntsic.weblab5.facade.interfaces;
 
 import ca.qc.collegeahuntsic.weblab5.bean.ClientBean;
@@ -7,13 +8,14 @@ import ca.qc.collegeahuntsic.weblab5.exception.service.EmailAlreadyUsedException
 
 public interface IClientFacade extends IFacade {
 
-	ClientBean getClientByEmail(Connexion connexion, String email)
-			throws FacadeException;
+    ClientBean getClientByEmail(Connexion connexion,
+        String email) throws FacadeException;
 
-	ClientBean ajouterClient(Connexion connexion, ClientBean clientBean)
-			throws FacadeException, EmailAlreadyUsedException;
+    ClientBean ajouterClient(Connexion connexion,
+        ClientBean clientBean) throws FacadeException,
+        EmailAlreadyUsedException;
 
-	void modifierMotDePasse(Connexion connexion, ClientBean clientBean)
-			throws FacadeException;
+    void modifierMotDePasse(Connexion connexion,
+        ClientBean clientBean) throws FacadeException;
 
 }

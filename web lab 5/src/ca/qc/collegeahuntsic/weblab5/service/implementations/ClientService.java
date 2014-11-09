@@ -1,3 +1,4 @@
+
 package ca.qc.collegeahuntsic.weblab5.service.implementations;
 
 import ca.qc.collegeahuntsic.weblab5.bean.ClientBean;
@@ -12,97 +13,106 @@ import ca.qc.collegeahuntsic.weblab5.service.interfaces.IClientService;
 
 public class ClientService extends Service implements IClientService {
 
-	private IClientDAO clientDAO;
-	private IProfilDAO profilDAO;
+    private IClientDAO clientDAO;
 
-	public ClientService(IClientDAO clientDAO, IProfilDAO profilDAO) {
-		super();
-		setClientDAO(clientDAO);
-		setProfilDAO(profilDAO);
-	}
+    private IProfilDAO profilDAO;
 
-	@Override
-	public ClientBean add(Connexion connexion, ClientBean clientBean)
-			throws ServiceException {
-		try {
-			return (ClientBean) getClientDAO().add(connexion, clientBean);
-		} catch (DAOException e) {
-			throw new ServiceException(e);
-		}
-	}
+    public ClientService(IClientDAO clientDAO,
+        IProfilDAO profilDAO) {
+        super();
+        setClientDAO(clientDAO);
+        setProfilDAO(profilDAO);
+    }
 
-	@Override
-	public ClientBean get(Connexion connexion, ClientBean clientBean)
-			throws ServiceException {
-		try {
-			return (ClientBean) getClientDAO().get(connexion,
-					clientBean.getIdClient());
-		} catch (DAOException e) {
-			throw new ServiceException(e);
-		}
-	}
+    @Override
+    public ClientBean add(Connexion connexion,
+        ClientBean clientBean) throws ServiceException {
+        try {
+            return (ClientBean) getClientDAO().add(connexion,
+                clientBean);
+        } catch(DAOException e) {
+            throw new ServiceException(e);
+        }
+    }
 
-	@Override
-	public void update(Connexion connexion, ClientBean clientBean)
-			throws ServiceException {
-		try {
-			getClientDAO().update(connexion, clientBean);
-		} catch (DAOException e) {
-			throw new ServiceException(e);
-		}
-	}
+    @Override
+    public ClientBean get(Connexion connexion,
+        ClientBean clientBean) throws ServiceException {
+        try {
+            return (ClientBean) getClientDAO().get(connexion,
+                clientBean.getIdClient());
+        } catch(DAOException e) {
+            throw new ServiceException(e);
+        }
+    }
 
-	@Override
-	public void delete(Connexion connexion, ClientBean clientBean)
-			throws ServiceException {
-		try {
-			getClientDAO().delete(connexion, clientBean);
-		} catch (DAOException e) {
-			throw new ServiceException(e);
-		}
-	}
+    @Override
+    public void update(Connexion connexion,
+        ClientBean clientBean) throws ServiceException {
+        try {
+            getClientDAO().update(connexion,
+                clientBean);
+        } catch(DAOException e) {
+            throw new ServiceException(e);
+        }
+    }
 
-	@Override
-	public ClientBean findByEmail(Connexion connexion, String email)
-			throws ServiceException {
-		try {
-			return getClientDAO().findByEmail(connexion, email);
-		} catch (DAOException e) {
-			throw new ServiceException(e);
-		}
-	}
+    @Override
+    public void delete(Connexion connexion,
+        ClientBean clientBean) throws ServiceException {
+        try {
+            getClientDAO().delete(connexion,
+                clientBean);
+        } catch(DAOException e) {
+            throw new ServiceException(e);
+        }
+    }
 
-	@Override
-	public ClientBean ajouterClient(Connexion connexion, ClientBean clientBean)
-			throws ServiceException, EmailAlreadyUsedException {
+    @Override
+    public ClientBean findByEmail(Connexion connexion,
+        String email) throws ServiceException {
+        try {
+            return getClientDAO().findByEmail(connexion,
+                email);
+        } catch(DAOException e) {
+            throw new ServiceException(e);
+        }
+    }
 
-		try {
-			if (getClientDAO().findByEmail(connexion, clientBean.getEmail()) != null) {
-				throw new EmailAlreadyUsedException();
-			}
+    @Override
+    public ClientBean ajouterClient(Connexion connexion,
+        ClientBean clientBean) throws ServiceException,
+        EmailAlreadyUsedException {
 
-			clientBean.setProfilBean((ProfilBean) getProfilDAO().add(connexion,
-					clientBean.getProfilBean()));
-			return (ClientBean) getClientDAO().add(connexion, clientBean);
-		} catch (DAOException e) {
-			throw new ServiceException(e);
-		}
-	}
+        try {
+            if(getClientDAO().findByEmail(connexion,
+                clientBean.getEmail()) != null) {
+                throw new EmailAlreadyUsedException();
+            }
 
-	public IClientDAO getClientDAO() {
-		return this.clientDAO;
-	}
+            clientBean.setProfilBean((ProfilBean) getProfilDAO().add(connexion,
+                clientBean.getProfilBean()));
+            return (ClientBean) getClientDAO().add(connexion,
+                clientBean);
+        } catch(DAOException e) {
+            throw new ServiceException(e);
+        }
+    }
 
-	public void setClientDAO(IClientDAO clientDAO) {
-		this.clientDAO = clientDAO;
-	}
+    public IClientDAO getClientDAO() {
+        return this.clientDAO;
+    }
 
-	public IProfilDAO getProfilDAO() {
-		return this.profilDAO;
-	}
+    public void setClientDAO(IClientDAO clientDAO) {
+        this.clientDAO = clientDAO;
+    }
 
-	public void setProfilDAO(IProfilDAO profilDAO) {
-		this.profilDAO = profilDAO;
-	}
+    public IProfilDAO getProfilDAO() {
+        return this.profilDAO;
+    }
+
+    public void setProfilDAO(IProfilDAO profilDAO) {
+        this.profilDAO = profilDAO;
+    }
 
 }

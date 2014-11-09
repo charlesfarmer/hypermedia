@@ -1,3 +1,4 @@
+
 package ca.qc.collegeahuntsic.weblab5.facade.implementations;
 
 import ca.qc.collegeahuntsic.weblab5.facade.interfaces.IStockFacade;
@@ -5,17 +6,18 @@ import ca.qc.collegeahuntsic.weblab5.service.interfaces.IStockService;
 
 public class StockFacade extends Facade implements IStockFacade {
 
-	private IStockService service;
+    private IStockService service;
 
-	public StockFacade(IStockService service) {
-		setService(service);
-	}
+    public StockFacade(IStockService service) {
+        setService(service);
+    }
 
-	private IStockService getService() {
-		return service;
-	}
+    @SuppressWarnings("unused")
+    private IStockService getService() {
+        return this.service;
+    }
 
-	private void setService(IStockService service) {
-		this.service = service;
-	}
+    private void setService(IStockService service) {
+        this.service = service;
+    }
 }
