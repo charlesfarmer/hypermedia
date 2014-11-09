@@ -2,7 +2,9 @@
 package ca.qc.collegeahuntsic.weblab5.service.interfaces;
 
 import ca.qc.collegeahuntsic.weblab5.bean.AchatBean;
+import ca.qc.collegeahuntsic.weblab5.bean.ClientBean;
 import ca.qc.collegeahuntsic.weblab5.db.Connexion;
+import ca.qc.collegeahuntsic.weblab5.exception.service.NotEnoughStockQuantityException;
 import ca.qc.collegeahuntsic.weblab5.exception.service.ServiceException;
 
 public interface IAchatService extends IService {
@@ -17,4 +19,8 @@ public interface IAchatService extends IService {
 
     void delete(Connexion connexion,
         AchatBean achatBean) throws ServiceException;
+
+    void acheter(Connexion connexion,
+        ClientBean clientBean) throws ServiceException,
+        NotEnoughStockQuantityException;
 }

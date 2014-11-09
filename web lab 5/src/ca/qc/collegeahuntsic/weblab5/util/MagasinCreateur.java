@@ -69,7 +69,10 @@ public class MagasinCreateur implements Serializable {
                 bd,
                 user,
                 password));
-            setAchatService(new AchatService(new AchatDAO(AchatBean.class)));
+            setAchatService(new AchatService(new AchatDAO(AchatBean.class),
+                new LignePanierDAO(LignePanierBean.class),
+                new StockDAO(StockBean.class),
+                new LigneFactureDAO(LigneFactureBean.class)));
             setClientService(new ClientService(new ClientDAO(ClientBean.class),
                 new ProfilDAO(ProfilBean.class)));
             setLignePanierService(new LignePanierService(new LignePanierDAO(LignePanierBean.class),
