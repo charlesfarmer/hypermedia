@@ -21,7 +21,7 @@ public class ProfilBean extends Bean {
 	}
 
 	public String getIdProfil() {
-		return idProfil;
+		return this.idProfil;
 	}
 
 	public void setIdProfil(String idProfil) {
@@ -29,7 +29,7 @@ public class ProfilBean extends Bean {
 	}
 
 	public String getNom() {
-		return nom;
+		return this.nom;
 	}
 
 	public void setNom(String nom) {
@@ -37,7 +37,7 @@ public class ProfilBean extends Bean {
 	}
 
 	public String getPrenom() {
-		return prenom;
+		return this.prenom;
 	}
 
 	public void setPrenom(String prenom) {

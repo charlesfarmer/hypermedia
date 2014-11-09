@@ -27,7 +27,7 @@ public class StockBean extends Bean {
 	}
 
 	public String getIdStock() {
-		return idStock;
+		return this.idStock;
 	}
 
 	public void setIdStock(String idStock) {
@@ -35,7 +35,7 @@ public class StockBean extends Bean {
 	}
 
 	public int getQuantite() {
-		return quantite;
+		return this.quantite;
 	}
 
 	public void setQuantite(int quantite) {
@@ -43,7 +43,7 @@ public class StockBean extends Bean {
 	}
 
 	public BigDecimal getPrix() {
-		return prix;
+		return this.prix;
 	}
 
 	public void setPrix(BigDecimal prix) {
@@ -51,7 +51,7 @@ public class StockBean extends Bean {
 	}
 
 	public BigDecimal getRabais() {
-		return rabais;
+		return this.rabais;
 	}
 
 	public void setRabais(BigDecimal rabais) {

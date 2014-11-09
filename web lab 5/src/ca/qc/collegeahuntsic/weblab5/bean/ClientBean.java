@@ -25,7 +25,7 @@ public class ClientBean extends Bean {
 	}
 
 	public String getIdClient() {
-		return idClient;
+		return this.idClient;
 	}
 
 	public void setIdClient(String idClient) {
@@ -33,7 +33,7 @@ public class ClientBean extends Bean {
 	}
 
 	public String getEmail() {
-		return email;
+		return this.email;
 	}
 
 	public void setEmail(String email) {
@@ -41,7 +41,7 @@ public class ClientBean extends Bean {
 	}
 
 	public String getPassword() {
-		return password;
+		return this.password;
 	}
 
 	public void setPassword(String password) {
@@ -49,7 +49,7 @@ public class ClientBean extends Bean {
 	}
 
 	public ProfilBean getProfilBean() {
-		return profilBean;
+		return this.profilBean;
 	}
 
 	public void setProfilBean(ProfilBean profilBean) {

@@ -25,7 +25,7 @@ public class ProduitBean extends Bean {
 	}
 
 	public String getIdProduit() {
-		return idProduit;
+		return this.idProduit;
 	}
 
 	public void setIdProduit(String idProduit) {
@@ -33,7 +33,7 @@ public class ProduitBean extends Bean {
 	}
 
 	public String getNom() {
-		return nom;
+		return this.nom;
 	}
 
 	public void setNom(String nom) {
@@ -41,7 +41,7 @@ public class ProduitBean extends Bean {
 	}
 
 	public String getDescription() {
-		return description;
+		return this.description;
 	}
 
 	public void setDescription(String description) {
@@ -49,7 +49,7 @@ public class ProduitBean extends Bean {
 	}
 
 	public StockBean getStockBean() {
-		return stockBean;
+		return this.stockBean;
 	}
 
 	public void setStockBean(StockBean stockBean) {

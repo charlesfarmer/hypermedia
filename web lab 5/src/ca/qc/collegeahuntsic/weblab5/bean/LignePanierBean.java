@@ -25,15 +25,15 @@ public class LignePanierBean extends Bean {
 	}
 
 	public String getIdLignePanier() {
-		return idLignePanier;
+		return this.idLignePanier;
 	}
 
 	public void setIdLignePanier(String idLignePanier) {
 		this.idLignePanier = idLignePanier;
 	}
-	
+
 	public int getQuantite() {
-		return quantite;
+		return this.quantite;
 	}
 
 	public void setQuantite(int quantite) {
@@ -41,15 +41,15 @@ public class LignePanierBean extends Bean {
 	}
 
 	public ClientBean getClientBean() {
-		return clientBean;
+		return this.clientBean;
 	}
 
 	public void setClientBean(ClientBean clientBean) {
 		this.clientBean = clientBean;
 	}
-	
+
 	public ProduitBean getProduitBean() {
-		return produitBean;
+		return this.produitBean;
 	}
 
 	public void setProduitBean(ProduitBean produitBean) {
