@@ -5,18 +5,22 @@ import java.util.List;
 import ca.qc.collegeahuntsic.weblab5.bean.ClientBean;
 import ca.qc.collegeahuntsic.weblab5.bean.LignePanierBean;
 import ca.qc.collegeahuntsic.weblab5.dao.interfaces.ILignePanierDAO;
+import ca.qc.collegeahuntsic.weblab5.dao.interfaces.IStockDAO;
 import ca.qc.collegeahuntsic.weblab5.db.Connexion;
 import ca.qc.collegeahuntsic.weblab5.exception.dao.DAOException;
+import ca.qc.collegeahuntsic.weblab5.exception.service.NotEnoughStockQuantityException;
 import ca.qc.collegeahuntsic.weblab5.exception.service.ServiceException;
 import ca.qc.collegeahuntsic.weblab5.service.interfaces.ILignePanierService;
 
 public class LignePanierService extends Service implements ILignePanierService {
 	
 	private ILignePanierDAO lignePanierDAO;
+	private IStockDAO stockDAO;
 	
-	public LignePanierService(ILignePanierDAO lignePanierDAO){
+	public LignePanierService(ILignePanierDAO lignePanierDAO, IStockDAO stockDAO){
 		super();
 		setLignePanierDAO(lignePanierDAO);
+		setStockDAO(stockDAO);
 	}
 
 	public ILignePanierDAO getLignePanierDAO() {
@@ -27,11 +31,44 @@ public class LignePanierService extends Service implements ILignePanierService {
 		this.lignePanierDAO = lignePanierDAO;
 	}
 
+	public IStockDAO getStockDAO() {
+		return stockDAO;
+	}
+
+	public void setStockDAO(IStockDAO stockDAO) {
+		this.stockDAO = stockDAO;
+	}
+
 	@Override
 	public LignePanierBean add(Connexion connexion,
 			LignePanierBean lignePanierBean) throws ServiceException {
 		try {
 			return (LignePanierBean) getLignePanierDAO().add(connexion, lignePanierBean);
+		} catch (DAOException e) {
+			throw new ServiceException(e);
+		}
+	}
+	
+	@Override
+	public LignePanierBean ajouterAuPanier(Connexion connexion, LignePanierBean lignePanierBean) throws ServiceException, NotEnoughStockQuantityException{
+		try {
+			
+			List<LignePanierBean> panier = getLignePanierDAO().findByClient(connexion, lignePanierBean.getClientBean());
+			for(int i=0; i<panier.size(); i++){
+				// Si...une ligne pour ce produit existe déjà, on update la quantité au lieu d'ajouter 
+				if (panier.get(i).getProduitBean().getIdProduit().equals(lignePanierBean.getProduitBean().getIdProduit())){
+					lignePanierBean.setQuantite(lignePanierBean.getQuantite() + panier.get(i).getQuantite());
+					
+					if (lignePanierBean.getProduitBean().getStockBean().getQuantite() < lignePanierBean.getQuantite()){
+						throw new NotEnoughStockQuantityException();
+					}
+					
+					update(connexion, lignePanierBean);
+					return lignePanierBean;
+				}
+			}
+			
+			return add(connexion, lignePanierBean);
 		} catch (DAOException e) {
 			throw new ServiceException(e);
 		}
