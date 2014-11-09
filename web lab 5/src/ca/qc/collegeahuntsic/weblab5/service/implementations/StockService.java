@@ -10,14 +10,14 @@ import ca.qc.collegeahuntsic.weblab5.service.interfaces.IStockService;
 public class StockService extends Service implements IStockService {
 
 	private IStockDAO stockDAO;
-	
+
 	public StockService(IStockDAO stockDAO) {
 		super();
 		setStockDAO(stockDAO);
 	}
 
 	public IStockDAO getStockDAO() {
-		return stockDAO;
+		return this.stockDAO;
 	}
 
 	public void setStockDAO(IStockDAO stockDAO) {
@@ -25,7 +25,8 @@ public class StockService extends Service implements IStockService {
 	}
 
 	@Override
-	public StockBean add(Connexion connexion, StockBean stockBean) throws ServiceException {
+	public StockBean add(Connexion connexion, StockBean stockBean)
+			throws ServiceException {
 		try {
 			return (StockBean) getStockDAO().add(connexion, stockBean);
 		} catch (DAOException e) {
@@ -34,16 +35,19 @@ public class StockService extends Service implements IStockService {
 	}
 
 	@Override
-	public StockBean get(Connexion connexion, StockBean stockBean) throws ServiceException {
+	public StockBean get(Connexion connexion, StockBean stockBean)
+			throws ServiceException {
 		try {
-			return (StockBean) getStockDAO().get(connexion, stockBean.getIdStock());
+			return (StockBean) getStockDAO().get(connexion,
+					stockBean.getIdStock());
 		} catch (DAOException e) {
 			throw new ServiceException(e);
 		}
 	}
 
 	@Override
-	public void update(Connexion connexion, StockBean stockBean) throws ServiceException {
+	public void update(Connexion connexion, StockBean stockBean)
+			throws ServiceException {
 		try {
 			getStockDAO().update(connexion, stockBean);
 		} catch (DAOException e) {
@@ -52,7 +56,8 @@ public class StockService extends Service implements IStockService {
 	}
 
 	@Override
-	public void delete(Connexion connexion, StockBean stockBean) throws ServiceException {
+	public void delete(Connexion connexion, StockBean stockBean)
+			throws ServiceException {
 		try {
 			getStockDAO().delete(connexion, stockBean);
 		} catch (DAOException e) {

@@ -10,21 +10,23 @@ import ca.qc.collegeahuntsic.weblab5.service.interfaces.IProfilService;
 public class ProfilService extends Service implements IProfilService {
 
 	private IProfilDAO profilDAO;
-	
-	public ProfilService(IProfilDAO profilDAO){
+
+	public ProfilService(IProfilDAO profilDAO) {
 		super();
 		setProfilDAO(profilDAO);
 	}
 
 	public IProfilDAO getProfilDAO() {
-		return profilDAO;
+		return this.profilDAO;
 	}
+
 	public void setProfilDAO(IProfilDAO profilDAO) {
 		this.profilDAO = profilDAO;
 	}
-	
+
 	@Override
-	public ProfilBean add(Connexion connexion, ProfilBean profilBean) throws ServiceException {
+	public ProfilBean add(Connexion connexion, ProfilBean profilBean)
+			throws ServiceException {
 		try {
 			return (ProfilBean) getProfilDAO().add(connexion, profilBean);
 		} catch (DAOException e) {
@@ -36,7 +38,8 @@ public class ProfilService extends Service implements IProfilService {
 	public ProfilBean get(Connexion connexion, ProfilBean profilBean)
 			throws ServiceException {
 		try {
-			return (ProfilBean) getProfilDAO().get(connexion, profilBean.getIdProfil());
+			return (ProfilBean) getProfilDAO().get(connexion,
+					profilBean.getIdProfil());
 		} catch (DAOException e) {
 			throw new ServiceException(e);
 		}

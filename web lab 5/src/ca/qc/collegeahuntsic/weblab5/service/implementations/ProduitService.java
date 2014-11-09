@@ -8,16 +8,16 @@ import ca.qc.collegeahuntsic.weblab5.exception.service.ServiceException;
 import ca.qc.collegeahuntsic.weblab5.service.interfaces.IProduitService;
 
 public class ProduitService extends Service implements IProduitService {
-	
+
 	private IProduitDAO produitDAO;
-	
-	public ProduitService(IProduitDAO produitDAO){
+
+	public ProduitService(IProduitDAO produitDAO) {
 		super();
 		setProduitDAO(produitDAO);
 	}
 
 	public IProduitDAO getProduitDAO() {
-		return produitDAO;
+		return this.produitDAO;
 	}
 
 	public void setProduitDAO(IProduitDAO produitDAO) {
@@ -25,7 +25,8 @@ public class ProduitService extends Service implements IProduitService {
 	}
 
 	@Override
-	public ProduitBean add(Connexion connexion, ProduitBean produitBean) throws ServiceException {
+	public ProduitBean add(Connexion connexion, ProduitBean produitBean)
+			throws ServiceException {
 		try {
 			return (ProduitBean) getProduitDAO().add(connexion, produitBean);
 		} catch (DAOException e) {
@@ -37,7 +38,8 @@ public class ProduitService extends Service implements IProduitService {
 	public ProduitBean get(Connexion connexion, ProduitBean produitBean)
 			throws ServiceException {
 		try {
-			return (ProduitBean) getProduitDAO().get(connexion, produitBean.getIdProduit());
+			return (ProduitBean) getProduitDAO().get(connexion,
+					produitBean.getIdProduit());
 		} catch (DAOException e) {
 			throw new ServiceException(e);
 		}
