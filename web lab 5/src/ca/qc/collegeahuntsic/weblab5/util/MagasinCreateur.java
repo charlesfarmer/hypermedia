@@ -21,6 +21,20 @@ import ca.qc.collegeahuntsic.weblab5.db.Connexion;
 import ca.qc.collegeahuntsic.weblab5.exception.MagasinException;
 import ca.qc.collegeahuntsic.weblab5.exception.db.ConnexionException;
 import ca.qc.collegeahuntsic.weblab5.exception.dto.InvalidDTOClassException;
+import ca.qc.collegeahuntsic.weblab5.facade.implementations.AchatFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.implementations.ClientFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.implementations.LigneFactureFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.implementations.LignePanierFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.implementations.ProduitFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.implementations.ProfilFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.implementations.StockFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.interfaces.IAchatFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.interfaces.IClientFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.interfaces.ILigneFactureFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.interfaces.ILignePanierFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.interfaces.IProduitFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.interfaces.IProfilFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.interfaces.IStockFacade;
 import ca.qc.collegeahuntsic.weblab5.service.implementations.AchatService;
 import ca.qc.collegeahuntsic.weblab5.service.implementations.ClientService;
 import ca.qc.collegeahuntsic.weblab5.service.implementations.LigneFactureService;
@@ -56,6 +70,20 @@ public class MagasinCreateur implements Serializable {
 
     private ILigneFactureService ligneFactureService;
 
+    private IAchatFacade achatFacade;
+
+    private IClientFacade clientFacade;
+
+    private ILignePanierFacade lignePanierFacade;
+
+    private IProfilFacade profilFacade;
+
+    private IProduitFacade produitFacade;
+
+    private ILigneFactureFacade ligneFactureFacade;
+
+    private IStockFacade stockFacade;
+
     public MagasinCreateur(String serveur,
         String bd,
         String user,
@@ -69,6 +97,20 @@ public class MagasinCreateur implements Serializable {
                 bd,
                 user,
                 password));
+
+            setAchatFacade(new AchatFacade(new AchatService(new AchatDAO(AchatBean.class),
+                new LignePanierDAO(LignePanierBean.class),
+                new StockDAO(StockBean.class),
+                new LigneFactureDAO(LigneFactureBean.class))));
+            setClientFacade(new ClientFacade(new ClientService(new ClientDAO(ClientBean.class),
+                new ProfilDAO(ProfilBean.class))));
+            setLignePanierFacade(new LignePanierFacade(new LignePanierService(new LignePanierDAO(LignePanierBean.class),
+                new StockDAO(StockBean.class))));
+            setProduitFacade(new ProduitFacade(new ProduitService(new ProduitDAO(ProduitBean.class))));
+            setProfilFacade(new ProfilFacade(new ProfilService(new ProfilDAO(ProfilBean.class))));
+            setStockFacade(new StockFacade(new StockService(new StockDAO(StockBean.class))));
+            setLigneFactureFacade(new LigneFactureFacade(new LigneFactureService(new LigneFactureDAO(LigneFactureBean.class))));
+
             setAchatService(new AchatService(new AchatDAO(AchatBean.class),
                 new LignePanierDAO(LignePanierBean.class),
                 new StockDAO(StockBean.class),
@@ -176,5 +218,61 @@ public class MagasinCreateur implements Serializable {
 
     public void setLigneFactureService(ILigneFactureService ligneFactureService) {
         this.ligneFactureService = ligneFactureService;
+    }
+
+    public IAchatFacade getAchatFacade() {
+        return this.achatFacade;
+    }
+
+    public void setAchatFacade(IAchatFacade achatFacade) {
+        this.achatFacade = achatFacade;
+    }
+
+    public IClientFacade getClientFacade() {
+        return this.clientFacade;
+    }
+
+    public void setClientFacade(IClientFacade clientFacade) {
+        this.clientFacade = clientFacade;
+    }
+
+    public ILignePanierFacade getLignePanierFacade() {
+        return this.lignePanierFacade;
+    }
+
+    public void setLignePanierFacade(ILignePanierFacade lignePanierFacade) {
+        this.lignePanierFacade = lignePanierFacade;
+    }
+
+    public IProfilFacade getProfilFacade() {
+        return this.profilFacade;
+    }
+
+    public void setProfilFacade(IProfilFacade profilFacade) {
+        this.profilFacade = profilFacade;
+    }
+
+    public IProduitFacade getProduitFacade() {
+        return this.produitFacade;
+    }
+
+    public void setProduitFacade(IProduitFacade produitFacade) {
+        this.produitFacade = produitFacade;
+    }
+
+    public ILigneFactureFacade getLigneFactureFacade() {
+        return this.ligneFactureFacade;
+    }
+
+    public void setLigneFactureFacade(ILigneFactureFacade ligneFactureFacade) {
+        this.ligneFactureFacade = ligneFactureFacade;
+    }
+
+    public IStockFacade getStockFacade() {
+        return this.stockFacade;
+    }
+
+    public void setStockFacade(IStockFacade stockFacade) {
+        this.stockFacade = stockFacade;
     }
 }
