@@ -39,8 +39,15 @@ public class ClientService extends Service implements IClientService {
     public ClientBean get(Connexion connexion,
         ClientBean clientBean) throws ServiceException {
         try {
-            return (ClientBean) getClientDAO().get(connexion,
+
+            ClientBean client = (ClientBean) getClientDAO().get(connexion,
                 clientBean.getIdClient());
+            ProfilBean profil = (ProfilBean) getProfilDAO().get(connexion,
+                client.getProfilBean().getIdProfil());
+
+            client.setProfilBean(profil);
+
+            return client;
         } catch(DAOException e) {
             throw new ServiceException(e);
         }

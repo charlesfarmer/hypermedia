@@ -4,7 +4,13 @@ package ca.qc.collegeahuntsic.weblab5.service.implementations;
 import java.util.List;
 import ca.qc.collegeahuntsic.weblab5.bean.ClientBean;
 import ca.qc.collegeahuntsic.weblab5.bean.LignePanierBean;
+import ca.qc.collegeahuntsic.weblab5.bean.ProduitBean;
+import ca.qc.collegeahuntsic.weblab5.bean.ProfilBean;
+import ca.qc.collegeahuntsic.weblab5.bean.StockBean;
+import ca.qc.collegeahuntsic.weblab5.dao.interfaces.IClientDAO;
 import ca.qc.collegeahuntsic.weblab5.dao.interfaces.ILignePanierDAO;
+import ca.qc.collegeahuntsic.weblab5.dao.interfaces.IProduitDAO;
+import ca.qc.collegeahuntsic.weblab5.dao.interfaces.IProfilDAO;
 import ca.qc.collegeahuntsic.weblab5.dao.interfaces.IStockDAO;
 import ca.qc.collegeahuntsic.weblab5.db.Connexion;
 import ca.qc.collegeahuntsic.weblab5.exception.dao.DAOException;
@@ -18,11 +24,23 @@ public class LignePanierService extends Service implements ILignePanierService {
 
     private IStockDAO stockDAO;
 
+    private IClientDAO clientDAO;
+
+    private IProfilDAO profilDAO;
+
+    private IProduitDAO produitDAO;
+
     public LignePanierService(ILignePanierDAO lignePanierDAO,
-        IStockDAO stockDAO) {
+        IStockDAO stockDAO,
+        IClientDAO clientDAO,
+        IProfilDAO profilDAO,
+        IProduitDAO produitDAO) {
         super();
         setLignePanierDAO(lignePanierDAO);
         setStockDAO(stockDAO);
+        setClientDAO(clientDAO);
+        setProfilDAO(profilDAO);
+        setProduitDAO(produitDAO);
     }
 
     public ILignePanierDAO getLignePanierDAO() {
@@ -41,6 +59,30 @@ public class LignePanierService extends Service implements ILignePanierService {
         this.stockDAO = stockDAO;
     }
 
+    public IClientDAO getClientDAO() {
+        return this.clientDAO;
+    }
+
+    public void setClientDAO(IClientDAO clientDAO) {
+        this.clientDAO = clientDAO;
+    }
+
+    public IProfilDAO getProfilDAO() {
+        return this.profilDAO;
+    }
+
+    public void setProfilDAO(IProfilDAO profilDAO) {
+        this.profilDAO = profilDAO;
+    }
+
+    public IProduitDAO getProduitDAO() {
+        return this.produitDAO;
+    }
+
+    public void setProduitDAO(IProduitDAO produitDAO) {
+        this.produitDAO = produitDAO;
+    }
+
     @Override
     public LignePanierBean add(Connexion connexion,
         LignePanierBean lignePanierBean) throws ServiceException {
@@ -56,8 +98,32 @@ public class LignePanierService extends Service implements ILignePanierService {
     public LignePanierBean get(Connexion connexion,
         LignePanierBean lignePanierBean) throws ServiceException {
         try {
-            return (LignePanierBean) getLignePanierDAO().get(connexion,
+            LignePanierBean lignePanier = (LignePanierBean) getLignePanierDAO().get(connexion,
                 lignePanierBean.getIdLignePanier());
+
+            //Peupler l'achatBean de lignePanier
+
+            ClientBean client = (ClientBean) getClientDAO().get(connexion,
+                lignePanier.getClientBean().getIdClient());
+
+            ProfilBean profil = (ProfilBean) getProfilDAO().get(connexion,
+                lignePanier.getClientBean().getProfilBean().getIdProfil());
+
+            client.setProfilBean(profil);
+            lignePanier.setClientBean(client);
+
+            //Peupler le produitBean de lignePanier
+
+            ProduitBean produit = (ProduitBean) getProduitDAO().get(connexion,
+                lignePanier.getProduitBean().getIdProduit());
+
+            StockBean stock = (StockBean) getStockDAO().get(connexion,
+                produit.getStockBean().getIdStock());
+
+            produit.setStockBean(stock);
+            lignePanier.setProduitBean(produit);
+
+            return lignePanier;
         } catch(DAOException e) {
             throw new ServiceException(e);
         }
