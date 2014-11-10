@@ -107,7 +107,7 @@ public class LignePanierService extends Service implements ILignePanierService {
                 lignePanier.getClientBean().getIdClient());
 
             ProfilBean profil = (ProfilBean) getProfilDAO().get(connexion,
-                lignePanier.getClientBean().getProfilBean().getIdProfil());
+                client.getProfilBean().getIdProfil());
 
             client.setProfilBean(profil);
             lignePanier.setClientBean(client);
@@ -155,8 +155,17 @@ public class LignePanierService extends Service implements ILignePanierService {
     public List<LignePanierBean> findByClient(Connexion connexion,
         ClientBean clientBean) throws ServiceException {
         try {
-            return getLignePanierDAO().findByClient(connexion,
+            List<LignePanierBean> panier = getLignePanierDAO().findByClient(connexion,
                 clientBean);
+
+            for(int i = 0 ; i < panier.size() ; i++) {
+                panier.set(i,
+                    get(connexion,
+                        panier.get(i)));
+            }
+            return panier;
+            //return getLignePanierDAO().findByClient(connexion,
+            //    clientBean);
         } catch(DAOException e) {
             throw new ServiceException(e);
         }

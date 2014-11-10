@@ -123,7 +123,7 @@ public class LigneFactureService extends Service implements ILigneFactureService
                 achat.getClientBean().getIdClient());
 
             ProfilBean profil = (ProfilBean) getProfilDAO().get(connexion,
-                achat.getClientBean().getProfilBean().getIdProfil());
+                client.getProfilBean().getIdProfil());
 
             client.setProfilBean(profil);
             achat.setClientBean(client);
@@ -172,8 +172,18 @@ public class LigneFactureService extends Service implements ILigneFactureService
     public List<LigneFactureBean> findByAchat(Connexion connexion,
         AchatBean achatBean) throws ServiceException {
         try {
-            return getLigneFactureDAO().findByAchat(connexion,
+            List<LigneFactureBean> liste = getLigneFactureDAO().findByAchat(connexion,
                 achatBean);
+
+            for(int i = 0 ; i < liste.size() ; i++) {
+                liste.set(i,
+                    get(connexion,
+                        liste.get(i)));
+            }
+            return liste;
+
+            //return getLigneFactureDAO().findByAchat(connexion,
+            //    achatBean);
         } catch(DAOException e) {
             throw new ServiceException(e);
         }

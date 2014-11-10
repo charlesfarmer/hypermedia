@@ -71,7 +71,7 @@ public class AchatService extends Service implements IAchatService {
                 achat.getClientBean().getIdClient());
 
             ProfilBean profil = (ProfilBean) getProfilDAO().get(connexion,
-                achat.getClientBean().getProfilBean().getIdProfil());
+                client.getProfilBean().getIdProfil());
 
             client.setProfilBean(profil);
             achat.setClientBean(client);
