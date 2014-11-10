@@ -7,9 +7,12 @@ import ca.qc.collegeahuntsic.weblab5.bean.AchatBean;
 import ca.qc.collegeahuntsic.weblab5.bean.ClientBean;
 import ca.qc.collegeahuntsic.weblab5.bean.LigneFactureBean;
 import ca.qc.collegeahuntsic.weblab5.bean.LignePanierBean;
+import ca.qc.collegeahuntsic.weblab5.bean.ProfilBean;
 import ca.qc.collegeahuntsic.weblab5.dao.interfaces.IAchatDAO;
+import ca.qc.collegeahuntsic.weblab5.dao.interfaces.IClientDAO;
 import ca.qc.collegeahuntsic.weblab5.dao.interfaces.ILigneFactureDAO;
 import ca.qc.collegeahuntsic.weblab5.dao.interfaces.ILignePanierDAO;
+import ca.qc.collegeahuntsic.weblab5.dao.interfaces.IProfilDAO;
 import ca.qc.collegeahuntsic.weblab5.dao.interfaces.IStockDAO;
 import ca.qc.collegeahuntsic.weblab5.db.Connexion;
 import ca.qc.collegeahuntsic.weblab5.exception.dao.DAOException;
@@ -27,15 +30,23 @@ public class AchatService extends Service implements IAchatService {
 
     private ILigneFactureDAO ligneFactureDAO;
 
+    private IClientDAO clientDAO;
+
+    private IProfilDAO profilDAO;
+
     public AchatService(IAchatDAO achatDAO,
         ILignePanierDAO lignePanierDAO,
         IStockDAO stockDAO,
-        ILigneFactureDAO ligneFactureDAO) {
+        ILigneFactureDAO ligneFactureDAO,
+        IClientDAO clientDAO,
+        IProfilDAO profilDAO) {
         super();
         setAchatDAO(achatDAO);
         setLignePanierDAO(lignePanierDAO);
         setStockDAO(stockDAO);
         setLigneFactureDAO(ligneFactureDAO);
+        setClientDAO(clientDAO);
+        setProfilDAO(profilDAO);
     }
 
     @Override
@@ -53,8 +64,19 @@ public class AchatService extends Service implements IAchatService {
     public AchatBean get(Connexion connexion,
         AchatBean achatBean) throws ServiceException {
         try {
-            return (AchatBean) getAchatDAO().get(connexion,
+            AchatBean achat = (AchatBean) getAchatDAO().get(connexion,
                 achatBean.getIdAchat());
+
+            ClientBean client = (ClientBean) getClientDAO().get(connexion,
+                achat.getClientBean().getIdClient());
+
+            ProfilBean profil = (ProfilBean) getProfilDAO().get(connexion,
+                achat.getClientBean().getProfilBean().getIdProfil());
+
+            client.setProfilBean(profil);
+            achat.setClientBean(client);
+
+            return achat;
         } catch(DAOException e) {
             throw new ServiceException(e);
         }
@@ -112,6 +134,22 @@ public class AchatService extends Service implements IAchatService {
 
     public void setLigneFactureDAO(ILigneFactureDAO ligneFactureDAO) {
         this.ligneFactureDAO = ligneFactureDAO;
+    }
+
+    public IClientDAO getClientDAO() {
+        return this.clientDAO;
+    }
+
+    public void setClientDAO(IClientDAO clientDAO) {
+        this.clientDAO = clientDAO;
+    }
+
+    public IProfilDAO getProfilDAO() {
+        return this.profilDAO;
+    }
+
+    public void setProfilDAO(IProfilDAO profilDAO) {
+        this.profilDAO = profilDAO;
     }
 
     @Override
