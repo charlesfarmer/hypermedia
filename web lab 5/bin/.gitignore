@@ -4,3 +4,4 @@
 /ojdbc7.jar
 /classes/
 *.class
+/.gitignore
