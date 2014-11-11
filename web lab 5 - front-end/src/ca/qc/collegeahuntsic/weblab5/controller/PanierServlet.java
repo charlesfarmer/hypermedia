@@ -15,16 +15,16 @@ import ca.qc.collegeahuntsic.weblab5.exception.facade.FacadeException;
 import ca.qc.collegeahuntsic.weblab5.util.MagasinCreateur;
 
 /**
- * Servlet implementation class Panier
+ * Servlet implementation class PanierServlet
  */
-@WebServlet("/Panier")
-public class Panier extends HttpServlet {
+@WebServlet("/panier")
+public class PanierServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Panier() {
+    public PanierServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -55,7 +55,7 @@ public class Panier extends HttpServlet {
         HttpServletResponse response) throws ServletException,
         IOException {
         try {
-            MagasinCreateur mag = (MagasinCreateur) request.getAttribute("Magasin");
+            MagasinCreateur mag = (MagasinCreateur) request.getAttribute("magasin");
             List<LignePanierBean> panier = (List<LignePanierBean>) request.getAttribute("panier");
             ClientBean client = (ClientBean) request.getAttribute("client");
 
