@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<magasin>
+	<produit>
+		<code>1</code>
+		<nom>Céréales Kellogs (R)</nom>
+		<description>C'est bon pour la santé, miam!</description>
+		<image>kellogs.jpg</image>
+	</produit>
+	<produit>
+		<code>2</code>
+		<nom>Console Xbox</nom>
+		<description>Jouez avec vos nombreaux 3 amis!</description>
+		<image>xbox.jpg</image>
+	</produit>
+	<produit>
+		<code>3</code>
+		<nom>Bottes de cowboy</nom>
+		<description>Prenez vous pour un vrai homme du far west et faites vous arrêter par la police</description>
+		<image>bottes.jpg</image>
+	</produit>
+	<produit>
+		<code>4</code>
+		<nom>Harry Potter de l'ordre du phénix</nom>
+		<description>Harry Potter passe l'année la plus plate de sa vie à Poudlard</description>
+		<image>harrypotter.jpg</image>
+	</produit>
+	<produit>
+		<code>5</code>
+		<nom>Bague en or</nom>
+		<description>En or</description>
+		<image>bague.jpg</image>
+	</produit>
+	<produit>
+		<code>6</code>
+		<nom>Tondeuse 360 noscope</nom>
+		<description>Vous pouvez couper votre gazon, même les yeux fermés!</description>
+		<image>tondeuse.jpg</image>
+	</produit>
+	<produit>
+		<code>7</code>
+		<nom>Générateur de sons d'applaudissements</nom>
+		<description>Vous en avez besoin, c'est juste que vous ne le savez pas encore</description>
+		<image>generateur.jpg</image>
+	</produit>
+	<produit>
+		<code>8</code>
+		<nom>Salopette</nom>
+		<description>One size fits all comme ils disent</description>
+		<image>salopette.jpeg</image>
+	</produit>
+</magasin>
