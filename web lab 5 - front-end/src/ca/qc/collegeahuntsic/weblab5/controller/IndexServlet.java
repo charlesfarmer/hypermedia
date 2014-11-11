@@ -57,10 +57,11 @@ public class IndexServlet extends HttpServlet {
             response);
     }
 
+    @SuppressWarnings("static-method")
     private void processRequest(HttpServletRequest request,
         HttpServletResponse response) throws ServletException,
         IOException {
-        getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request,
+        request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request,
             response);
     }
 }
