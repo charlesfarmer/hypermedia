@@ -14,10 +14,6 @@
 </head>
 <body>
 	<a href="/index">Retour à la page principale</a>
-	<form action="/profil" method="post">
-		<c:out value='${sessionScope["client"].email}' default='non disponible'/>
-		<c:out value='${sessionScope["client"].profil.nom}' default='non disponible'/>
-		<c:out value='${sessionScope["client"].profil.prenom}' default='non disponible'/>
-	</form>
+
 </body>
 </html>
