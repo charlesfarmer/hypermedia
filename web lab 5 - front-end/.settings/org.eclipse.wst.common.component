@@ -3,6 +3,7 @@
     <wb-module deploy-name="web lab 5 - front-end">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/lib"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
         <property name="context-root" value="web_lab_5_-_front-end"/>
         <property name="java-output-path" value="/web lab 5 - front-end/build/classes"/>
     </wb-module>
