@@ -21,6 +21,20 @@ import ca.qc.collegeahuntsic.weblab5.db.Connexion;
 import ca.qc.collegeahuntsic.weblab5.exception.MagasinException;
 import ca.qc.collegeahuntsic.weblab5.exception.db.ConnexionException;
 import ca.qc.collegeahuntsic.weblab5.exception.dto.InvalidDTOClassException;
+import ca.qc.collegeahuntsic.weblab5.facade.implementations.AchatFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.implementations.ClientFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.implementations.LigneFactureFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.implementations.LignePanierFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.implementations.ProduitFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.implementations.ProfilFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.implementations.StockFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.interfaces.IAchatFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.interfaces.IClientFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.interfaces.ILigneFactureFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.interfaces.ILignePanierFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.interfaces.IProduitFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.interfaces.IProfilFacade;
+import ca.qc.collegeahuntsic.weblab5.facade.interfaces.IStockFacade;
 import ca.qc.collegeahuntsic.weblab5.service.implementations.AchatService;
 import ca.qc.collegeahuntsic.weblab5.service.implementations.ClientService;
 import ca.qc.collegeahuntsic.weblab5.service.implementations.LigneFactureService;
@@ -28,13 +42,6 @@ import ca.qc.collegeahuntsic.weblab5.service.implementations.LignePanierService;
 import ca.qc.collegeahuntsic.weblab5.service.implementations.ProduitService;
 import ca.qc.collegeahuntsic.weblab5.service.implementations.ProfilService;
 import ca.qc.collegeahuntsic.weblab5.service.implementations.StockService;
-import ca.qc.collegeahuntsic.weblab5.service.interfaces.IAchatService;
-import ca.qc.collegeahuntsic.weblab5.service.interfaces.IClientService;
-import ca.qc.collegeahuntsic.weblab5.service.interfaces.ILigneFactureService;
-import ca.qc.collegeahuntsic.weblab5.service.interfaces.ILignePanierService;
-import ca.qc.collegeahuntsic.weblab5.service.interfaces.IProduitService;
-import ca.qc.collegeahuntsic.weblab5.service.interfaces.IProfilService;
-import ca.qc.collegeahuntsic.weblab5.service.interfaces.IStockService;
 
 public class MagasinCreateur implements Serializable {
 
@@ -42,19 +49,19 @@ public class MagasinCreateur implements Serializable {
 
     private Connexion connexion;
 
-    private IAchatService achatService;
+    private IAchatFacade achatFacade;
 
-    private IClientService clientService;
+    private IClientFacade clientFacade;
 
-    private ILignePanierService lignePanierService;
+    private ILignePanierFacade lignePanierFacade;
 
-    private IProduitService produitService;
+    private IProduitFacade produitFacade;
 
-    private IProfilService profilService;
+    private IProfilFacade profilFacade;
 
-    private IStockService stockService;
+    private IStockFacade stockFacade;
 
-    private ILigneFactureService ligneFactureService;
+    private ILigneFactureFacade ligneFactureFacade;
 
     public MagasinCreateur(String serveur,
         String bd,
@@ -69,29 +76,29 @@ public class MagasinCreateur implements Serializable {
                 bd,
                 user,
                 password));
-            setAchatService(new AchatService(new AchatDAO(AchatBean.class),
+            setAchatFacade(new AchatFacade(new AchatService(new AchatDAO(AchatBean.class),
                 new LignePanierDAO(LignePanierBean.class),
                 new StockDAO(StockBean.class),
                 new LigneFactureDAO(LigneFactureBean.class),
                 new ClientDAO(ClientBean.class),
-                new ProfilDAO(ProfilBean.class)));
-            setClientService(new ClientService(new ClientDAO(ClientBean.class),
-                new ProfilDAO(ProfilBean.class)));
-            setLignePanierService(new LignePanierService(new LignePanierDAO(LignePanierBean.class),
+                new ProfilDAO(ProfilBean.class))));
+            setClientFacade(new ClientFacade(new ClientService(new ClientDAO(ClientBean.class),
+                new ProfilDAO(ProfilBean.class))));
+            setLignePanierFacade(new LignePanierFacade(new LignePanierService(new LignePanierDAO(LignePanierBean.class),
                 new StockDAO(StockBean.class),
                 new ClientDAO(ClientBean.class),
                 new ProfilDAO(ProfilBean.class),
-                new ProduitDAO(ProduitBean.class)));
-            setProduitService(new ProduitService(new ProduitDAO(ProduitBean.class),
-                new StockDAO(StockBean.class)));
-            setProfilService(new ProfilService(new ProfilDAO(ProfilBean.class)));
-            setStockService(new StockService(new StockDAO(StockBean.class)));
-            setLigneFactureService(new LigneFactureService(new LigneFactureDAO(LigneFactureBean.class),
+                new ProduitDAO(ProduitBean.class))));
+            setProduitFacade(new ProduitFacade(new ProduitService(new ProduitDAO(ProduitBean.class),
+                new StockDAO(StockBean.class))));
+            setProfilFacade(new ProfilFacade(new ProfilService(new ProfilDAO(ProfilBean.class))));
+            setStockFacade(new StockFacade(new StockService(new StockDAO(StockBean.class))));
+            setLigneFactureFacade(new LigneFactureFacade(new LigneFactureService(new LigneFactureDAO(LigneFactureBean.class),
                 new ClientDAO(ClientBean.class),
                 new ProfilDAO(ProfilBean.class),
                 new AchatDAO(AchatBean.class),
                 new StockDAO(StockBean.class),
-                new ProduitDAO(ProduitBean.class)));
+                new ProduitDAO(ProduitBean.class))));
 
         } catch(
             ConnexionException
@@ -133,59 +140,59 @@ public class MagasinCreateur implements Serializable {
         this.connexion = connexion;
     }
 
-    public IAchatService getAchatService() {
-        return this.achatService;
+    public IAchatFacade getAchatFacade() {
+        return this.achatFacade;
     }
 
-    public void setAchatService(IAchatService achatService) {
-        this.achatService = achatService;
+    public void setAchatFacade(IAchatFacade achatFacade) {
+        this.achatFacade = achatFacade;
     }
 
-    public IClientService getClientService() {
-        return this.clientService;
+    public IClientFacade getClientFacade() {
+        return this.clientFacade;
     }
 
-    public void setClientService(IClientService clientService) {
-        this.clientService = clientService;
+    public void setClientFacade(IClientFacade clientFacade) {
+        this.clientFacade = clientFacade;
     }
 
-    public ILignePanierService getLignePanierService() {
-        return this.lignePanierService;
+    public ILignePanierFacade getLignePanierFacade() {
+        return this.lignePanierFacade;
     }
 
-    public void setLignePanierService(ILignePanierService lignePanierService) {
-        this.lignePanierService = lignePanierService;
+    public void setLignePanierFacade(ILignePanierFacade lignePanierFacade) {
+        this.lignePanierFacade = lignePanierFacade;
     }
 
-    public IProduitService getProduitService() {
-        return this.produitService;
+    public IProduitFacade getProduitFacade() {
+        return this.produitFacade;
     }
 
-    public void setProduitService(IProduitService produitService) {
-        this.produitService = produitService;
+    public void setProduitFacade(IProduitFacade produitFacade) {
+        this.produitFacade = produitFacade;
     }
 
-    public IProfilService getProfilService() {
-        return this.profilService;
+    public IProfilFacade getProfilFacade() {
+        return this.profilFacade;
     }
 
-    public void setProfilService(IProfilService profilService) {
-        this.profilService = profilService;
+    public void setProfilFacade(IProfilFacade profilFacade) {
+        this.profilFacade = profilFacade;
     }
 
-    public IStockService getStockService() {
-        return this.stockService;
+    public IStockFacade getStockFacade() {
+        return this.stockFacade;
     }
 
-    public void setStockService(IStockService stockService) {
-        this.stockService = stockService;
+    public void setStockFacade(IStockFacade stockFacade) {
+        this.stockFacade = stockFacade;
     }
 
-    public ILigneFactureService getLigneFactureService() {
-        return this.ligneFactureService;
+    public ILigneFactureFacade getLigneFactureFacade() {
+        return this.ligneFactureFacade;
     }
 
-    public void setLigneFactureService(ILigneFactureService ligneFactureService) {
-        this.ligneFactureService = ligneFactureService;
+    public void setLigneFactureFacade(ILigneFactureFacade ligneFactureFacade) {
+        this.ligneFactureFacade = ligneFactureFacade;
     }
 }
