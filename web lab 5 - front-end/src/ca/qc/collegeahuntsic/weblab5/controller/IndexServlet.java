@@ -9,8 +9,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import ca.qc.collegeahuntsic.weblab5.exception.MagasinException;
-import ca.qc.collegeahuntsic.weblab5.util.MagasinCreateur;
 
 /**
  * Servlet implementation class IndexServlet
@@ -33,15 +31,7 @@ public class IndexServlet extends HttpServlet {
      */
     @Override
     public void init(ServletConfig config) throws ServletException {
-        try {
-            getServletContext().setAttribute("magasin",
-                new MagasinCreateur("distant",
-                    "xe",
-                    "scott",
-                    "tiger"));
-        } catch(MagasinException e) {
-            e.printStackTrace();
-        }
+        //
     }
 
     /**
