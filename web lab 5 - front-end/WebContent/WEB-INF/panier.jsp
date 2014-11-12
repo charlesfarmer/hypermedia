@@ -13,8 +13,18 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="/index">Retour à la page principale</a>
+	<a href="index">Retour à la page principale</a>
 	
+	Panier de <c:out value="${sessionScope['client'].nom}"></c:out>
 	
+	<table>
+	<c:forEach items="${sessionScope['panier']}" var="ligne">
+		<tr>
+		
+		<td><c:out value="${ligne.quantite}"></c:out></td>
+		
+		</tr>
+	</c:forEach>
+	</table>
 </body>
 </html>

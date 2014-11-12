@@ -13,8 +13,8 @@
 		<title>Laboratoire 5</title>
 	</head>
 	<body>
-		<a href="/connexion">Se connecter</a> <br>
-		<a href="/panier">Visionner votre panier d'achat</a> <br>
+		<a href="connexion">Se connecter</a> <br>
+		<a href="panier">Visionner votre panier d'achat</a> <br>
 		<h1>Bienvenue sur le meilleur site de vente de produits!</h1>
 		<c:import url="/produits.xml" var="produits" />
 		<x:parse xml="${produits}" var="output" />

@@ -13,7 +13,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="/index">Retour à la page principale</a>
+	<a href="index">Retour à la page principale</a>
 
 </body>
 </html>
