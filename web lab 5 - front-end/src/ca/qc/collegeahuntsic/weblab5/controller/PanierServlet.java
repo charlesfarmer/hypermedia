@@ -98,8 +98,21 @@ public class PanierServlet extends HttpServlet {
                         mag.getLignePanierFacade().ajouterAuPanier(mag.getConnexion(),
                             l);
                         mag.commit();
+                        panier = mag.getLignePanierFacade().getPanier(mag.getConnexion(), client);
+                    }else{
+                    	boolean addIt = true;
+                        for(int i = 0 ; i < panier.size() ; i++) {
+                            if(panier.get(i).getProduitBean().getIdProduit().equals(l.getProduitBean().getIdProduit())) {
+                                addIt = false;
+                                panier.get(i).setQuantite(panier.get(i).getQuantite()
+                                    + l.getQuantite());
+                            }
+                        }
+                        if(addIt) {
+                            panier.add(l);
+                        }
                     }
-                    panier = mag.getLignePanierFacade().getPanier(mag.getConnexion(), client);
+                    
 /*
                     boolean addIt = true;
                     for(int i = 0 ; i < panier.size() ; i++) {
