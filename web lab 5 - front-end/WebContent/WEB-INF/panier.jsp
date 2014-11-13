@@ -61,6 +61,8 @@
 		</tr>
 	</c:forEach>
 	</table>
+	<br>
+	<br>
 	<c:if test="${ sessionScope['client'] == null }">
 		<a href="connexion">Connectez-vous</a> pour acheter le contenu de votre panier.
 	</c:if>
