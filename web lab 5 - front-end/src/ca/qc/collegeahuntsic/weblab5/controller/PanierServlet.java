@@ -17,7 +17,9 @@ import ca.qc.collegeahuntsic.weblab5.util.MagasinCreateur;
 /**
  * Servlet implementation class PanierServlet
  */
-@WebServlet("/panier")
+@WebServlet(
+    name = "panier",
+    urlPatterns = {"/panier"})
 public class PanierServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
