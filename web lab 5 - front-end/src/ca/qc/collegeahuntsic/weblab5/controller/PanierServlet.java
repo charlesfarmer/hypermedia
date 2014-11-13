@@ -14,7 +14,9 @@ import javax.servlet.http.HttpServletResponse;
 import ca.qc.collegeahuntsic.weblab5.bean.ClientBean;
 import ca.qc.collegeahuntsic.weblab5.bean.LignePanierBean;
 import ca.qc.collegeahuntsic.weblab5.bean.ProduitBean;
+import ca.qc.collegeahuntsic.weblab5.exception.MagasinException;
 import ca.qc.collegeahuntsic.weblab5.exception.facade.FacadeException;
+import ca.qc.collegeahuntsic.weblab5.exception.service.NotEnoughStockQuantityException;
 import ca.qc.collegeahuntsic.weblab5.util.MagasinCreateur;
 
 /**
@@ -64,6 +66,11 @@ public class PanierServlet extends HttpServlet {
         	
         	String itemToAdd = (String)request.getParameter("id");
         	String itemToDel = (String)request.getParameter("del");
+        	String modSub = (String)request.getParameter("modSub");
+        	String modQ = (String)request.getParameter("modQ");
+        	String modId = (String)request.getParameter("modId");
+        	
+        	
         	MagasinCreateur mag = (MagasinCreateur) getServletContext().getAttribute("magasin");
         	
             List<LignePanierBean> panier = (List<LignePanierBean>) request.getSession().getAttribute("panier");
@@ -92,6 +99,7 @@ public class PanierServlet extends HttpServlet {
             		if (request.getAttribute("client")!=null){
             			l.setClientBean((ClientBean)request.getAttribute("client"));
             			mag.getLignePanierFacade().ajouterAuPanier(mag.getConnexion(), l);
+            			mag.commit();
             		}
             		
             		boolean addIt = true;
@@ -108,27 +116,71 @@ public class PanierServlet extends HttpServlet {
             		
             	}catch(Exception e){
             		e.printStackTrace();
+            		try {
+						mag.rollback();
+					} catch (MagasinException e1) {
+						e1.printStackTrace();
+					}
             	}
             }
             
             // S'il y a une suppression à faire
             
             if (itemToDel != null){
-            	for(int i=0;i<panier.size();i++){
-            		if(panier.get(i).getProduitBean().getIdProduit().equals(itemToDel)){
-            			panier.remove(i);
-            			break;
-        			}
-            	}
-            	if(client!=null){
-            		LignePanierBean l = new LignePanierBean();
-            		l.setIdLignePanier(itemToDel);
-            		mag.getLignePanierFacade().retirerDuPanier(mag.getConnexion(), l);
+            	try{
+	            	for(int i=0;i<panier.size();i++){
+	            		if(panier.get(i).getProduitBean().getIdProduit().equals(itemToDel)){
+	            			panier.remove(i);
+	            			break;
+	        			}
+	            	}
+	            	if(client!=null){
+	            		LignePanierBean l = new LignePanierBean();
+	            		l.setIdLignePanier(itemToDel);
+	            		mag.getLignePanierFacade().retirerDuPanier(mag.getConnexion(), l);
+	            		mag.commit();
+	            	}
+            	}catch(Exception e){
+            		e.printStackTrace();
+            		try {
+						mag.rollback();
+					} catch (MagasinException e1) {
+						e1.printStackTrace();
+					}
             	}
             }
             
             
+            // S'il y a un update de quantité
             
+            if (modSub!=null && modSub.equals("Modifier") && modQ !=null && modId!=null){
+            	try{
+            		Integer.parseInt(modQ);
+            		
+            		for(int i=0;i<panier.size();i++){
+                		if(panier.get(i).getProduitBean().getIdProduit().equals(modId)){
+                			
+                			panier.get(i).setQuantite(Integer.parseInt(modQ));
+                			
+                			if (client!=null){
+								mag.getLignePanierFacade().modifierNombreDitems(mag.getConnexion(), panier.get(i));
+								mag.commit();
+                			}
+                			
+                			break;
+            			}
+                	}
+            		
+            		
+            	}catch(Exception e){
+            		e.printStackTrace();
+            		try {
+						mag.rollback();
+					} catch (MagasinException e1) {
+						e1.printStackTrace();
+					}
+            	}
+            }
             
             
             request.getSession().setAttribute("panier", panier);

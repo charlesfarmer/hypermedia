@@ -33,7 +33,7 @@
 		<x:forEach select="$output/magasin/produit" var="produit">
 			<c:set var="prodId"><x:out select="$produit/code"/></c:set>
 			
-		
+			
 			<c:if test="${ prodId == ligne.produitBean.idProduit }">
 				<td>
 					<img height='150' src="PICS/<x:out select="$produit/image"/>"/>
@@ -41,8 +41,15 @@
 				<td>
 					<x:out select="$produit/nom" />
 				</td>
-				<td>
-					<c:out value="${ ligne.quantite }" />
+				<td align="center">
+					<form action="panier">
+						<input type="hidden" name="modId" value="<x:out select='$produit/code' />"/>
+						<input type="text" name="modQ" size="5" value ='<c:out value="${ ligne.quantite }" />' />
+						<br/>
+						<input type="submit" name="modSub" value="Modifier"/>
+						
+					</form>
+					
 				</td>
 				<td>
 					<a href="panier?del=<x:out select="$produit/code"/>">RETIRER</a>
