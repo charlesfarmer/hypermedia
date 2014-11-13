@@ -17,10 +17,10 @@
 	<h3>Changer le produit vedette</h3>
 	<form method="post" action="administration">
 		Entrez un ID de produit:&nbsp;<input type="text" name="produitVedette">
-		<c:if test="${ request['produitInvalide'] != null }">
+		<c:if test="${ requestScope['produitInvalide'] != null }">
 			<span style="color:red;">ID de produit invalide</span>
 		</c:if>
-		<c:if test="${ request['produitValide'] != null }">
+		<c:if test="${ requestScope['produitValide'] != null }">
 			<span style="color:red;">Modification réussie</span>
 		</c:if>
 		<br><br>
