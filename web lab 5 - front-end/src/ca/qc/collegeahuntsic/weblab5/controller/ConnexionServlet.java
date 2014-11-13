@@ -86,7 +86,6 @@ public class ConnexionServlet extends HttpServlet {
                 request.setAttribute("clientExistant",
                     "true");
             }
-
         }
         if(connexion != null) {
             try {
