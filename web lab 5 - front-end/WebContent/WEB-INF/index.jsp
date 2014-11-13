@@ -9,7 +9,7 @@
 
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>Laboratoire 5</title>
 	</head>
 	<body>
@@ -17,7 +17,7 @@
 		<a href="connexion">Se connecter</a> <br>
 		<a href="panier">Visionner votre panier d'achat</a> <br>
 		<h1>Bienvenue sur le meilleur site de vente de produits!</h1>
-		<c:import url="/produits.xml" var="produits" />
+		<c:import url="/produits.xml" var="produits" charEncoding="UTF-8"/>
 		<x:parse xml="${produits}" var="output" />
 		<table border="1">
 			<x:forEach select="$output/magasin/produit" var="produit">
