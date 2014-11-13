@@ -1,4 +1,12 @@
-<style><jsp:include page="CSS/bootstrap.css"></jsp:include></style>
+<style><jsp:include page="CSS/bootstrap.css"></jsp:include>
+img{
+	height:150px;
+}
+td{
+	padding:10px;
+}
+
+</style>
 <div class="navbar navbar-fluid navbar-top">
 <div class="navbar-inner">
 <ul class="nav">
