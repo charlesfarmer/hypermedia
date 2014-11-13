@@ -40,6 +40,9 @@ public class AchatDAO extends DAO implements IAchatDAO {
     private static final String GET_ALL_REQUEST = "SELECT IDAchat, ClientID, DateAchat"
         + " FROM Achat";
 
+    private static final String FIND_BY_CLIENT_REQUEST = "SELECT IDAchat, ClientID, DateAchat"
+        + " FROM Achat WHERE ClientID";
+
     public AchatDAO(Class<AchatBean> beanClass) throws InvalidDTOClassException {
         super(beanClass);
     }
@@ -225,5 +228,44 @@ public class AchatDAO extends DAO implements IAchatDAO {
     private static String getPrimaryKey(Connexion connexion) throws DAOException {
         return DAO.getPrimaryKey(connexion,
             AchatDAO.CREATE_PRIMARY_KEY);
+    }
+
+    @Override
+    public List<AchatBean> findByClient(Connexion connexion,
+        ClientBean client) throws DAOException {
+        try {
+            if(connexion == null) {
+                throw new InvalidHibernateSessionException("La connexion ne peut être null");
+            }
+            if(client == null) {
+                throw new InvalidDTOException("Le DTO ne peut être null");
+            }
+            List<AchatBean> achats = Collections.emptyList();
+            try(
+                PreparedStatement findByClientPreparedStatement = connexion.getConnection().prepareStatement(AchatDAO.FIND_BY_CLIENT_REQUEST)) {
+                try(
+                    ResultSet resultSet = findByClientPreparedStatement.executeQuery()) {
+                    AchatBean achatBean = null;
+                    if(resultSet.next()) {
+                        achats = new ArrayList<>();
+                        do {
+                            achatBean = new AchatBean();
+                            achatBean.setIdAchat(resultSet.getString(1));
+                            ClientBean clientBean = new ClientBean();
+                            clientBean.setIdClient(resultSet.getString(2));
+                            achatBean.setClientBean(clientBean);
+                            achatBean.setDateAchat(resultSet.getTimestamp(3));
+                            achats.add(achatBean);
+                        } while(resultSet.next());
+                    }
+                }
+            }
+            return achats;
+        } catch(
+            SQLException
+            | InvalidHibernateSessionException
+            | InvalidDTOException exception) {
+            throw new DAOException(exception);
+        }
     }
 }

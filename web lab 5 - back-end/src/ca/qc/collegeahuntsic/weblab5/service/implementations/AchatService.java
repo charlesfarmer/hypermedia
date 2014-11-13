@@ -153,7 +153,7 @@ public class AchatService extends Service implements IAchatService {
     }
 
     @Override
-    public void acheter(Connexion connexion,
+    public AchatBean acheter(Connexion connexion,
         ClientBean clientBean) throws ServiceException,
         NotEnoughStockQuantityException {
         try {
@@ -176,7 +176,7 @@ public class AchatService extends Service implements IAchatService {
             achat.setClientBean(clientBean);
             achat.setDateAchat(new Timestamp(System.currentTimeMillis()));
 
-            add(connexion,
+            achat = add(connexion,
                 achat);
 
             //Partie 3 Créer les ligneFacture
@@ -197,6 +197,18 @@ public class AchatService extends Service implements IAchatService {
             getLignePanierDAO().deleteByClient(connexion,
                 clientBean);
 
+            return achat;
+        } catch(DAOException e) {
+            throw new ServiceException(e);
+        }
+    }
+
+    @Override
+    public List<AchatBean> findByClient(Connexion connexion,
+        ClientBean clientBean) throws ServiceException {
+        try {
+            return getAchatDAO().findByClient(connexion,
+                clientBean);
         } catch(DAOException e) {
             throw new ServiceException(e);
         }

@@ -1,6 +1,8 @@
 
 package ca.qc.collegeahuntsic.weblab5.facade.implementations;
 
+import java.util.List;
+import ca.qc.collegeahuntsic.weblab5.bean.AchatBean;
 import ca.qc.collegeahuntsic.weblab5.bean.ClientBean;
 import ca.qc.collegeahuntsic.weblab5.db.Connexion;
 import ca.qc.collegeahuntsic.weblab5.exception.facade.FacadeException;
@@ -25,15 +27,25 @@ public class AchatFacade extends Facade implements IAchatFacade {
     }
 
     @Override
-    public void acheter(Connexion connexion,
+    public AchatBean acheter(Connexion connexion,
         ClientBean clientBean) throws FacadeException,
         NotEnoughStockQuantityException {
         try {
-            getService().acheter(connexion,
+            return getService().acheter(connexion,
                 clientBean);
         } catch(ServiceException e) {
             throw new FacadeException(e);
         }
+    }
 
+    @Override
+    public List<AchatBean> findByClient(Connexion connexion,
+        ClientBean clientBean) throws FacadeException {
+        try {
+            return getService().findByClient(connexion,
+                clientBean);
+        } catch(ServiceException e) {
+            throw new FacadeException(e);
+        }
     }
 }
