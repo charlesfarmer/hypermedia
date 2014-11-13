@@ -2,6 +2,7 @@
 package ca.qc.collegeahuntsic.weblab5.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -73,6 +74,8 @@ public class ConnexionServlet extends HttpServlet {
         if(deconnexion != null) {
             request.getSession().setAttribute("client",
                 null);
+            request.getSession().setAttribute("panier",
+                    new ArrayList<LignePanierBean>());
         }
         MagasinCreateur magasin = (MagasinCreateur) getServletContext().getAttribute("magasin");
 
@@ -89,7 +92,16 @@ public class ConnexionServlet extends HttpServlet {
                     client);
                 request.getSession().setAttribute("client",
                     client);
+                
+                
+                List<LignePanierBean> vieuxPanier = (List<LignePanierBean>) request.getSession().getAttribute("panier");
+                for(LignePanierBean item : vieuxPanier){
+                	item.setClientBean(client);
+                	magasin.getLignePanierFacade().ajouterAuPanier(magasin.getConnexion(), item);
+                }
                 magasin.commit();
+                request.getSession().setAttribute("panier",
+                        vieuxPanier);
             } catch(
                 FacadeException
                 | EmailAlreadyUsedException e) {
@@ -102,7 +114,9 @@ public class ConnexionServlet extends HttpServlet {
                 }
             } catch(MagasinException e) {
                 e.printStackTrace();
-            }
+            } catch (NotEnoughStockQuantityException e) {
+				e.printStackTrace();
+			}
         }
         if(connexion != null) {
             try {
