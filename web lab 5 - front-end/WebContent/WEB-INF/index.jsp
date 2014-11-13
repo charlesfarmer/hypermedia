@@ -35,7 +35,7 @@
 					<img height='150' src="PICS/<x:out select="$produit/image"/>"/>
 				</td>
 				<td>
-					<a href="/panier?id=<x:out select="$produit/code"/>">AJOUTER</a>
+					<a href="panier?id=<x:out select="$produit/code"/>">AJOUTER</a>
 				</td>
 			</tr>
 			</x:forEach>
