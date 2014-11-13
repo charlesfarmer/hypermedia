@@ -1,9 +1,14 @@
-<style><jsp:include page="CSS/bootstrap.css"></jsp:include>
+<style>
+<jsp:include page="CSS/bootstrap.css"></jsp:include>
+
 img{
 	height:150px;
 }
 td{
 	padding:10px;
+}
+body{
+	padding-bottom: 50px;
 }
 
 </style>
