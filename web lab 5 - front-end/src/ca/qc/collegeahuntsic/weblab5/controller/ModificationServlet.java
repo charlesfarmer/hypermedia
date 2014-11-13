@@ -83,6 +83,10 @@ public class ModificationServlet extends HttpServlet {
                         profil);
                     clientBean.setProfilBean(profil);
                     magasin.commit();
+                    request.getSession().setAttribute("client",
+                        clientBean);
+                    request.getRequestDispatcher("/WEB-INF/profil.jsp").forward(request,
+                        response);
                 } catch(
                     FacadeException
                     | MagasinException e) {
@@ -94,9 +98,10 @@ public class ModificationServlet extends HttpServlet {
                     }
                 }
             }
+        } else {
+            request.getRequestDispatcher("/WEB-INF/modification.jsp").forward(request,
+                response);
         }
-        request.getRequestDispatcher("/WEB-INF/modification.jsp").forward(request,
-            response);
     }
 
 }
