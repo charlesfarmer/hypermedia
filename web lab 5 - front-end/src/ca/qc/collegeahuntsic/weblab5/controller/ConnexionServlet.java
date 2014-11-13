@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import ca.qc.collegeahuntsic.weblab5.bean.ClientBean;
 import ca.qc.collegeahuntsic.weblab5.bean.LignePanierBean;
 import ca.qc.collegeahuntsic.weblab5.bean.ProfilBean;
+import ca.qc.collegeahuntsic.weblab5.exception.MagasinException;
 import ca.qc.collegeahuntsic.weblab5.exception.facade.FacadeException;
 import ca.qc.collegeahuntsic.weblab5.exception.service.EmailAlreadyUsedException;
 import ca.qc.collegeahuntsic.weblab5.util.MagasinCreateur;
@@ -76,15 +77,28 @@ public class ConnexionServlet extends HttpServlet {
             ClientBean client = new ClientBean();
             client.setEmail(nouveauEmail);
             client.setPassword(password1);
-            client.setProfilBean(new ProfilBean());
+            ProfilBean profil = new ProfilBean();
+            profil.setNom("null");
+            profil.setPrenom("null");
+            client.setProfilBean(profil);
             try {
                 client = magasin.getClientFacade().ajouterClient(magasin.getConnexion(),
                     client);
+                request.getSession().setAttribute("client",
+                    client);
+                magasin.commit();
             } catch(
                 FacadeException
                 | EmailAlreadyUsedException e) {
                 request.setAttribute("clientExistant",
                     "true");
+                try {
+                    magasin.rollback();
+                } catch(MagasinException e1) {
+                    e1.printStackTrace();
+                }
+            } catch(MagasinException e) {
+                e.printStackTrace();
             }
         }
         if(connexion != null) {

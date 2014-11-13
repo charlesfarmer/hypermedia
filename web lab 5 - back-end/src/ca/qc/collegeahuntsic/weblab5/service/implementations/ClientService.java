@@ -79,9 +79,13 @@ public class ClientService extends Service implements IClientService {
     public ClientBean findByEmail(Connexion connexion,
         String email) throws ServiceException {
         try {
-            return get(connexion,
-                getClientDAO().findByEmail(connexion,
-                    email));
+            ClientBean client = getClientDAO().findByEmail(connexion,
+                email);
+            if(client != null) {
+                return get(connexion,
+                    client);
+            }
+            return null;
         } catch(DAOException e) {
             throw new ServiceException(e);
         }
