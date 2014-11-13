@@ -1,4 +1,6 @@
-<style><jsp:include page="CSS/bootstrap.css"></jsp:include>
+<style>
+<jsp:include page="CSS/bootstrap.css"></jsp:include>
+
 img{
 	height:150px;
 }
