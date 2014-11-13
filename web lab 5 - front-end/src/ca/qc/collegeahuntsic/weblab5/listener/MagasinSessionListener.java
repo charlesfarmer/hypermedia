@@ -11,14 +11,16 @@ public class MagasinSessionListener implements HttpSessionListener {
     @Override
     public void sessionCreated(HttpSessionEvent httpSessionEvent) {
         nbActiveSession++;
+        System.out.println("nouvelle session");
     }
 
     @Override
     public void sessionDestroyed(HttpSessionEvent httpSessionEvent) {
         nbActiveSession--;
+        System.out.println("destruction d'une session");
     }
 
-    public int getNbActiveSession() {
+    public static int getNbActiveSession() {
         return nbActiveSession;
     }
 

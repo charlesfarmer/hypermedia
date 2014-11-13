@@ -1,5 +1,5 @@
-<jsp:useBean id="counter" class="ca.qc.collegeahuntsic.weblab5.listener.MagasinSessionListener"></jsp:useBean>
+<%@page import="ca.qc.collegeahuntsic.weblab5.listener.MagasinSessionListener"%>
 <div>
 		Nombre d'usager en ligne:
-		<jsp:getProperty property="nbActiveSession" name="counter"/>
+		<%= MagasinSessionListener.getNbActiveSession() %>
 </div>
