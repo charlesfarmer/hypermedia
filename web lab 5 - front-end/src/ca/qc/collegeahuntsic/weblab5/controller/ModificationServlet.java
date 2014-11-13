@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import ca.qc.collegeahuntsic.weblab5.bean.ClientBean;
 
 /**
  * Servlet implementation class ModificationServlet
@@ -51,6 +52,11 @@ public class ModificationServlet extends HttpServlet {
     private void processRequest(HttpServletRequest request,
         HttpServletResponse response) throws ServletException,
         IOException {
+        ClientBean clientBean = (ClientBean) request.getSession(false).getAttribute("client");
+        if(clientBean == null) {
+            request.getRequestDispatcher("/WEB-INF/connexion.jsp").forward(request,
+                response);
+        }
         request.getRequestDispatcher("/WEB-INF/modification.jsp").forward(request,
             response);
     }

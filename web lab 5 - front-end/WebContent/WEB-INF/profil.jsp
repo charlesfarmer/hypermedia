@@ -14,12 +14,21 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-	<form action="profil" method="post">
-	<h2>Le profil de <c:out value='${sessionScope["client"].profil.prenom}'></c:out> </h2>
-		<c:out value='${sessionScope["client"].email}' default='non disponible'/> <br>
-		<c:out value='${sessionScope["client"].profil.nom}' default='non disponible'/> <br>
-		<c:out value='${sessionScope["client"].profil.prenom}' default='non disponible'/> <br>
-	</form>
+	
+	<c:choose>
+	    <c:when test="${ sessionScope.client != null }">
+	        <h2>Le profil de <c:out value='${sessionScope["client"].profilBean.nom}'></c:out> </h2>
+			Courriel/Nom d'utilisateur: <c:out value='${sessionScope["client"].email}' default='non disponible'/> <br><br>
+			Prenom: <c:out value='${sessionScope["client"].profilBean.prenom}' default='non disponible'/> <br>
+			Nom: <c:out value='${sessionScope["client"].profilBean.nom}' default='non disponible'/> <br><br>
+			<button onclick="location.href='profil/modification'"/>Modifier mon profil</button>
+	    </c:when>
+	    <c:otherwise>
+	        <h2>Vous n'êtes présentement pas connecté</h2><br>
+	        <a href="${pageContext.request.contextPath}/connexion">Cliquez ici</a> pour vous connecter ou pour vous créer un compte gratuit !
+	    </c:otherwise>
+	</c:choose>
+	
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

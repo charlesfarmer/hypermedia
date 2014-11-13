@@ -57,12 +57,10 @@ public class ProfilServlet extends HttpServlet {
         //TEST PROFIL
         MagasinCreateur magasin = ((MagasinCreateur) getServletContext().getAttribute("magasin"));
         try {
-            System.out.println(getServletContext().getAttribute("test"));
             ClientBean client = magasin.getClientFacade().getClientByEmail(magasin.getConnexion(),
                 "BigD@love.com");
-            System.out.println(client.getEmail());
-            /*request.getSession(false).setAttribute("client",
-                client);*/
+            request.getSession(false).setAttribute("client",
+                client);
         } catch(FacadeException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

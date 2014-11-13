@@ -13,7 +13,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="index">Retour à la page principale</a>
-
+	<jsp:include page="header.jsp"></jsp:include>
+	<h2>Modification du profil</h2>
+	<form method="post" action="modification">
+		
+	</form>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

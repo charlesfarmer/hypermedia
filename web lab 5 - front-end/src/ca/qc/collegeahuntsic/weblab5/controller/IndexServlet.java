@@ -64,8 +64,9 @@ public class IndexServlet extends HttpServlet {
 
         // TEST DE SESSION
         HttpSession session = request.getSession(true);
-        session.setMaxInactiveInterval(60 * 60);
-        System.out.println(session.isNew());
+        if(session.isNew()) {
+            session.setMaxInactiveInterval(60 * 60);
+        }
 
         request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request,
             response);

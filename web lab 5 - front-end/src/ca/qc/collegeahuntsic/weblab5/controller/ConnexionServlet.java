@@ -7,6 +7,11 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import ca.qc.collegeahuntsic.weblab5.bean.ClientBean;
+import ca.qc.collegeahuntsic.weblab5.bean.ProfilBean;
+import ca.qc.collegeahuntsic.weblab5.exception.facade.FacadeException;
+import ca.qc.collegeahuntsic.weblab5.exception.service.EmailAlreadyUsedException;
+import ca.qc.collegeahuntsic.weblab5.util.MagasinCreateur;
 
 /**
  * Servlet implementation class ConnexionServlet
@@ -47,12 +52,56 @@ public class ConnexionServlet extends HttpServlet {
             response);
     }
 
-    @SuppressWarnings("static-method")
     private void processRequest(HttpServletRequest request,
         HttpServletResponse response) throws ServletException,
         IOException {
+
+        String connexion = request.getParameter("connexion");
+        String deconnexion = request.getParameter("deconnexion");
+        String email = request.getParameter("email");
+        String password = request.getParameter("password");
+        String nouveauCompte = request.getParameter("nouveauCompte");
+        String nouveauEmail = request.getParameter("nouveauEmail");
+        String password1 = request.getParameter("password1");
+
+        if(deconnexion != null) {
+            request.getSession().setAttribute("client",
+                null);
+        }
+        MagasinCreateur magasin = (MagasinCreateur) getServletContext().getAttribute("magasin");
+
+        if(nouveauCompte != null) {
+            ClientBean client = new ClientBean();
+            client.setEmail(nouveauEmail);
+            client.setPassword(password1);
+            client.setProfilBean(new ProfilBean());
+            try {
+                client = magasin.getClientFacade().ajouterClient(magasin.getConnexion(),
+                    client);
+            } catch(
+                FacadeException
+                | EmailAlreadyUsedException e) {
+                request.setAttribute("clientExistant",
+                    "true");
+            }
+
+        }
+        if(connexion != null) {
+            try {
+                ClientBean client = magasin.getClientFacade().getClientByEmail(magasin.getConnexion(),
+                    email);
+                if(client == null
+                    || !password.equals(client.getPassword())) {
+                    throw new FacadeException();
+                }
+                request.getSession().setAttribute("client",
+                    client);
+            } catch(FacadeException e) {
+                request.setAttribute("clientInconnu",
+                    "true");
+            }
+        }
         request.getRequestDispatcher("/WEB-INF/connexion.jsp").forward(request,
             response);
     }
-
 }

@@ -14,16 +14,34 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-	<form method="post" action="connexion">
-		<h2>Connexion</h2> <br>
-		Entrez votre courriel <input type="email" name="email"> <br>
-		Entrez votre mot de passe <input type="password" name="password"> <br>
-		<input type="submit" value="Connexion">
+	<form method="post" action="connexion?connexion=true">
+		<c:choose>
+		    <c:when test="${ sessionScope.client != null }">
+		    	Vous êtes présentement connecté sous: <c:out value="${ sessionScope.client.email }" />
+		    	<a href="connexion?deconnexion=true">Déconnexion</a>
+		    </c:when>
+		    <c:otherwise>
+		    	<h2>Connexion</h2> <br>
+				Entrez votre courriel <input type="email" name="email">
+				<c:if test="${ requestScope['clientInconnu'] }">
+					<span style='color:red;'>Courriel/Mot de passe invalide</span>
+				</c:if>
+				<br>
+				Entrez votre mot de passe <input type="password" name="password"> <br>
+				<input type="submit" value="Connexion">
+		    </c:otherwise>
+		</c:choose>
+	</form>
+	<form method="post" action="connexion?nouveauCompte=true">
 		<h2>Créer un nouveau compte </h2><br>
-		Entrez votre courriel <input type="email" name="email"> <br>
+		Entrez votre courriel <input type="email" name="nouveauEmail">
+		<c:if test="${ requestScope['clientExistant'] }">
+			<span style='color:red;'>Ce courriel est déjà utilisé. Veuillez essayer de nouveau.</span>
+		</c:if>
+		<br>
 		Ce courriel vous servira de nom d'utilisateur <br>
-		Entrez votre mot de passe <input type="password" name="password"> <br>
-		Entrez votre mot de passe à nouveau <input type="password" name="password"> <br>
+		Entrez votre mot de passe <input type="password" name="password1"> <br>
+		Entrez votre mot de passe à nouveau <input type="password" name="password2"> <br>
 		<input type="submit" value="Créer votre compte gratuit!">
 	</form>
 	<br><br>
