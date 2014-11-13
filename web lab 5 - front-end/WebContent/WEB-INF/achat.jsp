@@ -15,7 +15,7 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	
-	<c:import url="/produits.xml" var="produits"charEncoding="UTF-8" />
+	<c:import url="/produits.xml" var="produits" charEncoding="UTF-8" />
 	<x:parse xml="${produits}" var="output" />
 	
 	<c:set var="subTotal" value="${ 0 }"></c:set>
@@ -59,9 +59,10 @@
 	</c:forEach>
 	
 	</table>
+	<h3>
 	Sous-total: <c:out value="${ subTotal }"/><br/>
 	<a href="confirmation">CONFIRMER</a> la commande
-	
+	</h3>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
