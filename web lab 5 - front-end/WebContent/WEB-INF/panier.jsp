@@ -15,7 +15,7 @@
 <body>
 	<a href="index">Retour à la page principale</a>
 	
-	Panier de <c:out value="${sessionScope['client'].nom}"></c:out><c:if test="${ sessionScope['client'] == null }">invité</c:if>
+	Panier de <c:out value="${sessionScope['client'].profilBean.prenom}"></c:out><c:if test="${ sessionScope['client'] == null }">invité</c:if>
 	<br/><br/>
 	
 	<c:import url="/produits.xml" var="produits" />
