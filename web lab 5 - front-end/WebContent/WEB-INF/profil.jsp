@@ -13,11 +13,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="index">Retour à la page principale</a>
-	<form action="/profil" method="post">
-		<c:out value='${sessionScope["client"].email}' default='non disponible'/>
-		<c:out value='${sessionScope["client"].profil.nom}' default='non disponible'/>
-		<c:out value='${sessionScope["client"].profil.prenom}' default='non disponible'/>
+	<jsp:include page="header.jsp"></jsp:include>
+	<form action="profil" method="post">
+	<h2>Le profil de <c:out value='${sessionScope["client"].profil.prenom}'></c:out> </h2>
+		<c:out value='${sessionScope["client"].email}' default='non disponible'/> <br>
+		<c:out value='${sessionScope["client"].profil.nom}' default='non disponible'/> <br>
+		<c:out value='${sessionScope["client"].profil.prenom}' default='non disponible'/> <br>
 	</form>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

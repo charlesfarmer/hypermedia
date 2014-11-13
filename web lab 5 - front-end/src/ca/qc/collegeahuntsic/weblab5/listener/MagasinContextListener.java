@@ -23,6 +23,8 @@ public class MagasinContextListener implements ServletContextListener {
                 "tiger");
             servletContextEvent.getServletContext().setAttribute("magasin",
                 magasin);
+            servletContextEvent.getServletContext().setAttribute("test",
+                "1");
         } catch(MagasinException e) {
             e.printStackTrace();
         }

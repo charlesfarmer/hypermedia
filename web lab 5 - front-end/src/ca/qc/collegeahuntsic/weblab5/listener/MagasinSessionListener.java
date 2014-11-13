@@ -17,6 +17,9 @@ public class MagasinSessionListener implements HttpSessionListener {
     @Override
     public void sessionDestroyed(HttpSessionEvent httpSessionEvent) {
         nbActiveSession--;
+        if(nbActiveSession < 0) {
+            nbActiveSession = 0;
+        }
         System.out.println("destruction d'une session");
     }
 

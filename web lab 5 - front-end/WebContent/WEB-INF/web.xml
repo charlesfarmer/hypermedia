@@ -6,4 +6,9 @@
             ca.qc.collegeahuntsic.weblab5.listener.MagasinSessionListener
         </listener-class>
     </listener>
+    <listener>
+    	<listener-class>
+            ca.qc.collegeahuntsic.weblab5.listener.MagasinContextListener
+        </listener-class>
+    </listener>
 </web-app>
