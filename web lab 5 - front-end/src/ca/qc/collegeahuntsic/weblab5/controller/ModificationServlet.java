@@ -8,6 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import ca.qc.collegeahuntsic.weblab5.bean.ClientBean;
+import ca.qc.collegeahuntsic.weblab5.bean.ProfilBean;
+import ca.qc.collegeahuntsic.weblab5.exception.MagasinException;
+import ca.qc.collegeahuntsic.weblab5.exception.facade.FacadeException;
+import ca.qc.collegeahuntsic.weblab5.util.MagasinCreateur;
 
 /**
  * Servlet implementation class ModificationServlet
@@ -48,7 +52,6 @@ public class ModificationServlet extends HttpServlet {
             response);
     }
 
-    @SuppressWarnings("static-method")
     private void processRequest(HttpServletRequest request,
         HttpServletResponse response) throws ServletException,
         IOException {
@@ -56,6 +59,41 @@ public class ModificationServlet extends HttpServlet {
         if(clientBean == null) {
             request.getRequestDispatcher("/WEB-INF/connexion.jsp").forward(request,
                 response);
+        }
+        if(request.getParameter("miseajour") != null) {
+            ProfilBean profil = clientBean.getProfilBean();
+            String nouveauPrenom = request.getParameter("nouveauPrenom");
+            String nouveauNom = request.getParameter("nouveauNom");
+            String password = request.getParameter("password");
+
+            if(password == null
+                || !password.equals(clientBean.getPassword())) {
+                request.setAttribute("passwordInvalide",
+                    "true");
+            } else {
+                if(nouveauPrenom != null) {
+                    profil.setPrenom(nouveauPrenom);
+                }
+                if(nouveauNom != null) {
+                    profil.setNom(nouveauNom);
+                }
+                MagasinCreateur magasin = (MagasinCreateur) getServletContext().getAttribute("magasin");
+                try {
+                    profil = magasin.getProfilFacade().modifierProfil(magasin.getConnexion(),
+                        profil);
+                    clientBean.setProfilBean(profil);
+                    magasin.commit();
+                } catch(
+                    FacadeException
+                    | MagasinException e) {
+                    e.printStackTrace();
+                    try {
+                        magasin.rollback();
+                    } catch(MagasinException e1) {
+                        e1.printStackTrace();
+                    }
+                }
+            }
         }
         request.getRequestDispatcher("/WEB-INF/modification.jsp").forward(request,
             response);

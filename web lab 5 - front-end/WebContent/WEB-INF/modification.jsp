@@ -15,8 +15,16 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<h2>Modification du profil</h2>
-	<form method="post" action="modification">
-		
+	<form method="post" action="modification?miseajour=true">
+		Nouveau Prenom <input type="text" name="nouveauPrenom"> <br>
+		Nouveau Nom <input type="text" name="nouveauNom"> <br>
+		<br>
+		<br>
+		Entrez votre mot de passe actuel <input type="password" name="password">
+		<c:if test="${ requestScope['passwordInvalide'] != null }">
+			<span style="color:red">Votre mot de passe est invalide</span>
+		</c:if> <br><br>
+		<input type="submit" value="Modifier mes informations">
 	</form>
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
