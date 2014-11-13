@@ -30,10 +30,10 @@
 							<td>
 								<x:out select="$produit/code" />
 							</td>
-							<td class="nomProduit">
+							<td>
 								<x:out select="$produit/nom" />
 							</td>		
-							<td>
+							<td class="nomProduit">
 								<x:out select="$produit/description" />
 							</td>
 							<td>
@@ -59,7 +59,7 @@
 							<td>
 								<x:out select="$produit/code" />
 							</td>
-							<td>
+							<td class="nomProduit">
 								<x:out select="$produit/nom" />
 							</td>		
 							<td>
