@@ -1,17 +1,19 @@
 insert into Profil values (SEQ_ID_PROFIL.NEXTVAL, 'Tavares','Antonie');
 insert into Profil values (SEQ_ID_PROFIL.NEXTVAL, 'Brunet','Falix');
 insert into Profil values (SEQ_ID_PROFIL.NEXTVAL, 'Farmer','Chuck');
+insert into Profil values (SEQ_ID_PROFIL.NEXTVAL, 'Toor','Root');
 
 insert into Client values (SEQ_ID_CLIENT.NEXTVAL, 'BigD@love.com','987654321',1);
 insert into Client values (SEQ_ID_CLIENT.NEXTVAL, 'BigHeart@love.com','987654321',2);
 insert into Client values (SEQ_ID_CLIENT.NEXTVAL, 'BigHands@love.com','987654321',3);
+insert into Client values (SEQ_ID_CLIENT.NEXTVAL, 'root@magasin','toor',4);
 
 insert into Stock values (SEQ_ID_STOCK.NEXTVAL,  100,4.99,0);
 insert into Stock values (SEQ_ID_STOCK.NEXTVAL,  100,350.99,0);
 insert into Stock values (SEQ_ID_STOCK.NEXTVAL,  100,49.99,0);
 insert into Stock values (SEQ_ID_STOCK.NEXTVAL,  100,19.99,0);
 insert into Stock values (SEQ_ID_STOCK.NEXTVAL,  100,299.99,0);
-insert into Stock values (SEQ_ID_STOCK.NEXTVAL,  100,1499.99,0);
+insert into Stock values (SEQ_ID_STOCK.NEXTVAL,  100,1499.99,30);
 insert into Stock values (SEQ_ID_STOCK.NEXTVAL,  100,9000.00,0);
 insert into Stock values (SEQ_ID_STOCK.NEXTVAL,  100,69.99,0);
 
