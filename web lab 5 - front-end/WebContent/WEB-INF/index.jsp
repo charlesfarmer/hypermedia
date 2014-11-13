@@ -23,8 +23,7 @@
 				</li>
 			</ul>
 		</c:if>
-		<a href="connexion">Se connecter</a> <br>
-		<a href="panier">Visionner votre panier d'achat</a> <br>
+
 		<h1>Bienvenue sur le meilleur site de vente de produits!</h1>
 		
 		<h3>Produit vedette</h3>
@@ -35,7 +34,7 @@
 			<x:forEach select="$output/magasin/produit" var="produit">
 				<c:set var="prodId"><x:out select="$produit/code"/></c:set>
 				<c:if test="${ applicationScope['vedette'] == prodId }">
-					<tr style='background:red'>
+					<tr style='background:#FFA0A0'>
 						<td>
 							<x:out select="$produit/code" />
 						</td>
@@ -49,7 +48,7 @@
 							<img height='150' src="PICS/<x:out select="$produit/image"/>"/>
 						</td>
 						<td>
-							<a href="panier?id=<x:out select="$produit/code"/>">AJOUTER</a>
+							<a class="btn" href="panier?id=<x:out select="$produit/code"/>">AJOUTER</a>
 						</td>
 					</tr>
 				</c:if>
@@ -76,7 +75,7 @@
 							<img height='150' src="PICS/<x:out select="$produit/image"/>"/>
 						</td>
 						<td>
-							<a href="panier?id=<x:out select="$produit/code"/>">AJOUTER</a>
+							<a class="btn" href="panier?id=<x:out select="$produit/code"/>">AJOUTER</a>
 						</td>
 					</tr>	
 				</c:if>

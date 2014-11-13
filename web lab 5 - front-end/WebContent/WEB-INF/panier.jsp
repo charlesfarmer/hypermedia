@@ -17,7 +17,7 @@
 	Panier de <c:out value="${sessionScope['client'].profilBean.prenom}"></c:out><c:if test="${ sessionScope['client'] == null }">invité</c:if>
 	<br/><br/>
 	
-	<c:import url="/produits.xml" var="produits" />
+	<c:import url="/produits.xml" var="produits" charEncoding="UTF-8"/>
 	<x:parse xml="${produits}" var="output" />
 	<table border="1">
 	<tr>
