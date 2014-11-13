@@ -89,6 +89,14 @@ public class ConnexionServlet extends HttpServlet {
                     client);
                 request.getSession().setAttribute("client",
                     client);
+                
+                
+                List<LignePanierBean> vieuxPanier = (List<LignePanierBean>) request.getSession().getAttribute("panier");
+                for(LignePanierBean item : vieuxPanier){
+                	item.setClientBean(client);
+                	magasin.getLignePanierFacade().ajouterAuPanier(magasin.getConnexion(), item);
+                }
+                
                 magasin.commit();
             } catch(
                 FacadeException
@@ -102,7 +110,9 @@ public class ConnexionServlet extends HttpServlet {
                 }
             } catch(MagasinException e) {
                 e.printStackTrace();
-            }
+            } catch (NotEnoughStockQuantityException e) {
+				e.printStackTrace();
+			}
         }
         if(connexion != null) {
             try {
