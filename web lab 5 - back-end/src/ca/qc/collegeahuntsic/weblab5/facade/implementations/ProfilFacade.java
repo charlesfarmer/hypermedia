@@ -29,9 +29,10 @@ public class ProfilFacade extends Facade implements IProfilFacade {
         try {
             getService().update(connexion,
                 profilBean);
+            return getService().get(connexion,
+                profilBean);
         } catch(ServiceException e) {
             throw new FacadeException(e);
         }
-        return null;
     }
 }

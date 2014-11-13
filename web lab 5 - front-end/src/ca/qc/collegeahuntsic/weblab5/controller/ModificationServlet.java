@@ -81,9 +81,11 @@ public class ModificationServlet extends HttpServlet {
                 try {
                     profil = magasin.getProfilFacade().modifierProfil(magasin.getConnexion(),
                         profil);
+                    System.out.println(profil);
                     magasin.commit();
                     clientBean.setProfilBean(profil);
-                    request.getSession().setAttribute("client",
+                    System.out.println(clientBean);
+                    request.getSession(false).setAttribute("client",
                         clientBean);
                     request.setAttribute("modificationsReussies",
                         "true");
