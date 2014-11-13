@@ -16,13 +16,6 @@
 	</head>
 	<body>
 		<jsp:include page="header.jsp"></jsp:include>
-		<c:if test="${ sessionScope.client.email eq 'root@magasin' }">
-			<ul>
-				<li>
-					<a href="${pageContext.request.contextPath}/administration">ADMINISTRATION</a>
-				</li>
-			</ul>
-		</c:if>
 
 		<h1>Bienvenue sur le meilleur site de vente de produits!</h1>
 		

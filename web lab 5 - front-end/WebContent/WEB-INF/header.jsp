@@ -14,6 +14,13 @@ td{
 	<li><a href="${pageContext.request.contextPath}/panier">PANIER</a></li>
 	<li><a href="${pageContext.request.contextPath}/profil">PROFIL</a></li>
 	<li><a href="${pageContext.request.contextPath}/connexion">CONNEXION</a></li>
+	<c:if test="${ sessionScope.client.email eq 'root@magasin' }">
+		<ul>
+			<li>
+				<a href="${pageContext.request.contextPath}/administration">ADMINISTRATION</a>
+			</li>
+		</ul>
+	</c:if>
 </ul>
 </div>
 </div>
