@@ -4,11 +4,15 @@ package ca.qc.collegeahuntsic.weblab5.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections;
+
 import ca.qc.collegeahuntsic.weblab5.bean.ClientBean;
 import ca.qc.collegeahuntsic.weblab5.bean.LignePanierBean;
 import ca.qc.collegeahuntsic.weblab5.bean.ProduitBean;
@@ -70,6 +74,9 @@ public class PanierServlet extends HttpServlet {
             MagasinCreateur mag = (MagasinCreateur) getServletContext().getAttribute("magasin");
 
             List<LignePanierBean> panier = (List<LignePanierBean>) request.getSession().getAttribute("panier");
+            if (panier.equals(java.util.Collections.emptyList()))
+            	panier = new ArrayList<LignePanierBean>();
+            
             ClientBean client = (ClientBean) request.getSession().getAttribute("client");
 
             //Uniformisation du panier
@@ -91,8 +98,8 @@ public class PanierServlet extends HttpServlet {
                     p.setIdProduit(itemToAdd);
                     l.setProduitBean(p);
 
-                    if(request.getAttribute("client") != null) {
-                        l.setClientBean((ClientBean) request.getAttribute("client"));
+                    if(request.getSession().getAttribute("client") != null) {
+                        l.setClientBean((ClientBean) request.getSession().getAttribute("client"));
                         mag.getLignePanierFacade().ajouterAuPanier(mag.getConnexion(),
                             l);
                         mag.commit();
@@ -111,7 +118,6 @@ public class PanierServlet extends HttpServlet {
                     }
 
                 } catch(Exception e) {
-                    System.out.println(e.getMessage());
                     e.printStackTrace();
                     try {
                         mag.rollback();
