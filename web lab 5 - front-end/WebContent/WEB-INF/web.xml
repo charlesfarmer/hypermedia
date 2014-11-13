@@ -10,4 +10,25 @@
             ca.qc.collegeahuntsic.weblab5.listener.MagasinContextListener
         </listener-class>
   </listener>
+  
+  <context-param>
+        <param-name>USERNAME</param-name>
+        <param-value>scott</param-value>
+  </context-param>
+        
+  <context-param>
+        <param-name>PASSWORD</param-name>
+        <param-value>tiger</param-value>
+  </context-param>
+        
+  <context-param>
+        <param-name>SERVER_TYPE</param-name>
+        <param-value>distant</param-value>
+  </context-param>
+        
+  <context-param>
+        <param-name>SERVER_NAME</param-name>
+        <param-value>xe</param-value>
+  </context-param>
+  
 </web-app>

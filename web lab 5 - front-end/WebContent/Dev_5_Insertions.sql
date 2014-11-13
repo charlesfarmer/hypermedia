@@ -15,7 +15,6 @@ insert into Stock values (SEQ_ID_STOCK.NEXTVAL,  100,19.99,0);
 insert into Stock values (SEQ_ID_STOCK.NEXTVAL,  100,299.99,0);
 insert into Stock values (SEQ_ID_STOCK.NEXTVAL,  100,1499.99,30);
 insert into Stock values (SEQ_ID_STOCK.NEXTVAL,  100,9000.00,0);
-insert into Stock values (SEQ_ID_STOCK.NEXTVAL,  100,69.99,0);
 
 insert into Produit values (SEQ_ID_PRODUIT.NEXTVAL,'Céréales Kellogs (R)','Cest bon pour la santé, miam!',1);
 insert into Produit values (SEQ_ID_PRODUIT.NEXTVAL,'Console Xbox','Jouez avec vos nombreaux 3 amis!',2);
@@ -24,6 +23,5 @@ insert into Produit values (SEQ_ID_PRODUIT.NEXTVAL,'Harry Potter de lordre du ph
 insert into Produit values (SEQ_ID_PRODUIT.NEXTVAL,'Bague en or','En or',5);
 insert into Produit values (SEQ_ID_PRODUIT.NEXTVAL,'Tondeuse 360 noscope','Vous pouvez couper votre gazon, même les yeux fermés!',6);
 insert into Produit values (SEQ_ID_PRODUIT.NEXTVAL,'Générateur de sons dapplaudissements','Vous en avez besoin, cest juste que vous ne le savez pas encore',7);
-insert into Produit values (SEQ_ID_PRODUIT.NEXTVAL,'Salopette','One size fits all comme ils disent',8);
 
 commit;

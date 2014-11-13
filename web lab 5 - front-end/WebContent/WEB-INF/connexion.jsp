@@ -14,37 +14,38 @@
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
-	<form method="post" action="connexion?connexion=true">
-		<c:choose>
-		    <c:when test="${ sessionScope.client != null }">
-		    	Vous êtes présentement connecté sous: <c:out value="${ sessionScope.client.email }" />
-		    	<a href="connexion?deconnexion=true">Déconnexion</a>
-		    </c:when>
-		    <c:otherwise>
-		    	<h2>Connexion</h2> <br>
-				Entrez votre courriel <input type="email" name="email">
-				<c:if test="${ requestScope['clientInconnu'] }">
-					<span style='color:red;'>Courriel/Mot de passe invalide</span>
-				</c:if>
-				<br>
-				Entrez votre mot de passe <input type="password" name="password"> <br>
-				<input type="submit" class="btn" value="Connexion">
-		    </c:otherwise>
-		</c:choose>
-	</form>
-	<form method="post" action="connexion?nouveauCompte=true">
-		<h2>Créer un nouveau compte </h2><br>
-		Entrez votre courriel <input type="email" name="nouveauEmail">
-		<c:if test="${ requestScope['clientExistant'] }">
-			<span style='color:red;'>Ce courriel est déjà utilisé. Veuillez essayer de nouveau.</span>
-		</c:if>
-		<br>
-		Ce courriel vous servira de nom d'utilisateur <br>
-		Entrez votre mot de passe <input type="password" name="password1"> <br>
-		Entrez votre mot de passe à nouveau <input type="password" name="password2"> <br>
-		<input type="submit" class="btn" value="Créer votre compte gratuit!">
-	</form>
-	<br><br>
-	<jsp:include page="footer.jsp"></jsp:include>
+	<div class="connexion">
+		<form method="post" action="connexion?connexion=true">
+			<c:choose>
+			    <c:when test="${ sessionScope.client != null }">
+			    	<h4><c:out value="${ sessionScope.client.email }" /></h4>
+			    	<strong><a href="connexion?deconnexion=true">Déconnexion</a></strong>
+			    </c:when>
+			    <c:otherwise>
+			    	<h2>Connexion</h2> <br>
+					Votre courriel <input type="email" name="email">
+					<c:if test="${ requestScope['clientInconnu'] }">
+						<span style='color:red;'>Courriel/Mot de passe invalide</span>
+					</c:if>
+					<br>
+					Mot de passe <input type="password" name="password"> <br>
+					<input type="submit" class="btn" value="Connexion">
+			    </c:otherwise>
+			</c:choose>
+		</form>
+		<form method="post" action="connexion?nouveauCompte=true">
+			<h2>Créer un nouveau compte </h2><br>
+			Entrez votre courriel <input type="email" name="nouveauEmail">
+			<c:if test="${ requestScope['clientExistant'] }">
+				<span style='color:red;'>Courriel déjà utilisé. Veuillez essayer de nouveau.</span>
+			</c:if>
+			<br><br>
+			Mot de passe <input type="password" name="password1"> <br>
+			Répétez mot de passe <input type="password" name="password2"> <br>
+			<input type="submit" class="btn" value="Créer votre compte gratuit!">
+		</form>
+		<br><br>
+	</div>
+		<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

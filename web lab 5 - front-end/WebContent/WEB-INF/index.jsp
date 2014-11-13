@@ -15,63 +15,67 @@
 	<body>
 		<jsp:include page="header.jsp"></jsp:include>
 
-		<h1>Bienvenue sur Valkyrie.com, le meilleur site de vente de produits!</h1>
+		<h1>Valkyrie.com</h1>
+		<br>
+		<div class="vedette">
+			<h3>Produit vedette</h3>
+			
+			<c:import url="/produits.xml" var="produits" charEncoding="UTF-8"/>
+			<x:parse xml="${produits}" var="output" />
+			<table border="1">
+				<x:forEach select="$output/magasin/produit" var="produit">
+					<c:set var="prodId"><x:out select="$produit/code"/></c:set>
+					<c:if test="${ applicationScope['vedette'] == prodId }">
+						<tr style='background:#FFA0A0'>
+							<td>
+								<x:out select="$produit/code" />
+							</td>
+							<td class="nomProduit">
+								<x:out select="$produit/nom" />
+							</td>		
+							<td>
+								<x:out select="$produit/description" />
+							</td>
+							<td>
+								<img height='150' src="PICS/<x:out select="$produit/image"/>"/>
+							</td>
+							<td>
+								<a class="btn" href="panier?id=<x:out select="$produit/code"/>">AJOUTER</a>
+							</td>
+						</tr>
+					</c:if>
+				</x:forEach>
+			</table>
+		</div>
 		
-		<h3>Produit vedette</h3>
-		
-		<c:import url="/produits.xml" var="produits" charEncoding="UTF-8"/>
-		<x:parse xml="${produits}" var="output" />
-		<table border="1">
-			<x:forEach select="$output/magasin/produit" var="produit">
+		<div class="inventaire">
+			<c:import url="/produits.xml" var="produits" charEncoding="UTF-8"/>
+			<x:parse xml="${produits}" var="output" />
+			<table border="1">
+				<x:forEach select="$output/magasin/produit" var="produit">
 				<c:set var="prodId"><x:out select="$produit/code"/></c:set>
-				<c:if test="${ applicationScope['vedette'] == prodId }">
-					<tr style='background:#FFA0A0'>
-						<td>
-							<x:out select="$produit/code" />
-						</td>
-						<td>
-							<x:out select="$produit/nom" />
-						</td>		
-						<td>
-							<x:out select="$produit/description" />
-						</td>
-						<td>
-							<img height='150' src="PICS/<x:out select="$produit/image"/>"/>
-						</td>
-						<td>
-							<a class="btn" href="panier?id=<x:out select="$produit/code"/>">AJOUTER</a>
-						</td>
-					</tr>
-				</c:if>
-			</x:forEach>
-		</table>
-		
-		<c:import url="/produits.xml" var="produits" charEncoding="UTF-8"/>
-		<x:parse xml="${produits}" var="output" />
-		<table border="1">
-			<x:forEach select="$output/magasin/produit" var="produit">
-			<c:set var="prodId"><x:out select="$produit/code"/></c:set>
-				<c:if test="${ applicationScope['vedette'] != prodId }">
-					<tr>
-						<td>
-							<x:out select="$produit/code" />
-						</td>
-						<td>
-							<x:out select="$produit/nom" />
-						</td>		
-						<td>
-							<x:out select="$produit/description" />
-						</td>
-						<td>
-							<img height='150' src="PICS/<x:out select="$produit/image"/>"/>
-						</td>
-						<td>
-							<a class="btn" href="panier?id=<x:out select="$produit/code"/>">AJOUTER</a>
-						</td>
-					</tr>	
-				</c:if>
-			</x:forEach>
-		</table>
+					<c:if test="${ applicationScope['vedette'] != prodId }">
+						<tr>
+							<td>
+								<x:out select="$produit/code" />
+							</td>
+							<td>
+								<x:out select="$produit/nom" />
+							</td>		
+							<td>
+								<x:out select="$produit/description" />
+							</td>
+							<td>
+								<img height='150' src="PICS/<x:out select="$produit/image"/>"/>
+							</td>
+							<td>
+								<a class="btn" href="panier?id=<x:out select="$produit/code"/>">AJOUTER</a>
+							</td>
+						</tr>	
+					</c:if>
+				</x:forEach>
+			</table>
+		</div>
 		<jsp:include page="footer.jsp"></jsp:include>
 	</body>
 </html>

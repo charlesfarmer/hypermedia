@@ -4,13 +4,11 @@ package ca.qc.collegeahuntsic.weblab5.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import ca.qc.collegeahuntsic.weblab5.bean.ClientBean;
 import ca.qc.collegeahuntsic.weblab5.bean.LignePanierBean;
 import ca.qc.collegeahuntsic.weblab5.bean.ProfilBean;
@@ -75,7 +73,7 @@ public class ConnexionServlet extends HttpServlet {
             request.getSession().setAttribute("client",
                 null);
             request.getSession().setAttribute("panier",
-                    new ArrayList<LignePanierBean>());
+                new ArrayList<LignePanierBean>());
         }
         MagasinCreateur magasin = (MagasinCreateur) getServletContext().getAttribute("magasin");
 
@@ -84,24 +82,24 @@ public class ConnexionServlet extends HttpServlet {
             client.setEmail(nouveauEmail);
             client.setPassword(password1);
             ProfilBean profil = new ProfilBean();
-            profil.setNom("null");
-            profil.setPrenom("null");
+            profil.setNom("Inconnu");
+            profil.setPrenom("Inconnu");
             client.setProfilBean(profil);
             try {
                 client = magasin.getClientFacade().ajouterClient(magasin.getConnexion(),
                     client);
                 request.getSession().setAttribute("client",
                     client);
-                
-                
+
                 List<LignePanierBean> vieuxPanier = (List<LignePanierBean>) request.getSession().getAttribute("panier");
-                for(LignePanierBean item : vieuxPanier){
-                	item.setClientBean(client);
-                	magasin.getLignePanierFacade().ajouterAuPanier(magasin.getConnexion(), item);
+                for(LignePanierBean item : vieuxPanier) {
+                    item.setClientBean(client);
+                    magasin.getLignePanierFacade().ajouterAuPanier(magasin.getConnexion(),
+                        item);
                 }
                 magasin.commit();
                 request.getSession().setAttribute("panier",
-                        vieuxPanier);
+                    vieuxPanier);
             } catch(
                 FacadeException
                 | EmailAlreadyUsedException e) {
@@ -114,9 +112,9 @@ public class ConnexionServlet extends HttpServlet {
                 }
             } catch(MagasinException e) {
                 e.printStackTrace();
-            } catch (NotEnoughStockQuantityException e) {
-				e.printStackTrace();
-			}
+            } catch(NotEnoughStockQuantityException e) {
+                e.printStackTrace();
+            }
         }
         if(connexion != null) {
             try {
@@ -128,15 +126,17 @@ public class ConnexionServlet extends HttpServlet {
                 }
                 request.getSession().setAttribute("client",
                     client);
-                
+
                 List<LignePanierBean> vieuxPanier = (List<LignePanierBean>) request.getSession().getAttribute("panier");
-                System.out.println("L'ancien panier est long de "+vieuxPanier.size());
-                for(LignePanierBean item : vieuxPanier){
-                	item.setClientBean(client);
-                	magasin.getLignePanierFacade().ajouterAuPanier(magasin.getConnexion(), item);
+                System.out.println("L'ancien panier est long de "
+                    + vieuxPanier.size());
+                for(LignePanierBean item : vieuxPanier) {
+                    item.setClientBean(client);
+                    magasin.getLignePanierFacade().ajouterAuPanier(magasin.getConnexion(),
+                        item);
                 }
                 magasin.commit();
-                
+
                 List<LignePanierBean> panier = magasin.getLignePanierFacade().getPanier(magasin.getConnexion(),
                     client);
                 request.getSession().setAttribute("panier",
@@ -144,8 +144,10 @@ public class ConnexionServlet extends HttpServlet {
             } catch(FacadeException e) {
                 request.setAttribute("clientInconnu",
                     "true");
-            }catch(NotEnoughStockQuantityException | MagasinException e){
-            	e.printStackTrace();
+            } catch(
+                NotEnoughStockQuantityException
+                | MagasinException e) {
+                e.printStackTrace();
             }
         }
         request.getRequestDispatcher("/WEB-INF/connexion.jsp").forward(request,

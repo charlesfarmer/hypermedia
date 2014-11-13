@@ -6117,6 +6117,41 @@ a.badge:focus {
   margin-bottom: 0;
 }
 
+.connexion {
+	padding-left: 25px;
+}
+
+.inventaire {
+	padding-left: 25px;
+}
+
+h1 {
+	text-align: center;
+}
+
+.vedette h3 {
+	width: 100%;
+	text-align: center;
+	margin-bottom: -50px;
+}
+.vedette table {
+	table-layout: fixed;
+	width: 100%;
+	margin: 60px auto;
+}
+
+.vedette table td { width: 33%; text-align: center; }
+
+.inventaire table {
+	table-layout: fixed;
+	width: 95%;
+	margin: 60px auto;
+}
+
+.inventaire table td { width: 33%; text-align: center; }
+
+.nomProduit { font-weight: bold; }
+
 .hero-unit {
   padding: 60px;
   margin-bottom: 30px;
@@ -6165,3 +6200,4 @@ a.badge:focus {
 .affix {
   position: fixed;
 }
+
