@@ -13,8 +13,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="index">Retour à la page principale</a>
-	
+	<jsp:include page="header.jsp"></jsp:include>
 	Panier de <c:out value="${sessionScope['client'].profilBean.prenom}"></c:out><c:if test="${ sessionScope['client'] == null }">invité</c:if>
 	<br/><br/>
 	
@@ -62,5 +61,6 @@
 		</tr>
 	</c:forEach>
 	</table>
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

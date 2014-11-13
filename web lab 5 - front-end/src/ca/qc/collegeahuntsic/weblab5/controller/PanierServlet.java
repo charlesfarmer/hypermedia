@@ -4,19 +4,16 @@ package ca.qc.collegeahuntsic.weblab5.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import ca.qc.collegeahuntsic.weblab5.bean.ClientBean;
 import ca.qc.collegeahuntsic.weblab5.bean.LignePanierBean;
 import ca.qc.collegeahuntsic.weblab5.bean.ProduitBean;
 import ca.qc.collegeahuntsic.weblab5.exception.MagasinException;
 import ca.qc.collegeahuntsic.weblab5.exception.facade.FacadeException;
-import ca.qc.collegeahuntsic.weblab5.exception.service.NotEnoughStockQuantityException;
 import ca.qc.collegeahuntsic.weblab5.util.MagasinCreateur;
 
 /**
@@ -62,129 +59,131 @@ public class PanierServlet extends HttpServlet {
         HttpServletResponse response) throws ServletException,
         IOException {
         try {
-        	//set des variables
-        	
-        	String itemToAdd = (String)request.getParameter("id");
-        	String itemToDel = (String)request.getParameter("del");
-        	String modSub = (String)request.getParameter("modSub");
-        	String modQ = (String)request.getParameter("modQ");
-        	String modId = (String)request.getParameter("modId");
-        	
-        	
-        	MagasinCreateur mag = (MagasinCreateur) getServletContext().getAttribute("magasin");
-        	
+            //set des variables
+
+            String itemToAdd = request.getParameter("id");
+            String itemToDel = request.getParameter("del");
+            String modSub = request.getParameter("modSub");
+            String modQ = request.getParameter("modQ");
+            String modId = request.getParameter("modId");
+
+            MagasinCreateur mag = (MagasinCreateur) getServletContext().getAttribute("magasin");
+
             List<LignePanierBean> panier = (List<LignePanierBean>) request.getSession().getAttribute("panier");
             ClientBean client = (ClientBean) request.getSession().getAttribute("client");
 
             //Uniformisation du panier
-            
+
             if(client != null) {
                 panier = mag.getLignePanierFacade().getPanier(mag.getConnexion(),
                     client);
-            } else if(panier == null){
-                    panier = new ArrayList<>();
+            } else if(panier == null) {
+                panier = new ArrayList<>();
             }
-            
-            
-            // S'il y a un ajout à faire
-            
-            if (itemToAdd != null){
-            	try{
-            		LignePanierBean l = new LignePanierBean();
-            		l.setQuantite(1);
-            		ProduitBean p = new ProduitBean();
-            		p.setIdProduit(itemToAdd);
-            		l.setProduitBean(p);
-            		
-            		if (request.getAttribute("client")!=null){
-            			l.setClientBean((ClientBean)request.getAttribute("client"));
-            			mag.getLignePanierFacade().ajouterAuPanier(mag.getConnexion(), l);
-            			mag.commit();
-            		}
-            		
-            		boolean addIt = true;
-            		for(int i=0;i<panier.size();i++){
-            			if(panier.get(i).getProduitBean().getIdProduit().equals(l.getProduitBean().getIdProduit())){
-            				addIt = false;
-            				panier.get(i).setQuantite(panier.get(i).getQuantite() + l.getQuantite());
-            			}
-            		}
-            		if (addIt)
-            			panier.add(l);
-            		
-        			
-            		
-            	}catch(Exception e){
-            		System.out.println(e.getMessage());
-            		e.printStackTrace();
-            		try {
-						mag.rollback();
-					} catch (MagasinException e1) {
-						e1.printStackTrace();
-					}
-            	}
+
+            // S'il y a un ajout ï¿½ faire
+
+            if(itemToAdd != null) {
+                try {
+                    LignePanierBean l = new LignePanierBean();
+                    l.setQuantite(1);
+                    ProduitBean p = new ProduitBean();
+                    p.setIdProduit(itemToAdd);
+                    l.setProduitBean(p);
+
+                    if(request.getAttribute("client") != null) {
+                        l.setClientBean((ClientBean) request.getAttribute("client"));
+                        mag.getLignePanierFacade().ajouterAuPanier(mag.getConnexion(),
+                            l);
+                        mag.commit();
+                    }
+
+                    boolean addIt = true;
+                    for(int i = 0 ; i < panier.size() ; i++) {
+                        if(panier.get(i).getProduitBean().getIdProduit().equals(l.getProduitBean().getIdProduit())) {
+                            addIt = false;
+                            panier.get(i).setQuantite(panier.get(i).getQuantite()
+                                + l.getQuantite());
+                        }
+                    }
+                    if(addIt) {
+                        panier.add(l);
+                    }
+
+                } catch(Exception e) {
+                    System.out.println(e.getMessage());
+                    e.printStackTrace();
+                    try {
+                        mag.rollback();
+                    } catch(MagasinException e1) {
+                        e1.printStackTrace();
+                    }
+                }
             }
-            
-            // S'il y a une suppression à faire
-            
-            if (itemToDel != null){
-            	try{
-	            	for(int i=0;i<panier.size();i++){
-	            		if(panier.get(i).getProduitBean().getIdProduit().equals(itemToDel)){
-	            			panier.remove(i);
-	            			break;
-	        			}
-	            	}
-	            	if(client!=null){
-	            		LignePanierBean l = new LignePanierBean();
-	            		l.setIdLignePanier(itemToDel);
-	            		mag.getLignePanierFacade().retirerDuPanier(mag.getConnexion(), l);
-	            		mag.commit();
-	            	}
-            	}catch(Exception e){
-            		e.printStackTrace();
-            		try {
-						mag.rollback();
-					} catch (MagasinException e1) {
-						e1.printStackTrace();
-					}
-            	}
+
+            // S'il y a une suppression ï¿½ faire
+
+            if(itemToDel != null) {
+                try {
+                    for(int i = 0 ; i < panier.size() ; i++) {
+                        if(panier.get(i).getProduitBean().getIdProduit().equals(itemToDel)) {
+                            panier.remove(i);
+                            break;
+                        }
+                    }
+                    if(client != null) {
+                        LignePanierBean l = new LignePanierBean();
+                        l.setIdLignePanier(itemToDel);
+                        mag.getLignePanierFacade().retirerDuPanier(mag.getConnexion(),
+                            l);
+                        mag.commit();
+                    }
+                } catch(Exception e) {
+                    e.printStackTrace();
+                    try {
+                        mag.rollback();
+                    } catch(MagasinException e1) {
+                        e1.printStackTrace();
+                    }
+                }
             }
-            
-            
-            // S'il y a un update de quantité
-            
-            if (modSub!=null && modSub.equals("Modifier") && modQ !=null && modId!=null){
-            	try{
-            		Integer.parseInt(modQ);
-            		
-            		for(int i=0;i<panier.size();i++){
-                		if(panier.get(i).getProduitBean().getIdProduit().equals(modId)){
-                			
-                			panier.get(i).setQuantite(Integer.parseInt(modQ));
-                			
-                			if (client!=null){
-								mag.getLignePanierFacade().modifierNombreDitems(mag.getConnexion(), panier.get(i));
-								mag.commit();
-                			}
-                			
-                			break;
-            			}
-                	}
-            		
-            		
-            	}catch(Exception e){
-            		e.printStackTrace();
-            		try {
-						mag.rollback();
-					} catch (MagasinException e1) {
-						e1.printStackTrace();
-					}
-            	}
+
+            // S'il y a un update de quantitï¿½
+
+            if(modSub != null
+                && modSub.equals("Modifier")
+                && modQ != null
+                && modId != null) {
+                try {
+                    Integer.parseInt(modQ);
+
+                    for(int i = 0 ; i < panier.size() ; i++) {
+                        if(panier.get(i).getProduitBean().getIdProduit().equals(modId)) {
+
+                            panier.get(i).setQuantite(Integer.parseInt(modQ));
+
+                            if(client != null) {
+                                mag.getLignePanierFacade().modifierNombreDitems(mag.getConnexion(),
+                                    panier.get(i));
+                                mag.commit();
+                            }
+
+                            break;
+                        }
+                    }
+
+                } catch(Exception e) {
+                    e.printStackTrace();
+                    try {
+                        mag.rollback();
+                    } catch(MagasinException e1) {
+                        e1.printStackTrace();
+                    }
+                }
             }
-            
-            
-            request.getSession().setAttribute("panier", panier);
+
+            request.getSession().setAttribute("panier",
+                panier);
             getServletContext().getRequestDispatcher("/WEB-INF/panier.jsp").forward(request,
                 response);
         } catch(FacadeException facadeException) {
