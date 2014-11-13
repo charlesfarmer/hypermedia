@@ -17,11 +17,22 @@
 	
 	Panier de <c:out value="${sessionScope['client'].nom}"></c:out>
 	
+	<c:import url="/produits.xml" var="produits" />
+	<x:parse xml="${produits}" var="output" />
 	<table>
 	<c:forEach items="${sessionScope['panier']}" var="ligne">
 		<tr>
 		
-		<td><c:out value="${ligne.quantite}"></c:out></td>
+		<x:forEach select="$output/magasin/produit" var="produit">
+			<x:set var="prodId" select="$produit/code"/>
+		
+			<c:if test="${ prodId == ligne.produitBean.idProduit }">
+				<c:out value="ÇA MARCHE BORDEL "></c:out>
+			</c:if>
+			<td><c:out value="${ligne.produitBean.idProduit}"></c:out></td>
+			<c:out value="${ prodId }"/>
+		</x:forEach>
+		
 		
 		</tr>
 	</c:forEach>
