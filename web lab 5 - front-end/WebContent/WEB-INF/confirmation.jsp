@@ -13,7 +13,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="index">Retour à la page principale</a>
-
+	<jsp:include page="header.jsp"></jsp:include>
+	
+	Achat confirmé! Votre numéro de facture est <c:out value="${ requestScope['achat'].idAchat }"/> et a été créée à: <c:out value="${ requestScope['achat'].dateAchat }"/>
+	
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

@@ -18,7 +18,7 @@
 	<c:import url="/produits.xml" var="produits" />
 	<x:parse xml="${produits}" var="output" />
 	
-	<c:set var="subtotal" value="0"></c:set>
+	<c:set var="subTotal" value="${ 0 }"></c:set>
 	
 	<table border="1">
 	<tr>
@@ -48,7 +48,7 @@
 				<td>
 					<c:set var="tempPrix"><c:out value="${ (ligne.quantite * ligne.produitBean.stockBean.prix) - ligne.produitBean.stockBean.rabais }"/></c:set>
 					<c:out value="${ tempPrix }"/>
-					<c:set var="subTotal" value="${ subTotal + tempPrix }"></c:set>
+					<c:set var="subTotal" value="${ subTotal + tempPrix }"/>
 				</td>
 			</c:if>
 			
@@ -59,7 +59,8 @@
 	</c:forEach>
 	
 	</table>
-	
+	Sous-total: <c:out value="${ subTotal }"/><br/>
+	<a href="confirmation">CONFIRMER</a> la commande
 	
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
