@@ -2,6 +2,7 @@
 package ca.qc.collegeahuntsic.weblab5.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -73,6 +74,8 @@ public class ConnexionServlet extends HttpServlet {
         if(deconnexion != null) {
             request.getSession().setAttribute("client",
                 null);
+            request.getSession().setAttribute("panier",
+                    new ArrayList<LignePanierBean>());
         }
         MagasinCreateur magasin = (MagasinCreateur) getServletContext().getAttribute("magasin");
 
@@ -96,8 +99,9 @@ public class ConnexionServlet extends HttpServlet {
                 	item.setClientBean(client);
                 	magasin.getLignePanierFacade().ajouterAuPanier(magasin.getConnexion(), item);
                 }
-                
                 magasin.commit();
+                request.getSession().setAttribute("panier",
+                        vieuxPanier);
             } catch(
                 FacadeException
                 | EmailAlreadyUsedException e) {

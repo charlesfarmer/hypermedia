@@ -70,9 +70,7 @@ public class PanierServlet extends HttpServlet {
             MagasinCreateur mag = (MagasinCreateur) getServletContext().getAttribute("magasin");
 
             List<LignePanierBean> panier = (List<LignePanierBean>) request.getSession().getAttribute("panier");
-            if(panier == null) {
-                panier = new ArrayList<>();
-            } else if(panier.equals(java.util.Collections.emptyList())) {
+            if(panier == null || panier.equals(java.util.Collections.emptyList())) {
                 panier = new ArrayList<>();
             }
 
@@ -130,17 +128,19 @@ public class PanierServlet extends HttpServlet {
                 try {
                     for(int i = 0 ; i < panier.size() ; i++) {
                         if(panier.get(i).getProduitBean().getIdProduit().equals(itemToDel)) {
+                        	
+                        	if(client != null) {
+                                LignePanierBean l = panier.get(i);
+                                mag.getLignePanierFacade().retirerDuPanier(mag.getConnexion(),
+                                    l);
+                                mag.commit();
+                            }
+                        	
                             panier.remove(i);
                             break;
                         }
                     }
-                    if(client != null) {
-                        LignePanierBean l = new LignePanierBean();
-                        l.setIdLignePanier(itemToDel);
-                        mag.getLignePanierFacade().retirerDuPanier(mag.getConnexion(),
-                            l);
-                        mag.commit();
-                    }
+                    
                 } catch(Exception e) {
                     e.printStackTrace();
                     try {
