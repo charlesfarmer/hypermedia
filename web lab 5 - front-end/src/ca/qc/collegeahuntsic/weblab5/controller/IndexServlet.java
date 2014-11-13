@@ -60,6 +60,7 @@ public class IndexServlet extends HttpServlet {
     private void processRequest(HttpServletRequest request,
         HttpServletResponse response) throws ServletException,
         IOException {
+
         request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request,
             response);
     }

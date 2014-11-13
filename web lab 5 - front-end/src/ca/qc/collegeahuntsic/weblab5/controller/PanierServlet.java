@@ -77,7 +77,7 @@ public class PanierServlet extends HttpServlet {
             request.getSession().setAttribute("panier",
                 request.getAttribute("panier"));
 
-            getServletContext().getRequestDispatcher("/WEB-INF/index.jsp").forward(request,
+            getServletContext().getRequestDispatcher("/WEB-INF/panier.jsp").forward(request,
                 response);
         } catch(FacadeException facadeException) {
             //temp

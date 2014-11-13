@@ -18,7 +18,7 @@ public class MagasinSessionListener implements HttpSessionListener {
         nbActiveSession--;
     }
 
-    public static int getNbActiveSession() {
+    public int getNbActiveSession() {
         return nbActiveSession;
     }
 

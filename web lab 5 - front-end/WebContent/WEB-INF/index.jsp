@@ -13,7 +13,7 @@
 		<title>Laboratoire 5</title>
 	</head>
 	<body>
-	<jsp:include page="header.jsp"></jsp:include>
+		<jsp:include page="header.jsp"></jsp:include>
 		<a href="connexion">Se connecter</a> <br>
 		<a href="panier">Visionner votre panier d'achat</a> <br>
 		<h1>Bienvenue sur le meilleur site de vente de produits!</h1>
@@ -40,5 +40,6 @@
 			</tr>
 			</x:forEach>
 		</table>
+		<jsp:include page="footer.jsp"></jsp:include>
 	</body>
 </html>
