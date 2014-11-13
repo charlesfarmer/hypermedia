@@ -59,21 +59,16 @@ public class AdministrationServlet extends HttpServlet {
         try {
             produit = magasin.getProduitFacade().get(magasin.getConnexion(),
                 produit);
-        } catch(FacadeException e) {
-            produit = null;
-        }
-
-        if(produit == null) {
-            request.setAttribute("produitInvalide",
-                "true");
-        } else {
             request.setAttribute("produitValide",
                 "true");
             request.getServletContext().setAttribute("vedette",
                 produit.getIdProduit());
+        } catch(FacadeException e) {
+            request.setAttribute("produitInvalide",
+                "true");
+        } finally {
+            request.getRequestDispatcher("/WEB-INF/administration.jsp").forward(request,
+                response);
         }
-
-        request.getRequestDispatcher("/WEB-INF/administration.jsp").forward(request,
-            response);
     }
 }

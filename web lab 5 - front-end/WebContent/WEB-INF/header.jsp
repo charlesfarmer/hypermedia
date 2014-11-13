@@ -12,6 +12,7 @@ body{
 }
 
 </style>
+<title>LABORATOIRE 5</title>
 <div class="navbar navbar-fluid navbar-top">
 	<div class="navbar-inner">
 		<ul class="nav">
