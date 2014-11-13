@@ -15,7 +15,6 @@ import ca.qc.collegeahuntsic.weblab5.bean.ClientBean;
 import ca.qc.collegeahuntsic.weblab5.bean.LignePanierBean;
 import ca.qc.collegeahuntsic.weblab5.bean.ProduitBean;
 import ca.qc.collegeahuntsic.weblab5.exception.facade.FacadeException;
-import ca.qc.collegeahuntsic.weblab5.exception.service.NotEnoughStockQuantityException;
 import ca.qc.collegeahuntsic.weblab5.util.MagasinCreateur;
 
 /**
@@ -61,50 +60,26 @@ public class PanierServlet extends HttpServlet {
         HttpServletResponse response) throws ServletException,
         IOException {
         try {
+        	//set des variables
+        	
         	String itemToAdd = (String)request.getParameter("id");
+        	String itemToDel = (String)request.getParameter("del");
         	MagasinCreateur mag = (MagasinCreateur) getServletContext().getAttribute("magasin");
         	
             List<LignePanierBean> panier = (List<LignePanierBean>) request.getSession().getAttribute("panier");
             ClientBean client = (ClientBean) request.getSession().getAttribute("client");
 
+            //Uniformisation du panier
+            
             if(client != null) {
                 panier = mag.getLignePanierFacade().getPanier(mag.getConnexion(),
                     client);
-                
-//                if(itemToAdd!=null){
-//                	LignePanierBean l = new LignePanierBean();
-//            		l.setQuantite(1);
-//            		ProduitBean p = new ProduitBean();
-//            		p.setIdProduit("itemToAdd");
-//            		l.setProduitBean(p);
-//            		l.setClientBean((ClientBean)request.getAttribute("client"));
-//        			try {
-//    					mag.getLignePanierFacade().ajouterAuPanier(mag.getConnexion(), l);
-//    				} catch (NotEnoughStockQuantityException e) {
-//    					e.printStackTrace();
-//    				}
-//        			
-//                }
-                
-                
-                request.getSession().setAttribute("panier",
-                    panier);
-            } else {
-                if(panier == null) {
-                	
+            } else if(panier == null){
                     panier = new ArrayList<>();
-                    //LignePanierBean l = new LignePanierBean();
-                    //ProduitBean p = new ProduitBean();
-                    //p.setIdProduit("1");
-                    //l.setProduitBean(p);
-                   // panier.add(l);
-                    request.getSession().setAttribute("panier",
-                        panier);
-                }
             }
             
             
-            
+            // S'il y a un ajout à faire
             
             if (itemToAdd != null){
             	try{
@@ -119,14 +94,44 @@ public class PanierServlet extends HttpServlet {
             			mag.getLignePanierFacade().ajouterAuPanier(mag.getConnexion(), l);
             		}
             		
-            		panier.add(l);
-        			request.getSession().setAttribute("panier", panier);
+            		boolean addIt = true;
+            		for(int i=0;i<panier.size();i++){
+            			if(panier.get(i).getProduitBean().getIdProduit().equals(l.getProduitBean().getIdProduit())){
+            				addIt = false;
+            				panier.get(i).setQuantite(panier.get(i).getQuantite() + l.getQuantite());
+            			}
+            		}
+            		if (addIt)
+            			panier.add(l);
+            		
+        			
             		
             	}catch(Exception e){
             		e.printStackTrace();
             	}
             }
-
+            
+            // S'il y a une suppression à faire
+            
+            if (itemToDel != null){
+            	for(int i=0;i<panier.size();i++){
+            		if(panier.get(i).getProduitBean().getIdProduit().equals(itemToDel)){
+            			panier.remove(i);
+            			break;
+        			}
+            	}
+            	if(client!=null){
+            		LignePanierBean l = new LignePanierBean();
+            		l.setIdLignePanier(itemToDel);
+            		mag.getLignePanierFacade().retirerDuPanier(mag.getConnexion(), l);
+            	}
+            }
+            
+            
+            
+            
+            
+            request.getSession().setAttribute("panier", panier);
             getServletContext().getRequestDispatcher("/WEB-INF/panier.jsp").forward(request,
                 response);
         } catch(FacadeException facadeException) {

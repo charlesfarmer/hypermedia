@@ -15,22 +15,40 @@
 <body>
 	<a href="index">Retour à la page principale</a>
 	
-	Panier de <c:out value="${sessionScope['client'].nom}"></c:out>
+	Panier de <c:out value="${sessionScope['client'].nom}"></c:out><c:if test="${ sessionScope['client'] == null }">invité</c:if>
+	<br/><br/>
 	
 	<c:import url="/produits.xml" var="produits" />
 	<x:parse xml="${produits}" var="output" />
-	<table>
+	<table border="1">
+	<tr>
+		<th>Aperçu</th>
+		<th>Item</th>
+		<th>Quantité</th>
+		<th>Retirer du panier</th>
+	</tr>
 	<c:forEach items="${sessionScope['panier']}" var="ligne">
 		<tr>
 		
 		<x:forEach select="$output/magasin/produit" var="produit">
-			<x:set var="prodId" select="$produit/code"/>
+			<c:set var="prodId"><x:out select="$produit/code"/></c:set>
+			
 		
 			<c:if test="${ prodId == ligne.produitBean.idProduit }">
-				<c:out value="ÇA MARCHE BORDEL "></c:out>
+				<td>
+					<img height='150' src="PICS/<x:out select="$produit/image"/>"/>
+				</td>
+				<td>
+					<x:out select="$produit/nom" />
+				</td>
+				<td>
+					<c:out value="${ ligne.quantite }" />
+				</td>
+				<td>
+					<a href="panier?del=<x:out select="$produit/code"/>">RETIRER</a>
+				</td>
 			</c:if>
-			<td><c:out value="${ligne.produitBean.idProduit}"></c:out></td>
-			<c:out value="${ prodId }"/>
+			
 		</x:forEach>
 		
 		
