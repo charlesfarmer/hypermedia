@@ -5,6 +5,9 @@ img{
 td{
 	padding:10px;
 }
+body{
+	padding-bottom: 50px;
+}
 
 </style>
 <div class="navbar navbar-fluid navbar-top">

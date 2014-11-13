@@ -17,7 +17,7 @@
 	<body>
 		<jsp:include page="header.jsp"></jsp:include>
 
-		<h1>Bienvenue sur le meilleur site de vente de produits!</h1>
+		<h1>Bienvenue sur Valkyrie.com, le meilleur site de vente de produits!</h1>
 		
 		<h3>Produit vedette</h3>
 		
