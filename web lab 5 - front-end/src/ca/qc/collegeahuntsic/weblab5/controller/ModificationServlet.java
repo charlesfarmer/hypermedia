@@ -59,9 +59,9 @@ public class ModificationServlet extends HttpServlet {
         if(clientBean == null) {
             request.getRequestDispatcher("/WEB-INF/connexion.jsp").forward(request,
                 response);
-        }
-        if(request.getParameter("miseajour") != null) {
+        } else if(request.getParameter("miseajour") != null) {
             ProfilBean profil = clientBean.getProfilBean();
+            System.out.println(profil);
             String nouveauPrenom = request.getParameter("nouveauPrenom");
             String nouveauNom = request.getParameter("nouveauNom");
             String password = request.getParameter("password");
@@ -81,12 +81,12 @@ public class ModificationServlet extends HttpServlet {
                 try {
                     profil = magasin.getProfilFacade().modifierProfil(magasin.getConnexion(),
                         profil);
-                    clientBean.setProfilBean(profil);
                     magasin.commit();
+                    clientBean.setProfilBean(profil);
                     request.getSession().setAttribute("client",
                         clientBean);
-                    request.getRequestDispatcher("/WEB-INF/profil.jsp").forward(request,
-                        response);
+                    request.setAttribute("modificationsReussies",
+                        "true");
                 } catch(
                     FacadeException
                     | MagasinException e) {
@@ -98,10 +98,9 @@ public class ModificationServlet extends HttpServlet {
                     }
                 }
             }
-        } else {
-            request.getRequestDispatcher("/WEB-INF/modification.jsp").forward(request,
-                response);
         }
+        request.getRequestDispatcher("/WEB-INF/modification.jsp").forward(request,
+            response);
     }
 
 }

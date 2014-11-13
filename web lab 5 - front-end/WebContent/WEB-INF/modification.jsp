@@ -15,6 +15,9 @@
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<h2>Modification du profil</h2>
+	<c:if test="${ requestScope['modificationsReussies'] != null }">
+			<span style="color:red; size=2em;">Modification Réussies!</span>
+	</c:if> <br><br>
 	<form method="post" action="modification?miseajour=true">
 		Nouveau Prenom <input type="text" name="nouveauPrenom"> <br>
 		Nouveau Nom <input type="text" name="nouveauNom"> <br>
