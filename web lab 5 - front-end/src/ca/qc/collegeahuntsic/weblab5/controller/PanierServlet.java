@@ -4,15 +4,11 @@ package ca.qc.collegeahuntsic.weblab5.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections;
-
 import ca.qc.collegeahuntsic.weblab5.bean.ClientBean;
 import ca.qc.collegeahuntsic.weblab5.bean.LignePanierBean;
 import ca.qc.collegeahuntsic.weblab5.bean.ProduitBean;
@@ -74,9 +70,10 @@ public class PanierServlet extends HttpServlet {
             MagasinCreateur mag = (MagasinCreateur) getServletContext().getAttribute("magasin");
 
             List<LignePanierBean> panier = (List<LignePanierBean>) request.getSession().getAttribute("panier");
-            if (panier.equals(java.util.Collections.emptyList()))
-            	panier = new ArrayList<LignePanierBean>();
-            
+            if(panier.equals(java.util.Collections.emptyList())) {
+                panier = new ArrayList<>();
+            }
+
             ClientBean client = (ClientBean) request.getSession().getAttribute("client");
 
             //Uniformisation du panier
@@ -84,9 +81,8 @@ public class PanierServlet extends HttpServlet {
             if(client != null) {
                 panier = mag.getLignePanierFacade().getPanier(mag.getConnexion(),
                     client);
-            } else if(panier == null) {
-                panier = new ArrayList<>();
             }
+            panier = new ArrayList<>();
 
             // S'il y a un ajout � faire
 
