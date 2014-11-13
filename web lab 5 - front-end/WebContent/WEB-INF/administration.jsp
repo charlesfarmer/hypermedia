@@ -10,19 +10,21 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>LABORATOIRE 5</title>
 </head>
 <body>
 	<jsp:include page="header.jsp"></jsp:include>
 	<h3>Changer le produit vedette</h3>
 	<form method="post" action="administration">
 		Entrez un ID de produit:&nbsp;<input type="text" name="produitVedette">
-		<c:if test="${ requestScope['produitInvalide'] != null }">
-			<span style="color:red;">ID de produit invalide</span>
-		</c:if>
-		<c:if test="${ requestScope['produitValide'] != null }">
-			<span style="color:red;">Modification réussie</span>
-		</c:if>
+		<c:choose>
+		  <c:when test="${ requestScope['produitValide'] != null }">
+		  	<span style="color:red;">Modification réussie</span>
+		  </c:when>
+		  <c:otherwise>
+		  	<span style="color:red;">Entrez un ID de produit valide</span>
+		  </c:otherwise>
+		</c:choose>
 		<br><br>
 		<input type="submit" value="Modifier produit vedette">
 	</form>

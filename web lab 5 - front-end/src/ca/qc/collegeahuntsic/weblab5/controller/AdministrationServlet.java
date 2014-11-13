@@ -64,8 +64,7 @@ public class AdministrationServlet extends HttpServlet {
             request.getServletContext().setAttribute("vedette",
                 produit.getIdProduit());
         } catch(FacadeException e) {
-            request.setAttribute("produitInvalide",
-                "true");
+            //
         } finally {
             request.getRequestDispatcher("/WEB-INF/administration.jsp").forward(request,
                 response);
