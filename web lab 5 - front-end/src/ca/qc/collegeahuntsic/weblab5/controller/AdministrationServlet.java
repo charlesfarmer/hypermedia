@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import ca.qc.collegeahuntsic.weblab5.bean.ProduitBean;
+import ca.qc.collegeahuntsic.weblab5.exception.facade.FacadeException;
 import ca.qc.collegeahuntsic.weblab5.util.MagasinCreateur;
 
 /**
@@ -55,8 +56,12 @@ public class AdministrationServlet extends HttpServlet {
         MagasinCreateur magasin = (MagasinCreateur) request.getServletContext().getAttribute("magasin");
         ProduitBean produit = new ProduitBean();
         produit.setIdProduit(request.getParameter("produitVedette"));
-        produit = magasin.getProduitFacade().get(magasin.getConnexion(),
-            produit);
+        try {
+            produit = magasin.getProduitFacade().get(magasin.getConnexion(),
+                produit);
+        } catch(FacadeException e) {
+            produit = null;
+        }
 
         if(produit == null) {
             request.setAttribute("produitInvalide",

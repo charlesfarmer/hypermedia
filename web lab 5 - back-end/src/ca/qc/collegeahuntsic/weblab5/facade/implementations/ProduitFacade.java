@@ -15,7 +15,6 @@ public class ProduitFacade extends Facade implements IProduitFacade {
         setService(service);
     }
 
-    @SuppressWarnings("unused")
     private IProduitService getService() {
         return this.service;
     }
@@ -23,11 +22,13 @@ public class ProduitFacade extends Facade implements IProduitFacade {
     private void setService(IProduitService service) {
         this.service = service;
     }
-    
+
     @Override
-    public ProduitBean get(Connexion connexion, ProduitBean produitBean) throws FacadeException{
-    	try {
-            return getService().get(connexion, produitBean);
+    public ProduitBean get(Connexion connexion,
+        ProduitBean produitBean) throws FacadeException {
+        try {
+            return getService().get(connexion,
+                produitBean);
         } catch(ServiceException e) {
             throw new FacadeException(e);
         }
