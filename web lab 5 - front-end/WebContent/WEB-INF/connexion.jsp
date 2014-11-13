@@ -28,7 +28,7 @@
 				</c:if>
 				<br>
 				Entrez votre mot de passe <input type="password" name="password"> <br>
-				<input type="submit" value="Connexion">
+				<input type="submit" class="btn" value="Connexion">
 		    </c:otherwise>
 		</c:choose>
 	</form>
@@ -42,7 +42,7 @@
 		Ce courriel vous servira de nom d'utilisateur <br>
 		Entrez votre mot de passe <input type="password" name="password1"> <br>
 		Entrez votre mot de passe à nouveau <input type="password" name="password2"> <br>
-		<input type="submit" value="Créer votre compte gratuit!">
+		<input type="submit" class="btn" value="Créer votre compte gratuit!">
 	</form>
 	<br><br>
 	<jsp:include page="footer.jsp"></jsp:include>
