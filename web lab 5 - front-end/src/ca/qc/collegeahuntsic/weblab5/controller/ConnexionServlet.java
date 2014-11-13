@@ -3,17 +3,20 @@ package ca.qc.collegeahuntsic.weblab5.controller;
 
 import java.io.IOException;
 import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
 import ca.qc.collegeahuntsic.weblab5.bean.ClientBean;
 import ca.qc.collegeahuntsic.weblab5.bean.LignePanierBean;
 import ca.qc.collegeahuntsic.weblab5.bean.ProfilBean;
 import ca.qc.collegeahuntsic.weblab5.exception.MagasinException;
 import ca.qc.collegeahuntsic.weblab5.exception.facade.FacadeException;
 import ca.qc.collegeahuntsic.weblab5.exception.service.EmailAlreadyUsedException;
+import ca.qc.collegeahuntsic.weblab5.exception.service.NotEnoughStockQuantityException;
 import ca.qc.collegeahuntsic.weblab5.util.MagasinCreateur;
 
 /**
@@ -111,6 +114,15 @@ public class ConnexionServlet extends HttpServlet {
                 }
                 request.getSession().setAttribute("client",
                     client);
+                
+                List<LignePanierBean> vieuxPanier = (List<LignePanierBean>) request.getSession().getAttribute("panier");
+                System.out.println("L'ancien panier est long de "+vieuxPanier.size());
+                for(LignePanierBean item : vieuxPanier){
+                	item.setClientBean(client);
+                	magasin.getLignePanierFacade().ajouterAuPanier(magasin.getConnexion(), item);
+                }
+                magasin.commit();
+                
                 List<LignePanierBean> panier = magasin.getLignePanierFacade().getPanier(magasin.getConnexion(),
                     client);
                 request.getSession().setAttribute("panier",
@@ -118,6 +130,8 @@ public class ConnexionServlet extends HttpServlet {
             } catch(FacadeException e) {
                 request.setAttribute("clientInconnu",
                     "true");
+            }catch(NotEnoughStockQuantityException | MagasinException e){
+            	e.printStackTrace();
             }
         }
         request.getRequestDispatcher("/WEB-INF/connexion.jsp").forward(request,

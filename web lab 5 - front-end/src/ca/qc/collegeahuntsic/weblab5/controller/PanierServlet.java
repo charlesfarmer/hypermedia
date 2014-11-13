@@ -70,7 +70,10 @@ public class PanierServlet extends HttpServlet {
             MagasinCreateur mag = (MagasinCreateur) getServletContext().getAttribute("magasin");
 
             List<LignePanierBean> panier = (List<LignePanierBean>) request.getSession().getAttribute("panier");
-            if(panier.equals(java.util.Collections.emptyList())) {
+            if (panier == null){
+            	panier = new ArrayList<LignePanierBean>();
+            }
+            else if(panier.equals(java.util.Collections.emptyList())) {
                 panier = new ArrayList<>();
             }
 
@@ -82,7 +85,6 @@ public class PanierServlet extends HttpServlet {
                 panier = mag.getLignePanierFacade().getPanier(mag.getConnexion(),
                     client);
             }
-            panier = new ArrayList<>();
 
             // S'il y a un ajout � faire
 
