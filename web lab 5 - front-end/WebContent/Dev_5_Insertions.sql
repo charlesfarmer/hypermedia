@@ -23,3 +23,5 @@ insert into Produit values (SEQ_ID_PRODUIT.NEXTVAL,'Bague en or','En or',5);
 insert into Produit values (SEQ_ID_PRODUIT.NEXTVAL,'Tondeuse 360 noscope','Vous pouvez couper votre gazon, même les yeux fermés!',6);
 insert into Produit values (SEQ_ID_PRODUIT.NEXTVAL,'Générateur de sons dapplaudissements','Vous en avez besoin, cest juste que vous ne le savez pas encore',7);
 insert into Produit values (SEQ_ID_PRODUIT.NEXTVAL,'Salopette','One size fits all comme ils disent',8);
+
+commit;
