@@ -192,11 +192,11 @@ public class LignePanierService extends Service implements ILignePanierService {
                 lignePanierBean.getClientBean());
             for(int i = 0 ; i < panier.size() ; i++) {
                 // Si...une ligne pour ce produit existe d�j�, on update la quantit� au lieu d'ajouter 
-                if(panier.get(i).getProduitBean().getIdProduit().equals(lignePanierBean.getProduitBean().getIdProduit())) {
+                if(get(connexion, panier.get(i)).getProduitBean().getIdProduit().equals(lignePanierBean.getProduitBean().getIdProduit())) {
                     lignePanierBean.setQuantite(lignePanierBean.getQuantite()
                         + panier.get(i).getQuantite());
-
-                    if(lignePanierBean.getProduitBean().getStockBean().getQuantite() < lignePanierBean.getQuantite()) {
+                    lignePanierBean.setIdLignePanier(panier.get(i).getIdLignePanier());
+                    if(get(connexion, panier.get(i)).getProduitBean().getStockBean().getQuantite() < lignePanierBean.getQuantite()) {
                         throw new NotEnoughStockQuantityException();
                     }
 

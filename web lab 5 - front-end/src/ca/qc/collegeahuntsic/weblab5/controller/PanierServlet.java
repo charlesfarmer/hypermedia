@@ -93,13 +93,14 @@ public class PanierServlet extends HttpServlet {
                     p.setIdProduit(itemToAdd);
                     l.setProduitBean(p);
 
-                    if(request.getSession().getAttribute("client") != null) {
+                    if(client != null) {
                         l.setClientBean((ClientBean) request.getSession().getAttribute("client"));
                         mag.getLignePanierFacade().ajouterAuPanier(mag.getConnexion(),
                             l);
                         mag.commit();
                     }
-
+                    panier = mag.getLignePanierFacade().getPanier(mag.getConnexion(), client);
+/*
                     boolean addIt = true;
                     for(int i = 0 ; i < panier.size() ; i++) {
                         if(panier.get(i).getProduitBean().getIdProduit().equals(l.getProduitBean().getIdProduit())) {
@@ -111,7 +112,7 @@ public class PanierServlet extends HttpServlet {
                     if(addIt) {
                         panier.add(l);
                     }
-
+*/
                 } catch(Exception e) {
                     e.printStackTrace();
                     try {

@@ -61,6 +61,13 @@
 		</tr>
 	</c:forEach>
 	</table>
+	<c:if test="${ sessionScope['client'] == null }">
+		<a href="connexion">Connectez-vous</a> pour acheter le contenu de votre panier.
+	</c:if>
+	<c:if test="${ sessionScope['client'] != null }">
+		<a href="achat">ACHETEZ</a> le contenu de votre panier
+	</c:if>
+	
 	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

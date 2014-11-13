@@ -13,7 +13,54 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<a href="index">Retour à la page principale</a>
-
+	<jsp:include page="header.jsp"></jsp:include>
+	
+	<c:import url="/produits.xml" var="produits" />
+	<x:parse xml="${produits}" var="output" />
+	
+	<c:set var="subtotal" value="0"></c:set>
+	
+	<table border="1">
+	<tr>
+		<th>Aperçu</th>
+		<th>Item</th>
+		<th>Quantité</th>
+		<th>Prix</th>
+	</tr>
+	
+	<c:forEach items="${sessionScope['panier']}" var="ligne">
+		<tr>
+		
+		<x:forEach select="$output/magasin/produit" var="produit">
+			<c:set var="prodId"><x:out select="$produit/code"/></c:set>
+			
+			
+			<c:if test="${ prodId == ligne.produitBean.idProduit }">
+				<td>
+					<img height='150' src="PICS/<x:out select="$produit/image"/>"/>
+				</td>
+				<td>
+					<x:out select="$produit/nom" />
+				</td>
+				<td>
+					<c:out value="${ ligne.quantite }" />
+				</td>
+				<td>
+					<c:set var="tempPrix"><c:out value="${ (ligne.quantite * ligne.produitBean.stockBean.prix) - ligne.produitBean.stockBean.rabais }"/></c:set>
+					<c:out value="${ tempPrix }"/>
+					<c:set var="subTotal" value="${ subTotal + tempPrix }"></c:set>
+				</td>
+			</c:if>
+			
+		</x:forEach>
+		
+		
+		</tr>
+	</c:forEach>
+	
+	</table>
+	
+	
+	<jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>
