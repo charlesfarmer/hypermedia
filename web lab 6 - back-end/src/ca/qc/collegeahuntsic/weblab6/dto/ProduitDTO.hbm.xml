@@ -1,0 +1,66 @@
+<?xml version="1.0"
+      encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO"
+         table="PRODUIT">
+         <id name="idProduit"
+             type="string">
+             <column name="IDPRODUIT">
+             </column>
+             <generator class="sequence">
+                        <param name="sequence">SEQ_ID_PRODUIT</param>
+             </generator>
+         </id>
+
+         <property name="title"
+                   type="string"
+                   length="100">
+                   <column name="TITLE">
+                   </column>
+         </property>
+         
+         <property name="url"
+                   type="string"
+                   length="100">
+                   <column name="URL">
+                   </column>
+         </property>
+         
+         <property name="price"
+                   type="big_decimal"
+                   length="100">
+                   <column name="PRICE">
+                   </column>
+         </property>
+         
+          <many-to-one name="marchandDTO"
+                      class="ca.qc.collegeahuntsic.weblab6.dto.MarchandDTO"
+                      not-null="true">
+                      <column name="MARCHANDID">
+                      </column>
+         </many-to-one>
+
+         <set name="ligneVitrines"
+              cascade="all">
+              <key>
+                <column name="PRODUITID">
+                </column>
+              </key>
+              <one-to-many class="ca.qc.collegeahuntsic.weblab6.dto.LigneVitrineDTO"/>
+         </set>
+         
+         <set name="favoris"
+              cascade="all">
+              <key>
+                <column name="PRODUITID">
+                </column>
+              </key>
+              <one-to-many class="ca.qc.collegeahuntsic.weblab6.dto.FavoriDTO"/>
+         </set>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0"
+      encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="ca.qc.collegeahuntsic.weblab6.dto.FavoriDTO"
+         table="FAVORI">
+         <id name="idFavori"
+             type="string">
+             <column name="IDFAVORI">
+             </column>
+             <generator class="sequence">
+                        <param name="sequence">SEQ_ID_FAVORI</param>
+             </generator>
+         </id>
+          <many-to-one name="produitDTO"
+                      class="ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO"
+                      not-null="true">
+                      <column name="PRODUITID">
+                      </column>
+         </many-to-one>
+         
+          <many-to-one name="membreDTO"
+                      class="ca.qc.collegeahuntsic.weblab6.dto.MembreDTO"
+                      not-null="true">
+                      <column name="MEMBREID">
+                      </column>
+         </many-to-one>
+  </class>
+</hibernate-mapping>

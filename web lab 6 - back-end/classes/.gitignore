@@ -1,0 +1,6 @@
+/applicationContext-DAO.xml
+/applicationContext-DTO.xml
+/applicationContext-Facade.xml
+/applicationContext-JDBC.xml
+/applicationContext-Service.xml
+/ca/

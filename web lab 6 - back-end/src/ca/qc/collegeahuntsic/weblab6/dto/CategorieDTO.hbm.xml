@@ -1,0 +1,43 @@
+<?xml version="1.0"
+      encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="ca.qc.collegeahuntsic.weblab6.dto.CategorieDTO"
+         table="CATEGORIE">
+         <id name="idCategorie"
+             type="string">
+             <column name="IDCATEGORIE">
+             </column>
+             <generator class="sequence">
+                        <param name="sequence">SEQ_ID_CATEGORIE</param>
+             </generator>
+         </id>
+
+         <property name="name"
+                   type="string"
+                   length="100">
+                   <column name="NAME">
+                   </column>
+         </property>
+
+          <many-to-one name="membreDTO"
+                      class="ca.qc.collegeahuntsic.weblab6.dto.MembreDTO"
+                      not-null="true">
+                      <column name="MEMBREID">
+                      </column>
+         </many-to-one>
+         
+         <set name="ligneVitrines"
+              cascade="all">
+              <key>
+                <column name="CATEGORIEID">
+                </column>
+              </key>
+              <one-to-many class="ca.qc.collegeahuntsic.weblab6.dto.LigneVitrineDTO"/>
+         </set>
+  </class>
+</hibernate-mapping>

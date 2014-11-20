@@ -1,0 +1,72 @@
+<?xml version="1.0"
+      encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+          
+<hibernate-mapping>
+  <class name="ca.qc.collegeahuntsic.weblab6.dto.MembreDTO"
+         table="MEMBRE">
+         <id name="idMembre"
+             type="string">
+             <column name="IDMEMBRE">
+             </column>
+             <generator class="sequence">
+                        <param name="sequence">SEQ_ID_MEMBRE</param>
+             </generator>
+         </id>
+
+         <property name="username"
+                   type="string"
+                   length="100">
+                   <column name="USERNAME">
+                   </column>
+         </property>
+         <property name="password"
+                   type="string"
+                   length="100">
+                   <column name="PASSWORD">
+                   </column>
+         </property>
+         <property name="email"
+                   type="string"
+                   length="100">
+                   <column name="EMAIL">
+                   </column>
+         </property>
+
+         <set name="vitrines"
+              cascade="all">
+              <key>
+                <column name="MEMBREID">
+                </column>
+              </key>
+              <one-to-many class="ca.qc.collegeahuntsic.weblab6.dto.VitrineDTO"/>
+         </set>
+         <set name="categories"
+              cascade="all">
+              <key>
+                <column name="MEMBREID">
+                </column>
+              </key>
+              <one-to-many class="ca.qc.collegeahuntsic.weblab6.dto.CategorieDTO"/>
+         </set>
+         <set name="favoris"
+              cascade="all">
+              <key>
+                <column name="MEMBREID">
+                </column>
+              </key>
+              <one-to-many class="ca.qc.collegeahuntsic.weblab6.dto.FavoriDTO"/>
+         </set>
+         <set name="marchands"
+              cascade="all">
+              <key>
+                <column name="MEMBREID">
+                </column>
+              </key>
+              <one-to-many class="ca.qc.collegeahuntsic.weblab6.dto.MarchandDTO"/>
+         </set>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,52 @@
+<?xml version="1.0"
+      encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+          "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="ca.qc.collegeahuntsic.weblab6.dto.MarchandDTO"
+         table="MARCHAND">
+         <id name="idMarchand"
+             type="string">
+             <column name="IDMARCHAND">
+             </column>
+             <generator class="sequence">
+                        <param name="sequence">SEQ_ID_MARCHAND</param>
+             </generator>
+         </id>
+
+         <property name="name"
+                   type="string"
+                   length="100">
+                   <column name="NAME">
+                   </column>
+         </property>
+
+         <property name="logoURI"
+                   type="string"
+                   length="100">
+                   <column name="LOGOURI">
+                   </column>
+         </property>
+         
+          <many-to-one name="membreDTO"
+                      class="ca.qc.collegeahuntsic.weblab6.dto.MembreDTO"
+                      not-null="true">
+                      <column name="MEMBREID">
+                      </column>
+         </many-to-one>
+         
+         <set name="produits"
+              cascade="all">
+              <key>
+                <column name="MARCHANDID">
+                </column>
+              </key>
+              <one-to-many class="ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO"/>
+         </set>
+         
+         
+  </class>
+</hibernate-mapping>

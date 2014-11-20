@@ -1,0 +1,262 @@
+
+package ca.qc.collegeahuntsic.weblab6.dao.implementations;
+
+import java.io.Serializable;
+import java.util.List;
+import ca.qc.collegeahuntsic.weblab6.dao.interfaces.IDAO;
+import ca.qc.collegeahuntsic.weblab6.dto.DTO;
+import ca.qc.collegeahuntsic.weblab6.exception.dao.DAOException;
+import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
+
+public class DAO implements IDAO {
+    private Class<?> dtoClass;
+
+    /**
+     * Crée un DAO.
+     * 
+     * @param dtoClass La classe de DTO à utiliser
+     * @throws DAOException S'il y a une erreur
+     */
+    protected DAO(Class<?> dtoClass) throws DAOException {
+        super();
+        if(dtoClass == null) {
+            throw new DAOException(new InvalidDTOClassException("La classe de DTO ne peut être null"));
+        }
+        setDtoClass(dtoClass);
+    }
+
+    // Region Getters and Setters
+    /**
+     * Getter de la variable d'instance <code>this.dtoClass</code>.
+     *
+     * @return La variable d'instance <code>this.dtoClass</code>
+     */
+    protected Class<?> getDtoClass() {
+        return this.dtoClass;
+    }
+
+    /**
+     * Setter de la variable d'instance <code>this.dtoClass</code>.
+     *
+     * @param dtoClass La valeur à utiliser pour la variable d'instance <code>this.dtoClass</code>
+     */
+    private void setDtoClass(Class<?> dtoClass) {
+        this.dtoClass = dtoClass;
+    }
+
+    // EndRegion Getters and Setters
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void add(Session session,
+        DTO dto) throws DAOException {
+        if(session == null) {
+            throw new DAOException(new InvalidHibernateSessionException("La session Hibernate ne peut être null"));
+        }
+        if(dto == null) {
+            throw new DAOException(new InvalidDTOException("Le DTO ne peut être null"));
+        }
+        try {
+            session.save(dto);
+        } catch(HibernateException hibernateException) {
+            throw new DAOException(hibernateException);
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public DTO get(Session session,
+        Serializable primaryKey) throws DAOException {
+        if(session == null) {
+            throw new DAOException(new InvalidHibernateSessionException("La session Hibernate ne peut être null"));
+        }
+        if(primaryKey == null) {
+            throw new DAOException(new InvalidPrimaryKeyException("La clef primaire ne peut être null"));
+        }
+        try {
+            final DTO dto = (DTO) session.get(getDtoClass(),
+                primaryKey);
+            return dto;
+        } catch(HibernateException hibernateException) {
+            throw new DAOException(hibernateException);
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void update(Session session,
+        DTO dto) throws DAOException {
+        if(session == null) {
+            throw new DAOException(new InvalidHibernateSessionException("La session Hibernate ne peut être null"));
+        }
+        if(dto == null) {
+            throw new DAOException(new InvalidDTOException("Le DTO ne peut être null"));
+        }
+        try {
+            session.update(dto);
+        } catch(HibernateException hibernateException) {
+            throw new DAOException(hibernateException);
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void save(Session session,
+        DTO dto) throws DAOException {
+        if(session == null) {
+            throw new DAOException(new InvalidHibernateSessionException("La session Hibernate ne peut être null"));
+        }
+        if(dto == null) {
+            throw new DAOException(new InvalidDTOException("Le DTO ne peut être null"));
+        }
+        try {
+            session.saveOrUpdate(dto);
+        } catch(HibernateException hibernateException) {
+            throw new DAOException(hibernateException);
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public void delete(Session session,
+        DTO dto) throws DAOException {
+        if(session == null) {
+            throw new DAOException(new InvalidHibernateSessionException("La session Hibernate ne peut être null"));
+        }
+        if(dto == null) {
+            throw new DAOException(new InvalidDTOException("Le DTO ne peut être null"));
+        }
+        try {
+            session.delete(dto);
+        } catch(HibernateException hibernateException) {
+            throw new DAOException(hibernateException);
+        }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public List<?> getAll(Session session,
+        String sortByPropertyName) throws DAOException {
+        if(session == null) {
+            throw new DAOException(new InvalidHibernateSessionException("La session Hibernate ne peut être null"));
+        }
+        if(sortByPropertyName == null) {
+            throw new DAOException(new InvalidSortByPropertyException("La propriété utilisée pour classer ne peut être null"));
+        }
+        try {
+            List<?> results = Collections.EMPTY_LIST;
+            final Criteria criteria = session.createCriteria(getDtoClass());
+            criteria.addOrder(Order.asc(sortByPropertyName));
+            results = criteria.list();
+            return results;
+        } catch(HibernateException hibernateException) {
+            throw new DAOException(hibernateException);
+        }
+    }
+
+    /**
+     * Trouve les DTOs à partir d'une propriété <code>propertyName</code> étant égale à une valeur <code>value</code>. La liste est classée par
+     * ordre croissant sur <code>sortByPropertyName</code>. Si aucun DTO n'est trouvé, une {@link List} vide est retournée.
+     * 
+     * @param session La session Hibernate à utiliser
+     * @param propertyName Le nom de la propriété à utiliser
+     * @param value La valeur à trouver
+     * @param sortByPropertyName The nom de la propriété à utiliser pour classer
+     * @return La liste des DTOs correspondants ; une liste vide sinon
+     * @throws DAOException S'il y a une erreur au niveau de la couche DAO
+     */
+    protected List<?> find(Session session,
+        String propertyName,
+        Object value,
+        String sortByPropertyName) throws DAOException {
+        if(session == null) {
+            throw new DAOException(new InvalidHibernateSessionException("La session Hibernate ne peut être null"));
+        }
+        if(propertyName == null) {
+            throw new DAOException(new InvalidCriterionException("La propriété à utiliser ne peut être null"));
+        }
+        if(value == null) {
+            throw new DAOException(new InvalidCriterionValueException("La valeur à trouver ne peut être null"));
+        }
+        if(sortByPropertyName == null) {
+            throw new DAOException(new InvalidSortByPropertyException("La propriété utilisée pour classer ne peut être null"));
+        }
+        try {
+            List<?> results = Collections.EMPTY_LIST;
+            if(value instanceof Date) {
+                results = findByDate(session,
+                    propertyName,
+                    (Date) value,
+                    sortByPropertyName);
+
+            } else {
+                final Criteria criteria = session.createCriteria(getDtoClass());
+                criteria.add(Restrictions.eq(propertyName,
+                    value));
+                criteria.addOrder(Order.asc(sortByPropertyName));
+                results = criteria.list();
+            }
+            return results;
+        } catch(HibernateException hibernateException) {
+            throw new DAOException(hibernateException);
+        }
+    }
+
+    /**
+     * Trouve les DTOs à partir d'une propriété <code>propertyName</code> étant comprise entre la veille et le lendemain de la date
+     * <code>date</code>. La liste est classée par ordre croissant sur <code>sortByPropertyName</code>. Si aucun DTO n'est trouvé, une
+     * {@link List} vide est retournée.
+     * 
+     * @param session La session Hibernate à utiliser
+     * @param propertyName Le nom de la propriété à utiliser
+     * @param date La date à trouver
+     * @param sortByPropertyName The nom de la propriété à utiliser pour classer
+     * @return La liste des DTOs correspondants ; une liste vide sinon
+     * @throws DAOException S'il y a une erreur au niveau de la couche DAO
+     */
+    private List<?> findByDate(Session session,
+        String propertyName,
+        Date date,
+        String sortByPropertyName) throws DAOException {
+        if(session == null) {
+            throw new DAOException(new InvalidHibernateSessionException("La session Hibernate ne peut être null"));
+        }
+        if(propertyName == null) {
+            throw new DAOException(new InvalidCriterionException("La propriété à utiliser ne peut être null"));
+        }
+        if(date == null) {
+            throw new DAOException(new InvalidCriterionValueException("La date à trouver ne peut être null"));
+        }
+        if(sortByPropertyName == null) {
+            throw new DAOException(new InvalidSortByPropertyException("La propriété utilisée pour classer ne peut être null"));
+        }
+        try {
+            List<?> results = Collections.EMPTY_LIST;
+            final Criteria criteria = session.createCriteria(getDtoClass());
+            criteria.add(Restrictions.between(propertyName,
+                BibliothequeDate.getStartDate(date),
+                BibliothequeDate.getEndDate(date)));
+            criteria.addOrder(Order.asc(sortByPropertyName));
+            results = criteria.list();
+            return results;
+        } catch(HibernateException hibernateException) {
+            throw new DAOException(hibernateException);
+        }
+    }
+}

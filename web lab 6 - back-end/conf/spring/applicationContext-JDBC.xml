@@ -1,0 +1,39 @@
+﻿<?xml version="1.0"
+      encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC
+          "-//SPRING//DTD BEAN//EN"
+          "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+  <!-- ========== Data source ==================================================== -->
+  <!--
+  <bean name="dataSource"
+      class="org.springframework.jndi.JndiObjectFactoryBean">
+      <property name="jndiName">
+          
+      </property>
+  </bean>
+  -->
+  <bean name="dataSource"
+        class="com.mchange.v2.c3p0.ComboPooledDataSource"
+        destroy-method="close">
+        <property name="driverClass">
+                  <value>oracle.jdbc.driver.OracleDriver</value>
+        </property>
+        <property name="jdbcUrl">
+                  <value>jdbc:oracle:thin:@localhost:1521:xe</value>
+        </property>
+        <property name="properties">
+                  <props>
+                    <prop key="c3p0.acquire_increment">1</prop>
+                    <prop key="c3p0.idle_test_period">10</prop>
+                    <prop key="c3p0.max_size">1</prop>
+                    <prop key="c3p0.max_statements">0</prop>
+                    <prop key="c3p0.min_size">1</prop>
+                    <prop key="user">scott</prop>
+                    <prop key="password">tiger</prop>
+                  </props>
+        </property>
+  </bean>
+</beans>
