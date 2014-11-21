@@ -4,3 +4,5 @@
 /applicationContext-JDBC.xml
 /applicationContext-Service.xml
 /ca/
+*.class
+/classes/
