@@ -5,39 +5,9 @@
           "-//SPRING//DTD BEAN//EN"
           "http://www.springframework.org/dtd/spring-beans.dtd">
           
-<beans>
-    <!-- ========== Transaction manager ============================================ -->
-  <bean name="transactionManager"
-        class="org.springframework.orm.hibernate3.HibernateTransactionManager">
-        <property name="sessionFactory">
-                  <ref bean="sessionFactory"/>
-        </property>
-  </bean>
-
-  <!-- ========== Base transaction proxy ========================================= -->
-  <bean name="transactionProxy"
-        class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
-        abstract="true">
-        <property name="transactionManager">
-                  <ref bean="transactionManager"/>
-        </property>
-        <property name="transactionAttributes">
-                  <props>
-                    <prop key="insert*">PROPAGATION_REQUIRED</prop>
-                    <prop key="add*">PROPAGATION_REQUIRED</prop>
-                    <prop key="save*">PROPAGATION_REQUIRED</prop>
-                    <prop key="delete*">PROPAGATION_REQUIRED</prop>
-                    <prop key="update*">PROPAGATION_REQUIRED</prop>
-                    <prop key="create*">PROPAGATION_REQUIRED</prop>
-                    <prop key="initiate*">PROPAGATION_REQUIRED</prop>
-                    <prop key="confirm*">PROPAGATION_REQUIRED</prop>
-                    <prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
-                  </props>
-        </property>
-  </bean>
-  
+<beans>  
   <!-- ========== Session Factory ========================================= -->
-    <bean name="sessionFactory"
+  <bean name="sessionFactory"
         class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
         <property name="mappingResources">
                   <list>
@@ -76,5 +46,35 @@
         <property name="dataSource">
                   <ref bean="dataSource"/>
         </property>
-    </bean>
+  </bean>
+  
+  <!-- ========== Transaction manager ============================================ -->
+  <bean name="transactionManager"
+        class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory">
+                  <ref bean="sessionFactory"/>
+        </property>
+  </bean>
+
+  <!-- ========== Base transaction proxy ========================================= -->
+  <bean name="transactionProxy"
+        class="org.springframework.transaction.interceptor.TransactionProxyFactoryBean"
+        abstract="true">
+        <property name="transactionManager">
+                  <ref bean="transactionManager"/>
+        </property>
+        <property name="transactionAttributes">
+                  <props>
+                    <prop key="insert*">PROPAGATION_REQUIRED</prop>
+                    <prop key="add*">PROPAGATION_REQUIRED</prop>
+                    <prop key="save*">PROPAGATION_REQUIRED</prop>
+                    <prop key="delete*">PROPAGATION_REQUIRED</prop>
+                    <prop key="update*">PROPAGATION_REQUIRED</prop>
+                    <prop key="create*">PROPAGATION_REQUIRED</prop>
+                    <prop key="initiate*">PROPAGATION_REQUIRED</prop>
+                    <prop key="confirm*">PROPAGATION_REQUIRED</prop>
+                    <prop key="*">PROPAGATION_REQUIRED,readOnly</prop>
+                  </props>
+        </property>
+  </bean>
 </beans>

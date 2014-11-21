@@ -13,8 +13,6 @@ public class LigneVitrineDTO extends DTO {
 
     public static final String CATEGORIE_ID_COLUMN_NAME = "CategorieID";
 
-    public static final String IS_PRIVATE_COLUMN_NAME = "IsPrivate";
-
     private String idLigneVitrine;
 
     private ProduitDTO produitDTO;
@@ -22,8 +20,6 @@ public class LigneVitrineDTO extends DTO {
     private VitrineDTO vitrineDTO;
 
     private CategorieDTO categorieDTO;
-
-    private Boolean isPrivate;
 
     public LigneVitrineDTO() {
         super();
@@ -59,13 +55,5 @@ public class LigneVitrineDTO extends DTO {
 
     public void setCategorieDTO(CategorieDTO categorieDTO) {
         this.categorieDTO = categorieDTO;
-    }
-
-    public Boolean getIsPrivate() {
-        return this.isPrivate;
-    }
-
-    public void setIsPrivate(Boolean isPrivate) {
-        this.isPrivate = isPrivate;
     }
 }

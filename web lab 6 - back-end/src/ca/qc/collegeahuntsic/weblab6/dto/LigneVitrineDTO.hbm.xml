@@ -8,7 +8,7 @@
 <hibernate-mapping>
   <class name="ca.qc.collegeahuntsic.weblab6.dto.LigneVitrineDTO"
          table="LIGNEVITRINE">
-         <id name="idLivreVitrine"
+         <id name="idLigneVitrine"
              type="string">
              <column name="IDLIGNEVITRINE">
              </column>
@@ -16,12 +16,6 @@
                         <param name="sequence">SEQ_ID_LIGNE_VITRINE</param>
              </generator>
          </id>
-
-         <property name="isPrivate"
-                   type="boolean">
-                   <column name="ISPRIVATE">
-                   </column>
-         </property>
          
          <many-to-one name="produitDTO"
                       class="ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO"

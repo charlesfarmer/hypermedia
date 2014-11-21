@@ -8,7 +8,7 @@ public class ProduitDTO extends DTO {
 
     private static final long serialVersionUID = 1L;
 
-    public static final String ID_PRODUIT_COLUMN_NAME = "ProduitID";
+    public static final String ID_PRODUIT_COLUMN_NAME = "IDProduit";
 
     public static final String MARCHAND_ID_COLUMN_NAME = "MarchandID";
 
@@ -18,7 +18,7 @@ public class ProduitDTO extends DTO {
 
     public static final String PRICE_COLUMN_NAME = "Price";
 
-    private String produitId;
+    private String idProduit;
 
     private MarchandDTO marchandDTO;
 
@@ -34,14 +34,6 @@ public class ProduitDTO extends DTO {
 
     public ProduitDTO() {
         super();
-    }
-
-    public String getProduitId() {
-        return this.produitId;
-    }
-
-    public void setProduitId(String produitId) {
-        this.produitId = produitId;
     }
 
     public MarchandDTO getMarchandDTO() {
@@ -90,5 +82,13 @@ public class ProduitDTO extends DTO {
 
     public void setFavoris(Set<FavoriDTO> favoris) {
         this.favoris = favoris;
+    }
+
+    public String getIdProduit() {
+        return this.idProduit;
+    }
+
+    public void setIdProduit(String idProduit) {
+        this.idProduit = idProduit;
     }
 }

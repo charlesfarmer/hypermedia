@@ -56,12 +56,12 @@ public class VitrineDTO extends DTO {
         this.dateAdded = dateAdded;
     }
 
-    public MembreDTO getMembre() {
+    public MembreDTO getMembreDTO() {
         return this.membreDTO;
     }
 
-    public void setMembre(MembreDTO membre) {
-        this.membreDTO = membre;
+    public void setMembreDTO(MembreDTO membreDTO) {
+        this.membreDTO = membreDTO;
     }
 
     public Set<LigneVitrineDTO> getLigneVitrines() {
