@@ -2,7 +2,7 @@
 package ca.qc.collegeahuntsic.weblab6.service.interfaces;
 
 import java.util.List;
-import ca.qc.collegeahuntsic.weblab6.dto.CategorieDTO;
+import ca.qc.collegeahuntsic.weblab6.dto.FavoriDTO;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidDTOException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidHibernateSessionException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidPrimaryKeyException;
@@ -10,30 +10,30 @@ import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidSortByPropertyExceptio
 import ca.qc.collegeahuntsic.weblab6.exception.dao.ServiceException;
 import org.hibernate.Session;
 
-public interface ICategorieService extends IService {
+public interface IFavoriService extends IService {
 
-    List<CategorieDTO> getAllCategories(Session session,
+    List<FavoriDTO> getAllFavoris(Session session,
         String sortByPropertyName) throws InvalidHibernateSessionException,
         InvalidSortByPropertyException,
         ServiceException;
 
-    void deleteCategorie(Session session,
-        CategorieDTO categorieDTO) throws InvalidHibernateSessionException,
+    void deleteFavori(Session session,
+        FavoriDTO favoriDTO) throws InvalidHibernateSessionException,
         InvalidDTOException,
         ServiceException;
 
-    void updateCategorie(Session session,
-        CategorieDTO categorieDTO) throws InvalidHibernateSessionException,
+    void updateFavori(Session session,
+        FavoriDTO favoriDTO) throws InvalidHibernateSessionException,
         InvalidDTOException,
         ServiceException;
 
-    CategorieDTO getCategorie(Session session,
-        String idCategorie) throws InvalidHibernateSessionException,
+    FavoriDTO getFavori(Session session,
+        String idFavori) throws InvalidHibernateSessionException,
         InvalidPrimaryKeyException,
         ServiceException;
 
-    void addCategorie(Session session,
-        CategorieDTO categorieDTO) throws InvalidHibernateSessionException,
+    void addFavori(Session session,
+        FavoriDTO favoriDTO) throws InvalidHibernateSessionException,
         InvalidDTOException,
         ServiceException;
 }

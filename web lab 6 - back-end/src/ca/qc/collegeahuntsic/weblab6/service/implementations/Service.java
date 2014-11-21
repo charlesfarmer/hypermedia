@@ -6,5 +6,5 @@ public class Service {
     protected Service() {
         super();
     }
-    // AU CAS OÙ
+
 }
