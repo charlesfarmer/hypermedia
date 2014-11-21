@@ -2,10 +2,20 @@
 package ca.qc.collegeahuntsic.weblab6.dao.implementations;
 
 import java.io.Serializable;
+import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 import ca.qc.collegeahuntsic.weblab6.dao.interfaces.IDAO;
 import ca.qc.collegeahuntsic.weblab6.dto.DTO;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.DAOException;
+import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidCriterionException;
+import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidCriterionValueException;
+import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidDTOClassException;
+import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidDTOException;
+import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidHibernateSessionException;
+import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidPrimaryKeyException;
+import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidSortByPropertyException;
+import ca.qc.collegeahuntsic.weblab6.utils.DateUtils;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -250,8 +260,8 @@ public class DAO implements IDAO {
             List<?> results = Collections.EMPTY_LIST;
             final Criteria criteria = session.createCriteria(getDtoClass());
             criteria.add(Restrictions.between(propertyName,
-                BibliothequeDate.getStartDate(date),
-                BibliothequeDate.getEndDate(date)));
+                DateUtils.getStartDate(date),
+                DateUtils.getEndDate(date)));
             criteria.addOrder(Order.asc(sortByPropertyName));
             results = criteria.list();
             return results;
