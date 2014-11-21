@@ -5,48 +5,73 @@
           "-//SPRING//DTD BEAN//EN"
           "http://www.springframework.org/dtd/spring-beans.dtd">
 
-<!--
-   - Application context
-   -
-   - Author: Gilles Benichou
--->
 <beans>
-  <bean name="livreDAO"
+  <bean name="categorieDAO"
         parent="transactionProxy">
         <property name="target">
-                  <bean class="ca.qc.collegeahuntsic.bibliotheque.dao.implementations.LivreDAO">
+                  <bean class="ca.qc.collegeahuntsic.weblab6.dao.implementations.CategorieDAO">
                         <constructor-arg>
-                          <value>ca.qc.collegeahuntsic.bibliotheque.dto.LivreDTO</value>
+                          <value>ca.qc.collegeahuntsic.weblab6.dto.CategorieDTO</value>
                         </constructor-arg>
                   </bean>
         </property>
   </bean>
-  <bean name="membreDAO"
+    <bean name="favoriDAO"
         parent="transactionProxy">
         <property name="target">
-                  <bean class="ca.qc.collegeahuntsic.bibliotheque.dao.implementations.MembreDAO">
+                  <bean class="ca.qc.collegeahuntsic.weblab6.dao.implementations.FavoriDAO">
                         <constructor-arg>
-                          <value>ca.qc.collegeahuntsic.bibliotheque.dto.MembreDTO</value>
+                          <value>ca.qc.collegeahuntsic.weblab6.dto.FavoriDTO</value>
                         </constructor-arg>
                   </bean>
         </property>
   </bean>
-  <bean name="pretDAO"
+    <bean name="ligneVitrineDAO"
         parent="transactionProxy">
         <property name="target">
-                  <bean class="ca.qc.collegeahuntsic.bibliotheque.dao.implementations.PretDAO">
+                  <bean class="ca.qc.collegeahuntsic.weblab6.dao.implementations.LigneVitrineDAO">
                         <constructor-arg>
-                          <value>ca.qc.collegeahuntsic.bibliotheque.dto.PretDTO</value>
+                          <value>ca.qc.collegeahuntsic.weblab6.dto.LigneVitrineDTO</value>
                         </constructor-arg>
                   </bean>
         </property>
   </bean>
-  <bean name="reservationDAO"
+    <bean name="marchandDAO"
         parent="transactionProxy">
         <property name="target">
-                  <bean class="ca.qc.collegeahuntsic.bibliotheque.dao.implementations.ReservationDAO">
+                  <bean class="ca.qc.collegeahuntsic.weblab6.dao.implementations.MarchandDAO">
                         <constructor-arg>
-                          <value>ca.qc.collegeahuntsic.bibliotheque.dto.ReservationDTO</value>
+                          <value>ca.qc.collegeahuntsic.weblab6.dto.MarchandDTO</value>
+                        </constructor-arg>
+                  </bean>
+        </property>
+  </bean>
+    <bean name="membreDAO"
+        parent="transactionProxy">
+        <property name="target">
+                  <bean class="ca.qc.collegeahuntsic.weblab6.dao.implementations.MembreDAO">
+                        <constructor-arg>
+                          <value>ca.qc.collegeahuntsic.weblab6.dto.MembreDTO</value>
+                        </constructor-arg>
+                  </bean>
+        </property>
+  </bean>
+    <bean name="produitDAO"
+        parent="transactionProxy">
+        <property name="target">
+                  <bean class="ca.qc.collegeahuntsic.weblab6.dao.implementations.ProduitDAO">
+                        <constructor-arg>
+                          <value>ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO</value>
+                        </constructor-arg>
+                  </bean>
+        </property>
+  </bean>
+    <bean name="vitrineDAO"
+        parent="transactionProxy">
+        <property name="target">
+                  <bean class="ca.qc.collegeahuntsic.weblab6.dao.implementations.VitrineDAO">
+                        <constructor-arg>
+                          <value>ca.qc.collegeahuntsic.weblab6.dto.VitrineDTO</value>
                         </constructor-arg>
                   </bean>
         </property>

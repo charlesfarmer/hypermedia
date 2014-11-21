@@ -35,16 +35,8 @@
                   </props>
         </property>
   </bean>
-
-  <!-- ========== Trace interceptor ============================================== -->
-  <bean name="traceInterceptor"
-        class="org.springframework.aop.interceptor.SimpleTraceInterceptor">
-  </bean>
-
-  <!-- ========== Performance monitor interceptor ================================ -->
-  <bean name="performanceMonitorInterceptor"
-        class="org.springframework.aop.interceptor.PerformanceMonitorInterceptor">
-  </bean>
+  
+  <!-- ========== Session Factory ========================================= -->
     <bean name="sessionFactory"
         class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
         <property name="mappingResources">
