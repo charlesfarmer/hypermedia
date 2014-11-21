@@ -85,3 +85,8 @@ create table favori (
   constraint fk_favori_produit  foreign key (ProduitID) references produit(IDProduit) on delete cascade,
   constraint fk_favori_membre   foreign key (MembreID)  references membre(IDMembre)   on delete cascade
 );
+
+insert into membre(IDMembre, Username, Password, Email) values (SEQ_ID_MEMBRE.nextval, "Roger", "Rabbit", "rr@acme.co");
+insert into membre(IDMembre, Username, Password, Email) values (SEQ_ID_MEMBRE.nextval, "Jessica", "Rabbit", "jr@acme.co");
+insert into marchand(IDMarchand, MembreID, Name, LogoURI) values (SEQ_ID_MARCHAND.nextval, 1, "ACME", "img/acme.jpg");
+insert into produit(IDProduit, MarchandID, Title, URL, Price) values (SEQ_ID_PRODUIT.nextval, 1, "Un beau marteau", "img/marteau.jpg", 99.99);

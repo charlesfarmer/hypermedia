@@ -1,0 +1,79 @@
+<?xml version="1.0"
+      encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC
+          "-//SPRING//DTD BEAN//EN"
+          "http://www.springframework.org/dtd/spring-beans.dtd">
+
+<beans>
+  <bean name="categorieService"
+        parent="transactionProxy">
+        <property name="target">
+                  <bean class="ca.qc.collegeahuntsic.weblab6.service.implementations.CategorieService">
+                        <constructor-arg>
+                          <ref bean="categorieDAO"/>
+                        </constructor-arg>
+                  </bean>
+        </property>
+  </bean>
+  <bean name="favoriService"
+        parent="transactionProxy">
+        <property name="target">
+                  <bean class="ca.qc.collegeahuntsic.weblab6.service.implementations.FavoriService">
+                        <constructor-arg>
+                          <ref bean="favoriDAO"/>
+                        </constructor-arg>
+                  </bean>
+        </property>
+  </bean>
+  <bean name="ligneVitrineService"
+        parent="transactionProxy">
+        <property name="target">
+                  <bean class="ca.qc.collegeahuntsic.weblab6.service.implementations.LigneVitrineService">
+                        <constructor-arg>
+                          <ref bean="ligneVitrineDAO"/>
+                        </constructor-arg>
+                  </bean>
+        </property>
+  </bean>
+  <bean name="marchandService"
+        parent="transactionProxy">
+        <property name="target">
+                  <bean class="ca.qc.collegeahuntsic.weblab6.service.implementations.MarchandService">
+                        <constructor-arg>
+                          <ref bean="marchandDAO"/>
+                        </constructor-arg>
+                  </bean>
+        </property>
+  </bean>
+  <bean name="membreService"
+        parent="transactionProxy">
+        <property name="target">
+                  <bean class="ca.qc.collegeahuntsic.weblab6.service.implementations.MembreService">
+                        <constructor-arg>
+                          <ref bean="membreDAO"/>
+                        </constructor-arg>
+                  </bean>
+        </property>
+  </bean>
+  <bean name="produitService"
+        parent="transactionProxy">
+        <property name="target">
+                  <bean class="ca.qc.collegeahuntsic.weblab6.service.implementations.ProduitService">
+                        <constructor-arg>
+                          <ref bean="produitDAO"/>
+                        </constructor-arg>
+                  </bean>
+        </property>
+  </bean>
+  <bean name="vitrineService"
+        parent="transactionProxy">
+        <property name="target">
+                  <bean class="ca.qc.collegeahuntsic.weblab6.service.implementations.VitrineService">
+                        <constructor-arg>
+                          <ref bean="vitrineDAO"/>
+                        </constructor-arg>
+                  </bean>
+        </property>
+  </bean>
+</beans>

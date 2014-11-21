@@ -1,9 +1,4 @@
-/applicationContext-DAO.xml
-/applicationContext-DTO.xml
-/applicationContext-Facade.xml
-/applicationContext-JDBC.xml
-/applicationContext-Service.xml
+/applicationContext.xml
+/log4j.properties
+/weblab6.sql
 /ca/
-*.class
-/classes/
-.gitignore

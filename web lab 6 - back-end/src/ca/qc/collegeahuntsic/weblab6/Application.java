@@ -9,7 +9,7 @@ import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidDTOException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidHibernateSessionException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidPrimaryKeyException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.ServiceException;
-import ca.qc.collegeahuntsic.weblab6.utils.ApplicationCreateur;
+import ca.qc.collegeahuntsic.weblab6.util.ApplicationCreateur;
 
 public class Application {
     public static void main(String[] args) {
