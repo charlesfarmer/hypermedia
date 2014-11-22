@@ -3,6 +3,7 @@ package ca.qc.collegeahuntsic.weblab6.service.interfaces;
 
 import java.util.List;
 import ca.qc.collegeahuntsic.weblab6.dto.FavoriDTO;
+import ca.qc.collegeahuntsic.weblab6.exception.dao.FavoriAlreadyAddedException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidCriterionException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidCriterionValueException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidDTOException;
@@ -43,5 +44,11 @@ public interface IFavoriService extends IService {
         int topCombien) throws InvalidHibernateSessionException,
         InvalidCriterionException,
         InvalidCriterionValueException,
+        ServiceException;
+
+    void ajouterFavori(Session session,
+        FavoriDTO favoriDTO) throws InvalidHibernateSessionException,
+        InvalidDTOException,
+        FavoriAlreadyAddedException,
         ServiceException;
 }
