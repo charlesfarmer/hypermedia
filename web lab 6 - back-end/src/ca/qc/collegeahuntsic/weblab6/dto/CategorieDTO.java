@@ -1,4 +1,3 @@
-
 package ca.qc.collegeahuntsic.weblab6.dto;
 
 import java.util.Collections;
@@ -6,56 +5,56 @@ import java.util.Set;
 
 public class CategorieDTO extends DTO {
 
-    private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L;
 
-    public static final String ID_CATEGORIE_COLUMN_NAME = "IDCategorie";
+	public static final String ID_CATEGORIE_COLUMN_NAME = "IDCategorie";
 
-    public static final String MEMBRE_ID_COLUMN_NAME = "MembreID";
+	public static final String MEMBRE_ID_COLUMN_NAME = "MembreID";
 
-    public static final String NAME_COLUMN_NAME = "Name";
+	public static final String NAME_COLUMN_NAME = "Name";
 
-    private String idCategorie;
+	private String idCategorie;
 
-    private MembreDTO membreDTO;
+	private MembreDTO membreDTO;
 
-    private String name;
+	private String name;
 
-    private Set<LigneVitrineDTO> ligneVitrines;
+	private Set<LigneVitrineDTO> ligneVitrines;
 
-    public CategorieDTO() {
-        super();
-        setLigneVitrines(Collections.EMPTY_SET);
-    }
+	public CategorieDTO() {
+		super();
+		setLigneVitrines(Collections.<LigneVitrineDTO> emptySet());
+	}
 
-    public String getIdCategorie() {
-        return this.idCategorie;
-    }
+	public String getIdCategorie() {
+		return this.idCategorie;
+	}
 
-    public void setIdCategorie(String idCategorie) {
-        this.idCategorie = idCategorie;
-    }
+	public void setIdCategorie(String idCategorie) {
+		this.idCategorie = idCategorie;
+	}
 
-    public String getName() {
-        return this.name;
-    }
+	public String getName() {
+		return this.name;
+	}
 
-    public void setName(String name) {
-        this.name = name;
-    }
+	public void setName(String name) {
+		this.name = name;
+	}
 
-    public Set<LigneVitrineDTO> getLigneVitrines() {
-        return this.ligneVitrines;
-    }
+	public Set<LigneVitrineDTO> getLigneVitrines() {
+		return this.ligneVitrines;
+	}
 
-    public void setLigneVitrines(Set<LigneVitrineDTO> ligneVitrines) {
-        this.ligneVitrines = ligneVitrines;
-    }
+	public void setLigneVitrines(Set<LigneVitrineDTO> ligneVitrines) {
+		this.ligneVitrines = ligneVitrines;
+	}
 
-    public MembreDTO getMembreDTO() {
-        return this.membreDTO;
-    }
+	public MembreDTO getMembreDTO() {
+		return this.membreDTO;
+	}
 
-    public void setMembreDTO(MembreDTO membreDTO) {
-        this.membreDTO = membreDTO;
-    }
+	public void setMembreDTO(MembreDTO membreDTO) {
+		this.membreDTO = membreDTO;
+	}
 }
