@@ -1,7 +1,7 @@
 drop sequence seq_id_membre;
 drop sequence seq_id_produit;
 drop sequence seq_id_vitrine;
-drop sequence seq_id_lignevitrine;
+drop sequence seq_id_ligne_vitrine;
 drop sequence seq_id_categorie;
 drop sequence seq_id_marchand;
 drop sequence seq_id_favori;
@@ -17,7 +17,7 @@ drop table favori       cascade constraints purge;
 create sequence seq_id_membre       start with 1 increment by 1;
 create sequence seq_id_produit      start with 1 increment by 1;
 create sequence seq_id_vitrine      start with 1 increment by 1;
-create sequence seq_id_lignevitrine start with 1 increment by 1;
+create sequence seq_id_ligne_vitrine start with 1 increment by 1;
 create sequence seq_id_categorie    start with 1 increment by 1;
 create sequence seq_id_marchand     start with 1 increment by 1;
 create sequence seq_id_favori       start with 1 increment by 1;
@@ -86,11 +86,14 @@ create table favori (
   constraint fk_favori_membre   foreign key (MembreID)  references membre(IDMembre)   on delete cascade
 );
 
-insert into membre(IDMembre, Username, Password, Email) values (SEQ_ID_MEMBRE.nextval, "Roger", "Rabbit", "rr@acme.co");
-insert into membre(IDMembre, Username, Password, Email) values (SEQ_ID_MEMBRE.nextval, "Jessica", "Rabbit", "jr@acme.co");
-insert into marchand(IDMarchand, MembreID, Name, LogoURI) values (SEQ_ID_MARCHAND.nextval, 1, "ACME", "img/acme.jpg");
-insert into produit(IDProduit, MarchandID, Title, URL, Price) values (SEQ_ID_PRODUIT.nextval, 1, "Un beau marteau", "img/marteau.jpg", 99.99);
-insert into vitrine(IDVitrine, MembreID, Title, DateAdded) values (SEQ_ID_VITRINE.nextval, 1, "Ma premiere vitrine", null);
-insert into categorie(IDCategorie, MembreID, Name) values (SEQ_ID_CATEGORIE.nextval, 1, "Acme co.");
+insert into membre(IDMembre, Username, Password, Email) values (SEQ_ID_MEMBRE.nextval, 'Roger', 'Rabbit', 'rr@acme.co');
+insert into membre(IDMembre, Username, Password, Email) values (SEQ_ID_MEMBRE.nextval, 'Jessica', 'Rabbit', 'jr@acme.co');
+insert into marchand(IDMarchand, MembreID, Name, LogoURI) values (SEQ_ID_MARCHAND.nextval, 1, 'ACME', 'img/acme.jpg');
+insert into produit(IDProduit, MarchandID, Title, URL, Price) values (SEQ_ID_PRODUIT.nextval, 1, 'Un beau marteau', 'img/marteau.jpg', 99.99);
+insert into produit(IDProduit, MarchandID, Title, URL, Price) values (SEQ_ID_PRODUIT.nextval, 1, 'Une ceinture', 'img/marteau.jpg', 6.99);
+insert into vitrine(IDVitrine, MembreID, Title, DateAdded) values (SEQ_ID_VITRINE.nextval, 1, 'Ma premiere vitrine', null);
+insert into categorie(IDCategorie, MembreID, Name) values (SEQ_ID_CATEGORIE.nextval, 1, 'Acme co.');
 insert into lignevitrine(IDLigneVitrine, ProduitID, VitrineID, CategorieID) values (SEQ_ID_LIGNE_VITRINE.nextval, 1, 1, 1);
 insert into favori(IDFavori, ProduitID, MembreID) values (SEQ_ID_FAVORI.nextval, 1, 2);
+insert into favori(IDFavori, ProduitID, MembreID) values (SEQ_ID_FAVORI.nextval, 2, 2);
+insert into favori(IDFavori, ProduitID, MembreID) values (SEQ_ID_FAVORI.nextval, 2, 2);

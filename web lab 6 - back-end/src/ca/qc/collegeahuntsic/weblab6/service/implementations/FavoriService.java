@@ -5,6 +5,8 @@ import java.util.List;
 import ca.qc.collegeahuntsic.weblab6.dao.interfaces.IFavoriDAO;
 import ca.qc.collegeahuntsic.weblab6.dto.FavoriDTO;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.DAOException;
+import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidCriterionException;
+import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidCriterionValueException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidDAOException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidDTOException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidHibernateSessionException;
@@ -97,6 +99,16 @@ public class FavoriService extends Service implements IFavoriService {
         } catch(DAOException daoException) {
             throw new ServiceException(daoException);
         }
+    }
+
+    @Override
+    public List<FavoriDTO> getTopFavoris(Session session,
+        int topCombien) throws InvalidHibernateSessionException,
+        InvalidCriterionException,
+        InvalidCriterionValueException,
+        ServiceException {
+        return getFavoriDAO().findTopFavoris(session,
+            topCombien);
     }
 
 }

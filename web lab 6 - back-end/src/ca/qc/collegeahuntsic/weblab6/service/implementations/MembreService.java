@@ -11,6 +11,7 @@ import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidHibernateSessionExcept
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidPrimaryKeyException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidSortByPropertyException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.ServiceException;
+import ca.qc.collegeahuntsic.weblab6.exception.dao.UsernameAlreadyTakenException;
 import ca.qc.collegeahuntsic.weblab6.service.interfaces.IMembreService;
 import org.hibernate.Session;
 
@@ -94,6 +95,25 @@ public class MembreService extends Service implements IMembreService {
         try {
             return (List<MembreDTO>) getMembreDAO().getAll(session,
                 sortByPropertyName);
+        } catch(DAOException daoException) {
+            throw new ServiceException(daoException);
+        }
+    }
+
+    @Override
+    public void inscrireMembre(Session session,
+        MembreDTO membreDTO) throws InvalidHibernateSessionException,
+        InvalidDTOException,
+        UsernameAlreadyTakenException,
+        ServiceException {
+        try {
+            List<MembreDTO> membres = getMembreDAO().findByUsername(session,
+                membreDTO.getUsername());
+            if(!membres.isEmpty()) {
+                throw new UsernameAlreadyTakenException();
+            }
+            addMembre(session,
+                membreDTO);
         } catch(DAOException daoException) {
             throw new ServiceException(daoException);
         }

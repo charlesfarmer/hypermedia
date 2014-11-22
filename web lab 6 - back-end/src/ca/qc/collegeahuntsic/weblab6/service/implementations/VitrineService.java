@@ -98,5 +98,4 @@ public class VitrineService extends Service implements IVitrineService {
             throw new ServiceException(daoException);
         }
     }
-
 }

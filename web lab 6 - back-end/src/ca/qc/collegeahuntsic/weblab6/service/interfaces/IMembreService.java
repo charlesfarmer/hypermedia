@@ -8,6 +8,7 @@ import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidHibernateSessionExcept
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidPrimaryKeyException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidSortByPropertyException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.ServiceException;
+import ca.qc.collegeahuntsic.weblab6.exception.dao.UsernameAlreadyTakenException;
 import org.hibernate.Session;
 
 public interface IMembreService extends IService {
@@ -35,6 +36,12 @@ public interface IMembreService extends IService {
     List<MembreDTO> getAllMembres(Session session,
         String sortByPropertyName) throws InvalidHibernateSessionException,
         InvalidSortByPropertyException,
+        ServiceException;
+
+    void inscrireMembre(Session session,
+        MembreDTO membreDTO) throws InvalidHibernateSessionException,
+        InvalidDTOException,
+        UsernameAlreadyTakenException,
         ServiceException;
 
 }

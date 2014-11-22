@@ -36,4 +36,5 @@ public interface IVitrineService extends IService {
         String idVitrine) throws InvalidHibernateSessionException,
         InvalidPrimaryKeyException,
         ServiceException;
+
 }

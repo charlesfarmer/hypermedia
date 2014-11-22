@@ -7,6 +7,7 @@ import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidDTOException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidHibernateSessionException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidPrimaryKeyException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidSortByPropertyException;
+import ca.qc.collegeahuntsic.weblab6.exception.dao.MarchandAlreadyAddedException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.ServiceException;
 import org.hibernate.Session;
 
@@ -35,5 +36,11 @@ public interface IMarchandService extends IService {
     List<MarchandDTO> getAllMarchands(Session session,
         String sortByPropertyName) throws InvalidHibernateSessionException,
         InvalidSortByPropertyException,
+        ServiceException;
+
+    void ajouterMarchand(Session session,
+        MarchandDTO marchandDTO) throws InvalidHibernateSessionException,
+        InvalidDTOException,
+        MarchandAlreadyAddedException,
         ServiceException;
 }
