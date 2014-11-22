@@ -1,14 +1,14 @@
 
-package ca.qc.collegeahuntsic.weblab6.exception.dao;
+package ca.qc.collegeahuntsic.weblab6.exception.service;
 
-public class VitrineAlreadyAddedException extends Exception {
+public class FavoriAlreadyAddedException extends Exception {
     private static final long serialVersionUID = 1L;
 
     /**
      * Constructs a new exception with null as its detail message. The cause is not initialized, and may subsequently be initialized by a call
      * to {@link java.lang.Throwable#initCause(java.lang.Throwable) Throwable.initCause(Throwable)}.
      */
-    public VitrineAlreadyAddedException() {
+    public FavoriAlreadyAddedException() {
         super();
     }
 
@@ -19,7 +19,7 @@ public class VitrineAlreadyAddedException extends Exception {
      * @param message The detail message. The detail message is saved for later retrieval by the
      *        {@link java.lang.Throwable#getMessage() Throwable.getMessage()} method
      */
-    public VitrineAlreadyAddedException(String message) {
+    public FavoriAlreadyAddedException(String message) {
         super(message);
     }
 
@@ -31,7 +31,7 @@ public class VitrineAlreadyAddedException extends Exception {
      * @param cause The cause (which is saved for later retrieval by the {@link java.lang.Throwable#getCause() Throwable.getCause()} method).
      *        A null value is permitted, and indicates that the cause is nonexistent or unknown
      */
-    public VitrineAlreadyAddedException(Throwable cause) {
+    public FavoriAlreadyAddedException(Throwable cause) {
         super(cause);
     }
 
@@ -43,7 +43,7 @@ public class VitrineAlreadyAddedException extends Exception {
      * @param cause The cause (which is saved for later retrieval by the {@link java.lang.Throwable#getCause() Throwable.getCause()} method).
      *        A null value is permitted, and indicates that the cause is nonexistent or unknown
      */
-    public VitrineAlreadyAddedException(String message,
+    public FavoriAlreadyAddedException(String message,
         Throwable cause) {
         super(message,
             cause);
@@ -58,7 +58,7 @@ public class VitrineAlreadyAddedException extends Exception {
      * @param enableSuppression Whether or not suppression is enabled or disabled
      * @param writableStackTrace Whether or not the stack trace should be writable
      */
-    public VitrineAlreadyAddedException(String message,
+    public FavoriAlreadyAddedException(String message,
         Throwable cause,
         boolean enableSuppression,
         boolean writableStackTrace) {

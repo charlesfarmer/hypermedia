@@ -1,14 +1,14 @@
 
-package ca.qc.collegeahuntsic.weblab6.exception.dao;
+package ca.qc.collegeahuntsic.weblab6.exception.dto;
 
-public class InvalidDTOClassException extends Exception {
+public class InvalidDTOException extends Exception {
     private static final long serialVersionUID = 1L;
 
     /**
      * Constructs a new exception with null as its detail message. The cause is not initialized, and may subsequently be initialized by a call
      * to {@link java.lang.Throwable#initCause(java.lang.Throwable) Throwable.initCause(Throwable)}.
      */
-    public InvalidDTOClassException() {
+    public InvalidDTOException() {
         super();
     }
 
@@ -19,7 +19,7 @@ public class InvalidDTOClassException extends Exception {
      * @param message The detail message. The detail message is saved for later retrieval by the
      *        {@link java.lang.Throwable#getMessage() Throwable.getMessage()} method
      */
-    public InvalidDTOClassException(String message) {
+    public InvalidDTOException(String message) {
         super(message);
     }
 
@@ -31,7 +31,7 @@ public class InvalidDTOClassException extends Exception {
      * @param cause The cause (which is saved for later retrieval by the {@link java.lang.Throwable#getCause() Throwable.getCause()} method).
      *        A null value is permitted, and indicates that the cause is nonexistent or unknown
      */
-    public InvalidDTOClassException(Throwable cause) {
+    public InvalidDTOException(Throwable cause) {
         super(cause);
     }
 
@@ -43,7 +43,7 @@ public class InvalidDTOClassException extends Exception {
      * @param cause The cause (which is saved for later retrieval by the {@link java.lang.Throwable#getCause() Throwable.getCause()} method).
      *        A null value is permitted, and indicates that the cause is nonexistent or unknown
      */
-    public InvalidDTOClassException(String message,
+    public InvalidDTOException(String message,
         Throwable cause) {
         super(message,
             cause);
@@ -58,7 +58,7 @@ public class InvalidDTOClassException extends Exception {
      * @param enableSuppression Whether or not suppression is enabled or disabled
      * @param writableStackTrace Whether or not the stack trace should be writable
      */
-    public InvalidDTOClassException(String message,
+    public InvalidDTOException(String message,
         Throwable cause,
         boolean enableSuppression,
         boolean writableStackTrace) {

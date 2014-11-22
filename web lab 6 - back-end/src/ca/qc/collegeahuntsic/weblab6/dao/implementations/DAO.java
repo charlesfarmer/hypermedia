@@ -5,17 +5,19 @@ import java.io.Serializable;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
+
 import ca.qc.collegeahuntsic.weblab6.dao.interfaces.IDAO;
 import ca.qc.collegeahuntsic.weblab6.dto.DTO;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.DAOException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidCriterionException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidCriterionValueException;
-import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidDTOClassException;
-import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidDTOException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidHibernateSessionException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidPrimaryKeyException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidSortByPropertyException;
+import ca.qc.collegeahuntsic.weblab6.exception.dto.InvalidDTOClassException;
+import ca.qc.collegeahuntsic.weblab6.exception.dto.InvalidDTOException;
 import ca.qc.collegeahuntsic.weblab6.util.DateUtils;
+
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;

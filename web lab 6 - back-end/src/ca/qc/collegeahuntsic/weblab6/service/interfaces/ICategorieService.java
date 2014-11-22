@@ -5,12 +5,12 @@ import java.util.List;
 import org.hibernate.Session;
 
 import ca.qc.collegeahuntsic.weblab6.dto.CategorieDTO;
-import ca.qc.collegeahuntsic.weblab6.exception.dao.CategorieAlreadyAddedException;
-import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidDTOException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidHibernateSessionException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidPrimaryKeyException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidSortByPropertyException;
-import ca.qc.collegeahuntsic.weblab6.exception.dao.ServiceException;
+import ca.qc.collegeahuntsic.weblab6.exception.dto.InvalidDTOException;
+import ca.qc.collegeahuntsic.weblab6.exception.service.CategorieAlreadyAddedException;
+import ca.qc.collegeahuntsic.weblab6.exception.service.ServiceException;
 
 public interface ICategorieService extends IService {
 

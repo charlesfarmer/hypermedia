@@ -2,13 +2,15 @@
 package ca.qc.collegeahuntsic.weblab6.service.interfaces;
 
 import java.util.List;
+
 import ca.qc.collegeahuntsic.weblab6.dto.MembreDTO;
-import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidDTOException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidHibernateSessionException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidPrimaryKeyException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidSortByPropertyException;
-import ca.qc.collegeahuntsic.weblab6.exception.dao.ServiceException;
-import ca.qc.collegeahuntsic.weblab6.exception.dao.UsernameAlreadyTakenException;
+import ca.qc.collegeahuntsic.weblab6.exception.dto.InvalidDTOException;
+import ca.qc.collegeahuntsic.weblab6.exception.service.ServiceException;
+import ca.qc.collegeahuntsic.weblab6.exception.service.UsernameAlreadyTakenException;
+
 import org.hibernate.Session;
 
 public interface IMembreService extends IService {

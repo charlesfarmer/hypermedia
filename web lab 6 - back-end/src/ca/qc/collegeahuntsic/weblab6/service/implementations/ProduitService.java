@@ -8,12 +8,12 @@ import ca.qc.collegeahuntsic.weblab6.dao.interfaces.IProduitDAO;
 import ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.DAOException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidDAOException;
-import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidDTOException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidHibernateSessionException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidPrimaryKeyException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidSortByPropertyException;
-import ca.qc.collegeahuntsic.weblab6.exception.dao.ProduitAlreadyAddedException;
-import ca.qc.collegeahuntsic.weblab6.exception.dao.ServiceException;
+import ca.qc.collegeahuntsic.weblab6.exception.dto.InvalidDTOException;
+import ca.qc.collegeahuntsic.weblab6.exception.service.ProduitAlreadyAddedException;
+import ca.qc.collegeahuntsic.weblab6.exception.service.ServiceException;
 import ca.qc.collegeahuntsic.weblab6.service.interfaces.IProduitService;
 
 public class ProduitService extends Service implements IProduitService {

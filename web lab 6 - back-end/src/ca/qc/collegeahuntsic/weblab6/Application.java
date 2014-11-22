@@ -2,13 +2,14 @@
 package ca.qc.collegeahuntsic.weblab6;
 
 import java.util.Set;
+
 import ca.qc.collegeahuntsic.weblab6.dto.MarchandDTO;
 import ca.qc.collegeahuntsic.weblab6.dto.MembreDTO;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.ApplicationException;
-import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidDTOException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidHibernateSessionException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidPrimaryKeyException;
-import ca.qc.collegeahuntsic.weblab6.exception.dao.ServiceException;
+import ca.qc.collegeahuntsic.weblab6.exception.dto.InvalidDTOException;
+import ca.qc.collegeahuntsic.weblab6.exception.service.ServiceException;
 import ca.qc.collegeahuntsic.weblab6.util.ApplicationCreateur;
 
 public class Application {

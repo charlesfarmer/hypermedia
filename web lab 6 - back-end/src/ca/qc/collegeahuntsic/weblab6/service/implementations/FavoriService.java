@@ -7,15 +7,15 @@ import org.hibernate.Session;
 import ca.qc.collegeahuntsic.weblab6.dao.interfaces.IFavoriDAO;
 import ca.qc.collegeahuntsic.weblab6.dto.FavoriDTO;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.DAOException;
-import ca.qc.collegeahuntsic.weblab6.exception.dao.FavoriAlreadyAddedException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidCriterionException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidCriterionValueException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidDAOException;
-import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidDTOException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidHibernateSessionException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidPrimaryKeyException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidSortByPropertyException;
-import ca.qc.collegeahuntsic.weblab6.exception.dao.ServiceException;
+import ca.qc.collegeahuntsic.weblab6.exception.dto.InvalidDTOException;
+import ca.qc.collegeahuntsic.weblab6.exception.service.FavoriAlreadyAddedException;
+import ca.qc.collegeahuntsic.weblab6.exception.service.ServiceException;
 import ca.qc.collegeahuntsic.weblab6.service.interfaces.IFavoriService;
 
 public class FavoriService extends Service implements IFavoriService {
