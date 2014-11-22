@@ -12,7 +12,7 @@ import ca.qc.collegeahuntsic.weblab6.exception.dto.InvalidDTOException;
 import ca.qc.collegeahuntsic.weblab6.exception.service.ServiceException;
 import ca.qc.collegeahuntsic.weblab6.util.ApplicationCreateur;
 
-public class Application {
+public class ApplicationTest {
     public static void main(String[] args) {
         try {
 
