@@ -34,7 +34,7 @@
           value="src"/> <!-- Source files -->
 
 <property name="web.dir"
-          value="webapp"/> <!-- Web application base folder -->
+          value="WebContent"/> <!-- Web application base folder -->
 
 <!-- Libraries, from .java, .class, .jar and .zip files -->
 <property name="lib.dir"
