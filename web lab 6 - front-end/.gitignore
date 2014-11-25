@@ -1,0 +1,5 @@
+/temp
+/application.war
+/charles.properties
+/classes/
+*.class

@@ -2,7 +2,7 @@
 // Auteur : Gilles Bénichou
 // Date de création : 2014-09-06
 
-package ca.qc.collegeahuntsic.weblab6.servlet.action;
+package ca.qc.collegeahuntsic.weblab6.servlet.startup;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
