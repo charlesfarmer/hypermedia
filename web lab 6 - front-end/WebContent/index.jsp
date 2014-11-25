@@ -17,10 +17,11 @@
     
     <%@ include file="/WEB-INF/jsp/layout/jsCommon.jsp" %>
     
+    <script type="text/javascript" src="js/viewLogin/viewLoginIndex.js"></script>
+    
   </head>
-
-  <body>
-  	<h1>Ca marche!</h1>
-    <p>Dis bonjour à papa</p>
+  <body onload="javascript:viewLoginIndex('view-login-index-form')">
+    <form id="view-login-index-form" method="post" action="viewLoginIndex.do">
+    </form>
   </body>
 </html>

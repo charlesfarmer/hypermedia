@@ -5,6 +5,26 @@
           "http://svn.apache.org/repos/asf/beehive/trunk/netui/external/struts/web-app_2_3.dtd">
           
 <web-app>
+
+  <display-name>web lab 6 - front-end</display-name>
+  
+  <context-param>
+    <param-name>contextConfigLocation</param-name>
+    <param-value>classpath*:applicationContext-JDBC.xml,
+                 classpath*:applicationContext-DTO.xml,
+                 classpath*:applicationContext-DAO.xml,
+                 classpath*:applicationContext-Service.xml
+    </param-value>
+  </context-param>
+  
+<!--                                            -->
+<!--            LISTENERS MAPPING               -->
+<!--                                            -->
+  
+  <listener>
+    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+  </listener>
+  
 <!--                                            -->
 <!--            SERVLET DEFINITIONS             -->
 <!--                                            -->
@@ -18,17 +38,33 @@
     <load-on-startup>1</load-on-startup>
   </servlet>
   
+  <servlet>
+    <servlet-name>viewLoginIndexServlet</servlet-name>
+    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.ViewLoginIndexServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>loginMembreServlet</servlet-name>
+    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.LoginMembreServlet</servlet-class>
+  </servlet>
+  
 <!--                                            -->
 <!--             SERVLET MAPPINGS               -->
 <!--                                            -->
   
+  <servlet-mapping>
+    <servlet-name>viewLoginIndexServlet</servlet-name>
+    <url-pattern>/viewLoginIndex.do</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>loginMembreServlet</servlet-name>
+    <url-pattern>/loginMembre.do</url-pattern>
+  </servlet-mapping>
+  
+<!--                                            -->
+<!--             SERVER SETTINGS                -->
+<!--                                            -->
 
-  
-<!--                                            -->
-<!--             SETTINGS SERVEUR               -->
-<!--                                            -->
-  <display-name>web lab 6 - front-end</display-name>
-  
   <session-config>
     <session-timeout>30</session-timeout>
   </session-config>
@@ -38,7 +74,7 @@
   </welcome-file-list>
   
 <!--                                            -->
-<!--            TAG LIB DEFINITION              -->
+<!--            TAG LIB DEFINITIONS             -->
 <!--                                            -->
   <taglib>
     <taglib-uri>application-config</taglib-uri>
@@ -47,20 +83,6 @@
   <taglib>
     <taglib-uri>application-message</taglib-uri>
     <taglib-location>/WEB-INF/tld/application-message.tld</taglib-location>
-  </taglib>
-  
-  <context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>classpath*:applicationContext-JDBC.xml,
-                 classpath*:applicationContext-DTO.xml,
-                 classpath*:applicationContext-DAO.xml,
-                 classpath*:applicationContext-Service.xml
-    </param-value>
-  </context-param>
-
-  <listener>
-    <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-  </listener>
-  
+  </taglib>  
 
 </web-app>
