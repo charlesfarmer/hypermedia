@@ -7,14 +7,14 @@
 
 <beans>
   <!-- ========== Data source ==================================================== -->
-  <!--
+
   <bean name="dataSource"
       class="org.springframework.jndi.JndiObjectFactoryBean">
       <property name="jndiName">
-          
+          <value>java:comp/env/jdbc/xe</value>
       </property>
   </bean>
-  -->
+  <!--
   <bean name="dataSource"
         class="com.mchange.v2.c3p0.ComboPooledDataSource"
         destroy-method="close">
@@ -36,4 +36,5 @@
                   </props>
         </property>
   </bean>
+    -->
 </beans>
