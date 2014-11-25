@@ -13,28 +13,8 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
-  <error-page>
-    <error-code>404</error-code>
-    <location>/viewErrorPage.do</location>
-  </error-page>
-  <error-page>
-    <error-code>405</error-code>
-    <location>/viewErrorPage.do</location>
-  </error-page>
-  <error-page>
-    <error-code>500</error-code>
-    <location>/viewErrorPage.do</location>
-  </error-page>
-  <error-page>
-    <error-code>505</error-code>
-    <location>/viewErrorPage.do</location>
-  </error-page>
   
-<!--                                            -->
-<!--             SETTINGS SERVEUR               -->
-<!--                                            -->
-
-<context-param>
+  <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath*:applicationContext-JDBC.xml,
                  classpath*:applicationContext-DTO.xml,
@@ -46,5 +26,19 @@
   <listener>
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
+  
+<!--                                            -->
+<!--            TAG LIB DEFINITION              -->
+<!--                                            -->
+  <jsp-config>
+    <taglib>
+      <taglib-uri>application-config</taglib-uri>
+      <taglib-location>/WEB-INF/tld/application-config.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>application-message</taglib-uri>
+      <taglib-location>/WEB-INF/tld/application-message.tld</taglib-location>
+    </taglib>
+  </jsp-config>
   
 </web-app>
