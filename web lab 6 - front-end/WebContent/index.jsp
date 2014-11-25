@@ -10,20 +10,19 @@
 
 <html>
   <head>
+  
     <base href="<config:webappProtocol/>://<config:webappServerName/>:<config:webappPortNumber/><config:webappPath/>/"/>
-
+    
     <title><message:say key="global.welcome.displayMessage"/></title>
-
-    <script type="text/javascript"
-            src="http://code.jquery.com/jquery-latest.min.js">
-    </script>
-    <script type="text/javascript"
-            src="js/bootstrap/bootstrap.min.js">
-    </script>
+    
+    <script type="text/javascript" src=""></script>
+    
+    <%@ include file="/WEB-INF/jsp/layout/jsCommon.jsp" %>
+    
   </head>
 
-  <body onload="javascript:viewTemplateIndex('view-template-index-form');">
-    <form id="view-template-index-form" method="post" action="viewTemplateIndex.do">
-    </form>
+  <body>
+  	<h1>Ca marche!</h1>
+    <p>Dis bonjour à papa</p>
   </body>
 </html>
