@@ -119,4 +119,14 @@ public class MembreService extends Service implements IMembreService {
         }
     }
 
+    @Override
+    public List<MembreDTO> findByUsername(Session session,
+        String username) throws ServiceException {
+        try {
+            return getMembreDAO().findByUsername(session,
+                username);
+        } catch(DAOException daoException) {
+            throw new ServiceException(daoException);
+        }
+    }
 }

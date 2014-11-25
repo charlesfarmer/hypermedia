@@ -2,7 +2,6 @@
 package ca.qc.collegeahuntsic.weblab6.service.interfaces;
 
 import java.util.List;
-
 import ca.qc.collegeahuntsic.weblab6.dto.MembreDTO;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidHibernateSessionException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidPrimaryKeyException;
@@ -10,7 +9,6 @@ import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidSortByPropertyExceptio
 import ca.qc.collegeahuntsic.weblab6.exception.dto.InvalidDTOException;
 import ca.qc.collegeahuntsic.weblab6.exception.service.ServiceException;
 import ca.qc.collegeahuntsic.weblab6.exception.service.UsernameAlreadyTakenException;
-
 import org.hibernate.Session;
 
 public interface IMembreService extends IService {
@@ -45,5 +43,8 @@ public interface IMembreService extends IService {
         InvalidDTOException,
         UsernameAlreadyTakenException,
         ServiceException;
+
+    List<MembreDTO> findByUsername(Session session,
+        String username) throws ServiceException;
 
 }

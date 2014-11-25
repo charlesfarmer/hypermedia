@@ -7,11 +7,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import ca.qc.collegeahuntsic.weblab6.dto.MembreDTO;
-import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidHibernateSessionException;
-import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidSortByPropertyException;
+import ca.qc.collegeahuntsic.weblab6.exception.dao.ApplicationException;
 import ca.qc.collegeahuntsic.weblab6.exception.service.ServiceException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hibernate.Session;
 
 public class LoginMembreServlet extends ApplicationServlet {
 
@@ -29,10 +29,13 @@ public class LoginMembreServlet extends ApplicationServlet {
         String u = request.getParameter(MembreDTO.USERNAME_COLUMN_NAME);
         String p = request.getParameter(MembreDTO.PASSWORD_COLUMN_NAME);
         try {
-            List<MembreDTO> list = getMembreService().getAllMembres(getSession(),
-                "");
-            request.setAttribute(LoginMembreServlet.LOGIN_MEMBRE_SUCCESSFUL,
-                Boolean.FALSE);
+            beginTransaction();
+            Session session = getSession();
+            LoginMembreServlet.LOGGER.warn(session.toString()
+                + "aaaaaaa");
+            List<MembreDTO> list = getMembreService().findByUsername(getSession(),
+                u);
+            commitTransaction();
             for(MembreDTO m : list) {
                 if(m.getUsername().equals(u)
                     && m.getPassword().equals(p)) {
@@ -41,16 +44,15 @@ public class LoginMembreServlet extends ApplicationServlet {
                         Boolean.TRUE);
                 }
             }
+
             request.getRequestDispatcher(LoginMembreServlet.FORWARD_RESOURCE).forward(request,
                 response);
         } catch(
-            InvalidHibernateSessionException
-            | InvalidSortByPropertyException
-            | ServiceException
+            ServiceException
             | ServletException
-            | IOException e) {
+            | IOException
+            | ApplicationException e) {
             LoginMembreServlet.LOGGER.fatal(e);
         }
     }
-
 }
