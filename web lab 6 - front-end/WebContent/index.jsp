@@ -15,8 +15,6 @@
     
     <title><message:say key="global.welcome.displayMessage"/></title>
     
-    <script type="text/javascript" src=""></script>
-    
     <%@ include file="/WEB-INF/jsp/layout/jsCommon.jsp" %>
     
   </head>

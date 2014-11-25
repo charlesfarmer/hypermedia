@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xmlns="http://java.sun.com/xml/ns/javaee" 
-         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
-         id="WebApp_ID" version="3.0">
-  
+
+<!DOCTYPE web-app PUBLIC
+          "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+          "http://svn.apache.org/repos/asf/beehive/trunk/netui/external/struts/web-app_2_3.dtd">
+          
+<web-app>
 <!--                                            -->
 <!--            SERVLET DEFINITIONS             -->
 <!--                                            -->
   <servlet>
     <servlet-name>applicationConfiguratorServlet</servlet-name>
-    <servlet-class>ca.qc.collegeahuntsic.bibliotheque.servlet.startup.ApplicationConfiguratorServlet</servlet-class>
+    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.startup.ApplicationConfiguratorServlet</servlet-class>
     <init-param>
       <param-name>applicationConfigurator</param-name>
       <param-value>conf/applicationConfigurator</param-value>
