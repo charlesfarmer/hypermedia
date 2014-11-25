@@ -24,8 +24,8 @@
 			maxTotal="15"
 			maxIdle="30"
 			maxWaitMillis="10000"
-			username="bibliotheque"
-			password="123456"
+			username="scott"
+			password="tiger"
 			driverClassName="oracle.jdbc.driver.OracleDriver"
             url="jdbc:oracle:thin:@localhost:1521:xe"/>
 </Context>
