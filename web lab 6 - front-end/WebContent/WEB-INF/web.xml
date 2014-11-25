@@ -36,6 +36,18 @@
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
   
+<!--                                            -->
+<!--            TAG LIB DEFINITION              -->
+<!--                                            -->
+  <taglib>
+    <taglib-uri>application-config</taglib-uri>
+    <taglib-location>/WEB-INF/tld/application-config.tld</taglib-location>
+  </taglib>
+  <taglib>
+    <taglib-uri>application-message</taglib-uri>
+    <taglib-location>/WEB-INF/tld/application-message.tld</taglib-location>
+  </taglib>
+  
   <context-param>
     <param-name>contextConfigLocation</param-name>
     <param-value>classpath*:applicationContext-JDBC.xml,
@@ -49,16 +61,5 @@
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
   
-<!--                                            -->
-<!--            TAG LIB DEFINITION              -->
-<!--                                            -->
-  <taglib>
-    <taglib-uri>application-config</taglib-uri>
-    <taglib-location>/WEB-INF/tld/application-config.tld</taglib-location>
-  </taglib>
-  <taglib>
-    <taglib-uri>application-message</taglib-uri>
-    <taglib-location>/WEB-INF/tld/application-message.tld</taglib-location>
-  </taglib>
 
 </web-app>

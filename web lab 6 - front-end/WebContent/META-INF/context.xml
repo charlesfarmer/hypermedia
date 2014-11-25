@@ -18,14 +18,14 @@
 
 		 url: The JDBC connection url for connecting to your Oracle database.
     -->
-  <Resource name="jdbc/xe"
+  <Resource name="jdbc/orcl"
             auth="Container"
 			type="javax.sql.DataSource"
 			maxTotal="15"
 			maxIdle="30"
 			maxWaitMillis="10000"
-			username="scott"
-			password="tiger"
+			username="bibliotheque"
+			password="123456"
 			driverClassName="oracle.jdbc.driver.OracleDriver"
-            url="jdbc:oracle:thin:@localhost:1521:xe"/>
+            url="jdbc:oracle:thin:@localhost:1521:orcl"/>
 </Context>
