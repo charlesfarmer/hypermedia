@@ -1,4 +1,10 @@
+/applicationContext-DAO.xml
+/applicationContext-DTO.xml
+/applicationContext-JDBC.xml
+/applicationContext-Service.xml
 /applicationContext.xml
+/ca/
 /log4j.properties
 /weblab6.sql
-/ca/
+/classes/
+*.class
