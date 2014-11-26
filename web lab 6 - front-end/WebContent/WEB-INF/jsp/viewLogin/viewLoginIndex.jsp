@@ -12,13 +12,9 @@
 
 <html>
   <head>
-  
     <base href="<config:webappProtocol/>://<config:webappServerName/>:<config:webappPortNumber/><config:webappPath/>/"/>
-    
     <title><message:say key="global.welcome.displayMessage"/></title>
-    
     <%@ include file="/WEB-INF/jsp/layout/jsCommon.jsp" %>
-    
   </head>
   <body>
   	<form id="login-membre-form" method="post" action="loginMembre.do">
