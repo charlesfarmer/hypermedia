@@ -7,12 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ViewTemplateIndexServlet extends HttpServlet {
+public class ViewTemplateServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private static final String FORWARD_RESOURCE = "/WEB-INF/jsp/viewTemplate/viewTemplateIndex.jsp";
 
-	public ViewTemplateIndexServlet() {
+	public ViewTemplateServlet() {
 		super();
 	}
 
@@ -20,7 +20,7 @@ public class ViewTemplateIndexServlet extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		getServletContext().getRequestDispatcher(
-				ViewTemplateIndexServlet.FORWARD_RESOURCE).forward(request,
+				ViewTemplateServlet.FORWARD_RESOURCE).forward(request,
 				response);
 	}
 }

@@ -39,8 +39,8 @@
   </servlet>
   
   <servlet>
-    <servlet-name>viewLoginIndexServlet</servlet-name>
-    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.ViewLoginIndexServlet</servlet-class>
+    <servlet-name>viewLoginServlet</servlet-name>
+    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.ViewLoginServlet</servlet-class>
   </servlet>
   
   <servlet>
@@ -53,8 +53,8 @@
 <!--                                            -->
   
   <servlet-mapping>
-    <servlet-name>viewLoginIndexServlet</servlet-name>
-    <url-pattern>/viewLoginIndex.do</url-pattern>
+    <servlet-name>viewLoginServlet</servlet-name>
+    <url-pattern>/viewLogin.do</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
     <servlet-name>loginMembreServlet</servlet-name>

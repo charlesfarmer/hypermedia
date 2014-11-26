@@ -7,12 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class ViewLoginIndexServlet extends HttpServlet {
+public class ViewLoginServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     private static final String FORWARD_RESOURCE = "/WEB-INF/jsp/viewLogin/viewLoginIndex.jsp";
 
-    public ViewLoginIndexServlet() {
+    public ViewLoginServlet() {
         super();
     }
 
@@ -20,7 +20,7 @@ public class ViewLoginIndexServlet extends HttpServlet {
     public void doPost(HttpServletRequest request,
         HttpServletResponse response) throws ServletException,
         IOException {
-        getServletContext().getRequestDispatcher(ViewLoginIndexServlet.FORWARD_RESOURCE).forward(request,
+        getServletContext().getRequestDispatcher(ViewLoginServlet.FORWARD_RESOURCE).forward(request,
             response);
     }
 }

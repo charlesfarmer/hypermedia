@@ -21,7 +21,7 @@
     
   </head>
   <body onload="javascript:viewLoginIndex('view-login-index-form')">
-    <form id="view-login-index-form" method="post" action="viewLoginIndex.do">
+    <form id="view-login-index-form" method="post" action="viewLogin.do">
     </form>
   </body>
 </html>
