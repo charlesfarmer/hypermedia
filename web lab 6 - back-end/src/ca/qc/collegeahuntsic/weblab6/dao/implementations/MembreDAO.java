@@ -19,6 +19,6 @@ public class MembreDAO extends DAO implements IMembreDAO {
         return (List<MembreDTO>) find(session,
             MembreDTO.USERNAME_COLUMN_NAME,
             username,
-            "");
+            MembreDTO.USERNAME_COLUMN_NAME);
     }
 }

@@ -11,7 +11,6 @@ import ca.qc.collegeahuntsic.weblab6.exception.dao.ApplicationException;
 import ca.qc.collegeahuntsic.weblab6.exception.service.ServiceException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.hibernate.Session;
 
 public class LoginMembreServlet extends ApplicationServlet {
 
@@ -28,11 +27,14 @@ public class LoginMembreServlet extends ApplicationServlet {
         HttpServletResponse response) {
         String u = request.getParameter(MembreDTO.USERNAME_COLUMN_NAME);
         String p = request.getParameter(MembreDTO.PASSWORD_COLUMN_NAME);
+
+        LoginMembreServlet.LOGGER.warn(" #####\n"
+            + u
+            + "\n"
+            + p
+            + "\n #####");
         try {
             beginTransaction();
-            Session session = getSession();
-            LoginMembreServlet.LOGGER.warn(session.toString()
-                + "aaaaaaa");
             List<MembreDTO> list = getMembreService().findByUsername(getSession(),
                 u);
             commitTransaction();
@@ -51,8 +53,8 @@ public class LoginMembreServlet extends ApplicationServlet {
             ServiceException
             | ServletException
             | IOException
-            | ApplicationException e) {
-            LoginMembreServlet.LOGGER.fatal(e);
+            | ApplicationException exception) {
+            LoginMembreServlet.LOGGER.fatal(exception);
         }
     }
 }

@@ -5,13 +5,13 @@ public class LigneVitrineDTO extends DTO {
 
     private static final long serialVersionUID = 1L;
 
-    public static final String ID_LIGNE_VITRINE_COLUMN_NAME = "IDLigneVitrine";
+    public static final String ID_LIGNE_VITRINE_COLUMN_NAME = "idLigneVitrine";
 
-    public static final String PRODUIT_ID_COLUMN_NAME = "ProduitID";
+    public static final String PRODUIT_ID_COLUMN_NAME = "produitId";
 
-    public static final String VITRINE_ID_COLUMN_NAME = "VitrineID";
+    public static final String VITRINE_ID_COLUMN_NAME = "vitrineId";
 
-    public static final String CATEGORIE_ID_COLUMN_NAME = "CategorieID";
+    public static final String CATEGORIE_ID_COLUMN_NAME = "categorieId";
 
     private String idLigneVitrine;
 

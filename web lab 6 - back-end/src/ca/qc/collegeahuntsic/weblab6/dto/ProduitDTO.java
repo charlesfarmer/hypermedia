@@ -8,15 +8,15 @@ public class ProduitDTO extends DTO {
 
     private static final long serialVersionUID = 1L;
 
-    public static final String ID_PRODUIT_COLUMN_NAME = "IDProduit";
+    public static final String ID_PRODUIT_COLUMN_NAME = "idProduit";
 
-    public static final String MARCHAND_ID_COLUMN_NAME = "MarchandID";
+    public static final String MARCHAND_ID_COLUMN_NAME = "marchandId";
 
-    public static final String TITLE_COLUMN_NAME = "Title";
+    public static final String TITLE_COLUMN_NAME = "title";
 
-    public static final String URL_COLUMN_NAME = "URL";
+    public static final String URL_COLUMN_NAME = "url";
 
-    public static final String PRICE_COLUMN_NAME = "Price";
+    public static final String PRICE_COLUMN_NAME = "price";
 
     private String idProduit;
 

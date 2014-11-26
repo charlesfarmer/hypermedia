@@ -23,7 +23,7 @@
   <body>
   	<form id="login-membre-form" method="post" action="loginMembre.do">
   	  <label>nom<input name="<%= MembreDTO.USERNAME_COLUMN_NAME %>" id="test" type="text"/></label><br></br>
-  	  <label>mot de passe<input name="<%= MembreDTO.PASSWORD_COLUMN_NAME %>" id="test" type="text"/></label><br></br>
+  	  <label>mot de passe<input name="<%= MembreDTO.PASSWORD_COLUMN_NAME %>" id="test2" type="text"/></label><br></br>
   	  <input type="submit" value="Envoyer"></input>
   	</form>
   </body>

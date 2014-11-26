@@ -5,11 +5,11 @@ public class FavoriDTO extends DTO {
 
     private static final long serialVersionUID = 1L;
 
-    public static final String ID_FAVORI_COLUMN_NAME = "IDFavori";
+    public static final String ID_FAVORI_COLUMN_NAME = "idFavori";
 
-    public static final String PRODUIT_ID_COLUMN_NAME = "ProduitID";
+    public static final String PRODUIT_ID_COLUMN_NAME = "produitId";
 
-    public static final String MEMBRE_ID_COLUMN_NAME = "MembreID";
+    public static final String MEMBRE_ID_COLUMN_NAME = "membreId";
 
     private String idFavori;
 
