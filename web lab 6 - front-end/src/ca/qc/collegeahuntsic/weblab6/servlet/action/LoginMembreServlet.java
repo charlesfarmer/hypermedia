@@ -17,11 +17,13 @@ public class LoginMembreServlet extends ApplicationServlet {
 
     private static final long serialVersionUID = 1L;
 
-    private static final String LOGIN_MEMBRE_SUCCESSFUL = "loginMembreSuccessful";
-
     private static final String MEMBRE_ATTRIBUTE_NAME = "membre";
 
-    private static final String FORWARD_RESOURCE = "/WEB-INF/jsp/viewLogin/viewLoginIndex.jsp";
+    private static final String LOGIN_STATUS_ATTRIBUTE_NAME = "loginSuccessful";
+
+    private static final String FORWARD_RESOURCE_SUCCESSFUL_LOGIN = "/WEB-INF/jsp/viewTemplate/viewIndex.jsp";
+
+    private static final String FORWARD_RESOURCE_FAILED_LOGIN = "/WEB-INF/jsp/viewLogin/viewIndex.jsp";
 
     private static final Log LOGGER = LogFactory.getLog(LoginMembreServlet.class);
 
@@ -30,23 +32,32 @@ public class LoginMembreServlet extends ApplicationServlet {
         HttpServletResponse response) {
         String username = request.getParameter(MembreDTO.USERNAME_COLUMN_NAME);
         String password = request.getParameter(MembreDTO.PASSWORD_COLUMN_NAME);
+        Boolean loginSuccessful = Boolean.FALSE;
         try {
             beginTransaction();
-            List<MembreDTO> usernames = getMembreService().findByUsername(getSession(),
+            List<MembreDTO> membres = getMembreService().findByUsername(getSession(),
                 username);
             commitTransaction();
-            for(MembreDTO membre : usernames) {
+            for(MembreDTO membre : membres) {
                 if(membre.getPassword().equals(password)) {
-                    request.setAttribute(LoginMembreServlet.LOGIN_MEMBRE_SUCCESSFUL,
-                        Boolean.TRUE);
+                    loginSuccessful = Boolean.TRUE;
                     HttpSession session = request.getSession();
                     session.setAttribute(LoginMembreServlet.MEMBRE_ATTRIBUTE_NAME,
                         membre);
                     LoginMembreServlet.LOGGER.warn("connexion réussie");
                 }
             }
-            request.getRequestDispatcher(LoginMembreServlet.FORWARD_RESOURCE).forward(request,
-                response);
+            if(loginSuccessful.booleanValue()) {
+                request.setAttribute(LoginMembreServlet.LOGIN_STATUS_ATTRIBUTE_NAME,
+                    loginSuccessful);
+                request.getRequestDispatcher(LoginMembreServlet.FORWARD_RESOURCE_SUCCESSFUL_LOGIN).forward(request,
+                    response);
+            } else {
+                request.setAttribute(LoginMembreServlet.LOGIN_STATUS_ATTRIBUTE_NAME,
+                    loginSuccessful);
+                request.getRequestDispatcher(LoginMembreServlet.FORWARD_RESOURCE_FAILED_LOGIN).forward(request,
+                    response);
+            }
         } catch(
             ServiceException
             | ServletException
