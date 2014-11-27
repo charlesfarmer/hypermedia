@@ -12,7 +12,7 @@
   <head>
     <base href="<config:webappProtocol/>://<config:webappServerName/>:<config:webappPortNumber/><config:webappPath/>/"/>
     <title><message:say key="global.welcome.displayMessage"/></title>
-    <%@ include file="/WEB-INF/jsp/layout/jsCommon.jsp" %>
+    <%@ include file="/WEB-INF/jsp/layout/includeCommon.jsp" %>
   </head>
   <body>
   	<div id="index-login"><jsp:include page="/WEB-INF/jsp/viewLogin/layout/viewLogin.jsp" flush="true"/></div>
