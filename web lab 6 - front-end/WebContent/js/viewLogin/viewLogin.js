@@ -1,4 +1,4 @@
 function viewLoginIndex(formID){
-	$("#"+formID).attr("action", "viewLoginIndex.do");
+	$("#"+formID).attr("action", "viewLogin.do");
 	$("#"+formID).submit();
 }

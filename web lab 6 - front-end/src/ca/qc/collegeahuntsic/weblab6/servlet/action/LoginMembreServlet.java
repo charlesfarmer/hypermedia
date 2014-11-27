@@ -17,7 +17,7 @@ public class LoginMembreServlet extends ApplicationServlet {
 
     private static final long serialVersionUID = 1L;
 
-    private static final String MEMBRE_ATTRIBUTE_NAME = "membre";
+    public static final String MEMBRE_ATTRIBUTE_NAME = "membre";
 
     private static final String LOGIN_STATUS_ATTRIBUTE_NAME = "loginSuccessful";
 

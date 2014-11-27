@@ -48,6 +48,16 @@
     <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.LoginMembreServlet</servlet-class>
   </servlet>
   
+  <servlet>
+    <servlet-name>fileUploadServlet</servlet-name>
+    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.FileUploadServlet</servlet-class>
+    <init-param>
+      <param-name>uploadPath</param-name>
+      <param-value>C:\Users\Charles\git\hypermedia\web lab 6 - front-end\WebContent\img\</param-value>
+      <description>The directory where user images are uploaded</description>
+    </init-param>
+  </servlet>
+  
 <!--                                            -->
 <!--             SERVLET MAPPINGS               -->
 <!--                                            -->
@@ -56,10 +66,15 @@
     <servlet-name>viewLoginServlet</servlet-name>
     <url-pattern>/viewLogin.do</url-pattern>
   </servlet-mapping>
+  
   <servlet-mapping>
     <servlet-name>loginMembreServlet</servlet-name>
     <url-pattern>/loginMembre.do</url-pattern>
   </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>fileUploadServlet</servlet-name>
+    <url-pattern>/uploadFile.do</url-pattern></servlet-mapping>
   
 <!--                                            -->
 <!--             SERVER SETTINGS                -->
