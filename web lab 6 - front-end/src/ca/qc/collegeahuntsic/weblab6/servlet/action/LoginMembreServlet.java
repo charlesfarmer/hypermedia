@@ -19,7 +19,7 @@ public class LoginMembreServlet extends ApplicationServlet {
 
     public static final String MEMBRE_ATTRIBUTE_NAME = "membre";
 
-    private static final String LOGIN_STATUS_ATTRIBUTE_NAME = "loginSuccessful";
+    public static final String LOGIN_STATUS_ATTRIBUTE_NAME = "loginSuccessful";
 
     private static final String FORWARD_RESOURCE_SUCCESSFUL_LOGIN = "/WEB-INF/jsp/viewTemplate/viewIndex.jsp";
 

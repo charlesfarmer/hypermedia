@@ -1,3 +1,4 @@
 eclipse.preferences.version=1
+encoding//WebContent/WEB-INF/jsp/viewLogin/layout/viewBody.jsp=UTF-8
 encoding//src/ca/qc/collegeahuntsic/weblab6/servlet/action/ViewLoginServlet.java=UTF-8
 encoding//src/ca/qc/collegeahuntsic/weblab6/servlet/action/ViewTemplateServlet.java=UTF-8

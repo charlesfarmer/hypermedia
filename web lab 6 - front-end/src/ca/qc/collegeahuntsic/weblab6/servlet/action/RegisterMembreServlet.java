@@ -21,7 +21,9 @@ public class RegisterMembreServlet extends ApplicationServlet {
 
     public static final String REGISTER_STATUS_ATTRIBUTE_NAME = "registerSuccessful";
 
-    private static final String FORWARD_RESOURCE = "/WEB-INF/jsp/viewLogin/viewIndex.jsp";
+    private static final String FORWARD_RESOURCE_SUCCESSFUL = "/WEB-INF/jsp/viewTemplate/viewIndex.jsp";
+
+    private static final String FORWARD_RESOURCE_FAILED = "/WEB-INF/jsp/viewLogin/viewIndex.jsp";
 
     private static final Log LOGGER = LogFactory.getLog(RegisterMembreServlet.class);
 
@@ -46,6 +48,10 @@ public class RegisterMembreServlet extends ApplicationServlet {
             request.getSession().setAttribute(LoginMembreServlet.MEMBRE_ATTRIBUTE_NAME,
                 membre);
             RegisterMembreServlet.LOGGER.info("membre créé");
+            request.setAttribute(RegisterMembreServlet.REGISTER_STATUS_ATTRIBUTE_NAME,
+                registerSuccessful);
+            request.getRequestDispatcher(RegisterMembreServlet.FORWARD_RESOURCE_SUCCESSFUL).forward(request,
+                response);
         } catch(
             ApplicationException
             | InvalidHibernateSessionException
@@ -58,10 +64,10 @@ public class RegisterMembreServlet extends ApplicationServlet {
                 RegisterMembreServlet.LOGGER.warn(ExceptionUtils.getStackTrace(e));
             }
             RegisterMembreServlet.LOGGER.warn("échec création de membre");
+            request.setAttribute(RegisterMembreServlet.REGISTER_STATUS_ATTRIBUTE_NAME,
+                registerSuccessful);
+            request.getRequestDispatcher(RegisterMembreServlet.FORWARD_RESOURCE_FAILED).forward(request,
+                response);
         }
-        request.setAttribute(RegisterMembreServlet.REGISTER_STATUS_ATTRIBUTE_NAME,
-            registerSuccessful);
-        request.getRequestDispatcher(RegisterMembreServlet.FORWARD_RESOURCE).forward(request,
-            response);
     }
 }

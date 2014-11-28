@@ -1,0 +1,64 @@
+#login-page {
+	height: 100vh;
+	background-size: 100% auto;
+	background-image: url("../../img/shopping-background.jpg");
+	background-color: transparent;
+	text-align: center;
+}
+
+#login-header {
+	padding-top: 2%;
+	padding-bottom: 2%;
+	margin: 0 auto;
+	border-bottom: none;
+}
+
+#login-header #login-logo {
+	width: 20%;
+	
+}
+
+#login-body {
+	width: 50%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	margin-right: 25%;
+	margin-left: 25%;
+	background-color: rgba(100,100,100,0.5);
+	border-bottom: none;
+}
+
+#body {
+	text-align: center;
+}
+
+#login-titre {
+    text-align: left;
+    color: rgb(240,230,140);
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+#login-membre {
+	background-color: rgba(255,255,255,0.5);
+	margin-bottom: 2%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	margin-right: 10%;
+    margin-left: 10%;
+}
+
+#register-membre {
+	background-color: rgba(255,255,255,0.5);
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-right: 10%;
+    margin-left: 10%;
+}
+
+.login-text {
+	width: 150px;
+	text-align: center;
+}

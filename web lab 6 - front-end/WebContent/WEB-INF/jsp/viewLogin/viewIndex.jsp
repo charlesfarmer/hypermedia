@@ -12,6 +12,7 @@
   <head>
     <base href="<config:webappProtocol/>://<config:webappServerName/>:<config:webappPortNumber/><config:webappPath/>/"/>
     <title><message:say key="global.welcome.displayMessage"/></title>
+    <link rel="stylesheet" href="css/viewLogin/stylesheet.css" type="text/css"/>
     <%@ include file="/WEB-INF/jsp/layout/includeCommon.jsp" %>
   </head>
   <body>

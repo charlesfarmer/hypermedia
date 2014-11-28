@@ -62,6 +62,11 @@
   </servlet>
   
   <servlet>
+    <servlet-name>viewTemplateServlet</servlet-name>
+    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.ViewTemplateServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
     <servlet-name>loginMembreServlet</servlet-name>
     <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.LoginMembreServlet</servlet-class>
   </servlet>
@@ -83,6 +88,11 @@
   <servlet-mapping>
     <servlet-name>viewLoginServlet</servlet-name>
     <url-pattern>/viewLogin.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>viewTemplateServlet</servlet-name>
+    <url-pattern>/viewTemplate.do</url-pattern>
   </servlet-mapping>
   
   <servlet-mapping>
