@@ -93,3 +93,795 @@ file status : UPLOADED
 01:10:18,407  INFO DefaultListableBeanFactory:555 - Destroying singletons in factory {org.springframework.beans.factory.support.DefaultListableBeanFactory defining beans [dataSource,sessionFactory,transactionManager,transactionProxy,categorieDAO,favoriDAO,ligneVitrineDAO,marchandDAO,membreDAO,produitDAO,vitrineDAO,categorieService,favoriService,ligneVitrineService,marchandService,membreService,produitService,vitrineService]; root of BeanFactory hierarchy}
 01:10:18,407  INFO LocalSessionFactoryBean:1028 - Closing Hibernate SessionFactory
 01:10:18,407  INFO SessionFactoryImpl:769 - closing
+17:21:26,037  INFO ContextLoader:180 - Root WebApplicationContext: initialization started
+17:21:26,085  INFO CollectionFactory:71 - Commons Collections 3.x available
+17:21:26,106  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-JDBC.xml]
+17:21:26,394  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-DTO.xml]
+17:21:26,433  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-DAO.xml]
+17:21:26,471  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-Service.xml]
+17:21:26,669  INFO XmlWebApplicationContext:92 - Bean factory for application context [Root WebApplicationContext]: org.springframework.beans.factory.support.DefaultListableBeanFactory defining beans [dataSource,sessionFactory,transactionManager,transactionProxy,categorieDAO,favoriDAO,ligneVitrineDAO,marchandDAO,membreDAO,produitDAO,vitrineDAO,categorieService,favoriService,ligneVitrineService,marchandService,membreService,produitService,vitrineService]; root of BeanFactory hierarchy
+17:21:26,806  INFO XmlWebApplicationContext:290 - 18 beans defined in application context [Root WebApplicationContext]
+17:21:26,817  INFO XmlWebApplicationContext:432 - Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@206e9689]
+17:21:26,824  INFO XmlWebApplicationContext:454 - Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@6fee13f1]
+17:21:26,828  INFO UiApplicationContextUtils:83 - Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@3b625be]
+17:21:26,831  INFO DefaultListableBeanFactory:268 - Pre-instantiating singletons in factory [org.springframework.beans.factory.support.DefaultListableBeanFactory defining beans [dataSource,sessionFactory,transactionManager,transactionProxy,categorieDAO,favoriDAO,ligneVitrineDAO,marchandDAO,membreDAO,produitDAO,vitrineDAO,categorieService,favoriService,ligneVitrineService,marchandService,membreService,produitService,vitrineService]; root of BeanFactory hierarchy]
+17:21:26,886  INFO Environment:514 - Hibernate 3.2.6
+17:21:26,893  INFO Environment:547 - hibernate.properties not found
+17:21:26,896  INFO Environment:681 - Bytecode provider name : cglib
+17:21:26,900  INFO Environment:598 - using JDK 1.4 java.sql.Timestamp handling
+17:21:27,108  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.CategorieDTO -> CATEGORIE
+17:21:27,309  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.FavoriDTO -> FAVORI
+17:21:27,349  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.LigneVitrineDTO -> LIGNEVITRINE
+17:21:27,371  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.MarchandDTO -> MARCHAND
+17:21:27,389  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO -> MEMBRE
+17:21:27,475  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO -> PRODUIT
+17:21:27,586  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.VitrineDTO -> VITRINE
+17:21:27,592  INFO LocalSessionFactoryBean:749 - Building new Hibernate SessionFactory
+17:21:27,593  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.CategorieDTO.ligneVitrines -> LIGNEVITRINE
+17:21:27,595  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MarchandDTO.produits -> PRODUIT
+17:21:27,596  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.vitrines -> VITRINE
+17:21:27,623  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.categories -> CATEGORIE
+17:21:27,625  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.favoris -> FAVORI
+17:21:27,626  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.marchands -> MARCHAND
+17:21:27,626  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO.ligneVitrines -> LIGNEVITRINE
+17:21:27,627  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO.favoris -> FAVORI
+17:21:27,627  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.VitrineDTO.ligneVitrines -> LIGNEVITRINE
+17:21:27,633  INFO ConnectionProviderFactory:72 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+17:21:28,089  INFO SettingsFactory:89 - RDBMS: Oracle, version: Oracle Database 10g Express Edition Release 10.2.0.1.0 - Production
+17:21:28,089  INFO SettingsFactory:90 - JDBC driver: Oracle JDBC driver, version: 12.1.0.1.0
+17:21:28,106  INFO Dialect:152 - Using dialect: org.hibernate.dialect.Oracle10gDialect
+17:21:28,111  INFO TransactionFactoryFactory:31 - Using default transaction strategy (direct JDBC transactions)
+17:21:28,113  INFO TransactionManagerLookupFactory:33 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+17:21:28,114  INFO SettingsFactory:143 - Automatic flush during beforeCompletion(): disabled
+17:21:28,114  INFO SettingsFactory:147 - Automatic session close at end of transaction: disabled
+17:21:28,115  INFO SettingsFactory:162 - Scrollable result sets: enabled
+17:21:28,116  INFO SettingsFactory:170 - JDBC3 getGeneratedKeys(): disabled
+17:21:28,116  INFO SettingsFactory:174 - JDBC result set fetch size: 0
+17:21:28,117  INFO SettingsFactory:178 - Connection release mode: on_close
+17:21:28,117  INFO SettingsFactory:202 - Maximum outer join fetch depth: 3
+17:21:28,118  INFO SettingsFactory:205 - Default batch fetch size: 16
+17:21:28,118  INFO SettingsFactory:209 - Generate SQL with comments: disabled
+17:21:28,119  INFO SettingsFactory:213 - Order SQL updates by primary key: enabled
+17:21:28,119  INFO SettingsFactory:217 - Order SQL inserts for batching: disabled
+17:21:28,119  INFO SettingsFactory:386 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+17:21:28,123  INFO ASTQueryTranslatorFactory:24 - Using ASTQueryTranslatorFactory
+17:21:28,124  INFO SettingsFactory:225 - Query language substitutions: {}
+17:21:28,124  INFO SettingsFactory:230 - JPA-QL strict compliance: disabled
+17:21:28,124  INFO SettingsFactory:235 - Second-level cache: enabled
+17:21:28,125  INFO SettingsFactory:239 - Query cache: enabled
+17:21:28,125  INFO SettingsFactory:373 - Cache provider: org.hibernate.cache.EhCacheProvider
+17:21:28,126  INFO SettingsFactory:254 - Optimize cache for minimal puts: enabled
+17:21:28,126  INFO SettingsFactory:263 - Structured second-level cache entries: enabled
+17:21:28,126  INFO SettingsFactory:360 - Query cache factory: org.hibernate.cache.StandardQueryCacheFactory
+17:21:28,131  INFO SettingsFactory:290 - Statistics: disabled
+17:21:28,131  INFO SettingsFactory:294 - Deleted entity synthetic identifier rollback: disabled
+17:21:28,131  INFO SettingsFactory:309 - Default entity-mode: pojo
+17:21:28,136  INFO SettingsFactory:313 - Named query checking : enabled
+17:21:28,161  INFO SessionFactoryImpl:161 - building session factory
+17:21:28,166  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+17:21:28,481  INFO SessionFactoryObjectFactory:82 - Not binding factory to JNDI, no JNDI name configured
+17:21:28,481  INFO UpdateTimestampsCache:41 - starting update timestamps cache at region: org.hibernate.cache.UpdateTimestampsCache
+17:21:28,481  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+17:21:28,496  INFO StandardQueryCache:52 - starting query cache at region: org.hibernate.cache.StandardQueryCache
+17:21:28,496  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+17:21:28,521  INFO HibernateTransactionManager:396 - Using DataSource [org.apache.tomcat.dbcp.dbcp.BasicDataSource@43a2b7e8] of Hibernate SessionFactory for HibernateTransactionManager
+17:21:28,526  INFO DefaultAopProxyFactory:59 - CGLIB2 available: proxyTargetClass feature enabled
+17:21:28,713  INFO ContextLoader:195 - Using context class [org.springframework.web.context.support.XmlWebApplicationContext] for root WebApplicationContext
+17:21:28,713  INFO ContextLoader:205 - Root WebApplicationContext: initialization completed in 2676 ms
+17:24:39,872  INFO XmlWebApplicationContext:500 - Closing application context [Root WebApplicationContext]
+17:24:39,872  INFO DefaultListableBeanFactory:555 - Destroying singletons in factory {org.springframework.beans.factory.support.DefaultListableBeanFactory defining beans [dataSource,sessionFactory,transactionManager,transactionProxy,categorieDAO,favoriDAO,ligneVitrineDAO,marchandDAO,membreDAO,produitDAO,vitrineDAO,categorieService,favoriService,ligneVitrineService,marchandService,membreService,produitService,vitrineService]; root of BeanFactory hierarchy}
+17:24:39,877  INFO LocalSessionFactoryBean:1028 - Closing Hibernate SessionFactory
+17:24:39,877  INFO SessionFactoryImpl:769 - closing
+17:24:41,893  INFO ContextLoader:180 - Root WebApplicationContext: initialization started
+17:24:41,949  INFO CollectionFactory:71 - Commons Collections 3.x available
+17:24:41,965  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-JDBC.xml]
+17:24:42,196  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-DTO.xml]
+17:24:42,241  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-DAO.xml]
+17:24:42,268  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-Service.xml]
+17:24:42,297  INFO XmlWebApplicationContext:92 - Bean factory for application context [Root WebApplicationContext]: org.springframework.beans.factory.support.DefaultListableBeanFactory defining beans [dataSource,sessionFactory,transactionManager,transactionProxy,categorieDAO,favoriDAO,ligneVitrineDAO,marchandDAO,membreDAO,produitDAO,vitrineDAO,categorieService,favoriService,ligneVitrineService,marchandService,membreService,produitService,vitrineService]; root of BeanFactory hierarchy
+17:24:42,305  INFO XmlWebApplicationContext:290 - 18 beans defined in application context [Root WebApplicationContext]
+17:24:42,314  INFO XmlWebApplicationContext:432 - Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@4a96e831]
+17:24:42,315  INFO XmlWebApplicationContext:454 - Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@251a21a3]
+17:24:42,319  INFO UiApplicationContextUtils:83 - Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@55c8db44]
+17:24:42,321  INFO DefaultListableBeanFactory:268 - Pre-instantiating singletons in factory [org.springframework.beans.factory.support.DefaultListableBeanFactory defining beans [dataSource,sessionFactory,transactionManager,transactionProxy,categorieDAO,favoriDAO,ligneVitrineDAO,marchandDAO,membreDAO,produitDAO,vitrineDAO,categorieService,favoriService,ligneVitrineService,marchandService,membreService,produitService,vitrineService]; root of BeanFactory hierarchy]
+17:24:42,380  INFO Environment:514 - Hibernate 3.2.6
+17:24:42,384  INFO Environment:547 - hibernate.properties not found
+17:24:42,390  INFO Environment:681 - Bytecode provider name : cglib
+17:24:42,394  INFO Environment:598 - using JDK 1.4 java.sql.Timestamp handling
+17:24:42,594  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.CategorieDTO -> CATEGORIE
+17:24:42,692  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.FavoriDTO -> FAVORI
+17:24:42,730  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.LigneVitrineDTO -> LIGNEVITRINE
+17:24:42,755  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.MarchandDTO -> MARCHAND
+17:24:42,820  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO -> MEMBRE
+17:24:43,021  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO -> PRODUIT
+17:24:43,042  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.VitrineDTO -> VITRINE
+17:24:43,090  INFO LocalSessionFactoryBean:749 - Building new Hibernate SessionFactory
+17:24:43,092  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.CategorieDTO.ligneVitrines -> LIGNEVITRINE
+17:24:43,092  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MarchandDTO.produits -> PRODUIT
+17:24:43,093  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.vitrines -> VITRINE
+17:24:43,094  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.categories -> CATEGORIE
+17:24:43,094  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.favoris -> FAVORI
+17:24:43,113  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.marchands -> MARCHAND
+17:24:43,114  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO.ligneVitrines -> LIGNEVITRINE
+17:24:43,119  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO.favoris -> FAVORI
+17:24:43,120  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.VitrineDTO.ligneVitrines -> LIGNEVITRINE
+17:24:43,126  INFO ConnectionProviderFactory:72 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+17:24:43,466  INFO SettingsFactory:89 - RDBMS: Oracle, version: Oracle Database 10g Express Edition Release 10.2.0.1.0 - Production
+17:24:43,466  INFO SettingsFactory:90 - JDBC driver: Oracle JDBC driver, version: 12.1.0.1.0
+17:24:43,481  INFO Dialect:152 - Using dialect: org.hibernate.dialect.Oracle10gDialect
+17:24:43,486  INFO TransactionFactoryFactory:31 - Using default transaction strategy (direct JDBC transactions)
+17:24:43,486  INFO TransactionManagerLookupFactory:33 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+17:24:43,486  INFO SettingsFactory:143 - Automatic flush during beforeCompletion(): disabled
+17:24:43,486  INFO SettingsFactory:147 - Automatic session close at end of transaction: disabled
+17:24:43,491  INFO SettingsFactory:162 - Scrollable result sets: enabled
+17:24:43,491  INFO SettingsFactory:170 - JDBC3 getGeneratedKeys(): disabled
+17:24:43,491  INFO SettingsFactory:174 - JDBC result set fetch size: 0
+17:24:43,491  INFO SettingsFactory:178 - Connection release mode: on_close
+17:24:43,491  INFO SettingsFactory:202 - Maximum outer join fetch depth: 3
+17:24:43,491  INFO SettingsFactory:205 - Default batch fetch size: 16
+17:24:43,491  INFO SettingsFactory:209 - Generate SQL with comments: disabled
+17:24:43,491  INFO SettingsFactory:213 - Order SQL updates by primary key: enabled
+17:24:43,491  INFO SettingsFactory:217 - Order SQL inserts for batching: disabled
+17:24:43,491  INFO SettingsFactory:386 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+17:24:43,496  INFO ASTQueryTranslatorFactory:24 - Using ASTQueryTranslatorFactory
+17:24:43,496  INFO SettingsFactory:225 - Query language substitutions: {}
+17:24:43,496  INFO SettingsFactory:230 - JPA-QL strict compliance: disabled
+17:24:43,496  INFO SettingsFactory:235 - Second-level cache: enabled
+17:24:43,496  INFO SettingsFactory:239 - Query cache: enabled
+17:24:43,496  INFO SettingsFactory:373 - Cache provider: org.hibernate.cache.EhCacheProvider
+17:24:43,501  INFO SettingsFactory:254 - Optimize cache for minimal puts: enabled
+17:24:43,501  INFO SettingsFactory:263 - Structured second-level cache entries: enabled
+17:24:43,501  INFO SettingsFactory:360 - Query cache factory: org.hibernate.cache.StandardQueryCacheFactory
+17:24:43,506  INFO SettingsFactory:290 - Statistics: disabled
+17:24:43,506  INFO SettingsFactory:294 - Deleted entity synthetic identifier rollback: disabled
+17:24:43,506  INFO SettingsFactory:309 - Default entity-mode: pojo
+17:24:43,511  INFO SettingsFactory:313 - Named query checking : enabled
+17:24:43,531  INFO SessionFactoryImpl:161 - building session factory
+17:24:43,562  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+17:24:43,850  INFO SessionFactoryObjectFactory:82 - Not binding factory to JNDI, no JNDI name configured
+17:24:43,850  INFO UpdateTimestampsCache:41 - starting update timestamps cache at region: org.hibernate.cache.UpdateTimestampsCache
+17:24:43,850  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+17:24:43,860  INFO StandardQueryCache:52 - starting query cache at region: org.hibernate.cache.StandardQueryCache
+17:24:43,860  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+17:24:43,885  INFO HibernateTransactionManager:396 - Using DataSource [org.apache.tomcat.dbcp.dbcp.BasicDataSource@7f3076b2] of Hibernate SessionFactory for HibernateTransactionManager
+17:24:43,885  INFO DefaultAopProxyFactory:59 - CGLIB2 available: proxyTargetClass feature enabled
+17:24:44,322  INFO ContextLoader:195 - Using context class [org.springframework.web.context.support.XmlWebApplicationContext] for root WebApplicationContext
+17:24:44,322  INFO ContextLoader:205 - Root WebApplicationContext: initialization completed in 2429 ms
+17:24:44,327  INFO ApplicationConfiguratorServlet:49 - Application configurator loaded for application 'leche_vitrine'.
+17:36:15,403  INFO ApplicationConfiguratorServlet:58 - Application configurator unloaded for application 'leche_vitrine'.
+17:36:15,408  INFO XmlWebApplicationContext:500 - Closing application context [Root WebApplicationContext]
+17:36:15,408  INFO DefaultListableBeanFactory:555 - Destroying singletons in factory {org.springframework.beans.factory.support.DefaultListableBeanFactory defining beans [dataSource,sessionFactory,transactionManager,transactionProxy,categorieDAO,favoriDAO,ligneVitrineDAO,marchandDAO,membreDAO,produitDAO,vitrineDAO,categorieService,favoriService,ligneVitrineService,marchandService,membreService,produitService,vitrineService]; root of BeanFactory hierarchy}
+17:36:15,413  INFO LocalSessionFactoryBean:1028 - Closing Hibernate SessionFactory
+17:36:15,413  INFO SessionFactoryImpl:769 - closing
+17:36:16,302  INFO ContextLoader:180 - Root WebApplicationContext: initialization started
+17:36:16,342  INFO CollectionFactory:71 - Commons Collections 3.x available
+17:36:16,357  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-JDBC.xml]
+17:36:16,528  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-DTO.xml]
+17:36:16,566  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-DAO.xml]
+17:36:16,585  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-Service.xml]
+17:36:16,615  INFO XmlWebApplicationContext:92 - Bean factory for application context [Root WebApplicationContext]: org.springframework.beans.factory.support.DefaultListableBeanFactory defining beans [dataSource,sessionFactory,transactionManager,transactionProxy,categorieDAO,favoriDAO,ligneVitrineDAO,marchandDAO,membreDAO,produitDAO,vitrineDAO,categorieService,favoriService,ligneVitrineService,marchandService,membreService,produitService,vitrineService]; root of BeanFactory hierarchy
+17:36:16,625  INFO XmlWebApplicationContext:290 - 18 beans defined in application context [Root WebApplicationContext]
+17:36:16,630  INFO XmlWebApplicationContext:432 - Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@c0ac415]
+17:36:16,630  INFO XmlWebApplicationContext:454 - Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@7a841262]
+17:36:16,635  INFO UiApplicationContextUtils:83 - Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@d4415b6]
+17:36:16,635  INFO DefaultListableBeanFactory:268 - Pre-instantiating singletons in factory [org.springframework.beans.factory.support.DefaultListableBeanFactory defining beans [dataSource,sessionFactory,transactionManager,transactionProxy,categorieDAO,favoriDAO,ligneVitrineDAO,marchandDAO,membreDAO,produitDAO,vitrineDAO,categorieService,favoriService,ligneVitrineService,marchandService,membreService,produitService,vitrineService]; root of BeanFactory hierarchy]
+17:36:16,685  INFO Environment:514 - Hibernate 3.2.6
+17:36:16,685  INFO Environment:547 - hibernate.properties not found
+17:36:16,690  INFO Environment:681 - Bytecode provider name : cglib
+17:36:16,690  INFO Environment:598 - using JDK 1.4 java.sql.Timestamp handling
+17:36:16,847  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.CategorieDTO -> CATEGORIE
+17:36:16,917  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.FavoriDTO -> FAVORI
+17:36:16,947  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.LigneVitrineDTO -> LIGNEVITRINE
+17:36:16,991  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.MarchandDTO -> MARCHAND
+17:36:17,017  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO -> MEMBRE
+17:36:17,111  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO -> PRODUIT
+17:36:17,136  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.VitrineDTO -> VITRINE
+17:36:17,170  INFO LocalSessionFactoryBean:749 - Building new Hibernate SessionFactory
+17:36:17,188  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.CategorieDTO.ligneVitrines -> LIGNEVITRINE
+17:36:17,189  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MarchandDTO.produits -> PRODUIT
+17:36:17,190  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.vitrines -> VITRINE
+17:36:17,190  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.categories -> CATEGORIE
+17:36:17,191  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.favoris -> FAVORI
+17:36:17,191  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.marchands -> MARCHAND
+17:36:17,195  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO.ligneVitrines -> LIGNEVITRINE
+17:36:17,195  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO.favoris -> FAVORI
+17:36:17,196  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.VitrineDTO.ligneVitrines -> LIGNEVITRINE
+17:36:17,203  INFO ConnectionProviderFactory:72 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+17:36:17,464  INFO SettingsFactory:89 - RDBMS: Oracle, version: Oracle Database 10g Express Edition Release 10.2.0.1.0 - Production
+17:36:17,464  INFO SettingsFactory:90 - JDBC driver: Oracle JDBC driver, version: 12.1.0.1.0
+17:36:17,479  INFO Dialect:152 - Using dialect: org.hibernate.dialect.Oracle10gDialect
+17:36:17,484  INFO TransactionFactoryFactory:31 - Using default transaction strategy (direct JDBC transactions)
+17:36:17,489  INFO TransactionManagerLookupFactory:33 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+17:36:17,489  INFO SettingsFactory:143 - Automatic flush during beforeCompletion(): disabled
+17:36:17,489  INFO SettingsFactory:147 - Automatic session close at end of transaction: disabled
+17:36:17,489  INFO SettingsFactory:162 - Scrollable result sets: enabled
+17:36:17,489  INFO SettingsFactory:170 - JDBC3 getGeneratedKeys(): disabled
+17:36:17,489  INFO SettingsFactory:174 - JDBC result set fetch size: 0
+17:36:17,489  INFO SettingsFactory:178 - Connection release mode: on_close
+17:36:17,489  INFO SettingsFactory:202 - Maximum outer join fetch depth: 3
+17:36:17,489  INFO SettingsFactory:205 - Default batch fetch size: 16
+17:36:17,489  INFO SettingsFactory:209 - Generate SQL with comments: disabled
+17:36:17,489  INFO SettingsFactory:213 - Order SQL updates by primary key: enabled
+17:36:17,489  INFO SettingsFactory:217 - Order SQL inserts for batching: disabled
+17:36:17,494  INFO SettingsFactory:386 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+17:36:17,494  INFO ASTQueryTranslatorFactory:24 - Using ASTQueryTranslatorFactory
+17:36:17,494  INFO SettingsFactory:225 - Query language substitutions: {}
+17:36:17,494  INFO SettingsFactory:230 - JPA-QL strict compliance: disabled
+17:36:17,494  INFO SettingsFactory:235 - Second-level cache: enabled
+17:36:17,494  INFO SettingsFactory:239 - Query cache: enabled
+17:36:17,494  INFO SettingsFactory:373 - Cache provider: org.hibernate.cache.EhCacheProvider
+17:36:17,499  INFO SettingsFactory:254 - Optimize cache for minimal puts: enabled
+17:36:17,499  INFO SettingsFactory:263 - Structured second-level cache entries: enabled
+17:36:17,499  INFO SettingsFactory:360 - Query cache factory: org.hibernate.cache.StandardQueryCacheFactory
+17:36:17,504  INFO SettingsFactory:290 - Statistics: disabled
+17:36:17,504  INFO SettingsFactory:294 - Deleted entity synthetic identifier rollback: disabled
+17:36:17,504  INFO SettingsFactory:309 - Default entity-mode: pojo
+17:36:17,509  INFO SettingsFactory:313 - Named query checking : enabled
+17:36:17,529  INFO SessionFactoryImpl:161 - building session factory
+17:36:17,534  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+17:36:17,834  INFO SessionFactoryObjectFactory:82 - Not binding factory to JNDI, no JNDI name configured
+17:36:17,834  INFO UpdateTimestampsCache:41 - starting update timestamps cache at region: org.hibernate.cache.UpdateTimestampsCache
+17:36:17,834  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+17:36:17,844  INFO StandardQueryCache:52 - starting query cache at region: org.hibernate.cache.StandardQueryCache
+17:36:17,849  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+17:36:17,869  INFO HibernateTransactionManager:396 - Using DataSource [org.apache.tomcat.dbcp.dbcp.BasicDataSource@47c1ecfc] of Hibernate SessionFactory for HibernateTransactionManager
+17:36:17,874  INFO DefaultAopProxyFactory:59 - CGLIB2 available: proxyTargetClass feature enabled
+17:36:18,004  INFO ContextLoader:195 - Using context class [org.springframework.web.context.support.XmlWebApplicationContext] for root WebApplicationContext
+17:36:18,004  INFO ContextLoader:205 - Root WebApplicationContext: initialization completed in 1702 ms
+17:36:18,009  INFO ApplicationConfiguratorServlet:49 - Application configurator loaded for application 'leche_vitrine'.
+17:36:22,399  INFO ApplicationConfiguratorServlet:58 - Application configurator unloaded for application 'leche_vitrine'.
+17:36:22,404  INFO XmlWebApplicationContext:500 - Closing application context [Root WebApplicationContext]
+17:36:22,404  INFO DefaultListableBeanFactory:555 - Destroying singletons in factory {org.springframework.beans.factory.support.DefaultListableBeanFactory defining beans [dataSource,sessionFactory,transactionManager,transactionProxy,categorieDAO,favoriDAO,ligneVitrineDAO,marchandDAO,membreDAO,produitDAO,vitrineDAO,categorieService,favoriService,ligneVitrineService,marchandService,membreService,produitService,vitrineService]; root of BeanFactory hierarchy}
+17:36:22,404  INFO LocalSessionFactoryBean:1028 - Closing Hibernate SessionFactory
+17:36:22,404  INFO SessionFactoryImpl:769 - closing
+17:39:05,553  INFO ContextLoader:180 - Root WebApplicationContext: initialization started
+17:39:05,597  INFO CollectionFactory:71 - Commons Collections 3.x available
+17:39:05,612  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-JDBC.xml]
+17:39:05,975  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-DTO.xml]
+17:39:06,009  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-DAO.xml]
+17:39:06,055  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-Service.xml]
+17:39:06,094  INFO XmlWebApplicationContext:92 - Bean factory for application context [Root WebApplicationContext]: org.springframework.beans.factory.support.DefaultListableBeanFactory defining beans [dataSource,sessionFactory,transactionManager,transactionProxy,categorieDAO,favoriDAO,ligneVitrineDAO,marchandDAO,membreDAO,produitDAO,vitrineDAO,categorieService,favoriService,ligneVitrineService,marchandService,membreService,produitService,vitrineService]; root of BeanFactory hierarchy
+17:39:06,103  INFO XmlWebApplicationContext:290 - 18 beans defined in application context [Root WebApplicationContext]
+17:39:06,115  INFO XmlWebApplicationContext:432 - Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@3c5d0d01]
+17:39:06,124  INFO XmlWebApplicationContext:454 - Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@775f6c9f]
+17:39:06,133  INFO UiApplicationContextUtils:83 - Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@2b67ded9]
+17:39:06,141  INFO DefaultListableBeanFactory:268 - Pre-instantiating singletons in factory [org.springframework.beans.factory.support.DefaultListableBeanFactory defining beans [dataSource,sessionFactory,transactionManager,transactionProxy,categorieDAO,favoriDAO,ligneVitrineDAO,marchandDAO,membreDAO,produitDAO,vitrineDAO,categorieService,favoriService,ligneVitrineService,marchandService,membreService,produitService,vitrineService]; root of BeanFactory hierarchy]
+17:39:06,217  INFO Environment:514 - Hibernate 3.2.6
+17:39:06,222  INFO Environment:547 - hibernate.properties not found
+17:39:06,227  INFO Environment:681 - Bytecode provider name : cglib
+17:39:06,232  INFO Environment:598 - using JDK 1.4 java.sql.Timestamp handling
+17:39:06,458  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.CategorieDTO -> CATEGORIE
+17:39:06,553  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.FavoriDTO -> FAVORI
+17:39:06,652  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.LigneVitrineDTO -> LIGNEVITRINE
+17:39:06,670  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.MarchandDTO -> MARCHAND
+17:39:06,689  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO -> MEMBRE
+17:39:06,714  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO -> PRODUIT
+17:39:06,762  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.VitrineDTO -> VITRINE
+17:39:06,772  INFO LocalSessionFactoryBean:749 - Building new Hibernate SessionFactory
+17:39:06,788  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.CategorieDTO.ligneVitrines -> LIGNEVITRINE
+17:39:06,791  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MarchandDTO.produits -> PRODUIT
+17:39:06,791  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.vitrines -> VITRINE
+17:39:06,792  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.categories -> CATEGORIE
+17:39:06,794  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.favoris -> FAVORI
+17:39:06,795  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.marchands -> MARCHAND
+17:39:06,796  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO.ligneVitrines -> LIGNEVITRINE
+17:39:06,798  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO.favoris -> FAVORI
+17:39:06,799  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.VitrineDTO.ligneVitrines -> LIGNEVITRINE
+17:39:06,804  INFO ConnectionProviderFactory:72 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+17:39:07,216  INFO SettingsFactory:89 - RDBMS: Oracle, version: Oracle Database 10g Express Edition Release 10.2.0.1.0 - Production
+17:39:07,216  INFO SettingsFactory:90 - JDBC driver: Oracle JDBC driver, version: 12.1.0.1.0
+17:39:07,231  INFO Dialect:152 - Using dialect: org.hibernate.dialect.Oracle10gDialect
+17:39:07,236  INFO TransactionFactoryFactory:31 - Using default transaction strategy (direct JDBC transactions)
+17:39:07,236  INFO TransactionManagerLookupFactory:33 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+17:39:07,241  INFO SettingsFactory:143 - Automatic flush during beforeCompletion(): disabled
+17:39:07,241  INFO SettingsFactory:147 - Automatic session close at end of transaction: disabled
+17:39:07,241  INFO SettingsFactory:162 - Scrollable result sets: enabled
+17:39:07,241  INFO SettingsFactory:170 - JDBC3 getGeneratedKeys(): disabled
+17:39:07,241  INFO SettingsFactory:174 - JDBC result set fetch size: 0
+17:39:07,246  INFO SettingsFactory:178 - Connection release mode: on_close
+17:39:07,246  INFO SettingsFactory:202 - Maximum outer join fetch depth: 3
+17:39:07,246  INFO SettingsFactory:205 - Default batch fetch size: 16
+17:39:07,246  INFO SettingsFactory:209 - Generate SQL with comments: disabled
+17:39:07,246  INFO SettingsFactory:213 - Order SQL updates by primary key: enabled
+17:39:07,246  INFO SettingsFactory:217 - Order SQL inserts for batching: disabled
+17:39:07,246  INFO SettingsFactory:386 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+17:39:07,251  INFO ASTQueryTranslatorFactory:24 - Using ASTQueryTranslatorFactory
+17:39:07,251  INFO SettingsFactory:225 - Query language substitutions: {}
+17:39:07,251  INFO SettingsFactory:230 - JPA-QL strict compliance: disabled
+17:39:07,251  INFO SettingsFactory:235 - Second-level cache: enabled
+17:39:07,251  INFO SettingsFactory:239 - Query cache: enabled
+17:39:07,251  INFO SettingsFactory:373 - Cache provider: org.hibernate.cache.EhCacheProvider
+17:39:07,256  INFO SettingsFactory:254 - Optimize cache for minimal puts: enabled
+17:39:07,256  INFO SettingsFactory:263 - Structured second-level cache entries: enabled
+17:39:07,256  INFO SettingsFactory:360 - Query cache factory: org.hibernate.cache.StandardQueryCacheFactory
+17:39:07,261  INFO SettingsFactory:290 - Statistics: disabled
+17:39:07,261  INFO SettingsFactory:294 - Deleted entity synthetic identifier rollback: disabled
+17:39:07,261  INFO SettingsFactory:309 - Default entity-mode: pojo
+17:39:07,266  INFO SettingsFactory:313 - Named query checking : enabled
+17:39:07,291  INFO SessionFactoryImpl:161 - building session factory
+17:39:07,296  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+17:39:07,608  INFO SessionFactoryObjectFactory:82 - Not binding factory to JNDI, no JNDI name configured
+17:39:07,613  INFO UpdateTimestampsCache:41 - starting update timestamps cache at region: org.hibernate.cache.UpdateTimestampsCache
+17:39:07,613  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+17:39:07,623  INFO StandardQueryCache:52 - starting query cache at region: org.hibernate.cache.StandardQueryCache
+17:39:07,623  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+17:39:07,653  INFO HibernateTransactionManager:396 - Using DataSource [org.apache.tomcat.dbcp.dbcp.BasicDataSource@43a2b7e8] of Hibernate SessionFactory for HibernateTransactionManager
+17:39:07,653  INFO DefaultAopProxyFactory:59 - CGLIB2 available: proxyTargetClass feature enabled
+17:39:07,805  INFO ContextLoader:195 - Using context class [org.springframework.web.context.support.XmlWebApplicationContext] for root WebApplicationContext
+17:39:07,805  INFO ContextLoader:205 - Root WebApplicationContext: initialization completed in 2253 ms
+17:39:07,825  INFO ApplicationConfiguratorServlet:49 - Application configurator loaded for application 'leche_vitrine'.
+17:39:28,150  INFO JdbcTransactionObjectSupport:60 - JDBC 3.0 Savepoint class is available
+17:39:28,501  WARN LoginMembreServlet:47 - connexion réussie
+17:39:47,752 ERROR LoginMembreServlet:104 - org.apache.commons.fileupload.FileUploadBase$SizeLimitExceededException: the request was rejected because its size (53706) exceeds the configured maximum (0)
+	at org.apache.commons.fileupload.FileUploadBase$FileItemIteratorImpl.<init>(FileUploadBase.java:797)
+	at org.apache.commons.fileupload.FileUploadBase.getItemIterator(FileUploadBase.java:323)
+	at org.apache.commons.fileupload.FileUploadBase.parseRequest(FileUploadBase.java:341)
+	at org.apache.commons.fileupload.servlet.ServletFileUpload.parseRequest(ServletFileUpload.java:126)
+	at ca.qc.collegeahuntsic.weblab6.util.FileUpload.uploadFilesFromForm(FileUpload.java:63)
+	at ca.qc.collegeahuntsic.weblab6.servlet.action.FileUploadServlet.doPost(FileUploadServlet.java:29)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:646)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:503)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1070)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+17:39:47,752  INFO LoginMembreServlet:37 - file upload failed
+18:06:22,683  INFO ApplicationConfiguratorServlet:58 - Application configurator unloaded for application 'leche_vitrine'.
+18:06:22,693  INFO XmlWebApplicationContext:500 - Closing application context [Root WebApplicationContext]
+18:06:22,693  INFO DefaultListableBeanFactory:555 - Destroying singletons in factory {org.springframework.beans.factory.support.DefaultListableBeanFactory defining beans [dataSource,sessionFactory,transactionManager,transactionProxy,categorieDAO,favoriDAO,ligneVitrineDAO,marchandDAO,membreDAO,produitDAO,vitrineDAO,categorieService,favoriService,ligneVitrineService,marchandService,membreService,produitService,vitrineService]; root of BeanFactory hierarchy}
+18:06:22,698  INFO LocalSessionFactoryBean:1028 - Closing Hibernate SessionFactory
+18:06:22,698  INFO SessionFactoryImpl:769 - closing
+18:09:45,457  INFO ContextLoader:180 - Root WebApplicationContext: initialization started
+18:09:45,507  INFO CollectionFactory:71 - Commons Collections 3.x available
+18:09:45,528  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-JDBC.xml]
+18:09:45,854  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-DTO.xml]
+18:09:45,885  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-DAO.xml]
+18:09:45,926  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-Service.xml]
+18:09:45,960  INFO XmlWebApplicationContext:92 - Bean factory for application context [Root WebApplicationContext]: org.springframework.beans.factory.support.DefaultListableBeanFactory defining beans [dataSource,sessionFactory,transactionManager,transactionProxy,categorieDAO,favoriDAO,ligneVitrineDAO,marchandDAO,membreDAO,produitDAO,vitrineDAO,categorieService,favoriService,ligneVitrineService,marchandService,membreService,produitService,vitrineService]; root of BeanFactory hierarchy
+18:09:45,973  INFO XmlWebApplicationContext:290 - 18 beans defined in application context [Root WebApplicationContext]
+18:09:45,985  INFO XmlWebApplicationContext:432 - Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@4c0effc4]
+18:09:45,988  INFO XmlWebApplicationContext:454 - Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@326fa4bc]
+18:09:45,993  INFO UiApplicationContextUtils:83 - Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@202bf4a9]
+18:09:45,995  INFO DefaultListableBeanFactory:268 - Pre-instantiating singletons in factory [org.springframework.beans.factory.support.DefaultListableBeanFactory defining beans [dataSource,sessionFactory,transactionManager,transactionProxy,categorieDAO,favoriDAO,ligneVitrineDAO,marchandDAO,membreDAO,produitDAO,vitrineDAO,categorieService,favoriService,ligneVitrineService,marchandService,membreService,produitService,vitrineService]; root of BeanFactory hierarchy]
+18:09:46,062  INFO Environment:514 - Hibernate 3.2.6
+18:09:46,068  INFO Environment:547 - hibernate.properties not found
+18:09:46,073  INFO Environment:681 - Bytecode provider name : cglib
+18:09:46,078  INFO Environment:598 - using JDK 1.4 java.sql.Timestamp handling
+18:09:46,271  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.CategorieDTO -> CATEGORIE
+18:09:46,398  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.FavoriDTO -> FAVORI
+18:09:46,484  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.LigneVitrineDTO -> LIGNEVITRINE
+18:09:46,512  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.MarchandDTO -> MARCHAND
+18:09:46,533  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO -> MEMBRE
+18:09:46,592  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO -> PRODUIT
+18:09:46,645  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.VitrineDTO -> VITRINE
+18:09:46,666  INFO LocalSessionFactoryBean:749 - Building new Hibernate SessionFactory
+18:09:46,668  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.CategorieDTO.ligneVitrines -> LIGNEVITRINE
+18:09:46,670  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MarchandDTO.produits -> PRODUIT
+18:09:46,671  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.vitrines -> VITRINE
+18:09:46,674  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.categories -> CATEGORIE
+18:09:46,675  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.favoris -> FAVORI
+18:09:46,678  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.marchands -> MARCHAND
+18:09:46,681  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO.ligneVitrines -> LIGNEVITRINE
+18:09:46,682  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO.favoris -> FAVORI
+18:09:46,684  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.VitrineDTO.ligneVitrines -> LIGNEVITRINE
+18:09:46,691  INFO ConnectionProviderFactory:72 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+18:09:47,059  INFO SettingsFactory:89 - RDBMS: Oracle, version: Oracle Database 10g Express Edition Release 10.2.0.1.0 - Production
+18:09:47,059  INFO SettingsFactory:90 - JDBC driver: Oracle JDBC driver, version: 12.1.0.1.0
+18:09:47,074  INFO Dialect:152 - Using dialect: org.hibernate.dialect.Oracle10gDialect
+18:09:47,079  INFO TransactionFactoryFactory:31 - Using default transaction strategy (direct JDBC transactions)
+18:09:47,084  INFO TransactionManagerLookupFactory:33 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+18:09:47,084  INFO SettingsFactory:143 - Automatic flush during beforeCompletion(): disabled
+18:09:47,084  INFO SettingsFactory:147 - Automatic session close at end of transaction: disabled
+18:09:47,089  INFO SettingsFactory:162 - Scrollable result sets: enabled
+18:09:47,089  INFO SettingsFactory:170 - JDBC3 getGeneratedKeys(): disabled
+18:09:47,089  INFO SettingsFactory:174 - JDBC result set fetch size: 0
+18:09:47,089  INFO SettingsFactory:178 - Connection release mode: on_close
+18:09:47,089  INFO SettingsFactory:202 - Maximum outer join fetch depth: 3
+18:09:47,089  INFO SettingsFactory:205 - Default batch fetch size: 16
+18:09:47,089  INFO SettingsFactory:209 - Generate SQL with comments: disabled
+18:09:47,089  INFO SettingsFactory:213 - Order SQL updates by primary key: enabled
+18:09:47,089  INFO SettingsFactory:217 - Order SQL inserts for batching: disabled
+18:09:47,089  INFO SettingsFactory:386 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+18:09:47,094  INFO ASTQueryTranslatorFactory:24 - Using ASTQueryTranslatorFactory
+18:09:47,094  INFO SettingsFactory:225 - Query language substitutions: {}
+18:09:47,094  INFO SettingsFactory:230 - JPA-QL strict compliance: disabled
+18:09:47,094  INFO SettingsFactory:235 - Second-level cache: enabled
+18:09:47,094  INFO SettingsFactory:239 - Query cache: enabled
+18:09:47,099  INFO SettingsFactory:373 - Cache provider: org.hibernate.cache.EhCacheProvider
+18:09:47,099  INFO SettingsFactory:254 - Optimize cache for minimal puts: enabled
+18:09:47,099  INFO SettingsFactory:263 - Structured second-level cache entries: enabled
+18:09:47,099  INFO SettingsFactory:360 - Query cache factory: org.hibernate.cache.StandardQueryCacheFactory
+18:09:47,104  INFO SettingsFactory:290 - Statistics: disabled
+18:09:47,109  INFO SettingsFactory:294 - Deleted entity synthetic identifier rollback: disabled
+18:09:47,109  INFO SettingsFactory:309 - Default entity-mode: pojo
+18:09:47,109  INFO SettingsFactory:313 - Named query checking : enabled
+18:09:47,134  INFO SessionFactoryImpl:161 - building session factory
+18:09:47,139  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+18:09:47,434  INFO SessionFactoryObjectFactory:82 - Not binding factory to JNDI, no JNDI name configured
+18:09:47,439  INFO UpdateTimestampsCache:41 - starting update timestamps cache at region: org.hibernate.cache.UpdateTimestampsCache
+18:09:47,439  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+18:09:47,449  INFO StandardQueryCache:52 - starting query cache at region: org.hibernate.cache.StandardQueryCache
+18:09:47,449  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+18:09:47,479  INFO HibernateTransactionManager:396 - Using DataSource [org.apache.tomcat.dbcp.dbcp.BasicDataSource@79ea3abe] of Hibernate SessionFactory for HibernateTransactionManager
+18:09:47,479  INFO DefaultAopProxyFactory:59 - CGLIB2 available: proxyTargetClass feature enabled
+18:09:47,651  INFO ContextLoader:195 - Using context class [org.springframework.web.context.support.XmlWebApplicationContext] for root WebApplicationContext
+18:09:47,651  INFO ContextLoader:205 - Root WebApplicationContext: initialization completed in 2194 ms
+18:09:47,676  INFO ApplicationConfiguratorServlet:49 - Application configurator loaded for application 'leche_vitrine'.
+18:09:47,681  INFO LoginMembreServlet:45 - FileUpload filePath initialized
+18:09:47,681  INFO FileUploadConfiguratorServlet:22 - FileUploadConfigurator initialized
+18:10:02,717  INFO JdbcTransactionObjectSupport:60 - JDBC 3.0 Savepoint class is available
+18:10:03,024  WARN LoginMembreServlet:47 - connexion réussie
+18:10:10,003  WARN LoginMembreServlet:68 - ### FILE ITEM ###
+18:10:10,003  WARN LoginMembreServlet:74 - field name : file-chooser
+file name : sq4.jpg
+content type : image/jpeg
+is in memory : true
+size in bytes : 53406
+18:10:10,008  WARN LoginMembreServlet:99 - 
+
+file status : UPLOADED
+
+
+18:10:10,008  INFO LoginMembreServlet:31 - file uploaded
+18:11:37,333  WARN LoginMembreServlet:68 - ### FILE ITEM ###
+18:11:37,333  WARN LoginMembreServlet:74 - field name : file-chooser
+file name : 
+content type : application/octet-stream
+is in memory : true
+size in bytes : 0
+18:11:37,338 ERROR LoginMembreServlet:104 - java.io.FileNotFoundException: C:\Users\Charles\git\hypermedia\web lab 6 - front-end\WebContent\img\Roger (Accès refusé)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:171)
+	at org.apache.commons.fileupload.disk.DiskFileItem.write(DiskFileItem.java:400)
+	at ca.qc.collegeahuntsic.weblab6.util.FileUpload.uploadFilesFromForm(FileUpload.java:98)
+	at ca.qc.collegeahuntsic.weblab6.servlet.action.FileUploadServlet.doPost(FileUploadServlet.java:29)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:646)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:503)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1070)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:314)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+18:11:37,343  INFO LoginMembreServlet:37 - file upload failed
+18:11:38,110  WARN LoginMembreServlet:68 - ### FILE ITEM ###
+18:11:38,110  WARN LoginMembreServlet:74 - field name : file-chooser
+file name : 
+content type : application/octet-stream
+is in memory : true
+size in bytes : 0
+18:11:38,115 ERROR LoginMembreServlet:104 - java.io.FileNotFoundException: C:\Users\Charles\git\hypermedia\web lab 6 - front-end\WebContent\img\Roger (Accès refusé)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:171)
+	at org.apache.commons.fileupload.disk.DiskFileItem.write(DiskFileItem.java:400)
+	at ca.qc.collegeahuntsic.weblab6.util.FileUpload.uploadFilesFromForm(FileUpload.java:98)
+	at ca.qc.collegeahuntsic.weblab6.servlet.action.FileUploadServlet.doPost(FileUploadServlet.java:29)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:646)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:503)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1070)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+18:11:38,126  INFO LoginMembreServlet:37 - file upload failed
+18:11:38,428  WARN LoginMembreServlet:68 - ### FILE ITEM ###
+18:11:38,428  WARN LoginMembreServlet:74 - field name : file-chooser
+file name : 
+content type : application/octet-stream
+is in memory : true
+size in bytes : 0
+18:11:38,428 ERROR LoginMembreServlet:104 - java.io.FileNotFoundException: C:\Users\Charles\git\hypermedia\web lab 6 - front-end\WebContent\img\Roger (Accès refusé)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:171)
+	at org.apache.commons.fileupload.disk.DiskFileItem.write(DiskFileItem.java:400)
+	at ca.qc.collegeahuntsic.weblab6.util.FileUpload.uploadFilesFromForm(FileUpload.java:98)
+	at ca.qc.collegeahuntsic.weblab6.servlet.action.FileUploadServlet.doPost(FileUploadServlet.java:29)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:646)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:503)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1070)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+18:11:38,433  INFO LoginMembreServlet:37 - file upload failed
+18:14:51,037  WARN LoginMembreServlet:68 - ### FILE ITEM ###
+18:14:51,037  WARN LoginMembreServlet:74 - field name : file-chooser
+file name : Ovide_and_the_Gang_screenshot.jpg
+content type : image/jpeg
+is in memory : true
+size in bytes : 92156
+18:14:51,047  WARN LoginMembreServlet:99 - 
+
+file status : UPLOADED
+
+
+18:14:51,047  INFO LoginMembreServlet:31 - file uploaded
+18:15:00,721  WARN LoginMembreServlet:68 - ### FILE ITEM ###
+18:15:00,721  WARN LoginMembreServlet:74 - field name : file-chooser
+file name : 
+content type : application/octet-stream
+is in memory : true
+size in bytes : 0
+18:15:00,721 ERROR LoginMembreServlet:104 - java.io.FileNotFoundException: C:\Users\Charles\git\hypermedia\web lab 6 - front-end\WebContent\img\Roger (Accès refusé)
+	at java.io.FileOutputStream.open(Native Method)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:221)
+	at java.io.FileOutputStream.<init>(FileOutputStream.java:171)
+	at org.apache.commons.fileupload.disk.DiskFileItem.write(DiskFileItem.java:400)
+	at ca.qc.collegeahuntsic.weblab6.util.FileUpload.uploadFilesFromForm(FileUpload.java:98)
+	at ca.qc.collegeahuntsic.weblab6.servlet.action.FileUploadServlet.doPost(FileUploadServlet.java:29)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:646)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:727)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:303)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:241)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:208)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:220)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:122)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:503)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:170)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:103)
+	at org.apache.catalina.valves.AccessLogValve.invoke(AccessLogValve.java:950)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:116)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:421)
+	at org.apache.coyote.http11.AbstractHttp11Processor.process(AbstractHttp11Processor.java:1070)
+	at org.apache.coyote.AbstractProtocol$AbstractConnectionHandler.process(AbstractProtocol.java:611)
+	at org.apache.tomcat.util.net.JIoEndpoint$SocketProcessor.run(JIoEndpoint.java:316)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:745)
+
+18:15:00,726  INFO LoginMembreServlet:37 - file upload failed
+18:17:07,353  INFO ApplicationConfiguratorServlet:58 - Application configurator unloaded for application 'leche_vitrine'.
+18:17:07,353  INFO FileUploadConfiguratorServlet:27 - FileUploadConfigurator destroyed
+18:17:07,358  INFO XmlWebApplicationContext:500 - Closing application context [Root WebApplicationContext]
+18:17:07,358  INFO DefaultListableBeanFactory:555 - Destroying singletons in factory {org.springframework.beans.factory.support.DefaultListableBeanFactory defining beans [dataSource,sessionFactory,transactionManager,transactionProxy,categorieDAO,favoriDAO,ligneVitrineDAO,marchandDAO,membreDAO,produitDAO,vitrineDAO,categorieService,favoriService,ligneVitrineService,marchandService,membreService,produitService,vitrineService]; root of BeanFactory hierarchy}
+18:17:07,363  INFO LocalSessionFactoryBean:1028 - Closing Hibernate SessionFactory
+18:17:07,363  INFO SessionFactoryImpl:769 - closing
+18:18:04,253  INFO ContextLoader:180 - Root WebApplicationContext: initialization started
+18:18:04,310  INFO CollectionFactory:71 - Commons Collections 3.x available
+18:18:04,330  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-JDBC.xml]
+18:18:04,755  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-DTO.xml]
+18:18:04,980  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-DAO.xml]
+18:18:05,081  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-Service.xml]
+18:18:05,115  INFO XmlWebApplicationContext:92 - Bean factory for application context [Root WebApplicationContext]: org.springframework.beans.factory.support.DefaultListableBeanFactory defining beans [dataSource,sessionFactory,transactionManager,transactionProxy,categorieDAO,favoriDAO,ligneVitrineDAO,marchandDAO,membreDAO,produitDAO,vitrineDAO,categorieService,favoriService,ligneVitrineService,marchandService,membreService,produitService,vitrineService]; root of BeanFactory hierarchy
+18:18:05,128  INFO XmlWebApplicationContext:290 - 18 beans defined in application context [Root WebApplicationContext]
+18:18:05,141  INFO XmlWebApplicationContext:432 - Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@2c176570]
+18:18:05,143  INFO XmlWebApplicationContext:454 - Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@8604e2e]
+18:18:05,148  INFO UiApplicationContextUtils:83 - Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@2af55def]
+18:18:05,150  INFO DefaultListableBeanFactory:268 - Pre-instantiating singletons in factory [org.springframework.beans.factory.support.DefaultListableBeanFactory defining beans [dataSource,sessionFactory,transactionManager,transactionProxy,categorieDAO,favoriDAO,ligneVitrineDAO,marchandDAO,membreDAO,produitDAO,vitrineDAO,categorieService,favoriService,ligneVitrineService,marchandService,membreService,produitService,vitrineService]; root of BeanFactory hierarchy]
+18:18:05,203  INFO Environment:514 - Hibernate 3.2.6
+18:18:05,208  INFO Environment:547 - hibernate.properties not found
+18:18:05,208  INFO Environment:681 - Bytecode provider name : cglib
+18:18:05,213  INFO Environment:598 - using JDK 1.4 java.sql.Timestamp handling
+18:18:05,370  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.CategorieDTO -> CATEGORIE
+18:18:05,451  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.FavoriDTO -> FAVORI
+18:18:05,513  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.LigneVitrineDTO -> LIGNEVITRINE
+18:18:05,537  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.MarchandDTO -> MARCHAND
+18:18:05,568  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO -> MEMBRE
+18:18:05,595  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO -> PRODUIT
+18:18:05,660  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.VitrineDTO -> VITRINE
+18:18:05,662  INFO LocalSessionFactoryBean:749 - Building new Hibernate SessionFactory
+18:18:05,667  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.CategorieDTO.ligneVitrines -> LIGNEVITRINE
+18:18:05,673  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MarchandDTO.produits -> PRODUIT
+18:18:05,674  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.vitrines -> VITRINE
+18:18:05,675  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.categories -> CATEGORIE
+18:18:05,677  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.favoris -> FAVORI
+18:18:05,678  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.marchands -> MARCHAND
+18:18:05,679  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO.ligneVitrines -> LIGNEVITRINE
+18:18:05,680  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO.favoris -> FAVORI
+18:18:05,683  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.VitrineDTO.ligneVitrines -> LIGNEVITRINE
+18:18:05,717  INFO ConnectionProviderFactory:72 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+18:18:06,084  INFO SettingsFactory:89 - RDBMS: Oracle, version: Oracle Database 10g Express Edition Release 10.2.0.1.0 - Production
+18:18:06,084  INFO SettingsFactory:90 - JDBC driver: Oracle JDBC driver, version: 12.1.0.1.0
+18:18:06,099  INFO Dialect:152 - Using dialect: org.hibernate.dialect.Oracle10gDialect
+18:18:06,104  INFO TransactionFactoryFactory:31 - Using default transaction strategy (direct JDBC transactions)
+18:18:06,104  INFO TransactionManagerLookupFactory:33 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+18:18:06,109  INFO SettingsFactory:143 - Automatic flush during beforeCompletion(): disabled
+18:18:06,109  INFO SettingsFactory:147 - Automatic session close at end of transaction: disabled
+18:18:06,109  INFO SettingsFactory:162 - Scrollable result sets: enabled
+18:18:06,109  INFO SettingsFactory:170 - JDBC3 getGeneratedKeys(): disabled
+18:18:06,109  INFO SettingsFactory:174 - JDBC result set fetch size: 0
+18:18:06,109  INFO SettingsFactory:178 - Connection release mode: on_close
+18:18:06,114  INFO SettingsFactory:202 - Maximum outer join fetch depth: 3
+18:18:06,114  INFO SettingsFactory:205 - Default batch fetch size: 16
+18:18:06,114  INFO SettingsFactory:209 - Generate SQL with comments: disabled
+18:18:06,114  INFO SettingsFactory:213 - Order SQL updates by primary key: enabled
+18:18:06,114  INFO SettingsFactory:217 - Order SQL inserts for batching: disabled
+18:18:06,114  INFO SettingsFactory:386 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+18:18:06,119  INFO ASTQueryTranslatorFactory:24 - Using ASTQueryTranslatorFactory
+18:18:06,119  INFO SettingsFactory:225 - Query language substitutions: {}
+18:18:06,119  INFO SettingsFactory:230 - JPA-QL strict compliance: disabled
+18:18:06,119  INFO SettingsFactory:235 - Second-level cache: enabled
+18:18:06,119  INFO SettingsFactory:239 - Query cache: enabled
+18:18:06,119  INFO SettingsFactory:373 - Cache provider: org.hibernate.cache.EhCacheProvider
+18:18:06,124  INFO SettingsFactory:254 - Optimize cache for minimal puts: enabled
+18:18:06,124  INFO SettingsFactory:263 - Structured second-level cache entries: enabled
+18:18:06,124  INFO SettingsFactory:360 - Query cache factory: org.hibernate.cache.StandardQueryCacheFactory
+18:18:06,129  INFO SettingsFactory:290 - Statistics: disabled
+18:18:06,129  INFO SettingsFactory:294 - Deleted entity synthetic identifier rollback: disabled
+18:18:06,129  INFO SettingsFactory:309 - Default entity-mode: pojo
+18:18:06,129  INFO SettingsFactory:313 - Named query checking : enabled
+18:18:06,154  INFO SessionFactoryImpl:161 - building session factory
+18:18:06,159  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+18:18:06,464  INFO SessionFactoryObjectFactory:82 - Not binding factory to JNDI, no JNDI name configured
+18:18:06,464  INFO UpdateTimestampsCache:41 - starting update timestamps cache at region: org.hibernate.cache.UpdateTimestampsCache
+18:18:06,464  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+18:18:06,474  INFO StandardQueryCache:52 - starting query cache at region: org.hibernate.cache.StandardQueryCache
+18:18:06,479  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+18:18:06,515  INFO HibernateTransactionManager:396 - Using DataSource [org.apache.tomcat.dbcp.dbcp.BasicDataSource@140ffc1] of Hibernate SessionFactory for HibernateTransactionManager
+18:18:06,517  INFO DefaultAopProxyFactory:59 - CGLIB2 available: proxyTargetClass feature enabled
+18:18:06,693  INFO ContextLoader:195 - Using context class [org.springframework.web.context.support.XmlWebApplicationContext] for root WebApplicationContext
+18:18:06,693  INFO ContextLoader:205 - Root WebApplicationContext: initialization completed in 2440 ms
+18:18:06,718  INFO ApplicationConfiguratorServlet:49 - Application configurator loaded for application 'leche_vitrine'.
+18:18:06,723  INFO LoginMembreServlet:45 - FileUpload filePath initialized
+18:18:06,723  INFO FileUploadConfiguratorServlet:22 - FileUploadConfigurator initialized
+18:18:16,492  INFO JdbcTransactionObjectSupport:60 - JDBC 3.0 Savepoint class is available
+18:18:17,024  WARN LoginMembreServlet:47 - connexion réussie
+18:18:22,678  WARN LoginMembreServlet:73 - #\\FILE ITEM
+field name : file-chooser
+file name : sq4.jpg
+content type : image/jpeg
+is in memory : true
+size in bytes : 53406
+18:18:22,683  WARN LoginMembreServlet:98 - 
+
+file status : UPLOADED
+
+
+18:18:22,683  INFO LoginMembreServlet:31 - file uploaded
+18:18:38,483  INFO ApplicationConfiguratorServlet:58 - Application configurator unloaded for application 'leche_vitrine'.
+18:18:38,488  INFO FileUploadConfiguratorServlet:27 - FileUploadConfigurator destroyed
+18:18:38,493  INFO XmlWebApplicationContext:500 - Closing application context [Root WebApplicationContext]
+18:18:38,493  INFO DefaultListableBeanFactory:555 - Destroying singletons in factory {org.springframework.beans.factory.support.DefaultListableBeanFactory defining beans [dataSource,sessionFactory,transactionManager,transactionProxy,categorieDAO,favoriDAO,ligneVitrineDAO,marchandDAO,membreDAO,produitDAO,vitrineDAO,categorieService,favoriService,ligneVitrineService,marchandService,membreService,produitService,vitrineService]; root of BeanFactory hierarchy}
+18:18:38,493  INFO LocalSessionFactoryBean:1028 - Closing Hibernate SessionFactory
+18:18:38,498  INFO SessionFactoryImpl:769 - closing
+19:33:28,046  INFO ContextLoader:180 - Root WebApplicationContext: initialization started
+19:33:28,150  INFO CollectionFactory:71 - Commons Collections 3.x available
+19:33:28,178  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-JDBC.xml]
+19:33:28,622  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-DTO.xml]
+19:33:28,681  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-DAO.xml]
+19:33:28,718  INFO XmlBeanDefinitionReader:163 - Loading XML bean definitions from URL [jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/appVitrine-BackEnd.jar!/applicationContext-Service.xml]
+19:33:28,783  INFO XmlWebApplicationContext:92 - Bean factory for application context [Root WebApplicationContext]: org.springframework.beans.factory.support.DefaultListableBeanFactory defining beans [dataSource,sessionFactory,transactionManager,transactionProxy,categorieDAO,favoriDAO,ligneVitrineDAO,marchandDAO,membreDAO,produitDAO,vitrineDAO,categorieService,favoriService,ligneVitrineService,marchandService,membreService,produitService,vitrineService]; root of BeanFactory hierarchy
+19:33:28,799  INFO XmlWebApplicationContext:290 - 18 beans defined in application context [Root WebApplicationContext]
+19:33:28,819  INFO XmlWebApplicationContext:432 - Unable to locate MessageSource with name 'messageSource': using default [org.springframework.context.support.DelegatingMessageSource@5f5220ee]
+19:33:28,832  INFO XmlWebApplicationContext:454 - Unable to locate ApplicationEventMulticaster with name 'applicationEventMulticaster': using default [org.springframework.context.event.SimpleApplicationEventMulticaster@4c0effc4]
+19:33:28,836  INFO UiApplicationContextUtils:83 - Unable to locate ThemeSource with name 'themeSource': using default [org.springframework.ui.context.support.ResourceBundleThemeSource@446195c9]
+19:33:28,839  INFO DefaultListableBeanFactory:268 - Pre-instantiating singletons in factory [org.springframework.beans.factory.support.DefaultListableBeanFactory defining beans [dataSource,sessionFactory,transactionManager,transactionProxy,categorieDAO,favoriDAO,ligneVitrineDAO,marchandDAO,membreDAO,produitDAO,vitrineDAO,categorieService,favoriService,ligneVitrineService,marchandService,membreService,produitService,vitrineService]; root of BeanFactory hierarchy]
+19:33:28,914  INFO Environment:514 - Hibernate 3.2.6
+19:33:28,918  INFO Environment:547 - hibernate.properties not found
+19:33:28,918  INFO Environment:681 - Bytecode provider name : cglib
+19:33:28,923  INFO Environment:598 - using JDK 1.4 java.sql.Timestamp handling
+19:33:29,085  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.CategorieDTO -> CATEGORIE
+19:33:29,173  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.FavoriDTO -> FAVORI
+19:33:29,212  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.LigneVitrineDTO -> LIGNEVITRINE
+19:33:29,252  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.MarchandDTO -> MARCHAND
+19:33:29,281  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO -> MEMBRE
+19:33:29,330  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO -> PRODUIT
+19:33:29,398  INFO HbmBinder:300 - Mapping class: ca.qc.collegeahuntsic.weblab6.dto.VitrineDTO -> VITRINE
+19:33:29,399  INFO LocalSessionFactoryBean:749 - Building new Hibernate SessionFactory
+19:33:29,401  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.CategorieDTO.ligneVitrines -> LIGNEVITRINE
+19:33:29,402  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MarchandDTO.produits -> PRODUIT
+19:33:29,403  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.vitrines -> VITRINE
+19:33:29,404  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.categories -> CATEGORIE
+19:33:29,405  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.favoris -> FAVORI
+19:33:29,405  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.MembreDTO.marchands -> MARCHAND
+19:33:29,406  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO.ligneVitrines -> LIGNEVITRINE
+19:33:29,408  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.ProduitDTO.favoris -> FAVORI
+19:33:29,409  INFO HbmBinder:2382 - Mapping collection: ca.qc.collegeahuntsic.weblab6.dto.VitrineDTO.ligneVitrines -> LIGNEVITRINE
+19:33:29,415  INFO ConnectionProviderFactory:72 - Initializing connection provider: org.springframework.orm.hibernate3.LocalDataSourceConnectionProvider
+19:33:29,845  INFO SettingsFactory:89 - RDBMS: Oracle, version: Oracle Database 10g Express Edition Release 10.2.0.1.0 - Production
+19:33:29,845  INFO SettingsFactory:90 - JDBC driver: Oracle JDBC driver, version: 12.1.0.1.0
+19:33:29,861  INFO Dialect:152 - Using dialect: org.hibernate.dialect.Oracle10gDialect
+19:33:29,871  INFO TransactionFactoryFactory:31 - Using default transaction strategy (direct JDBC transactions)
+19:33:29,873  INFO TransactionManagerLookupFactory:33 - No TransactionManagerLookup configured (in JTA environment, use of read-write or transactional second-level cache is not recommended)
+19:33:29,874  INFO SettingsFactory:143 - Automatic flush during beforeCompletion(): disabled
+19:33:29,875  INFO SettingsFactory:147 - Automatic session close at end of transaction: disabled
+19:33:29,876  INFO SettingsFactory:162 - Scrollable result sets: enabled
+19:33:29,877  INFO SettingsFactory:170 - JDBC3 getGeneratedKeys(): disabled
+19:33:29,877  INFO SettingsFactory:174 - JDBC result set fetch size: 0
+19:33:29,877  INFO SettingsFactory:178 - Connection release mode: on_close
+19:33:29,878  INFO SettingsFactory:202 - Maximum outer join fetch depth: 3
+19:33:29,878  INFO SettingsFactory:205 - Default batch fetch size: 16
+19:33:29,879  INFO SettingsFactory:209 - Generate SQL with comments: disabled
+19:33:29,879  INFO SettingsFactory:213 - Order SQL updates by primary key: enabled
+19:33:29,880  INFO SettingsFactory:217 - Order SQL inserts for batching: disabled
+19:33:29,880  INFO SettingsFactory:386 - Query translator: org.hibernate.hql.ast.ASTQueryTranslatorFactory
+19:33:29,883  INFO ASTQueryTranslatorFactory:24 - Using ASTQueryTranslatorFactory
+19:33:29,883  INFO SettingsFactory:225 - Query language substitutions: {}
+19:33:29,884  INFO SettingsFactory:230 - JPA-QL strict compliance: disabled
+19:33:29,884  INFO SettingsFactory:235 - Second-level cache: enabled
+19:33:29,885  INFO SettingsFactory:239 - Query cache: enabled
+19:33:29,885  INFO SettingsFactory:373 - Cache provider: org.hibernate.cache.EhCacheProvider
+19:33:29,888  INFO SettingsFactory:254 - Optimize cache for minimal puts: enabled
+19:33:29,888  INFO SettingsFactory:263 - Structured second-level cache entries: enabled
+19:33:29,889  INFO SettingsFactory:360 - Query cache factory: org.hibernate.cache.StandardQueryCacheFactory
+19:33:29,895  INFO SettingsFactory:290 - Statistics: disabled
+19:33:29,895  INFO SettingsFactory:294 - Deleted entity synthetic identifier rollback: disabled
+19:33:29,895  INFO SettingsFactory:309 - Default entity-mode: pojo
+19:33:29,895  INFO SettingsFactory:313 - Named query checking : enabled
+19:33:29,920  INFO SessionFactoryImpl:161 - building session factory
+19:33:29,925  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+19:33:30,282  INFO SessionFactoryObjectFactory:82 - Not binding factory to JNDI, no JNDI name configured
+19:33:30,283  INFO UpdateTimestampsCache:41 - starting update timestamps cache at region: org.hibernate.cache.UpdateTimestampsCache
+19:33:30,284  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+19:33:30,297  INFO StandardQueryCache:52 - starting query cache at region: org.hibernate.cache.StandardQueryCache
+19:33:30,297  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+19:33:30,328  INFO HibernateTransactionManager:396 - Using DataSource [org.apache.tomcat.dbcp.dbcp.BasicDataSource@6fd80308] of Hibernate SessionFactory for HibernateTransactionManager
+19:33:30,331  INFO DefaultAopProxyFactory:59 - CGLIB2 available: proxyTargetClass feature enabled
+19:33:30,541  INFO ContextLoader:195 - Using context class [org.springframework.web.context.support.XmlWebApplicationContext] for root WebApplicationContext
+19:33:30,542  INFO ContextLoader:205 - Root WebApplicationContext: initialization completed in 2496 ms
+19:33:30,566  INFO ApplicationConfiguratorServlet:49 - Application configurator loaded for application 'leche_vitrine'.
+19:33:30,576  INFO LoginMembreServlet:45 - FileUpload filePath initialized
+19:33:30,576  INFO FileUploadConfiguratorServlet:22 - FileUploadConfigurator initialized
+19:33:52,589  INFO JdbcTransactionObjectSupport:60 - JDBC 3.0 Savepoint class is available
+19:33:52,896  INFO RegisterMembreServlet:48 - membre créé
+19:33:56,883  WARN LoginMembreServlet:47 - connexion réussie

@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class ViewLoginServlet extends HttpServlet {
+
     private static final long serialVersionUID = 1L;
 
     private static final String FORWARD_RESOURCE = "/WEB-INF/jsp/viewLogin/viewIndex.jsp";

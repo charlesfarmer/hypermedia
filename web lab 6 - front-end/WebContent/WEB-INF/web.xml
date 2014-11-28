@@ -39,6 +39,24 @@
   </servlet>
   
   <servlet>
+    <servlet-name>fileUploadConfiguratorServlet</servlet-name>
+    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.startup.FileUploadConfiguratorServlet</servlet-class>
+    <init-param>
+      <param-name>fileUploadPath</param-name>
+      <param-value>C:\Users\Charles\git\hypermedia\web lab 6 - front-end\WebContent\img\</param-value>
+    </init-param>
+    <init-param>
+      <param-name>maxFileSize</param-name>
+      <param-value>123456</param-value>
+    </init-param>
+    <init-param>
+      <param-name>maxMemSize</param-name>
+      <param-value>123456</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet>
     <servlet-name>viewLoginServlet</servlet-name>
     <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.ViewLoginServlet</servlet-class>
   </servlet>
@@ -51,11 +69,11 @@
   <servlet>
     <servlet-name>fileUploadServlet</servlet-name>
     <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.FileUploadServlet</servlet-class>
-    <init-param>
-      <param-name>uploadPath</param-name>
-      <param-value>C:\Users\Charles\git\hypermedia\web lab 6 - front-end\WebContent\img\</param-value>
-      <description>The directory where user images are uploaded</description>
-    </init-param>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>registerMembreServlet</servlet-name>
+    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.RegisterMembreServlet</servlet-class>
   </servlet>
   
 <!--                                            -->
@@ -74,8 +92,13 @@
   
   <servlet-mapping>
     <servlet-name>fileUploadServlet</servlet-name>
-    <url-pattern>/uploadFile.do</url-pattern></servlet-mapping>
+    <url-pattern>/uploadFile.do</url-pattern>
+  </servlet-mapping>
   
+  <servlet-mapping>
+    <servlet-name>registerMembreServlet</servlet-name>
+    <url-pattern>/registerMembre.do</url-pattern>
+  </servlet-mapping>
 <!--                                            -->
 <!--             SERVER SETTINGS                -->
 <!--                                            -->
