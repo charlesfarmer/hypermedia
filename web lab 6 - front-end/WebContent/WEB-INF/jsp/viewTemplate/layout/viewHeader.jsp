@@ -1,4 +1,15 @@
+<%@ taglib uri="application-message"
+           prefix="message" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
+<%@ page import="ca.qc.collegeahuntsic.weblab6.dto.MembreDTO" %>
+<%@ page import="ca.qc.collegeahuntsic.weblab6.servlet.action.LoginMembreServlet" %>
+
+
 <div id="header">
+  <a name="top"></a>
   <nav class="navbar navbar-default" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -15,49 +26,58 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-      
-      <% if(request.getParameter("param1") != null) { %>
-          <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-      <% } else { %>
-          <li class=""><a href="#">Link <span class="sr-only">(current)</span></a></li>
-      <% } %>
-      
-      
-      <% if(request.getParameter("param1") != null) { %>
-          <li class="active"><a href="#">Link</a></li>
-      <% } else { %>
-          <li><a href="#">Link</a></li>
-      <% } %>
-
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-          <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-        </li>
+        <c:choose>
+          <c:when test="${ not empty param.viewFavorites }">
+            <li class="active"><a href="viewVitrines.do"><message:say key="global.vitrinesPage.displayMessage"/></a></li>
+          </c:when>
+          <c:otherwise>
+            <li><a href="viewVitrines.do"><message:say key="global.vitrinesPage.displayMessage"/></a></li>
+          </c:otherwise>
+        </c:choose>
+        <c:choose>
+          <c:when test="${ not empty param.viewVitrines }">
+            <li class="active"><a href="viewFavorites.do"><message:say key="global.favoritesPage.displayMessage"/></a></li>
+          </c:when>
+          <c:otherwise>
+            <li><a href="viewFavorites.do"><message:say key="global.favoritesPage.displayMessage"/></a></li>
+          </c:otherwise>
+        </c:choose>
+        <c:choose>
+          <c:when test="${ not empty param.viewStatistiques }">
+            <li class="active"><a href="viewStatistiques.do"><message:say key="global.statistiquesPage.displayMessage"/></a></li>
+          </c:when>
+          <c:otherwise>
+            <li><a href="viewStatistiques.do"><message:say key="global.statistiquesPage.displayMessage"/></a></li>
+          </c:otherwise>
+        </c:choose>
+        
+        <!-- 
+        <c:choose>
+          <c:when test="${ not empty param.param1 }">
+            ...
+          </c:when>
+          <c:otherwise>
+            ...
+          </c:otherwise>
+        </c:choose>
+         -->
+         
       </ul>
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Link</a></li>
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user"></span>
+            <% MembreDTO membre = ((MembreDTO) request.getSession().getAttribute(LoginMembreServlet.MEMBRE_ATTRIBUTE_NAME)); %>
+            <%= membre.getUsername() %>
+            <span class="caret"></span>
+          </a>
           <ul class="dropdown-menu" role="menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li>
+              <a href="viewMembre.do"><message:say key="global.membrePage.displayMessage"/></a>
+            </li>
             <li class="divider"></li>
-            <li><a href="#">Separated link</a></li>
+            <li>
+              <a href="#"><message:say key="global.logout.displayMessage"/></a>
+            </li>
           </ul>
         </li>
       </ul>

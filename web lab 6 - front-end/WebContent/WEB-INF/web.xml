@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!DOCTYPE web-app PUBLIC
-          "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
-          "http://svn.apache.org/repos/asf/beehive/trunk/netui/external/struts/web-app_2_3.dtd">
-          
-<web-app>
+  
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+         http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         id="WebApp_ID" version="2.5">
 
   <display-name>web lab 6 - front-end</display-name>
   
@@ -67,6 +68,21 @@
   </servlet>
   
   <servlet>
+    <servlet-name>viewFavoritesServlet</servlet-name>
+    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.viewFavoritesServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>viewVitrinesServlet</servlet-name>
+    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.viewVitrinesServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>viewMembreServlet</servlet-name>
+    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.viewMembreServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
     <servlet-name>loginMembreServlet</servlet-name>
     <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.LoginMembreServlet</servlet-class>
   </servlet>
@@ -96,11 +112,26 @@
   </servlet-mapping>
   
   <servlet-mapping>
+    <servlet-name>viewMembreServlet</servlet-name>
+    <url-pattern>/viewMembre.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>viewFavoritesServlet</servlet-name>
+    <url-pattern>/viewFavorites.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>viewVitrinesServlet</servlet-name>
+    <url-pattern>/viewVitrines.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
     <servlet-name>loginMembreServlet</servlet-name>
     <url-pattern>/loginMembre.do</url-pattern>
   </servlet-mapping>
   
-  <servlet-mapping>
+    <servlet-mapping>
     <servlet-name>fileUploadServlet</servlet-name>
     <url-pattern>/uploadFile.do</url-pattern>
   </servlet-mapping>
@@ -124,13 +155,14 @@
 <!--                                            -->
 <!--            TAG LIB DEFINITIONS             -->
 <!--                                            -->
-  <taglib>
-    <taglib-uri>application-config</taglib-uri>
-    <taglib-location>/WEB-INF/tld/application-config.tld</taglib-location>
-  </taglib>
-  <taglib>
-    <taglib-uri>application-message</taglib-uri>
-    <taglib-location>/WEB-INF/tld/application-message.tld</taglib-location>
-  </taglib>  
-
+  <jsp-config>
+    <taglib>
+      <taglib-uri>application-config</taglib-uri>
+      <taglib-location>/WEB-INF/tld/application-config.tld</taglib-location>
+    </taglib>
+    <taglib>
+      <taglib-uri>application-message</taglib-uri>
+      <taglib-location>/WEB-INF/tld/application-message.tld</taglib-location>
+    </taglib>  
+  </jsp-config>
 </web-app>
