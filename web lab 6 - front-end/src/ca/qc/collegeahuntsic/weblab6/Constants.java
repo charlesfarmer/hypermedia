@@ -35,6 +35,36 @@ public interface Constants {
     Character SPACE = new Character(' ');
 
     /**
+     * Character for the character '='.
+     */
+    Character EQUALS = new Character('=');
+
+    /**
+     * Character for the character ','.
+     */
+    Character COMMA = new Character(',');
+
+    /**
+     * Character for the character '['.
+     */
+    Character OPENING_BRACE = new Character('[');
+
+    /**
+     * Character for the character ']'.
+     */
+    Character CLOSING_BRACE = new Character(']');
+
+    /**
+     * Character for the character '\n'.
+     */
+    Character NEW_LINE = new Character('\n');
+
+    /**
+     * Character for the character '\t'.
+     */
+    Character TAB = new Character('\t');
+
+    /**
      * Application name ID.
      */
     String APPLICATION_NAME_ID = "app.name"; //$NON-NLS-1$

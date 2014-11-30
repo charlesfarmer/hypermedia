@@ -37,7 +37,8 @@
          </property>
 
          <set name="vitrines"
-              cascade="all">
+              cascade="all"
+              lazy="false">
               <key>
                 <column name="MEMBREID">
                 </column>
@@ -45,7 +46,8 @@
               <one-to-many class="ca.qc.collegeahuntsic.weblab6.dto.VitrineDTO"/>
          </set>
          <set name="categories"
-              cascade="all">
+              cascade="all"
+              lazy="false">
               <key>
                 <column name="MEMBREID">
                 </column>
@@ -53,7 +55,8 @@
               <one-to-many class="ca.qc.collegeahuntsic.weblab6.dto.CategorieDTO"/>
          </set>
          <set name="favoris"
-              cascade="all">
+              cascade="all"
+              lazy="false">
               <key>
                 <column name="MEMBREID">
                 </column>
@@ -61,7 +64,8 @@
               <one-to-many class="ca.qc.collegeahuntsic.weblab6.dto.FavoriDTO"/>
          </set>
          <set name="marchands"
-              cascade="all">
+              cascade="all"
+              lazy="false">
               <key>
                 <column name="MEMBREID">
                 </column>

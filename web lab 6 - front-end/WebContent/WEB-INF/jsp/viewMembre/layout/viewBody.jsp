@@ -1,6 +1,7 @@
 <%@ page import="ca.qc.collegeahuntsic.weblab6.servlet.action.UpdateMembreServlet"%>
 <%@ page import="ca.qc.collegeahuntsic.weblab6.servlet.action.LoginMembreServlet" %>
 <%@ page import="ca.qc.collegeahuntsic.weblab6.dto.MembreDTO" %>
+<%@ page import="ca.qc.collegeahuntsic.weblab6.dto.VitrineDTO" %>
 
 <%@ taglib prefix="message" uri="application-message" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -75,10 +76,39 @@
        <div class="panel panel-heading">
          <div class="panel-title membre-titre" id="membre-vitrines-titre"><message:say key="viewMembre.layout.viewBody.vitrines.displayMessage"/><c:out value="${ requestScope.membre.username }"></c:out></div>
        </div>
+       <div class="panel panel-body">
+       <c:choose>
+         <c:when test="${ not empty requestScope.vitrines }">
+           <c:forEach var="vitrine" varStatus="i" items="${ requestScope.vitrines }">
+             <c:out value="${ vitrine.title }"></c:out>
+             <fmt:formatDate value="${ vitrine.dateAdded }" pattern="yyyy/MM/dd"/>
+             <br/>
+           </c:forEach>
+         </c:when>
+         <c:otherwise>
+           <h3><message:say key="viewMembre.layout.viewBody.vitrines.vide.displayMessage"/></h3>
+         </c:otherwise>
+       </c:choose>
+       </div>
      </div>
      <div class="panel panel-default" id="marchands-membre">
        <div class="panel panel-heading">
          <div class="panel-title membre-titre" id="membre-marchands-titre"><message:say key="viewMembre.layout.viewBody.marchands.displayMessage"/><c:out value="${ requestScope.membre.username }"></c:out></div>
+       </div>
+       <div class="panel panel-body">
+       <c:choose>
+         <c:when test="${ not empty requestScope.marchands }">
+           <c:forEach var="marchand" varStatus="i" items="${ requestScope.marchands }">
+             <div name="marchand-${ marchand.idMarchand }" class="marchand-membre">
+               <span class="logo-marchand-membre"><img class="marchand-logo" src="<c:url value="${ request.membre.username }/${ marchand.logoURI }"/>"></span>
+               <span class="nom-marchand-membre"><c:out value="${ marchand.name }"></c:out></span>
+             </div>
+           </c:forEach>
+         </c:when>
+         <c:otherwise>
+           <h3><message:say key="viewMembre.layout.viewBody.marchands.vide.displayMessage"/></h3>
+         </c:otherwise>
+       </c:choose>
        </div>
      </div>
      </div>

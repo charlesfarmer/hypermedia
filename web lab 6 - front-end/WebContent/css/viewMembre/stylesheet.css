@@ -45,3 +45,22 @@
 	width: 50%;
 	height: 100%;
 }
+
+.marchand-logo {
+	width: 33%;
+	height: 33%;
+}
+
+.marchand-membre {
+	border: 1px blue solid;
+	display:block;
+	
+}
+
+.nom-marchand-membre {
+	display:inline-block;
+}
+
+.logo-marchand-membre {
+	display:inline-block;
+}
