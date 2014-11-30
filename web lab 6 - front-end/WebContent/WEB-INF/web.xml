@@ -69,17 +69,22 @@
   
   <servlet>
     <servlet-name>viewFavoritesServlet</servlet-name>
-    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.viewFavoritesServlet</servlet-class>
+    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.ViewFavoritesServlet</servlet-class>
   </servlet>
   
   <servlet>
     <servlet-name>viewVitrinesServlet</servlet-name>
-    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.viewVitrinesServlet</servlet-class>
+    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.ViewVitrinesServlet</servlet-class>
   </servlet>
   
   <servlet>
     <servlet-name>viewMembreServlet</servlet-name>
-    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.viewMembreServlet</servlet-class>
+    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.ViewMembreServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>viewStatistiquesServlet</servlet-name>
+    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.ViewStatistiquesServlet</servlet-class>
   </servlet>
   
   <servlet>
@@ -96,6 +101,16 @@
     <servlet-name>registerMembreServlet</servlet-name>
     <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.RegisterMembreServlet</servlet-class>
   </servlet>
+  
+  <servlet>
+    <servlet-name>updateMembreServlet</servlet-name>
+    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.UpdateMembreServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>deconnexionServlet</servlet-name>
+    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.DeconnexionServlet</servlet-class>
+   </servlet>
   
 <!--                                            -->
 <!--             SERVLET MAPPINGS               -->
@@ -127,6 +142,11 @@
   </servlet-mapping>
   
   <servlet-mapping>
+    <servlet-name>viewStatistiquesServlet</servlet-name>
+    <url-pattern>/viewStatistiques.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
     <servlet-name>loginMembreServlet</servlet-name>
     <url-pattern>/loginMembre.do</url-pattern>
   </servlet-mapping>
@@ -140,6 +160,17 @@
     <servlet-name>registerMembreServlet</servlet-name>
     <url-pattern>/registerMembre.do</url-pattern>
   </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>updateMembreServlet</servlet-name>
+    <url-pattern>/updateMembre.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>deconnexionServlet</servlet-name>
+    <url-pattern>/deconnexion.do</url-pattern>
+  </servlet-mapping>
+  
 <!--                                            -->
 <!--             SERVER SETTINGS                -->
 <!--                                            -->

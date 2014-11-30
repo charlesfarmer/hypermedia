@@ -1,0 +1,47 @@
+#new-profil-membre {
+	margin-top: 10px;
+}
+
+.membre-titre {
+    text-align: left;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.membre-info {
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+
+.form-old-password {
+    margin-top: 10px !important;
+    margin-bottom: 15px !important;
+}
+
+#body {
+	height: 100%;
+}
+
+#panel-body {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+#profil-membre {
+	height: 100%;
+}
+
+#left {
+	float: left;
+	display:inline-block;
+	width: 50%;
+	height: 100%;
+}
+
+#right {
+	float: left;
+	display: inline-block;
+	width: 50%;
+	height: 100%;
+}

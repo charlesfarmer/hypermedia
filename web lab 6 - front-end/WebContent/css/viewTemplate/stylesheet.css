@@ -1,4 +1,30 @@
+html, body {
+    height: 100%;
+    margin: auto;
+}
+
+#index-template {
+	height: 100%;
+	margin: 0 auto;
+}
+
 #template-page {
+	height: 100%;
+	width: 96%;
+	margin: 0 auto;
+	padding-left: 2%;
+    padding-right: 2%;
+    display: table;
+}
+
+#template-body {
+    height: 100%;
+    margin: 0 auto;
+    display: table-row;
+}
+
+#template-footer {
+	display: table-row;
 }
 
 #nav-bar-logo {
@@ -6,10 +32,23 @@
     margin-top: -18px;
 }
 
-#footer {
+#footer-wrapper {
 	text-align: center;
 	background-color: rgba(225,225,225,0.5);
-	padding-top: 2%;
-	padding-bottom: 2%;
+	margin-top: 2%;
+	padding-top: 0,5%;
+	padding-left: 0,5%;
 	font-weight: bold;
+}
+
+#footer-navigation {
+	
+}
+
+#footer #retour-accueil {
+	
+}
+
+#footer #go-to-top {
+	
 }

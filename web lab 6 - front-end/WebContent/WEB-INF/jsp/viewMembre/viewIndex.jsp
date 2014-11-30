@@ -12,11 +12,13 @@
   <head>
     <base href="<config:webappProtocol/>://<config:webappServerName/>:<config:webappPortNumber/><config:webappPath/>/"/>
     <title><message:say key="global.welcome.displayMessage"/></title>
-    <link rel="stylesheet" href="css/viewTemplate/stylesheet.css" type="text/css"/>
-    <script type="text/javascript" src="js/viewTemplate/viewTemplate.js"></script>
     <%@ include file="/WEB-INF/jsp/layout/includeCommon.jsp" %>
+    <link rel="stylesheet" href="css/viewTemplate/stylesheet.css" type="text/css"/>
+    <link rel="stylesheet" href="css/viewMembre/stylesheet.css" type="text/css"/>
+    <script type="text/javascript" src="js/viewTemplate/viewTemplate.js"></script>
+    <script type="text/javascript" src="js/viewMembre/viewMembre.js"></script>
   </head>
   <body>
-    <div id="index-template"><jsp:include page="/WEB-INF/jsp/viewTemplate/layout/viewTemplate.jsp" flush="true"/></div>
+    <div id="index-template"><jsp:include page="/WEB-INF/jsp/viewMembre/layout/viewMembre.jsp" flush="true"/></div>
   </body>
 </html>

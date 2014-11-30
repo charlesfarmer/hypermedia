@@ -1,12 +1,11 @@
-<%@ taglib uri="application-message"
-           prefix="message" %>
+<%@ page import="ca.qc.collegeahuntsic.weblab6.dto.MembreDTO" %>
+<%@ page import="ca.qc.collegeahuntsic.weblab6.servlet.action.LoginMembreServlet" %>
+
+<%@ taglib prefix="message" uri="application-message" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="x" uri="http://java.sun.com/jsp/jstl/xml" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql" %>
-<%@ page import="ca.qc.collegeahuntsic.weblab6.dto.MembreDTO" %>
-<%@ page import="ca.qc.collegeahuntsic.weblab6.servlet.action.LoginMembreServlet" %>
-
 
 <div id="header">
   <a name="top"></a>
@@ -72,11 +71,11 @@
           </a>
           <ul class="dropdown-menu" role="menu">
             <li>
-              <a href="viewMembre.do"><message:say key="global.membrePage.displayMessage"/></a>
+              <a href="viewMembre.do?idMembre=<c:out value="${ sessionScope.membre.idMembre }"></c:out>"><message:say key="global.membrePage.displayMessage"/></a>
             </li>
             <li class="divider"></li>
             <li>
-              <a href="#"><message:say key="global.logout.displayMessage"/></a>
+              <a href="deconnexion.do"><message:say key="global.logout.displayMessage"/></a>
             </li>
           </ul>
         </li>
