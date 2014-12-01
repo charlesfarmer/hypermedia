@@ -87,8 +87,8 @@ public class DTO implements Serializable {
      */
     @Override
     public int hashCode() {
-        final HashCodeBuilder hashCodeBuilder = new HashCodeBuilder(15,
-            5);
+        final HashCodeBuilder hashCodeBuilder = new HashCodeBuilder(5,
+            11);
         return hashCodeBuilder.toHashCode();
     }
 
@@ -143,7 +143,8 @@ public class DTO implements Serializable {
                             getter = property.getReadMethod();
                         }
                         propertyName = property.getName();
-                        string.append(propertyName).append(Constants.SPACE.toString()).append(Constants.EQUALS.toString()).append(Constants.SPACE.toString()).append(getter.invoke(this)).append(Constants.COMMA.toString());
+                        string.append(propertyName).append(Constants.SPACE.toString()).append(Constants.EQUALS.toString()).append(Constants.SPACE.toString())
+                            .append(getter.invoke(this)).append(Constants.COMMA.toString());
                     } catch(NullPointerException nullPointerException) {
                         // Nothing to do.
                     } catch(IllegalAccessException illegalAccessException) {

@@ -4,6 +4,8 @@ package ca.qc.collegeahuntsic.weblab6.dto;
 import java.sql.Timestamp;
 import java.util.Collections;
 import java.util.Set;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 public class VitrineDTO extends DTO {
 
@@ -70,5 +72,32 @@ public class VitrineDTO extends DTO {
 
     public void setLigneVitrines(Set<LigneVitrineDTO> ligneVitrines) {
         this.ligneVitrines = ligneVitrines;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        boolean equals = this == obj;
+        if(!equals) {
+            equals = obj != null
+                && obj instanceof VitrineDTO;
+            if(equals) {
+                final VitrineDTO vitrineDTO = (VitrineDTO) obj;
+                final EqualsBuilder equalsBuilder = new EqualsBuilder();
+                equalsBuilder.appendSuper(super.equals(vitrineDTO));
+                equalsBuilder.append(getIdVitrine(),
+                    vitrineDTO.getIdVitrine());
+                equals = equalsBuilder.isEquals();
+            }
+        }
+        return equals;
+    }
+
+    @Override
+    public int hashCode() {
+        final HashCodeBuilder hashCodeBuilder = new HashCodeBuilder(31,
+            37);
+        hashCodeBuilder.appendSuper(super.hashCode());
+        hashCodeBuilder.append(getIdVitrine());
+        return hashCodeBuilder.toHashCode();
     }
 }

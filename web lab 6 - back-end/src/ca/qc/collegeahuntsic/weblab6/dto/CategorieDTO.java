@@ -3,6 +3,8 @@ package ca.qc.collegeahuntsic.weblab6.dto;
 
 import java.util.Collections;
 import java.util.Set;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 public class CategorieDTO extends DTO {
 
@@ -57,5 +59,32 @@ public class CategorieDTO extends DTO {
 
     public void setMembreDTO(MembreDTO membreDTO) {
         this.membreDTO = membreDTO;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        boolean equals = this == obj;
+        if(!equals) {
+            equals = obj != null
+                && obj instanceof CategorieDTO;
+            if(equals) {
+                final CategorieDTO categorieDTO = (CategorieDTO) obj;
+                final EqualsBuilder equalsBuilder = new EqualsBuilder();
+                equalsBuilder.appendSuper(super.equals(categorieDTO));
+                equalsBuilder.append(getIdCategorie(),
+                    categorieDTO.getIdCategorie());
+                equals = equalsBuilder.isEquals();
+            }
+        }
+        return equals;
+    }
+
+    @Override
+    public int hashCode() {
+        final HashCodeBuilder hashCodeBuilder = new HashCodeBuilder(37,
+            43);
+        hashCodeBuilder.appendSuper(super.hashCode());
+        hashCodeBuilder.append(getIdCategorie());
+        return hashCodeBuilder.toHashCode();
     }
 }

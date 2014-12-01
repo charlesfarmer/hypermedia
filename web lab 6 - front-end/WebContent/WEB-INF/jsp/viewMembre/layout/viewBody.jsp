@@ -26,7 +26,7 @@
           <% } else { %>
                <div class="alert alert-danger">
                  <span class="glyphicon glyphicon-exclamation-sign"></span>
-                 <message:say key="update.membre.failed.displayMessage"/>
+                 <message:say key="update.membre.failed.displayMessage"/> prout
                </div>
          <%  } 
            } %>

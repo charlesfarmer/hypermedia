@@ -1,6 +1,9 @@
 
 package ca.qc.collegeahuntsic.weblab6.dto;
 
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
+
 public class FavoriDTO extends DTO {
 
     private static final long serialVersionUID = 1L;
@@ -43,5 +46,32 @@ public class FavoriDTO extends DTO {
 
     public void setMembreDTO(MembreDTO membreDTO) {
         this.membreDTO = membreDTO;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        boolean equals = this == obj;
+        if(!equals) {
+            equals = obj != null
+                && obj instanceof FavoriDTO;
+            if(equals) {
+                final FavoriDTO favoriDTO = (FavoriDTO) obj;
+                final EqualsBuilder equalsBuilder = new EqualsBuilder();
+                equalsBuilder.appendSuper(super.equals(favoriDTO));
+                equalsBuilder.append(getIdFavori(),
+                    favoriDTO.getIdFavori());
+                equals = equalsBuilder.isEquals();
+            }
+        }
+        return equals;
+    }
+
+    @Override
+    public int hashCode() {
+        final HashCodeBuilder hashCodeBuilder = new HashCodeBuilder(7,
+            13);
+        hashCodeBuilder.appendSuper(super.hashCode());
+        hashCodeBuilder.append(getIdFavori());
+        return hashCodeBuilder.toHashCode();
     }
 }

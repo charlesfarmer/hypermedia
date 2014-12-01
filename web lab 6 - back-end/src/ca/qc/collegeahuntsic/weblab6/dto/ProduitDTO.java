@@ -3,6 +3,8 @@ package ca.qc.collegeahuntsic.weblab6.dto;
 
 import java.math.BigDecimal;
 import java.util.Set;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 public class ProduitDTO extends DTO {
 
@@ -90,5 +92,32 @@ public class ProduitDTO extends DTO {
 
     public void setIdProduit(String idProduit) {
         this.idProduit = idProduit;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        boolean equals = this == obj;
+        if(!equals) {
+            equals = obj != null
+                && obj instanceof ProduitDTO;
+            if(equals) {
+                final ProduitDTO produitDTO = (ProduitDTO) obj;
+                final EqualsBuilder equalsBuilder = new EqualsBuilder();
+                equalsBuilder.appendSuper(super.equals(produitDTO));
+                equalsBuilder.append(getIdProduit(),
+                    produitDTO.getIdProduit());
+                equals = equalsBuilder.isEquals();
+            }
+        }
+        return equals;
+    }
+
+    @Override
+    public int hashCode() {
+        final HashCodeBuilder hashCodeBuilder = new HashCodeBuilder(23,
+            29);
+        hashCodeBuilder.appendSuper(super.hashCode());
+        hashCodeBuilder.append(getIdProduit());
+        return hashCodeBuilder.toHashCode();
     }
 }
