@@ -7004,3 +7004,14 @@ org.hibernate.LazyInitializationException: could not initialize proxy - no Sessi
 17:40:10,059  WARN ViewMembreServlet:79 - vitrineId : 1
 17:40:10,059  WARN ViewMembreServlet:79 - vitrineId : 3
 17:40:10,101  WARN ViewMembreServlet:79 - vitrineId : 2
+21:17:08,617  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+21:17:08,934  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+21:17:08,949  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+21:17:26,817  WARN RegisterMembreServlet:66 - échec création de membre
+21:17:31,027  WARN LoginMembreServlet:47 - connexion réussie
+21:51:58,142  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+21:51:58,473  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+21:51:58,487  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+22:28:01,065  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+22:28:01,372  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+22:28:01,385  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.

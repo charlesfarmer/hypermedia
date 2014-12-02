@@ -1,0 +1,92 @@
+#body {
+	height: 100%;
+}
+
+#body div {
+	background-color: rgba(150,190,180,0.271);
+	margin: 10px;
+}
+
+#view-vitrines-title-text {
+	font-size: 2.71em;
+	font-weight: bold;
+}
+
+#img-new-vitrines {
+	width: 69px;
+	height: 69px;
+	
+}
+
+#new-vitrines-message {
+	font-size: 1.69em;
+    font-weight: bold;
+    padding: 10px 10px;
+}
+
+#view-vitrines-nouvelle-vitrine {
+	display: table;
+	padding: 25px;
+}
+
+#view-vitrines-nouvelle-vitrine div {
+	display: table-cell;
+}
+
+#img-new-vitrines > img {
+	width: 100%;
+	height: auto;
+}
+
+#view-vitrines-vitrines {
+}
+
+.vitrine-summary {
+	display: flex;
+	text-align: center;
+	margin: 10px 0px;
+	font-weight: bold;
+	font-size: 16px;
+}
+
+.vitrine-summary > div {
+	flex-grow: 1;
+}
+
+.vitrine-summary-lastEdited {
+	width: 80px;
+}
+
+.vitrine-summary-dateAdded {
+	width: 80px;
+}
+
+.vitrine-summary-title {
+	width: 65%
+}
+
+.vitrine-summary-toolbox {
+	width: 207px;
+	display: table;
+}
+
+.vitrine-table-row {
+	display: table-row;
+}
+
+.img-toolbox {
+	width: 69px;
+    height: 69px;
+    display: table-cell;
+}
+
+.img-toolbox > img {
+	width: 100%;
+	height: auto;
+}
+
+.vitrine-element {
+	height: auto;
+	vertical-align: middle;
+	padding-top: 12px;
+}
