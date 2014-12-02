@@ -1,5 +1,5 @@
 #new-profil-membre {
-	margin-top: 10px;
+	margin-top: 30px;
 }
 
 .membre-titre {
@@ -20,7 +20,6 @@
 }
 
 #body {
-	height: 100%;
 }
 
 #panel-body {
@@ -37,6 +36,7 @@
 	display:inline-block;
 	width: 50%;
 	height: 100%;
+	padding-right: 1%;
 }
 
 #right {
@@ -44,6 +44,7 @@
 	display: inline-block;
 	width: 50%;
 	height: 100%;
+	padding-left: 1%;
 }
 
 .marchand-logo {
@@ -54,7 +55,6 @@
 .marchand-membre {
 	border: 1px blue solid;
 	display:block;
-	
 }
 
 .nom-marchand-membre {
@@ -63,4 +63,23 @@
 
 .logo-marchand-membre {
 	display:inline-block;
+}
+
+.ancien-password {
+	margin-top: 15px;
+	margin-bottom:15px;
+}
+
+.btn-send {
+	margin-bottom: 30px;
+}
+
+.voir-marchands-membre {
+	font-weigth: bold;
+	font-size: 1.2em;
+}
+
+.voir-vitrines-membre {
+	font-weigth: bold;
+	font-size: 1.2em;
 }

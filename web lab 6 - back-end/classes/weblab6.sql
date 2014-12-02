@@ -88,11 +88,19 @@ create table favori (
 
 insert into membre(IDMembre, Username, Password, Email) values (SEQ_ID_MEMBRE.nextval, 'Roger', 'Rabbit', 'rr@acme.co');
 insert into membre(IDMembre, Username, Password, Email) values (SEQ_ID_MEMBRE.nextval, 'Jessica', 'Rabbit', 'jr@acme.co');
-insert into marchand(IDMarchand, MembreID, Name, LogoURI) values (SEQ_ID_MARCHAND.nextval, 1, 'ACME', 'img/acme.jpg');
+insert into marchand(IDMarchand, MembreID, Name, LogoURI) values (SEQ_ID_MARCHAND.nextval, 1, 'ACME', 'Roger/img/acme.jpg');
+insert into marchand(IDMarchand, MembreID, Name, LogoURI) values (SEQ_ID_MARCHAND.nextval, 1, 'ACME2', 'Roger/img/acme.jpg');
+insert into marchand(IDMarchand, MembreID, Name, LogoURI) values (SEQ_ID_MARCHAND.nextval, 1, 'ACME3', 'Roger/img/acme.jpg');
 insert into produit(IDProduit, MarchandID, Title, URL, Price) values (SEQ_ID_PRODUIT.nextval, 1, 'Un beau marteau', 'img/marteau.jpg', 99.99);
 insert into produit(IDProduit, MarchandID, Title, URL, Price) values (SEQ_ID_PRODUIT.nextval, 1, 'Une ceinture', 'img/marteau.jpg', 6.99);
-insert into vitrine(IDVitrine, MembreID, Title, DateAdded) values (SEQ_ID_VITRINE.nextval, 1, 'Ma premiere vitrine', null);
+insert into vitrine(IDVitrine, MembreID, Title, DateAdded) values (SEQ_ID_VITRINE.nextval, 1, 'Ma premiere vitrine', SYSDATE);
+insert into vitrine(IDVitrine, MembreID, Title, DateAdded) values (SEQ_ID_VITRINE.nextval, 1, 'Ma deuxieme vitrine', SYSDATE);
+insert into vitrine(IDVitrine, MembreID, Title, DateAdded) values (SEQ_ID_VITRINE.nextval, 1, 'Ma troisieme vitrine', SYSDATE);
 insert into categorie(IDCategorie, MembreID, Name) values (SEQ_ID_CATEGORIE.nextval, 1, 'Acme co.');
+insert into categorie(IDCategorie, MembreID, Name) values (SEQ_ID_CATEGORIE.nextval, 1, 'Acme2 co.');
+insert into lignevitrine(IDLigneVitrine, ProduitID, VitrineID, CategorieID) values (SEQ_ID_LIGNE_VITRINE.nextval, 1, 1, 1);
+insert into lignevitrine(IDLigneVitrine, ProduitID, VitrineID, CategorieID) values (SEQ_ID_LIGNE_VITRINE.nextval, 1, 1, 1);
+insert into lignevitrine(IDLigneVitrine, ProduitID, VitrineID, CategorieID) values (SEQ_ID_LIGNE_VITRINE.nextval, 1, 1, 1);
 insert into lignevitrine(IDLigneVitrine, ProduitID, VitrineID, CategorieID) values (SEQ_ID_LIGNE_VITRINE.nextval, 1, 1, 1);
 insert into favori(IDFavori, ProduitID, MembreID) values (SEQ_ID_FAVORI.nextval, 1, 2);
 insert into favori(IDFavori, ProduitID, MembreID) values (SEQ_ID_FAVORI.nextval, 2, 2);

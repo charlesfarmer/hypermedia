@@ -78,6 +78,11 @@
   </servlet>
   
   <servlet>
+    <servlet-name>viewMarchandsServlet</servlet-name>
+    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.ViewMarchandsServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
     <servlet-name>viewMembreServlet</servlet-name>
     <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.ViewMembreServlet</servlet-class>
   </servlet>
@@ -139,6 +144,11 @@
   <servlet-mapping>
     <servlet-name>viewVitrinesServlet</servlet-name>
     <url-pattern>/viewVitrines.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>viewMarchandsServlet</servlet-name>
+    <url-pattern>/viewMarchands.do</url-pattern>
   </servlet-mapping>
   
   <servlet-mapping>

@@ -15,6 +15,7 @@
     <%@ include file="/WEB-INF/jsp/layout/includeCommon.jsp" %>
     <link rel="stylesheet" href="css/viewTemplate/stylesheet.css" type="text/css"/>
     <link rel="stylesheet" href="css/viewMembre/stylesheet.css" type="text/css"/>
+    <link rel="stylesheet" href="css/core/stylesheet.css" type="text/css"/>
     <script type="text/javascript" src="js/viewTemplate/viewTemplate.js"></script>
     <script type="text/javascript" src="js/viewMembre/viewMembre.js"></script>
   </head>

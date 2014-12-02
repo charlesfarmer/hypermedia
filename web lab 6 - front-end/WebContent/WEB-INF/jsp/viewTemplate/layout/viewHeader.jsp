@@ -26,7 +26,7 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <c:choose>
-          <c:when test="${ not empty param.viewFavorites }">
+          <c:when test="${ not empty param.viewVitrines }">
             <li class="active"><a href="viewVitrines.do"><message:say key="global.vitrinesPage.displayMessage"/></a></li>
           </c:when>
           <c:otherwise>
@@ -34,7 +34,15 @@
           </c:otherwise>
         </c:choose>
         <c:choose>
-          <c:when test="${ not empty param.viewVitrines }">
+          <c:when test="${ not empty param.viewMarchands }">
+            <li class="active"><a href="viewMarchands.do"><message:say key="global.marchandsPage.displayMessage"/></a></li>
+          </c:when>
+          <c:otherwise>
+            <li><a href="viewMarchands.do"><message:say key="global.marchandsPage.displayMessage"/></a></li>
+          </c:otherwise>
+        </c:choose>
+        <c:choose>
+          <c:when test="${ not empty param.viewFavorites }">
             <li class="active"><a href="viewFavorites.do"><message:say key="global.favoritesPage.displayMessage"/></a></li>
           </c:when>
           <c:otherwise>

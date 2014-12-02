@@ -1,0 +1,13 @@
+.form-text {
+    width: 200px !important;
+    display: inline !important;
+}
+
+.form-field {
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.form-field-btn {
+    margin-top: 10px;   
+}

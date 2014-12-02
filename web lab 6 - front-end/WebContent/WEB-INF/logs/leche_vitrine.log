@@ -6580,3 +6580,427 @@ org.hibernate.LazyInitializationException: could not initialize proxy - no Sessi
 14:20:23,038  WARN RegisterMembreServlet:66 - échec création de membre
 14:22:47,620  WARN RegisterMembreServlet:66 - échec création de membre
 14:23:03,657  WARN RegisterMembreServlet:66 - échec création de membre
+14:26:33,387  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+14:26:33,723  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+14:26:33,738  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+14:26:57,418  WARN LoginMembreServlet:47 - connexion réussie
+14:27:13,439  WARN ViewMembreServlet:75 - marchandId : 31
+14:27:13,439  WARN ViewMembreServlet:75 - marchandId : 30
+14:27:13,439  WARN ViewMembreServlet:75 - marchandId : 29
+14:27:13,439  WARN ViewMembreServlet:75 - marchandId : 28
+14:27:13,439  WARN ViewMembreServlet:75 - marchandId : 27
+14:27:13,439  WARN ViewMembreServlet:75 - marchandId : 26
+14:27:13,444  WARN ViewMembreServlet:75 - marchandId : 25
+14:27:13,444  WARN ViewMembreServlet:75 - marchandId : 24
+14:27:13,444  WARN ViewMembreServlet:75 - marchandId : 23
+14:27:13,444  WARN ViewMembreServlet:75 - marchandId : 22
+14:27:13,444  WARN ViewMembreServlet:75 - marchandId : 21
+14:27:13,444  WARN ViewMembreServlet:75 - marchandId : 1
+14:27:13,449  WARN ViewMembreServlet:79 - vitrineId : 1
+15:18:40,035  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+15:18:40,362  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+15:18:40,372  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+15:19:01,902  WARN LoginMembreServlet:47 - connexion réussie
+15:21:35,693  WARN LoginMembreServlet:47 - connexion réussie
+15:40:06,759  WARN LoginMembreServlet:47 - connexion réussie
+15:51:51,150  WARN ViewMembreServlet:75 - marchandId : 31
+15:51:51,151  WARN ViewMembreServlet:75 - marchandId : 30
+15:51:51,151  WARN ViewMembreServlet:75 - marchandId : 29
+15:51:51,152  WARN ViewMembreServlet:75 - marchandId : 28
+15:51:51,152  WARN ViewMembreServlet:75 - marchandId : 27
+15:51:51,153  WARN ViewMembreServlet:75 - marchandId : 26
+15:51:51,154  WARN ViewMembreServlet:75 - marchandId : 25
+15:51:51,154  WARN ViewMembreServlet:75 - marchandId : 24
+15:51:51,154  WARN ViewMembreServlet:75 - marchandId : 23
+15:51:51,155  WARN ViewMembreServlet:75 - marchandId : 22
+15:51:51,155  WARN ViewMembreServlet:75 - marchandId : 21
+15:51:51,155  WARN ViewMembreServlet:75 - marchandId : 1
+15:51:51,156  WARN ViewMembreServlet:79 - vitrineId : 1
+15:52:17,569  WARN ViewMembreServlet:75 - marchandId : 31
+15:52:17,570  WARN ViewMembreServlet:75 - marchandId : 30
+15:52:17,571  WARN ViewMembreServlet:75 - marchandId : 29
+15:52:17,571  WARN ViewMembreServlet:75 - marchandId : 28
+15:52:17,572  WARN ViewMembreServlet:75 - marchandId : 27
+15:52:17,573  WARN ViewMembreServlet:75 - marchandId : 26
+15:52:17,573  WARN ViewMembreServlet:75 - marchandId : 25
+15:52:17,574  WARN ViewMembreServlet:75 - marchandId : 24
+15:52:17,574  WARN ViewMembreServlet:75 - marchandId : 23
+15:52:17,575  WARN ViewMembreServlet:75 - marchandId : 22
+15:52:17,575  WARN ViewMembreServlet:75 - marchandId : 21
+15:52:17,576  WARN ViewMembreServlet:75 - marchandId : 1
+15:52:17,576  WARN ViewMembreServlet:79 - vitrineId : 1
+15:53:43,683  WARN ViewMembreServlet:75 - marchandId : 31
+15:53:43,683  WARN ViewMembreServlet:75 - marchandId : 30
+15:53:43,688  WARN ViewMembreServlet:75 - marchandId : 29
+15:53:43,688  WARN ViewMembreServlet:75 - marchandId : 28
+15:53:43,688  WARN ViewMembreServlet:75 - marchandId : 27
+15:53:43,688  WARN ViewMembreServlet:75 - marchandId : 26
+15:53:43,688  WARN ViewMembreServlet:75 - marchandId : 25
+15:53:43,693  WARN ViewMembreServlet:75 - marchandId : 24
+15:53:43,693  WARN ViewMembreServlet:75 - marchandId : 23
+15:53:43,693  WARN ViewMembreServlet:75 - marchandId : 22
+15:53:43,693  WARN ViewMembreServlet:75 - marchandId : 21
+15:53:43,693  WARN ViewMembreServlet:75 - marchandId : 1
+15:53:43,693  WARN ViewMembreServlet:79 - vitrineId : 1
+15:54:13,501  WARN ViewMembreServlet:75 - marchandId : 31
+15:54:13,501  WARN ViewMembreServlet:75 - marchandId : 30
+15:54:13,501  WARN ViewMembreServlet:75 - marchandId : 29
+15:54:13,501  WARN ViewMembreServlet:75 - marchandId : 28
+15:54:13,501  WARN ViewMembreServlet:75 - marchandId : 27
+15:54:13,501  WARN ViewMembreServlet:75 - marchandId : 26
+15:54:13,501  WARN ViewMembreServlet:75 - marchandId : 25
+15:54:13,501  WARN ViewMembreServlet:75 - marchandId : 24
+15:54:13,501  WARN ViewMembreServlet:75 - marchandId : 23
+15:54:13,501  WARN ViewMembreServlet:75 - marchandId : 22
+15:54:13,501  WARN ViewMembreServlet:75 - marchandId : 21
+15:54:13,501  WARN ViewMembreServlet:75 - marchandId : 1
+15:54:13,501  WARN ViewMembreServlet:79 - vitrineId : 1
+15:59:46,970  WARN ViewMembreServlet:75 - marchandId : 31
+15:59:46,971  WARN ViewMembreServlet:75 - marchandId : 30
+15:59:46,971  WARN ViewMembreServlet:75 - marchandId : 29
+15:59:46,971  WARN ViewMembreServlet:75 - marchandId : 28
+15:59:46,971  WARN ViewMembreServlet:75 - marchandId : 27
+15:59:46,972  WARN ViewMembreServlet:75 - marchandId : 26
+15:59:46,972  WARN ViewMembreServlet:75 - marchandId : 25
+15:59:46,973  WARN ViewMembreServlet:75 - marchandId : 24
+15:59:46,973  WARN ViewMembreServlet:75 - marchandId : 23
+15:59:46,974  WARN ViewMembreServlet:75 - marchandId : 22
+15:59:46,974  WARN ViewMembreServlet:75 - marchandId : 21
+15:59:46,974  WARN ViewMembreServlet:75 - marchandId : 1
+15:59:46,975  WARN ViewMembreServlet:79 - vitrineId : 1
+16:11:07,849  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+16:11:08,149  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+16:11:08,164  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+16:11:21,011  WARN LoginMembreServlet:47 - connexion réussie
+16:11:29,935  WARN ViewMembreServlet:75 - marchandId : 31
+16:11:29,940  WARN ViewMembreServlet:75 - marchandId : 30
+16:11:29,940  WARN ViewMembreServlet:75 - marchandId : 29
+16:11:29,940  WARN ViewMembreServlet:75 - marchandId : 28
+16:11:29,940  WARN ViewMembreServlet:75 - marchandId : 27
+16:11:29,940  WARN ViewMembreServlet:75 - marchandId : 26
+16:11:29,940  WARN ViewMembreServlet:75 - marchandId : 25
+16:11:29,940  WARN ViewMembreServlet:75 - marchandId : 24
+16:11:29,945  WARN ViewMembreServlet:75 - marchandId : 23
+16:11:29,945  WARN ViewMembreServlet:75 - marchandId : 22
+16:11:29,945  WARN ViewMembreServlet:75 - marchandId : 21
+16:11:29,945  WARN ViewMembreServlet:75 - marchandId : 1
+16:11:29,945  WARN ViewMembreServlet:79 - vitrineId : 1
+16:14:24,864  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+16:14:25,196  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+16:14:25,206  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+16:14:28,673  WARN LoginMembreServlet:47 - connexion réussie
+16:14:32,367  WARN ViewMembreServlet:75 - marchandId : 31
+16:14:32,367  WARN ViewMembreServlet:75 - marchandId : 30
+16:14:32,367  WARN ViewMembreServlet:75 - marchandId : 29
+16:14:32,367  WARN ViewMembreServlet:75 - marchandId : 28
+16:14:32,367  WARN ViewMembreServlet:75 - marchandId : 27
+16:14:32,372  WARN ViewMembreServlet:75 - marchandId : 26
+16:14:32,372  WARN ViewMembreServlet:75 - marchandId : 25
+16:14:32,372  WARN ViewMembreServlet:75 - marchandId : 24
+16:14:32,372  WARN ViewMembreServlet:75 - marchandId : 23
+16:14:32,372  WARN ViewMembreServlet:75 - marchandId : 22
+16:14:32,372  WARN ViewMembreServlet:75 - marchandId : 21
+16:14:32,372  WARN ViewMembreServlet:75 - marchandId : 1
+16:14:32,372  WARN ViewMembreServlet:79 - vitrineId : 1
+16:14:49,742  WARN ViewMembreServlet:75 - marchandId : 31
+16:14:49,742  WARN ViewMembreServlet:75 - marchandId : 30
+16:14:49,742  WARN ViewMembreServlet:75 - marchandId : 29
+16:14:49,742  WARN ViewMembreServlet:75 - marchandId : 28
+16:14:49,752  WARN ViewMembreServlet:75 - marchandId : 27
+16:14:49,757  WARN ViewMembreServlet:75 - marchandId : 26
+16:14:49,757  WARN ViewMembreServlet:75 - marchandId : 25
+16:14:49,757  WARN ViewMembreServlet:75 - marchandId : 24
+16:14:49,757  WARN ViewMembreServlet:75 - marchandId : 23
+16:14:49,757  WARN ViewMembreServlet:75 - marchandId : 22
+16:14:49,757  WARN ViewMembreServlet:75 - marchandId : 21
+16:14:49,757  WARN ViewMembreServlet:75 - marchandId : 1
+16:14:49,757  WARN ViewMembreServlet:79 - vitrineId : 1
+16:19:47,743  WARN ViewMembreServlet:75 - marchandId : 31
+16:19:47,748  WARN ViewMembreServlet:75 - marchandId : 30
+16:19:47,748  WARN ViewMembreServlet:75 - marchandId : 29
+16:19:47,748  WARN ViewMembreServlet:75 - marchandId : 28
+16:19:47,753  WARN ViewMembreServlet:75 - marchandId : 27
+16:19:47,753  WARN ViewMembreServlet:75 - marchandId : 26
+16:19:47,753  WARN ViewMembreServlet:75 - marchandId : 25
+16:19:47,753  WARN ViewMembreServlet:75 - marchandId : 24
+16:19:47,753  WARN ViewMembreServlet:75 - marchandId : 23
+16:19:47,753  WARN ViewMembreServlet:75 - marchandId : 22
+16:19:47,753  WARN ViewMembreServlet:75 - marchandId : 21
+16:19:47,753  WARN ViewMembreServlet:75 - marchandId : 1
+16:19:47,758  WARN ViewMembreServlet:79 - vitrineId : 1
+16:19:53,467  WARN ViewMembreServlet:75 - marchandId : 31
+16:19:53,468  WARN ViewMembreServlet:75 - marchandId : 30
+16:19:53,468  WARN ViewMembreServlet:75 - marchandId : 29
+16:19:53,468  WARN ViewMembreServlet:75 - marchandId : 28
+16:19:53,469  WARN ViewMembreServlet:75 - marchandId : 27
+16:19:53,469  WARN ViewMembreServlet:75 - marchandId : 26
+16:19:53,470  WARN ViewMembreServlet:75 - marchandId : 25
+16:19:53,470  WARN ViewMembreServlet:75 - marchandId : 24
+16:19:53,470  WARN ViewMembreServlet:75 - marchandId : 23
+16:19:53,470  WARN ViewMembreServlet:75 - marchandId : 22
+16:19:53,471  WARN ViewMembreServlet:75 - marchandId : 21
+16:19:53,471  WARN ViewMembreServlet:75 - marchandId : 1
+16:19:53,471  WARN ViewMembreServlet:79 - vitrineId : 1
+16:20:21,707  WARN ViewMembreServlet:75 - marchandId : 31
+16:20:21,707  WARN ViewMembreServlet:75 - marchandId : 30
+16:20:21,717  WARN ViewMembreServlet:75 - marchandId : 29
+16:20:21,717  WARN ViewMembreServlet:75 - marchandId : 28
+16:20:21,722  WARN ViewMembreServlet:75 - marchandId : 27
+16:20:21,722  WARN ViewMembreServlet:75 - marchandId : 26
+16:20:21,724  WARN ViewMembreServlet:75 - marchandId : 25
+16:20:21,725  WARN ViewMembreServlet:75 - marchandId : 24
+16:20:21,725  WARN ViewMembreServlet:75 - marchandId : 23
+16:20:21,725  WARN ViewMembreServlet:75 - marchandId : 22
+16:20:21,726  WARN ViewMembreServlet:75 - marchandId : 21
+16:20:21,726  WARN ViewMembreServlet:75 - marchandId : 1
+16:20:21,726  WARN ViewMembreServlet:79 - vitrineId : 1
+16:21:09,887  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+16:21:10,167  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+16:21:10,192  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+16:21:11,468  WARN ViewMembreServlet:75 - marchandId : 31
+16:21:11,473  WARN ViewMembreServlet:75 - marchandId : 30
+16:21:11,473  WARN ViewMembreServlet:75 - marchandId : 29
+16:21:11,473  WARN ViewMembreServlet:75 - marchandId : 28
+16:21:11,473  WARN ViewMembreServlet:75 - marchandId : 27
+16:21:11,473  WARN ViewMembreServlet:75 - marchandId : 26
+16:21:11,473  WARN ViewMembreServlet:75 - marchandId : 25
+16:21:11,473  WARN ViewMembreServlet:75 - marchandId : 24
+16:21:11,473  WARN ViewMembreServlet:75 - marchandId : 23
+16:21:11,473  WARN ViewMembreServlet:75 - marchandId : 22
+16:21:11,473  WARN ViewMembreServlet:75 - marchandId : 21
+16:21:11,473  WARN ViewMembreServlet:75 - marchandId : 1
+16:21:11,473  WARN ViewMembreServlet:79 - vitrineId : 1
+16:22:24,054  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+16:22:24,403  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+16:22:24,418  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+16:22:54,413  WARN ViewMembreServlet:75 - marchandId : 31
+16:22:54,413  WARN ViewMembreServlet:75 - marchandId : 30
+16:22:54,413  WARN ViewMembreServlet:75 - marchandId : 29
+16:22:54,413  WARN ViewMembreServlet:75 - marchandId : 28
+16:22:54,413  WARN ViewMembreServlet:75 - marchandId : 27
+16:22:54,418  WARN ViewMembreServlet:75 - marchandId : 26
+16:22:54,418  WARN ViewMembreServlet:75 - marchandId : 25
+16:22:54,418  WARN ViewMembreServlet:75 - marchandId : 24
+16:22:54,418  WARN ViewMembreServlet:75 - marchandId : 23
+16:22:54,418  WARN ViewMembreServlet:75 - marchandId : 22
+16:22:54,418  WARN ViewMembreServlet:75 - marchandId : 21
+16:22:54,418  WARN ViewMembreServlet:75 - marchandId : 1
+16:22:54,418  WARN ViewMembreServlet:79 - vitrineId : 1
+16:23:07,250  WARN ViewMembreServlet:75 - marchandId : 31
+16:23:07,251  WARN ViewMembreServlet:75 - marchandId : 30
+16:23:07,252  WARN ViewMembreServlet:75 - marchandId : 29
+16:23:07,253  WARN ViewMembreServlet:75 - marchandId : 28
+16:23:07,253  WARN ViewMembreServlet:75 - marchandId : 27
+16:23:07,254  WARN ViewMembreServlet:75 - marchandId : 26
+16:23:07,255  WARN ViewMembreServlet:75 - marchandId : 25
+16:23:07,258  WARN ViewMembreServlet:75 - marchandId : 24
+16:23:07,259  WARN ViewMembreServlet:75 - marchandId : 23
+16:23:07,260  WARN ViewMembreServlet:75 - marchandId : 22
+16:23:07,260  WARN ViewMembreServlet:75 - marchandId : 21
+16:23:07,261  WARN ViewMembreServlet:75 - marchandId : 1
+16:23:07,262  WARN ViewMembreServlet:79 - vitrineId : 1
+16:25:29,455  WARN ViewMembreServlet:75 - marchandId : 31
+16:25:29,458  WARN ViewMembreServlet:75 - marchandId : 30
+16:25:29,459  WARN ViewMembreServlet:75 - marchandId : 29
+16:25:29,459  WARN ViewMembreServlet:75 - marchandId : 28
+16:25:29,459  WARN ViewMembreServlet:75 - marchandId : 27
+16:25:29,460  WARN ViewMembreServlet:75 - marchandId : 26
+16:25:29,460  WARN ViewMembreServlet:75 - marchandId : 25
+16:25:29,460  WARN ViewMembreServlet:75 - marchandId : 24
+16:25:29,461  WARN ViewMembreServlet:75 - marchandId : 23
+16:25:29,461  WARN ViewMembreServlet:75 - marchandId : 22
+16:25:29,461  WARN ViewMembreServlet:75 - marchandId : 21
+16:25:29,462  WARN ViewMembreServlet:75 - marchandId : 1
+16:25:29,462  WARN ViewMembreServlet:79 - vitrineId : 1
+16:25:32,148  WARN ViewMembreServlet:75 - marchandId : 31
+16:25:32,156  WARN ViewMembreServlet:75 - marchandId : 30
+16:25:32,157  WARN ViewMembreServlet:75 - marchandId : 29
+16:25:32,158  WARN ViewMembreServlet:75 - marchandId : 28
+16:25:32,160  WARN ViewMembreServlet:75 - marchandId : 27
+16:25:32,161  WARN ViewMembreServlet:75 - marchandId : 26
+16:25:32,161  WARN ViewMembreServlet:75 - marchandId : 25
+16:25:32,162  WARN ViewMembreServlet:75 - marchandId : 24
+16:25:32,169  WARN ViewMembreServlet:75 - marchandId : 23
+16:25:32,170  WARN ViewMembreServlet:75 - marchandId : 22
+16:25:32,170  WARN ViewMembreServlet:75 - marchandId : 21
+16:25:32,171  WARN ViewMembreServlet:75 - marchandId : 1
+16:25:32,172  WARN ViewMembreServlet:79 - vitrineId : 1
+16:26:14,442  WARN ViewMembreServlet:75 - marchandId : 31
+16:26:14,443  WARN ViewMembreServlet:75 - marchandId : 30
+16:26:14,443  WARN ViewMembreServlet:75 - marchandId : 29
+16:26:14,444  WARN ViewMembreServlet:75 - marchandId : 28
+16:26:14,448  WARN ViewMembreServlet:75 - marchandId : 27
+16:26:14,449  WARN ViewMembreServlet:75 - marchandId : 26
+16:26:14,449  WARN ViewMembreServlet:75 - marchandId : 25
+16:26:14,449  WARN ViewMembreServlet:75 - marchandId : 24
+16:26:14,450  WARN ViewMembreServlet:75 - marchandId : 23
+16:26:14,450  WARN ViewMembreServlet:75 - marchandId : 22
+16:26:14,451  WARN ViewMembreServlet:75 - marchandId : 21
+16:26:14,451  WARN ViewMembreServlet:75 - marchandId : 1
+16:26:14,451  WARN ViewMembreServlet:79 - vitrineId : 1
+16:26:19,889  WARN ViewMembreServlet:75 - marchandId : 31
+16:26:19,890  WARN ViewMembreServlet:75 - marchandId : 30
+16:26:19,890  WARN ViewMembreServlet:75 - marchandId : 29
+16:26:19,891  WARN ViewMembreServlet:75 - marchandId : 28
+16:26:19,891  WARN ViewMembreServlet:75 - marchandId : 27
+16:26:19,892  WARN ViewMembreServlet:75 - marchandId : 26
+16:26:19,892  WARN ViewMembreServlet:75 - marchandId : 25
+16:26:19,893  WARN ViewMembreServlet:75 - marchandId : 24
+16:26:19,893  WARN ViewMembreServlet:75 - marchandId : 23
+16:26:19,893  WARN ViewMembreServlet:75 - marchandId : 22
+16:26:19,894  WARN ViewMembreServlet:75 - marchandId : 21
+16:26:19,894  WARN ViewMembreServlet:75 - marchandId : 1
+16:26:19,894  WARN ViewMembreServlet:79 - vitrineId : 1
+16:26:43,520  WARN ViewMembreServlet:75 - marchandId : 31
+16:26:43,520  WARN ViewMembreServlet:75 - marchandId : 30
+16:26:43,521  WARN ViewMembreServlet:75 - marchandId : 29
+16:26:43,521  WARN ViewMembreServlet:75 - marchandId : 28
+16:26:43,522  WARN ViewMembreServlet:75 - marchandId : 27
+16:26:43,522  WARN ViewMembreServlet:75 - marchandId : 26
+16:26:43,522  WARN ViewMembreServlet:75 - marchandId : 25
+16:26:43,523  WARN ViewMembreServlet:75 - marchandId : 24
+16:26:43,523  WARN ViewMembreServlet:75 - marchandId : 23
+16:26:43,523  WARN ViewMembreServlet:75 - marchandId : 22
+16:26:43,524  WARN ViewMembreServlet:75 - marchandId : 21
+16:26:43,524  WARN ViewMembreServlet:75 - marchandId : 1
+16:26:43,524  WARN ViewMembreServlet:79 - vitrineId : 1
+16:26:50,452  WARN ViewMembreServlet:75 - marchandId : 31
+16:26:50,452  WARN ViewMembreServlet:75 - marchandId : 30
+16:26:50,453  WARN ViewMembreServlet:75 - marchandId : 29
+16:26:50,453  WARN ViewMembreServlet:75 - marchandId : 28
+16:26:50,454  WARN ViewMembreServlet:75 - marchandId : 27
+16:26:50,454  WARN ViewMembreServlet:75 - marchandId : 26
+16:26:50,455  WARN ViewMembreServlet:75 - marchandId : 25
+16:26:50,456  WARN ViewMembreServlet:75 - marchandId : 24
+16:26:50,456  WARN ViewMembreServlet:75 - marchandId : 23
+16:26:50,457  WARN ViewMembreServlet:75 - marchandId : 22
+16:26:50,458  WARN ViewMembreServlet:75 - marchandId : 21
+16:26:50,459  WARN ViewMembreServlet:75 - marchandId : 1
+16:26:50,460  WARN ViewMembreServlet:79 - vitrineId : 1
+16:36:09,114  WARN ViewMembreServlet:75 - marchandId : 31
+16:36:09,115  WARN ViewMembreServlet:75 - marchandId : 30
+16:36:09,115  WARN ViewMembreServlet:75 - marchandId : 29
+16:36:09,116  WARN ViewMembreServlet:75 - marchandId : 28
+16:36:09,116  WARN ViewMembreServlet:75 - marchandId : 27
+16:36:09,116  WARN ViewMembreServlet:75 - marchandId : 26
+16:36:09,117  WARN ViewMembreServlet:75 - marchandId : 25
+16:36:09,117  WARN ViewMembreServlet:75 - marchandId : 24
+16:36:09,117  WARN ViewMembreServlet:75 - marchandId : 23
+16:36:09,118  WARN ViewMembreServlet:75 - marchandId : 22
+16:36:09,118  WARN ViewMembreServlet:75 - marchandId : 21
+16:36:09,118  WARN ViewMembreServlet:75 - marchandId : 1
+16:36:09,119  WARN ViewMembreServlet:79 - vitrineId : 1
+16:37:01,154  WARN ViewMembreServlet:75 - marchandId : 31
+16:37:01,155  WARN ViewMembreServlet:75 - marchandId : 30
+16:37:01,155  WARN ViewMembreServlet:75 - marchandId : 29
+16:37:01,155  WARN ViewMembreServlet:75 - marchandId : 28
+16:37:01,155  WARN ViewMembreServlet:75 - marchandId : 27
+16:37:01,156  WARN ViewMembreServlet:75 - marchandId : 26
+16:37:01,156  WARN ViewMembreServlet:75 - marchandId : 25
+16:37:01,156  WARN ViewMembreServlet:75 - marchandId : 24
+16:37:01,157  WARN ViewMembreServlet:75 - marchandId : 23
+16:37:01,157  WARN ViewMembreServlet:75 - marchandId : 22
+16:37:01,157  WARN ViewMembreServlet:75 - marchandId : 21
+16:37:01,158  WARN ViewMembreServlet:75 - marchandId : 1
+16:37:01,158  WARN ViewMembreServlet:79 - vitrineId : 1
+16:37:13,600  WARN ViewMembreServlet:75 - marchandId : 31
+16:37:13,601  WARN ViewMembreServlet:75 - marchandId : 30
+16:37:13,601  WARN ViewMembreServlet:75 - marchandId : 29
+16:37:13,602  WARN ViewMembreServlet:75 - marchandId : 28
+16:37:13,603  WARN ViewMembreServlet:75 - marchandId : 27
+16:37:13,603  WARN ViewMembreServlet:75 - marchandId : 26
+16:37:13,603  WARN ViewMembreServlet:75 - marchandId : 25
+16:37:13,604  WARN ViewMembreServlet:75 - marchandId : 24
+16:37:13,604  WARN ViewMembreServlet:75 - marchandId : 23
+16:37:13,604  WARN ViewMembreServlet:75 - marchandId : 22
+16:37:13,605  WARN ViewMembreServlet:75 - marchandId : 21
+16:37:13,605  WARN ViewMembreServlet:75 - marchandId : 1
+16:37:13,605  WARN ViewMembreServlet:79 - vitrineId : 1
+16:37:24,687  WARN ViewMembreServlet:75 - marchandId : 31
+16:37:24,687  WARN ViewMembreServlet:75 - marchandId : 30
+16:37:24,687  WARN ViewMembreServlet:75 - marchandId : 29
+16:37:24,687  WARN ViewMembreServlet:75 - marchandId : 28
+16:37:24,687  WARN ViewMembreServlet:75 - marchandId : 27
+16:37:24,687  WARN ViewMembreServlet:75 - marchandId : 26
+16:37:24,687  WARN ViewMembreServlet:75 - marchandId : 25
+16:37:24,687  WARN ViewMembreServlet:75 - marchandId : 24
+16:37:24,687  WARN ViewMembreServlet:75 - marchandId : 23
+16:37:24,687  WARN ViewMembreServlet:75 - marchandId : 22
+16:37:24,687  WARN ViewMembreServlet:75 - marchandId : 21
+16:37:24,692  WARN ViewMembreServlet:75 - marchandId : 1
+16:37:24,692  WARN ViewMembreServlet:79 - vitrineId : 1
+17:02:36,481  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+17:02:36,793  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+17:02:36,803  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+17:03:04,345  WARN LoginMembreServlet:47 - connexion réussie
+17:03:08,908  WARN ViewMembreServlet:75 - marchandId : 31
+17:03:08,908  WARN ViewMembreServlet:75 - marchandId : 30
+17:03:08,908  WARN ViewMembreServlet:75 - marchandId : 29
+17:03:08,913  WARN ViewMembreServlet:75 - marchandId : 28
+17:03:08,913  WARN ViewMembreServlet:75 - marchandId : 27
+17:03:08,913  WARN ViewMembreServlet:75 - marchandId : 26
+17:03:08,913  WARN ViewMembreServlet:75 - marchandId : 25
+17:03:08,913  WARN ViewMembreServlet:75 - marchandId : 24
+17:03:08,913  WARN ViewMembreServlet:75 - marchandId : 23
+17:03:08,913  WARN ViewMembreServlet:75 - marchandId : 22
+17:03:08,913  WARN ViewMembreServlet:75 - marchandId : 21
+17:03:08,913  WARN ViewMembreServlet:75 - marchandId : 1
+17:03:08,913  WARN ViewMembreServlet:79 - vitrineId : 1
+17:09:34,270  WARN LoginMembreServlet:47 - connexion réussie
+17:09:36,103  WARN ViewMembreServlet:75 - marchandId : 3
+17:09:36,104  WARN ViewMembreServlet:75 - marchandId : 2
+17:09:36,105  WARN ViewMembreServlet:75 - marchandId : 1
+17:09:36,105  WARN ViewMembreServlet:79 - vitrineId : 1
+17:09:36,105  WARN ViewMembreServlet:79 - vitrineId : 3
+17:09:36,106  WARN ViewMembreServlet:79 - vitrineId : 2
+17:13:28,307  WARN ViewMembreServlet:75 - marchandId : 3
+17:13:28,312  WARN ViewMembreServlet:75 - marchandId : 2
+17:13:28,323  WARN ViewMembreServlet:75 - marchandId : 1
+17:13:28,324  WARN ViewMembreServlet:79 - vitrineId : 1
+17:13:28,325  WARN ViewMembreServlet:79 - vitrineId : 3
+17:13:28,325  WARN ViewMembreServlet:79 - vitrineId : 2
+17:13:36,974  WARN ViewMembreServlet:75 - marchandId : 3
+17:13:36,974  WARN ViewMembreServlet:75 - marchandId : 2
+17:13:36,974  WARN ViewMembreServlet:75 - marchandId : 1
+17:13:36,974  WARN ViewMembreServlet:79 - vitrineId : 1
+17:13:36,974  WARN ViewMembreServlet:79 - vitrineId : 3
+17:13:36,974  WARN ViewMembreServlet:79 - vitrineId : 2
+17:17:03,317  WARN ViewMembreServlet:75 - marchandId : 3
+17:17:03,317  WARN ViewMembreServlet:75 - marchandId : 2
+17:17:03,317  WARN ViewMembreServlet:75 - marchandId : 1
+17:17:03,317  WARN ViewMembreServlet:79 - vitrineId : 1
+17:17:03,322  WARN ViewMembreServlet:79 - vitrineId : 3
+17:17:03,322  WARN ViewMembreServlet:79 - vitrineId : 2
+17:18:14,518  WARN ViewMembreServlet:75 - marchandId : 3
+17:18:14,523  WARN ViewMembreServlet:75 - marchandId : 2
+17:18:14,524  WARN ViewMembreServlet:75 - marchandId : 1
+17:18:14,524  WARN ViewMembreServlet:79 - vitrineId : 2
+17:18:14,524  WARN ViewMembreServlet:79 - vitrineId : 3
+17:18:14,525  WARN ViewMembreServlet:79 - vitrineId : 1
+17:27:14,558  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+17:27:14,838  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+17:27:14,853  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+17:27:33,385  WARN ViewMembreServlet:75 - marchandId : 3
+17:27:33,385  WARN ViewMembreServlet:75 - marchandId : 2
+17:27:33,385  WARN ViewMembreServlet:75 - marchandId : 1
+17:27:33,386  WARN ViewMembreServlet:79 - vitrineId : 1
+17:27:33,386  WARN ViewMembreServlet:79 - vitrineId : 3
+17:27:33,386  WARN ViewMembreServlet:79 - vitrineId : 2
+17:28:34,969  WARN ViewMembreServlet:75 - marchandId : 3
+17:28:34,969  WARN ViewMembreServlet:75 - marchandId : 2
+17:28:34,969  WARN ViewMembreServlet:75 - marchandId : 1
+17:28:34,969  WARN ViewMembreServlet:79 - vitrineId : 1
+17:28:34,979  WARN ViewMembreServlet:79 - vitrineId : 3
+17:28:34,979  WARN ViewMembreServlet:79 - vitrineId : 2
+17:30:07,573  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+17:30:07,860  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+17:30:07,870  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+17:39:19,055  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+17:39:19,345  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+17:39:19,365  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+17:40:10,059  WARN ViewMembreServlet:75 - marchandId : 3
+17:40:10,059  WARN ViewMembreServlet:75 - marchandId : 2
+17:40:10,059  WARN ViewMembreServlet:75 - marchandId : 1
+17:40:10,059  WARN ViewMembreServlet:79 - vitrineId : 1
+17:40:10,059  WARN ViewMembreServlet:79 - vitrineId : 3
+17:40:10,101  WARN ViewMembreServlet:79 - vitrineId : 2

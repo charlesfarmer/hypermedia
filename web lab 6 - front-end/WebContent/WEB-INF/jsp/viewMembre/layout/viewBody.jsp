@@ -26,10 +26,14 @@
           <% } else { %>
                <div class="alert alert-danger">
                  <span class="glyphicon glyphicon-exclamation-sign"></span>
-                 <message:say key="update.membre.failed.displayMessage"/> prout
+                 <message:say key="update.membre.failed.displayMessage"/>
                </div>
          <%  } 
            } %>
+        <div id="error-passwords" class="alert alert-danger" style="display: none;">
+          <span class="glyphicon glyphicon-exclamation-sign"></span>
+          <message:say key="register.membre.failed.passwords.displayMessage"/>
+        </div>
         <div class="membre-titre" id="profil-membre-username"><message:say key="viewMembre.layout.viewBody.profil.username.displayName"/>
         </div>
         <c:choose>
@@ -57,16 +61,22 @@
       </div>
       <c:if test="${ requestScope.membre.username eq sessionScope.membre.username }">
       <div style="visibility: hidden;" id="new-profil-membre">
-        <form class="input-group" id="new-profil-form" method="post" action="updateMembre.do">
-          <input class="form-new-profil form-control" placeholder="<message:say key="viewMembre.layout.viewBody.changeProfil.email.displayMessage"/>" name="<%= MembreDTO.EMAIL_COLUMN_NAME %>" id="profil-membre-new-email" type="text"></input>
-          <br/>
-          <input class="form-new-profil form-control" placeholder="<message:say key="viewMembre.layout.viewBody.changeProfil.password.displayMessage"/>" name="<%= MembreDTO.PASSWORD_COLUMN_NAME %>" id="profil-membre-new-password" type="password"></input>
-          <br/>
-          <input class="form-new-profil form-control" placeholder="<message:say key="viewMembre.layout.viewBody.changeProfil.password.displayMessage"/>" name="<%= MembreDTO.PASSWORD_COLUMN_NAME %>2" id="profil-membre-new-password2" type="password"></input>
-          <br/>
-          <input class="form-old-password form-control" placeholder="<message:say key="viewMembre.layout.viewBody.changeProfil.oldPassword.displayMessage"/>" name="ancien_<%= MembreDTO.PASSWORD_COLUMN_NAME %>" id="profil-membre-ancien-password" type="password"></input>
-          <br/>
-          <input class="btn btn-default" type="submit" value="<message:say key="viewMembre.layout.viewBody.changeProfil.submit.displayMessage"/>"></input>
+        <form id="new-profil-form" method="post" action="updateMembre.do" onsubmit="javascript: return checkFields();">
+          <div class="form-field">
+            <input class="form-text form-control" placeholder="<message:say key="viewMembre.layout.viewBody.changeProfil.email.displayMessage"/>" name="<%= MembreDTO.EMAIL_COLUMN_NAME %>" id="profil-membre-new-email" type="text"/>
+          </div>
+          <div class="form-field">
+            <input class="form-text form-control" placeholder="<message:say key="viewMembre.layout.viewBody.changeProfil.password.displayMessage"/>" name="<%= MembreDTO.PASSWORD_COLUMN_NAME %>" id="profil-membre-new-password" type="password"/>
+          </div>
+          <div class="form-field">
+            <input class="form-text form-control" placeholder="<message:say key="viewMembre.layout.viewBody.changeProfil.password.displayMessage"/>" name="<%= MembreDTO.PASSWORD_COLUMN_NAME %>2" id="profil-membre-new-password2" type="password"/>
+          </div>
+          <div class="ancien-password">
+            <input class="form-text form-control" placeholder="<message:say key="viewMembre.layout.viewBody.changeProfil.oldPassword.displayMessage"/>" name="ancien_<%= MembreDTO.PASSWORD_COLUMN_NAME %>" id="profil-membre-ancien-password" type="password"/>
+          </div>
+          <div class="btn-send">
+            <input class="btn btn-default" type="submit" value="<message:say key="viewMembre.layout.viewBody.changeProfil.submit.displayMessage"/>"/>
+          </div>
         </form>
       </div>
       </c:if>
@@ -79,14 +89,26 @@
        <div class="panel panel-body">
        <c:choose>
          <c:when test="${ not empty requestScope.vitrines }">
-           <c:forEach var="vitrine" varStatus="i" items="${ requestScope.vitrines }">
-             <c:out value="${ vitrine.title }"></c:out>
-             <fmt:formatDate value="${ vitrine.dateAdded }" pattern="yyyy/MM/dd"/>
-             <br/>
+         <div class="voir-vitrines-membre">
+            <c:out value="${ requestScope.vitrines.size() }"></c:out><message:say key="viewMembre.layout.viewBody.vitrines.displayName"/>
+            <br>
+            <message:say key="viewMembre.layout.viewBody.vitrines.description.displayMessage"/><c:out value="${ requestScope.membre.username }"></c:out>
+            
+            <!-- 
+            <c:forEach var="vitrine" varStatus="i" items="${ requestScope.vitrines }">
+             <div name="vitrine-${ vitrine.idVitrine }" class="vitrine-membre">
+               <span class="dateAdded-vitrine-membre"><fmt:formatDate value="${ vitrine.dateAdded }" pattern="yyyy/MM/dd"/></span>
+               <span class="nom-vitrine-membre"><c:out value="${ vitrine.title }"></c:out></span>
+               <span class="id-vitrine-membre"><c:out value="${ vitrine.idVitrine }"></c:out></span>
+             </div>
            </c:forEach>
+             -->
+            
+            
+         </div>
          </c:when>
          <c:otherwise>
-           <h3><message:say key="viewMembre.layout.viewBody.vitrines.vide.displayMessage"/></h3>
+           <div class="voir-vitrines-membre"><message:say key="viewMembre.layout.viewBody.vitrines.vide.displayMessage"/></div>
          </c:otherwise>
        </c:choose>
        </div>
@@ -98,15 +120,25 @@
        <div class="panel panel-body">
        <c:choose>
          <c:when test="${ not empty requestScope.marchands }">
-           <c:forEach var="marchand" varStatus="i" items="${ requestScope.marchands }">
+         <div class="voir-marchands-membre">
+            <c:out value="${ requestScope.marchands.size() }"></c:out><message:say key="viewMembre.layout.viewBody.marchands.displayName"/>
+            <br>
+            <message:say key="viewMembre.layout.viewBody.marchands.description.displayMessage"/><c:out value="${ requestScope.membre.username }"></c:out>
+            
+            <!-- 
+            <c:forEach var="marchand" varStatus="i" items="${ requestScope.marchands }">
              <div name="marchand-${ marchand.idMarchand }" class="marchand-membre">
                <span class="logo-marchand-membre"><img class="marchand-logo" src="<c:url value="${ request.membre.username }/${ marchand.logoURI }"/>"></span>
                <span class="nom-marchand-membre"><c:out value="${ marchand.name }"></c:out></span>
+               <span class="id-marchand-membre"><c:out value="${ marchand.idMarchand }"></c:out></span>
              </div>
            </c:forEach>
+            -->
+           
+         </div>
          </c:when>
          <c:otherwise>
-           <h3><message:say key="viewMembre.layout.viewBody.marchands.vide.displayMessage"/></h3>
+           <div class="voir-marchands-membre"><message:say key="viewMembre.layout.viewBody.marchands.vide.displayMessage"/></div>
          </c:otherwise>
        </c:choose>
        </div>

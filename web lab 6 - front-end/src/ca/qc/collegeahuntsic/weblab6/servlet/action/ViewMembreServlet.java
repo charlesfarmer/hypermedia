@@ -58,6 +58,11 @@ public class ViewMembreServlet extends ApplicationServlet {
         HttpServletResponse response) throws ServletException,
         IOException {
         String idMembre = request.getParameter(ViewMembreServlet.MEMBRE_ID_ATTRIBUTE_NAME);
+        if(Integer.parseInt(idMembre) < 1
+            || idMembre == null
+            || idMembre.isEmpty()) {
+            idMembre = ((MembreDTO) request.getSession().getAttribute(LoginMembreServlet.MEMBRE_ATTRIBUTE_NAME)).getIdMembre();
+        }
         try {
             beginTransaction();
             MembreDTO membre = getMembreService().getMembre(getSession(),
@@ -70,15 +75,6 @@ public class ViewMembreServlet extends ApplicationServlet {
                 MarchandDTO.ID_MARCHAND_COLUMN_NAME);
             tousMarchands.size();
             commitTransaction();
-
-            for(MarchandDTO m : marchands) {
-                LOGGER.warn("marchandId : "
-                    + m.getIdMarchand());
-            }
-            for(VitrineDTO v : vitrines) {
-                LOGGER.warn("vitrineId : "
-                    + v.getIdVitrine());
-            }
 
             request.setAttribute(ViewMembreServlet.VIEW_MEMBRE_ATTRIBUTE_NAME,
                 membre);
