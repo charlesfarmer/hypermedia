@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$(".img-toolbox, #img-new-vitrines").each(function(){
+	$(".img-toolbox, #view-vitrines-nouvelle-vitrine").each(function(){
 		$(this).hover(
 				function(){
 					$(this).css({
