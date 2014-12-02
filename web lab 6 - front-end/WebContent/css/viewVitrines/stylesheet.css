@@ -13,12 +13,15 @@
 }
 
 #img-new-vitrines {
+	position: relative;
 	width: 69px;
 	height: 69px;
-	
+	padding-bottom: 1px;
 }
 
 #new-vitrines-message {
+	position: relative;
+	vertical-align: middle;
 	font-size: 1.69em;
     font-weight: bold;
     padding: 10px 10px;
@@ -89,4 +92,10 @@
 	height: auto;
 	vertical-align: middle;
 	padding-top: 12px;
+}
+
+#empty-vitrines {
+	font-size: 1.69em;
+    font-weight: bold;
+    padding: 40px 100px;
 }

@@ -21,30 +21,37 @@
       </div>
     </div>
     <div id="view-vitrines-liste-vitrines">
-      <div class="vitrine-summary">
-        <!-- <div class="vitrine-summary-lastEdited"><message:say key="viewVitrines.body.dernierChangement.displayName"/><div class="vitrine-element"><c:out value=""></c:out></div></div> -->
-        <div class="vitrine-summary-dateAdded"><message:say key="viewVitrines.body.dateAjout.displayName"/></div>
-        <div class="vitrine-summary-title"><message:say key="viewVitrines.body.titre.displayName"/></div>
-        <div class="vitrine-summary-toolbox"><message:say key="viewVitrines.body.actions.displayName"/></div>
-      </div>
-      <c:forEach items="${ requestScope.vitrines }" var="vitrine" varStatus="i">
-        <div class="vitrine-summary">
-          <!-- <div class="vitrine-summary-lastEdited"><message:say key="viewVitrines.body.dernierChangement.displayName"/><div class="vitrine-element"><c:out value=""></c:out></div></div> -->
-          <div class="vitrine-summary-dateAdded">
-            <div class="vitrine-element"><fmt:formatDate value="${ vitrine.dateAdded }" pattern="yyyy/MM/dd"/></div>
+      <c:choose>
+        <c:when test="${ requestScope.vitrines.size() > 0 }">
+          <div class="vitrine-summary">
+            <!-- <div class="vitrine-summary-lastEdited"><message:say key="viewVitrines.body.dernierChangement.displayName"/><div class="vitrine-element"><c:out value=""></c:out></div></div> -->
+            <div class="vitrine-summary-dateAdded"><message:say key="viewVitrines.body.dateAjout.displayName"/></div>
+            <div class="vitrine-summary-title"><message:say key="viewVitrines.body.titre.displayName"/></div>
+            <div class="vitrine-summary-toolbox"><message:say key="viewVitrines.body.actions.displayName"/></div>
           </div>
-          <div class="vitrine-summary-title">
-            <div class="vitrine-element"><c:out value="${ vitrine.title }"></c:out></div>
-          </div>
-          <div class="vitrine-summary-toolbox">
-            <div class="vitrine-table-row">
-              <div class="img-toolbox"><img alt="Voir vitrine" src='<message:say key="viewVitrine.body.voirVitrine.img"/>'></div>
-              <div class="img-toolbox"><img alt="Modifier vitrine" src='<message:say key="viewVitrine.body.modifierVitrine.img"/>'></div>
-              <div class="img-toolbox"><img alt="Supprimer vitrine" src='<message:say key="viewVitrine.body.supprimerVitrine.img"/>'></div>
+          <c:forEach items="${ requestScope.vitrines }" var="vitrine" varStatus="i">
+            <div class="vitrine-summary">
+            <!-- <div class="vitrine-summary-lastEdited"><message:say key="viewVitrines.body.dernierChangement.displayName"/><div class="vitrine-element"><c:out value=""></c:out></div></div> -->
+              <div class="vitrine-summary-dateAdded">
+                <div class="vitrine-element"><fmt:formatDate value="${ vitrine.dateAdded }" pattern="yyyy/MM/dd"/></div>
+              </div>
+              <div class="vitrine-summary-title">
+                <div class="vitrine-element"><c:out value="${ vitrine.title }"></c:out></div>
+              </div>
+              <div class="vitrine-summary-toolbox">
+                <div class="vitrine-table-row">
+                  <div class="img-toolbox"><img alt="Voir vitrine" src='<message:say key="viewVitrine.body.voirVitrine.img"/>'></div>
+                  <div class="img-toolbox"><img alt="Modifier vitrine" src='<message:say key="viewVitrine.body.modifierVitrine.img"/>'></div>
+                  <div class="img-toolbox"><img alt="Supprimer vitrine" src='<message:say key="viewVitrine.body.supprimerVitrine.img"/>'></div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </c:forEach>
+          </c:forEach>
+        </c:when>
+        <c:otherwise>
+          <div class="vitrine-summary"><div id="empty-vitrines"><message:say key="viewVitrines.body.emptyVitrines.displayMessage"/><c:out value="${ requestScope.membre.username }"></c:out></div></div>
+        </c:otherwise>
+      </c:choose>
     </div>
   </div>
 </div>
