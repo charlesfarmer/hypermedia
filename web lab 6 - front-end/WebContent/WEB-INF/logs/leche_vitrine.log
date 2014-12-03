@@ -7026,3 +7026,266 @@ org.hibernate.LazyInitializationException: could not initialize proxy - no Sessi
 00:47:49,927  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
 00:47:49,947  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
 00:48:20,033  WARN LoginMembreServlet:47 - connexion réussie
+14:16:56,522  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+14:16:56,869  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+14:16:56,879  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+14:17:38,017  WARN LoginMembreServlet:47 - connexion réussie
+14:56:35,855  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+14:56:36,206  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+14:56:36,218  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+14:56:49,607  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+14:56:49,941  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+14:56:49,955  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+14:57:02,513  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+14:57:02,832  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+14:57:02,845  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+15:04:57,305  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+15:04:57,669  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+15:04:57,684  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+15:05:14,511  WARN LoginMembreServlet:47 - connexion réussie
+15:15:08,122  WARN LoginMembreServlet:47 - connexion réussie
+15:27:16,260  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+15:27:16,607  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+15:27:16,627  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+15:28:45,999  WARN LoginMembreServlet:47 - connexion réussie
+15:29:00,502  WARN DeleteVitrineServlet:34 - 13 
+15:30:44,123  WARN DeleteVitrineServlet:34 - 13 
+15:31:36,445  WARN DeleteVitrineServlet:34 - 11 
+15:33:33,103  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+15:33:33,442  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+15:33:33,452  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+15:33:41,272 FATAL ViewVitrinesServlet:53 - idMembre = 1
+15:33:45,143  WARN DeleteVitrineServlet:34 - idVitrine = 13 idMembre = 
+15:33:45,143 FATAL ViewVitrinesServlet:53 - idMembre = 
+15:34:33,226 FATAL ViewVitrinesServlet:53 - idMembre = 1
+15:34:37,360 FATAL ViewVitrinesServlet:53 - idMembre = 1
+15:34:40,093  WARN DeleteVitrineServlet:34 - idVitrine = 12 idMembre = 
+15:34:40,098 FATAL ViewVitrinesServlet:53 - idMembre = 
+15:36:17,956 FATAL ViewVitrinesServlet:53 - idMembre = 1
+15:36:21,253  WARN DeleteVitrineServlet:34 - idVitrine = 12 idMembre = 1
+15:36:21,254 FATAL ViewVitrinesServlet:53 - idMembre = 1
+15:36:28,439  WARN DeleteVitrineServlet:34 - idVitrine = 1 idMembre = 1
+15:36:28,441 FATAL ViewVitrinesServlet:53 - idMembre = 1
+15:36:32,963  WARN DeleteVitrineServlet:34 - idVitrine = 1 idMembre = 1
+15:36:32,964 FATAL ViewVitrinesServlet:53 - idMembre = 1
+15:37:13,513  WARN DeleteVitrineServlet:34 - idVitrine = 1 idMembre = 1
+15:37:13,514 FATAL ViewVitrinesServlet:53 - idMembre = 1
+15:39:45,921  WARN DeleteVitrineServlet:34 - idVitrine = 1 idMembre = 1
+15:39:45,925 FATAL ViewVitrinesServlet:53 - idMembre = 1
+15:41:53,618  WARN DeleteVitrineServlet:34 - idVitrine = 1 idMembre = 1
+15:41:53,619 FATAL ViewVitrinesServlet:53 - idMembre = 1
+15:42:12,314  WARN DeleteVitrineServlet:34 - idVitrine = 1 idMembre = 1
+15:42:12,316 FATAL ViewVitrinesServlet:53 - idMembre = 1
+15:42:42,336 FATAL ViewVitrinesServlet:53 - idMembre = null
+15:42:46,953 FATAL ViewVitrinesServlet:53 - idMembre = 1
+15:45:38,214 FATAL ViewVitrinesServlet:53 - idMembre = 1
+16:05:24,025  WARN LoginMembreServlet:47 - connexion réussie
+16:05:26,583 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:05:37,424 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:05:41,163 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:05:47,771 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:06:22,658 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:06:32,919  WARN LoginMembreServlet:47 - connexion réussie
+16:06:38,782 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:10:06,807  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+16:10:07,153  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+16:10:07,163  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+16:10:33,252  WARN LoginMembreServlet:47 - connexion réussie
+16:10:34,828 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:11:14,804 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:12:49,351 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:14:20,256 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:14:27,712 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:14:55,013 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:15:51,217 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:22:17,442 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:23:05,743 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:23:11,678 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:24:03,197 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:24:12,948 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:24:19,994 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:25:41,844 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:25:57,794 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:26:17,895 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:27:28,564 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:28:48,248 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:29:15,025 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:30:11,906 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:32:23,486 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:33:25,337 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:34:37,544 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:35:46,310 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:37:26,034 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:38:19,802 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:38:38,295 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:39:23,373 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:39:33,792 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:39:35,685 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:41:48,848 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:42:24,241 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:42:29,327 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:42:50,795 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:45:22,552 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:46:14,832 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:47:10,774 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:47:17,460 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:47:18,510 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:47:19,389 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:47:19,780 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:47:20,017 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:47:48,373 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:48:28,968 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:48:41,296 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:48:42,500 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:49:12,231 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:49:23,709 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:49:27,097 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:50:19,033 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:50:55,991 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:51:48,498 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:51:59,570 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:52:00,990 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:52:12,831 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:52:13,812 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:52:16,209 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:53:12,999 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:53:15,454 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:53:18,625 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:54:13,846 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:54:16,688 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:56:27,132 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:56:39,121 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:57:47,826 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:57:53,044 FATAL ViewVitrinesServlet:53 - idMembre = null
+16:57:59,263 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:00:11,742 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:00:15,450 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:00:16,295 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:00:17,829 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:00:48,852 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:00:54,310 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:01:29,066 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:02:08,473 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:02:16,093 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:02:33,711 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:02:49,616  WARN LoginMembreServlet:47 - connexion réussie
+17:02:50,964 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:03:15,522 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:03:42,334 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:04:00,066 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:04:55,581 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:05:03,898 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:05:37,685 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:05:54,968 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:05:56,921 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:05:59,177 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:06:16,228 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:06:21,405 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:06:26,313 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:06:27,544 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:06:43,521 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:07:04,588 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:07:09,509 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:07:19,977 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:07:24,286 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:07:25,040 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:07:25,771 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:07:31,663 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:07:40,686 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:08:14,850 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:08:16,245 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:08:22,186 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:08:29,448 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:08:35,687 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:09:01,744 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:09:31,263 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:10:21,156 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:10:57,637  WARN LoginMembreServlet:47 - connexion réussie
+17:10:59,281 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:11:36,866 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:13:02,892 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:13:22,330 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:15:48,115 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:16:37,272 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:16:58,923 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:18:59,292  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+17:18:59,584  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+17:18:59,594  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+17:19:22,735  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+17:19:23,005  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+17:19:23,020  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+17:38:04,711  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+17:38:05,058  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+17:38:05,073  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+17:38:21,814  WARN LoginMembreServlet:47 - connexion réussie
+17:38:25,173 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:38:34,053 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:38:38,733 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:41:47,785 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:41:52,074 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:41:56,085 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:41:58,916 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:42:10,849 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:42:13,499 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:43:33,033 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:44:59,954 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:45:40,035 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:45:55,156 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:45:57,462 FATAL ViewVitrinesServlet:53 - idMembre = 1
+17:48:53,794 FATAL ViewVitrinesServlet:53 - idMembre = 1
+17:48:58,146 FATAL ViewVitrinesServlet:53 - idMembre = 1
+17:48:59,816 FATAL ViewVitrinesServlet:53 - idMembre = 1
+17:49:01,291 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:49:02,371 FATAL ViewVitrinesServlet:53 - idMembre = 1
+17:49:30,153 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:49:31,575 FATAL ViewVitrinesServlet:53 - idMembre = 1
+17:49:44,424 FATAL ViewVitrinesServlet:53 - idMembre = 1
+17:49:46,906 FATAL ViewVitrinesServlet:53 - idMembre = 1
+17:51:40,038  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+17:51:40,350  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+17:51:40,360  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+17:51:48,920  WARN LoginMembreServlet:47 - connexion réussie
+17:51:50,781 FATAL ViewVitrinesServlet:53 - idMembre = null
+17:52:04,197 FATAL ViewVitrinesServlet:53 - idMembre = 1
+17:52:28,719 FATAL ViewVitrinesServlet:53 - idMembre = 1
+17:52:46,076 FATAL ViewVitrinesServlet:53 - idMembre = null
+18:04:53,560  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+18:04:53,917  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+18:04:53,932  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+18:04:59,965  WARN LoginMembreServlet:47 - connexion réussie
+18:05:03,891  WARN ViewVitrinesServlet:53 - idMembre = null
+18:05:06,176  WARN ViewVitrinesServlet:53 - idMembre = 1
+18:05:07,485  WARN ViewVitrinesServlet:53 - idMembre = 1
+18:05:08,445  WARN ViewVitrinesServlet:53 - idMembre = 1
+18:05:10,263  WARN ViewVitrinesServlet:53 - idMembre = 1
+18:05:11,178  WARN ViewVitrinesServlet:53 - idMembre = 1
+18:05:11,926  WARN ViewVitrinesServlet:53 - idMembre = 1
+18:05:12,546  WARN ViewVitrinesServlet:53 - idMembre = 1
+18:05:13,068  WARN ViewVitrinesServlet:53 - idMembre = 1
+18:05:13,565  WARN ViewVitrinesServlet:53 - idMembre = 1
+18:05:14,078  WARN ViewVitrinesServlet:53 - idMembre = 1
+18:05:14,621  WARN ViewVitrinesServlet:53 - idMembre = 1
+18:05:15,154  WARN ViewVitrinesServlet:53 - idMembre = 1
+18:05:21,066  WARN ViewVitrinesServlet:53 - idMembre = null
+18:06:32,710  WARN ViewVitrinesServlet:53 - idMembre = null
+18:06:35,352  WARN ViewVitrinesServlet:53 - idMembre = null
+18:06:37,460  WARN ViewVitrinesServlet:53 - idMembre = null
+18:06:40,818  WARN ViewVitrinesServlet:53 - idMembre = null
+18:06:42,505  WARN ViewVitrinesServlet:53 - idMembre = null
+18:06:48,734  WARN ViewVitrinesServlet:53 - idMembre = 1
+18:06:52,496  WARN ViewVitrinesServlet:53 - idMembre = null
+18:07:09,581  WARN ViewVitrinesServlet:53 - idMembre = 3
+18:07:13,458  WARN ViewVitrinesServlet:53 - idMembre = 2
+18:08:30,669  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+18:08:30,967  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+18:08:30,977  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+18:08:45,213  WARN LoginMembreServlet:47 - connexion réussie
+19:03:50,107  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+19:03:50,432  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+19:03:50,442  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+19:05:40,538  WARN LoginMembreServlet:47 - connexion réussie
+19:09:10,220  WARN LoginMembreServlet:47 - connexion réussie
+21:18:30,366  WARN ConfigurationFactory:127 - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/C:/Users/Charles/git/hypermedia/web%20lab%206%20-%20front-end/WebContent/WEB-INF/lib/ehcache-1.2.3.jar!/ehcache-failsafe.xml
+21:18:30,678  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.UpdateTimestampsCache]; using defaults.
+21:18:30,688  WARN EhCacheProvider:86 - Could not find configuration [org.hibernate.cache.StandardQueryCache]; using defaults.
+21:18:44,062  WARN LoginMembreServlet:47 - connexion réussie

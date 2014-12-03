@@ -51,8 +51,8 @@ public class ViewVitrinesServlet extends ApplicationServlet {
         IOException {
         String idMembre = request.getParameter(ViewMembreServlet.MEMBRE_ID_ATTRIBUTE_NAME);
         if(idMembre == null
-            || Integer.parseInt(idMembre) < 1
-            || idMembre.isEmpty()) {
+            || idMembre.isEmpty()
+            || Integer.parseInt(idMembre) < 1) {
             MembreDTO membre = (MembreDTO) request.getSession().getAttribute(LoginMembreServlet.MEMBRE_ATTRIBUTE_NAME);
             if(membre != null) {
                 idMembre = membre.getIdMembre();

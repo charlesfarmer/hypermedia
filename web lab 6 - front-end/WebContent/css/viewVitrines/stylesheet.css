@@ -1,10 +1,10 @@
 #body {
-	height: 100%;
+	height:100%;
 }
 
 #body div {
 	background-color: rgba(150,190,180,0.271);
-	margin: 10px;
+	margin: auto;
 }
 
 #view-vitrines-title-text {
@@ -20,7 +20,6 @@
 }
 
 #new-vitrines-message {
-	position: relative;
 	vertical-align: middle;
 	font-size: 1.69em;
     font-weight: bold;
@@ -32,22 +31,26 @@
 	padding: 25px;
 }
 
-#view-vitrines-nouvelle-vitrine div {
-	display: table-cell;
-}
-
 #img-new-vitrines > img {
 	width: 100%;
 	height: auto;
 }
 
-#view-vitrines-vitrines {
+.table-cell {
+	display: table-cell;
+}
+
+.vitrine-summary-header {
+	display: flex;
+    text-align: center;
+    font-weight: bold;
+    margin: auto auto;
 }
 
 .vitrine-summary {
 	display: flex;
 	text-align: center;
-	margin: 10px 0px;
+	margin: auto auto;
 	font-weight: bold;
 	font-size: 16px;
 }
@@ -77,14 +80,25 @@
 	display: table-row;
 }
 
+.vitrine-table-cell {
+	display: table-cell;
+	padding-left: 10px;
+	padding-right: 2%;
+	vertical-align: middle;
+}
+
+#new-vitrine-div {
+	display: inline;
+	margin-left: 25px;
+}
+
 .img-toolbox {
-	width: 69px;
-    height: 69px;
     display: table-cell;
 }
 
 .img-toolbox > img {
-	width: 100%;
+	width: 69px;
+    height: 69px;
 	height: auto;
 }
 
@@ -94,8 +108,54 @@
 	padding-top: 12px;
 }
 
+.new-vitrine-name {
+	width: 400px;
+}
+
 #empty-vitrines {
 	font-size: 1.69em;
     font-weight: bold;
     padding: 40px 100px;
+}
+
+.inline-form {
+	display: inline !important;
+}
+
+.container {
+	display: table-row;
+}
+
+#view-vitrines-vitrines {
+	position: relative;
+}
+
+#edit-vitrine {
+	width: 486px;
+	height: 300px;
+    margin: auto;
+    position: absolute;
+    z-index: 1000;
+    top: 0; left: 0; bottom: 0; right: 0;
+    background-color: rgba(5,7,11,666) !important;
+}
+
+.edit-vitrine-title {
+	position: relative;
+	font-size: 24px;
+	font-weight: bold;
+	color: rgb(255,255,255);
+	padding-top: 45px; padding-left: 25px; padding-bottom: 25px;
+}
+
+#form-edit-vitrine {
+	position: relative;
+}
+
+#nouveau-titre {
+	padding-top: 25px; padding-left: 25px;
+}
+
+#apply-change {
+	padding-top: auto; padding-left: 25px;
 }

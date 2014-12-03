@@ -113,6 +113,21 @@
   </servlet>
   
   <servlet>
+    <servlet-name>updateVitrineServlet</servlet-name>
+    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.UpdateVitrineServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>deleteVitrineServlet</servlet-name>
+    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.DeleteVitrineServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>createVitrineServlet</servlet-name>
+    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.CreateVitrineServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
     <servlet-name>deconnexionServlet</servlet-name>
     <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.DeconnexionServlet</servlet-class>
    </servlet>
@@ -177,6 +192,21 @@
   </servlet-mapping>
   
   <servlet-mapping>
+    <servlet-name>updateVitrineServlet</servlet-name>
+    <url-pattern>/updateVitrine.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>deleteVitrineServlet</servlet-name>
+    <url-pattern>/deleteVitrine.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>createVitrineServlet</servlet-name>
+    <url-pattern>/createVitrine.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
     <servlet-name>deconnexionServlet</servlet-name>
     <url-pattern>/deconnexion.do</url-pattern>
   </servlet-mapping>
@@ -196,6 +226,7 @@
 <!--                                            -->
 <!--            TAG LIB DEFINITIONS             -->
 <!--                                            -->
+
   <jsp-config>
     <taglib>
       <taglib-uri>application-config</taglib-uri>
