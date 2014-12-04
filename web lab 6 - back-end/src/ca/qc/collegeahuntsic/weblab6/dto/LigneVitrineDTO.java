@@ -14,15 +14,11 @@ public class LigneVitrineDTO extends DTO {
 
     public static final String VITRINE_ID_COLUMN_NAME = "vitrineId";
 
-    public static final String CATEGORIE_ID_COLUMN_NAME = "categorieId";
-
     private String idLigneVitrine;
 
     private ProduitDTO produitDTO;
 
     private VitrineDTO vitrineDTO;
-
-    private CategorieDTO categorieDTO;
 
     public LigneVitrineDTO() {
         super();
@@ -50,14 +46,6 @@ public class LigneVitrineDTO extends DTO {
 
     public void setVitrineDTO(VitrineDTO vitrineDTO) {
         this.vitrineDTO = vitrineDTO;
-    }
-
-    public CategorieDTO getCategorieDTO() {
-        return this.categorieDTO;
-    }
-
-    public void setCategorieDTO(CategorieDTO categorieDTO) {
-        this.categorieDTO = categorieDTO;
     }
 
     @Override
