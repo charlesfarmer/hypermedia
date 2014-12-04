@@ -11,6 +11,7 @@ import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidHibernateSessionExcept
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidPrimaryKeyException;
 import ca.qc.collegeahuntsic.weblab6.exception.dto.InvalidDTOException;
 import ca.qc.collegeahuntsic.weblab6.exception.service.ServiceException;
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -58,9 +59,9 @@ public class DeleteVitrineServlet extends ApplicationServlet {
                 try {
                     rollbackTransaction();
                 } catch(ApplicationException e1) {
-                    DeleteVitrineServlet.LOGGER.fatal("problème de rollback");
+                    DeleteVitrineServlet.LOGGER.error(ExceptionUtils.getStackTrace(e1));
                 }
-                DeleteVitrineServlet.LOGGER.fatal("problème de transaction");
+                DeleteVitrineServlet.LOGGER.error("problème de transaction");
             }
         }
         request.setAttribute(DeleteVitrineServlet.DELETE_STATUS_ATTRIBUTE_NAME,

@@ -20,7 +20,7 @@ public class FileUploadServlet extends HttpServlet {
 
     private static final String FORWARD_RESOURCE_FAILED_UPLOAD = "/WEB-INF/jsp/viewTemplate/viewIndex.jsp";
 
-    private static final Log LOGGER = LogFactory.getLog(LoginMembreServlet.class);
+    private static final Log LOGGER = LogFactory.getLog(FileUploadServlet.class);
 
     @Override
     public void doPost(HttpServletRequest request,

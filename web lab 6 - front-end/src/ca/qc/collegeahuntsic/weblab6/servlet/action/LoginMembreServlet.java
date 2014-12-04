@@ -10,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import ca.qc.collegeahuntsic.weblab6.dto.MembreDTO;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.ApplicationException;
 import ca.qc.collegeahuntsic.weblab6.exception.service.ServiceException;
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -63,7 +64,7 @@ public class LoginMembreServlet extends ApplicationServlet {
             | ServletException
             | IOException
             | ApplicationException exception) {
-            LoginMembreServlet.LOGGER.fatal(exception);
+            LoginMembreServlet.LOGGER.error(ExceptionUtils.getStackTrace(exception));
         }
     }
 }

@@ -56,9 +56,9 @@ public class UpdateVitrineServlet extends ApplicationServlet {
                 try {
                     rollbackTransaction();
                 } catch(ApplicationException e1) {
-                    UpdateVitrineServlet.LOGGER.fatal(ExceptionUtils.getStackTrace(e1));
+                    UpdateVitrineServlet.LOGGER.error(ExceptionUtils.getStackTrace(e1));
                 }
-                UpdateVitrineServlet.LOGGER.fatal("problème de transaction");
+                UpdateVitrineServlet.LOGGER.error(ExceptionUtils.getStackTrace(e));
             }
             this.updateSuccessful = Boolean.TRUE;
             request.setAttribute(UpdateVitrineServlet.UPDATE_STATUS_PARAMETER_NAME,

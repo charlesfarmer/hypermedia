@@ -6,16 +6,6 @@
           "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans>
-  <bean name="categorieService"
-        parent="transactionProxy">
-        <property name="target">
-                  <bean class="ca.qc.collegeahuntsic.weblab6.service.implementations.CategorieService">
-                        <constructor-arg>
-                          <ref bean="categorieDAO"/>
-                        </constructor-arg>
-                  </bean>
-        </property>
-  </bean>
   <bean name="favoriService"
         parent="transactionProxy">
         <property name="target">

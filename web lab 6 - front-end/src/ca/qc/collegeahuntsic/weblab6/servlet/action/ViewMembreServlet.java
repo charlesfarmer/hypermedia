@@ -91,9 +91,9 @@ public class ViewMembreServlet extends ApplicationServlet {
             try {
                 rollbackTransaction();
             } catch(ApplicationException e1) {
-                ViewMembreServlet.LOGGER.fatal("problème");
+                ViewMembreServlet.LOGGER.error("problème");
             }
-            ViewMembreServlet.LOGGER.fatal("problème");
+            ViewMembreServlet.LOGGER.error("problème");
         }
         getServletContext().getRequestDispatcher(ViewMembreServlet.FORWARD_RESOURCE).forward(request,
             response);

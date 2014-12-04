@@ -30,12 +30,5 @@
                       <column name="VITRINEID">
                       </column>
          </many-to-one>
-         
-         <many-to-one name="categorieDTO"
-                      class="ca.qc.collegeahuntsic.weblab6.dto.CategorieDTO"
-                      not-null="true">
-                      <column name="CATEGORIEID">
-                      </column>
-         </many-to-one>
   </class>
 </hibernate-mapping>

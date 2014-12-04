@@ -10,6 +10,7 @@ import ca.qc.collegeahuntsic.weblab6.exception.dao.ApplicationException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidHibernateSessionException;
 import ca.qc.collegeahuntsic.weblab6.exception.dto.InvalidDTOException;
 import ca.qc.collegeahuntsic.weblab6.exception.service.ServiceException;
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -57,9 +58,9 @@ public class UpdateMembreServlet extends ApplicationServlet {
             try {
                 rollbackTransaction();
             } catch(ApplicationException e1) {
-                UpdateMembreServlet.LOGGER.fatal("problème de rollback");
+                UpdateMembreServlet.LOGGER.error(ExceptionUtils.getStackTrace(e1));
             }
-            UpdateMembreServlet.LOGGER.fatal("problème");
+            UpdateMembreServlet.LOGGER.error("problème");
         }
         request.setAttribute(ViewMembreServlet.VIEW_MEMBRE_ATTRIBUTE_NAME,
             membre);

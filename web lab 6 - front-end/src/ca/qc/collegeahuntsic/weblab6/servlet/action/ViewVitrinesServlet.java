@@ -13,6 +13,7 @@ import ca.qc.collegeahuntsic.weblab6.exception.dao.ApplicationException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidHibernateSessionException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidPrimaryKeyException;
 import ca.qc.collegeahuntsic.weblab6.exception.service.ServiceException;
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -77,9 +78,9 @@ public class ViewVitrinesServlet extends ApplicationServlet {
             try {
                 rollbackTransaction();
             } catch(ApplicationException e1) {
-                ViewVitrinesServlet.LOGGER.fatal("problème de rollback");
+                ViewVitrinesServlet.LOGGER.error(ExceptionUtils.getStackTrace(e1));
             }
-            ViewVitrinesServlet.LOGGER.fatal("problème transactionnel");
+            ViewVitrinesServlet.LOGGER.error("problème transactionnel");
         }
         request.setAttribute(LoginMembreServlet.MEMBRE_ATTRIBUTE_NAME,
             membre);

@@ -12,6 +12,7 @@ import ca.qc.collegeahuntsic.weblab6.exception.dao.ApplicationException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidHibernateSessionException;
 import ca.qc.collegeahuntsic.weblab6.exception.dto.InvalidDTOException;
 import ca.qc.collegeahuntsic.weblab6.exception.service.ServiceException;
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -55,9 +56,9 @@ public class CreateVitrineServlet extends ApplicationServlet {
                 try {
                     rollbackTransaction();
                 } catch(ApplicationException e1) {
-                    CreateVitrineServlet.LOGGER.fatal("problème de rollback");
+                    CreateVitrineServlet.LOGGER.error(ExceptionUtils.getStackTrace(e1));
                 }
-                CreateVitrineServlet.LOGGER.fatal("problème de création de vitrine");
+                CreateVitrineServlet.LOGGER.error(ExceptionUtils.getStackTrace(e));
             }
         }
         request.setAttribute(CreateVitrineServlet.CREATE_STATUS_PARAMETER_NAME,

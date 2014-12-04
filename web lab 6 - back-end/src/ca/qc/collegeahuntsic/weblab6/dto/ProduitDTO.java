@@ -20,6 +20,8 @@ public class ProduitDTO extends DTO {
 
     public static final String PRICE_COLUMN_NAME = "price";
 
+    public static final String IMG_URI_COLUMN_NAME = "imgURI";
+
     private String idProduit;
 
     private MarchandDTO marchandDTO;
@@ -29,6 +31,8 @@ public class ProduitDTO extends DTO {
     private String url;
 
     private BigDecimal price;
+
+    private String imgURI;
 
     private Set<LigneVitrineDTO> ligneVitrines;
 
@@ -92,6 +96,14 @@ public class ProduitDTO extends DTO {
 
     public void setIdProduit(String idProduit) {
         this.idProduit = idProduit;
+    }
+
+    public String getImgURI() {
+        return this.imgURI;
+    }
+
+    public void setImgURI(String imgURI) {
+        this.imgURI = imgURI;
     }
 
     @Override

@@ -6,16 +6,6 @@
           "http://www.springframework.org/dtd/spring-beans.dtd">
 
 <beans>
-  <bean name="categorieDAO"
-        parent="transactionProxy">
-        <property name="target">
-                  <bean class="ca.qc.collegeahuntsic.weblab6.dao.implementations.CategorieDAO">
-                        <constructor-arg>
-                          <value>ca.qc.collegeahuntsic.weblab6.dto.CategorieDTO</value>
-                        </constructor-arg>
-                  </bean>
-        </property>
-  </bean>
     <bean name="favoriDAO"
         parent="transactionProxy">
         <property name="target">
