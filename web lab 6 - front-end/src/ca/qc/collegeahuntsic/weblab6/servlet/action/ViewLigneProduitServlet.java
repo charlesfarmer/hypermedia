@@ -2,12 +2,11 @@
 package ca.qc.collegeahuntsic.weblab6.servlet.action;
 
 import java.io.IOException;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import ca.qc.collegeahuntsic.weblab6.dto.FavoriDTO;
 import ca.qc.collegeahuntsic.weblab6.dto.MembreDTO;
+import ca.qc.collegeahuntsic.weblab6.dto.VitrineDTO;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.ApplicationException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidHibernateSessionException;
 import ca.qc.collegeahuntsic.weblab6.exception.dao.InvalidPrimaryKeyException;
@@ -16,15 +15,17 @@ import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-public class ViewFavorisServlet extends ApplicationServlet {
+public class ViewLigneProduitServlet extends ApplicationServlet {
 
     private static final long serialVersionUID = 1L;
 
-    private static final String FORWARD_RESOURCE = "/WEB-INF/jsp/viewFavoris/viewIndex.jsp";
+    private static final String FORWARD_RESOURCE = "/WEB-INF/jsp/viewLigneProduit/viewIndex.jsp";
 
-    public static final String FAVORIS_ATTRIBUTE_NAME = "favoris";
+    private static final Log LOGGER = LogFactory.getLog(ViewLigneProduitServlet.class);
 
-    private static final Log LOGGER = LogFactory.getLog(ViewFavorisServlet.class);
+    public static final String VITRINE_ID_ATTRIBUTE_NAME = "idVitrine";
+
+    public static final String VITRINE_ATTRIBUTE_NAME = "vitrine";
 
     @Override
     public void doGet(HttpServletRequest req,
@@ -46,13 +47,16 @@ public class ViewFavorisServlet extends ApplicationServlet {
         HttpServletResponse response) throws ServletException,
         IOException {
         String idMembre = request.getParameter(ViewMembreServlet.MEMBRE_ID_ATTRIBUTE_NAME);
+        String idVitrine = request.getParameter(ViewLigneProduitServlet.VITRINE_ID_ATTRIBUTE_NAME);
         try {
             beginTransaction();
             MembreDTO membreDTO = getMembreService().getMembre(getSession(),
                 idMembre);
-            List<FavoriDTO> favoris = (List<FavoriDTO>) membreDTO.getFavoris();
-            request.setAttribute(ViewFavorisServlet.FAVORIS_ATTRIBUTE_NAME,
-                favoris);
+            VitrineDTO vitrineDTO = getVitrineService().getVitrine(getSession(),
+                idVitrine);
+            vitrineDTO.getLigneVitrines().size();
+            request.setAttribute(ViewLigneProduitServlet.VITRINE_ATTRIBUTE_NAME,
+                vitrineDTO);
             request.setAttribute(ViewMembreServlet.MEMBRE_ID_ATTRIBUTE_NAME,
                 membreDTO);
             commitTransaction();
@@ -64,12 +68,11 @@ public class ViewFavorisServlet extends ApplicationServlet {
             try {
                 rollbackTransaction();
             } catch(ApplicationException e1) {
-                ViewFavorisServlet.LOGGER.error(ExceptionUtils.getStackTrace(e1));
+                ViewLigneProduitServlet.LOGGER.error(ExceptionUtils.getStackTrace(e1));
             }
-            ViewFavorisServlet.LOGGER.error(ExceptionUtils.getStackTrace(e));
+            ViewLigneProduitServlet.LOGGER.error(ExceptionUtils.getStackTrace(e));
         }
-        request.getRequestDispatcher(ViewFavorisServlet.FORWARD_RESOURCE).forward(request,
+        request.getRequestDispatcher(ViewLigneProduitServlet.FORWARD_RESOURCE).forward(request,
             response);
     }
-
 }
