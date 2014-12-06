@@ -41,6 +41,8 @@
             <li><a href="viewMarchands.do"><message:say key="global.marchandsPage.displayMessage"/></a></li>
           </c:otherwise>
         </c:choose>
+        
+        <!-- 
         <c:choose>
           <c:when test="${ not empty param.viewFavorites }">
             <li class="active"><a href="viewFavorites.do"><message:say key="global.favoritesPage.displayMessage"/></a></li>

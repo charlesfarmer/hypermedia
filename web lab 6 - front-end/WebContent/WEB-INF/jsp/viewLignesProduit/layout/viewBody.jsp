@@ -1,0 +1,1 @@
+<div class="body">jsp/viewLignesProduit/layout/viewBody.jsp</div>
