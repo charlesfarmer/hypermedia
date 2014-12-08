@@ -28,8 +28,6 @@ public class MembreDTO extends DTO {
 
     private Set<VitrineDTO> vitrines;
 
-    private Set<CategorieDTO> categories;
-
     private Set<FavoriDTO> favoris;
 
     private Set<MarchandDTO> marchands;
@@ -37,7 +35,6 @@ public class MembreDTO extends DTO {
     public MembreDTO() {
         super();
         setVitrines(Collections.<VitrineDTO> emptySet());
-        setCategories(Collections.<CategorieDTO> emptySet());
         setFavoris(Collections.<FavoriDTO> emptySet());
         setMarchands(Collections.<MarchandDTO> emptySet());
     }
@@ -80,14 +77,6 @@ public class MembreDTO extends DTO {
 
     public void setVitrines(Set<VitrineDTO> vitrines) {
         this.vitrines = vitrines;
-    }
-
-    public Set<CategorieDTO> getCategories() {
-        return this.categories;
-    }
-
-    public void setCategories(Set<CategorieDTO> categories) {
-        this.categories = categories;
     }
 
     public Set<FavoriDTO> getFavoris() {

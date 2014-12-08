@@ -106,14 +106,14 @@ public class CategorieService extends Service implements ICategorieService {
         InvalidDTOException,
         CategorieAlreadyAddedException,
         ServiceException {
-        List<CategorieDTO> categories = (List<CategorieDTO>) categorieDTO.getMembreDTO().getCategories();
+        /*List<CategorieDTO> categories = (List<CategorieDTO>) categorieDTO.getMembreDTO().getCategories();
         for(CategorieDTO categorie : categories) {
             if(categorie.getName().equals(categorieDTO.getName())) {
                 throw new CategorieAlreadyAddedException();
             }
         }
         addCategorie(session,
-            categorieDTO);
+            categorieDTO);*/
     }
 
 }

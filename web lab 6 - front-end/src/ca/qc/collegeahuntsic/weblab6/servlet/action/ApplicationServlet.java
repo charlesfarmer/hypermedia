@@ -23,8 +23,6 @@ public class ApplicationServlet extends HttpServlet {
 
     private static final String SESSION_FACTORY_NAME = "sessionFactory";
 
-    private static final String CATEGORIE_SERVICE_NAME = "categorieService";
-
     private static final String FAVORI_SERVICE_NAME = "favoriService";
 
     private static final String LIGNE_VITRINE_SERVICE_NAME = "ligneVitrineService";
@@ -95,10 +93,6 @@ public class ApplicationServlet extends HttpServlet {
         return this.categorieService;
     }
 
-    private void setCategorieService(ICategorieService categorieService) {
-        this.categorieService = categorieService;
-    }
-
     public IFavoriService getFavoriService() {
         return this.favoriService;
     }
@@ -151,7 +145,7 @@ public class ApplicationServlet extends HttpServlet {
     public void init() {
         setApplicationContext(WebApplicationContextUtils.getWebApplicationContext(getServletContext()));
         setSessionFactory((SessionFactory) getApplicationContext().getBean(ApplicationServlet.SESSION_FACTORY_NAME));
-        setCategorieService((ICategorieService) getApplicationContext().getBean(ApplicationServlet.CATEGORIE_SERVICE_NAME));
+        //setCategorieService((ICategorieService) getApplicationContext().getBean(ApplicationServlet.CATEGORIE_SERVICE_NAME));
         setFavoriService((IFavoriService) getApplicationContext().getBean(ApplicationServlet.FAVORI_SERVICE_NAME));
         setLigneVitrineService((ILigneVitrineService) getApplicationContext().getBean(ApplicationServlet.LIGNE_VITRINE_SERVICE_NAME));
         setMarchandService((IMarchandService) getApplicationContext().getBean(ApplicationServlet.MARCHAND_SERVICE_NAME));

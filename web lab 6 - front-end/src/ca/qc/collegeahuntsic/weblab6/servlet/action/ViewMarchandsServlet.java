@@ -2,7 +2,7 @@
 package ca.qc.collegeahuntsic.weblab6.servlet.action;
 
 import java.io.IOException;
-import java.util.List;
+import java.util.Set;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -58,7 +58,7 @@ public class ViewMarchandsServlet extends ApplicationServlet {
             beginTransaction();
             MembreDTO membreDTO = getMembreService().getMembre(getSession(),
                 idMembre);
-            List<MarchandDTO> marchands = (List<MarchandDTO>) membreDTO.getMarchands();
+            Set<MarchandDTO> marchands = membreDTO.getMarchands();
             request.setAttribute(ViewMarchandsServlet.MARCHANDS_ATTRIBUTE_NAME,
                 marchands);
             request.setAttribute(ViewMembreServlet.MEMBRE_ID_ATTRIBUTE_NAME,

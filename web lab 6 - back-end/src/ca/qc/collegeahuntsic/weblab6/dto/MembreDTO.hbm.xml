@@ -46,15 +46,6 @@
               </key>
               <one-to-many class="ca.qc.collegeahuntsic.weblab6.dto.VitrineDTO"/>
          </set>
-         <set name="categories"
-              cascade="all"
-              lazy="false">
-              <key>
-                <column name="MEMBREID">
-                </column>
-              </key>
-              <one-to-many class="ca.qc.collegeahuntsic.weblab6.dto.CategorieDTO"/>
-         </set>
          <set name="favoris"
               cascade="all"
               lazy="false"
