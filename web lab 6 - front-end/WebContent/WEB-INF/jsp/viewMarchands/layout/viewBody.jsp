@@ -1,1 +1,1 @@
-div class="body">jsp/viewMarchands/layout/viewBody.jsp</div>
+<div class="body">jsp/viewMarchands/layout/viewBody.jsp</div>

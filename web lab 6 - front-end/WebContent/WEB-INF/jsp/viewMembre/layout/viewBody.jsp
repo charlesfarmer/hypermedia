@@ -92,7 +92,7 @@
          <div class="voir-vitrines-membre">
             <c:out value="${ requestScope.vitrines.size() }"></c:out><message:say key="viewMembre.layout.viewBody.vitrines.displayName"/>
             <br>
-            <message:say key="viewMembre.layout.viewBody.vitrines.description.displayMessage"/><c:out value="${ requestScope.membre.username }"></c:out>
+            <a href="viewVitrines.do?idMembre=<c:out value='${ requestScope.membre.idMembre }'></c:out>"><message:say key="viewMembre.layout.viewBody.vitrines.description.displayMessage"/><c:out value="${ requestScope.membre.username }"></c:out></a>
             
             <!-- 
             <c:forEach var="vitrine" varStatus="i" items="${ requestScope.vitrines }">
@@ -123,7 +123,7 @@
          <div class="voir-marchands-membre">
             <c:out value="${ requestScope.marchands.size() }"></c:out><message:say key="viewMembre.layout.viewBody.marchands.displayName"/>
             <br>
-            <message:say key="viewMembre.layout.viewBody.marchands.description.displayMessage"/><c:out value="${ requestScope.membre.username }"></c:out>
+            <a href="viewMarchands.do?idMembre=<c:out value='${ requestScope.membre.idMembre }'></c:out>"><message:say key="viewMembre.layout.viewBody.marchands.description.displayMessage"/><c:out value="${ requestScope.membre.username }"></c:out></a>
             
             <!-- 
             <c:forEach var="marchand" varStatus="i" items="${ requestScope.marchands }">

@@ -156,7 +156,9 @@
               </div>
               <div class="vitrine-summary-toolbox">
                 <div class="vitrine-table-row">
+                <form action="viewLignesProduit.do?idMembre=<c:out value="${ requestScope.membre.idMembre }"></c:out>idVitrine=<c:out value="${ vitrine.idVitrine }"></c:out>">
                   <div class="img-toolbox voir-vitrine"><img id='voir-<c:out value="${ vitrine.idVitrine }"></c:out>' alt="Voir vitrine" src='<message:say key="viewVitrine.body.voirVitrine.img"/>'></div>
+                </form>
                   <c:if test="${ requestScope.membre.idMembre eq sessionScope.membre.idMembre }">
                     <div class="img-toolbox modifier-vitrine"><img id='modifier-<c:out value="${ vitrine.idVitrine }"></c:out>' alt="Modifier vitrine" src='<message:say key="viewVitrine.body.modifierVitrine.img"/>'></div>
                     <div class="img-toolbox supprimer-vitrine"><img id='supprimer-<c:out value="${ vitrine.idVitrine }"></c:out>' alt="Supprimer vitrine" src='<message:say key="viewVitrine.body.supprimerVitrine.img"/>'></div>

@@ -93,6 +93,11 @@
   </servlet>
   
   <servlet>
+    <servlet-name>viewLigneProduitServlet</servlet-name>
+    <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.ViewLigneProduitServlet</servlet-class>
+  </servlet>
+  
+  <servlet>
     <servlet-name>loginMembreServlet</servlet-name>
     <servlet-class>ca.qc.collegeahuntsic.weblab6.servlet.action.LoginMembreServlet</servlet-class>
   </servlet>
@@ -169,6 +174,11 @@
   <servlet-mapping>
     <servlet-name>viewStatistiquesServlet</servlet-name>
     <url-pattern>/viewStatistiques.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>viewLigneProduitServlet</servlet-name>
+    <url-pattern>/viewLignesProduit.do</url-pattern>
   </servlet-mapping>
   
   <servlet-mapping>
