@@ -1,6 +1,3 @@
-// Fichier Constants.java
-// Auteur : Gilles Bénichou
-// Date de création : 2014-09-06
 
 package ca.qc.collegeahuntsic.weblab6;
 
@@ -8,11 +5,6 @@ import java.text.SimpleDateFormat;
 import java.util.Locale;
 import ca.qc.collegeahuntsic.weblab6.util.ApplicationConfigurator;
 
-/**
- * Bibliothèque constants.
- * 
- * @author Gilles Benichou
- */
 public interface Constants {
     /**
      * Character for the character '.'.

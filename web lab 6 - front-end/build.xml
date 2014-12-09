@@ -7,12 +7,6 @@
           [<!ENTITY build-common
              SYSTEM "ant-common/build-common.xml">]>
 
-<!--
-   - Ant 'build' file.
-   -
-   - Author: Gilles Benichou
--->
-
 <project default="usage" basedir=".">
   <!-- ==================================================================== -->
   <!-- INCLUDED BUILD FILE FRAGMENT ======================================= -->

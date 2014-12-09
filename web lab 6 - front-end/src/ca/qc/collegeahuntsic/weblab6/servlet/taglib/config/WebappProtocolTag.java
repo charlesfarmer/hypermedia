@@ -1,23 +1,13 @@
-// Fichier WebappProtocolTag.java
-// Auteur : Gilles Bénichou
-// Date de création : 2014-09-06
 
 package ca.qc.collegeahuntsic.weblab6.servlet.taglib.config;
 
 import java.io.IOException;
 import java.net.URL;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.jsp.JspTagException;
 import javax.servlet.jsp.tagext.Tag;
-
 import ca.qc.collegeahuntsic.weblab6.servlet.taglib.AbstractTag;
 
-/**
- * Tag to display the web application protocol.
- * 
- * @author Gilles Benichou
- */
 public class WebappProtocolTag extends AbstractTag {
     /**
      * Default constructor.

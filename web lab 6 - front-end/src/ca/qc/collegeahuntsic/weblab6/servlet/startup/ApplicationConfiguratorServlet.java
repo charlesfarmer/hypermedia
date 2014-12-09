@@ -1,6 +1,3 @@
-// Fichier ApplicationConfiguratorServlet.java
-// Auteur : Gilles Bénichou
-// Date de création : 2014-09-06
 
 package ca.qc.collegeahuntsic.weblab6.servlet.startup;
 
@@ -13,12 +10,6 @@ import org.apache.commons.logging.LogFactory;
 import ca.qc.collegeahuntsic.weblab6.Constants;
 import ca.qc.collegeahuntsic.weblab6.util.ApplicationConfigurator;
 
-/**
- * Application configurator servlet. Loads the
- * {@link ca.qc.collegeahuntsic.bibliotheque.util.ApplicationConfigurator}.
- * 
- * @author Gilles Benichou
- */
 public class ApplicationConfiguratorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

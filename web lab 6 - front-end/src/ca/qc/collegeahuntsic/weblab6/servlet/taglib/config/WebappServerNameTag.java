@@ -1,21 +1,11 @@
-// Fichier WebappServerNameTag.java
-// Auteur : Gilles Bénichou
-// Date de création : 2014-09-06
 
 package ca.qc.collegeahuntsic.weblab6.servlet.taglib.config;
 
 import java.io.IOException;
-
 import javax.servlet.jsp.JspTagException;
 import javax.servlet.jsp.tagext.Tag;
-
 import ca.qc.collegeahuntsic.weblab6.servlet.taglib.AbstractTag;
 
-/**
- * Tag to display the web application server name.
- * 
- * @author Gilles Benichou
- */
 public class WebappServerNameTag extends AbstractTag {
     /**
      * Default constructor.

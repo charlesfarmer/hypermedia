@@ -1,6 +1,3 @@
-// Fichier WebappPortNumberTag.java
-// Auteur : Gilles Bénichou
-// Date de création : 2014-09-06
 
 package ca.qc.collegeahuntsic.weblab6.servlet.taglib.config;
 
@@ -11,11 +8,6 @@ import javax.servlet.jsp.tagext.Tag;
 
 import ca.qc.collegeahuntsic.weblab6.servlet.taglib.AbstractTag;
 
-/**
- * Tag to display the web application port number.
- * 
- * @author Gilles Benichou
- */
 public class WebappPortNumberTag extends AbstractTag {
     /**
      * Default constructor.
